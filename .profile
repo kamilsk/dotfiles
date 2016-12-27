@@ -14,6 +14,11 @@ function g^ {
     git remote add mirror "$1"
 }
 export -f g^
+function g++ {
+    git config alias.up '!git fetch --all -p && git pull && git submodule update --init --recursive'
+    git config alias.down '!git reset --hard && git clean -df && git submodule update --init --recursive'
+}
+export -f g++
 
 alias netl="netstat -an | grep LISTEN"
 
