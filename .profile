@@ -6,19 +6,16 @@ alias v-="deactivate"
 alias g+="git fetch --all -p && git pull && git submodule update --init --recursive"
 alias g-="git reset --hard && git clean -df && git submodule update --init --recursive"
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
-function g^ {
+alias g^="git push && git push mirror"
+function g++ {
     if [ "$1" = "" ]; then
-        echo "usage: g^ <url>"
+        echo "usage: g++ <url>"
         return 1
     fi
     git remote add mirror "$1"
-}
-export -f g^
-function g++ {
     git config alias.up '!git fetch --all -p && git pull && git submodule update --init --recursive'
     git config alias.down '!git reset --hard && git clean -df && git submodule update --init --recursive'
 }
-export -f g++
 
 alias netl="netstat -an | grep LISTEN"
 
