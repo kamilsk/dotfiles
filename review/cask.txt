@@ -1,0 +1,4 @@
+brew cask list | cat | sort
+
+vagrant
+virtualbox

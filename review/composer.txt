@@ -1,0 +1,55 @@
+composer global info
+
+bamarni/symfony-console-autocomplete v1.2.0               Shell completion for Symfony Console based scr...
+blackfire/php-sdk                    v1.5.18              Blackfire.io PHP SDK
+composer/ca-bundle                   1.0.4                Lets you find a path to the system CA bundle, ...
+doctrine/instantiator                1.0.5                A small, lightweight utility to instantiate ob...
+friendsofphp/php-cs-fixer            v1.12.1              A tool to automatically fix PHP code style
+hirak/prestissimo                    0.2.4                composer parallel install plugin
+hoa/compiler                         2.15.10.29           The Hoa\Compiler library.
+hoa/core                             2.15.11.09           The Hoa\Core library.
+hoa/file                             0.15.11.09           The Hoa\File library.
+hoa/iterator                         1.15.10.29           The Hoa\Iterator library.
+hoa/math                             0.15.10.26           The Hoa\Math library.
+hoa/regex                            0.15.08.13           The Hoa\Regex library.
+hoa/ruler                            1.15.11.09           The Hoa\Ruler library.
+hoa/stream                           0.15.10.26           The Hoa\Stream library.
+hoa/ustring                          3.15.11.09           The Hoa\Ustring library.
+hoa/visitor                          1.15.08.17           The Hoa\Visitor library.
+michelf/php-markdown                 1.6.0                PHP Markdown
+nikic/php-parser                     v1.4.1               A PHP parser written in PHP
+phalcon/devtools                     v2.0.1               This tools provide you useful scripts to gener...
+phpdocumentor/reflection-docblock    2.0.4
+phpmetrics/phpmetrics                v1.10.0              Static analyzer tool for PHP : Coupling, Cyclo...
+phpspec/prophecy                     v1.6.1               Highly opinionated mocking framework for PHP 5.3+
+phpunit/php-code-coverage            2.2.4                Library that provides collection, processing, ...
+phpunit/php-file-iterator            1.4.1                FilterIterator implementation that filters fil...
+phpunit/php-text-template            1.2.1                Simple template engine.
+phpunit/php-timer                    1.0.8                Utility class for timing
+phpunit/php-token-stream             1.4.8                Wrapper around PHP's tokenizer extension.
+phpunit/phpunit                      4.8.27               The PHP Unit Testing framework.
+phpunit/phpunit-mock-objects         2.3.8                Mock Object library for PHPUnit
+pimple/pimple                        v3.0.2               Pimple, a simple Dependency Injection Container
+psecio/iniscan                       3.6.3                A scanner to evaluate php.ini security
+roave/security-advisories            dev-master b809da5   Prevents installation of composer packages wit...
+sami/sami                            v3.3.0               Sami, an API documentation generator
+sebastian/comparator                 1.2.0                Provides the functionality to compare PHP valu...
+sebastian/diff                       1.4.1                Diff implementation
+sebastian/environment                1.3.8                Provides functionality to handle HHVM/PHP envi...
+sebastian/exporter                   1.2.2                Provides the functionality to export PHP varia...
+sebastian/global-state               1.1.1                Snapshotting of global state
+sebastian/recursion-context          1.0.2                Provides functionality to recursively process ...
+sebastian/version                    1.0.6                Library that helps with managing the version n...
+sensiolabs/melody                    dev-autoload 49fbce9 One file composer scripts
+squizlabs/php_codesniffer            2.7.0                PHP_CodeSniffer tokenizes PHP, JavaScript and ...
+sstalle/php7cc                       1.1.0                A command-line tool to check PHP 5.3 - 5.6 cod...
+symfony/config                       v3.1.4               Symfony Config Component
+symfony/console                      v2.8.11              Symfony Console Component
+symfony/event-dispatcher             v3.1.4               Symfony EventDispatcher Component
+symfony/filesystem                   v2.8.11              Symfony Filesystem Component
+symfony/finder                       v2.8.11              Symfony Finder Component
+symfony/polyfill-mbstring            v1.2.0               Symfony polyfill for the Mbstring extension
+symfony/process                      v2.8.11              Symfony Process Component
+symfony/stopwatch                    v3.1.4               Symfony Stopwatch Component
+symfony/yaml                         v2.8.11              Symfony Yaml Component
+twig/twig                            v1.24.2              Twig, the flexible, fast, and secure template ...
