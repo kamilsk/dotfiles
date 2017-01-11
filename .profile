@@ -1,4 +1,4 @@
-if [ "$(ps cax | grep ssh | awk '{print $1}')" != '' ]; then
+if [ "$(ps cax | grep ssh | awk '{print $1}')" = '' ]; then
     ssh-add >/dev/null 2>&1
 fi
 
