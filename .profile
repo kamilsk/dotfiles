@@ -7,7 +7,7 @@ set +o histexpand
 alias g+="git fetch --all -p && git pull && git submodule update --init --recursive"
 alias g-="git reset --hard && git clean -df && git submodule update --init --recursive"
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
-alias g^="branch=\$(git branch | cut -f2 -d' '); git push origin \$branch --tags && git push mirror \$branch --tags"
+alias g^="branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git push origin \$branch --tags && git push mirror \$branch --tags"
 function g++ {
     git remote -v | grep mirror > /dev/null
     exists=$?
@@ -24,7 +24,7 @@ function g++ {
 
     git config alias.up '!git fetch --all -p && git pull && git submodule update --init --recursive'
     git config alias.down '!git reset --hard && git clean -df && git submodule update --init --recursive'
-    git config alias.pub "!branch=\$(git branch | cut -f2 -d' '); git push origin \$branch --tags && git push mirror \$branch --tags"
+    git config alias.pub "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git push origin \$branch --tags && git push mirror \$branch --tags"
 }
 
 alias v+="source .virtenv/bin/activate"
