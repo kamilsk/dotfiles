@@ -4,6 +4,9 @@ fi
 
 set +o histexpand
 
+alias docker+img="docker images --all | tail -n +2 | sort -f"
+alias docker-img="docker+img | grep -v '<none>'"
+
 alias g+="git fetch --all -p && git pull && git submodule update --init --recursive"
 alias g-="git reset --hard && git clean -df && git submodule update --init --recursive"
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
@@ -35,6 +38,7 @@ alias brew+="brew update && brew upgrade && \
              brew doctor && brew cask doctor && \
              brew prune"
 alias composer+="sudo composer self-update && composer global update"
+alias docker+="docker-img | awk '{print \$1\":\"\$2}' | xargs -n1 docker pull"
 alias gem+="sudo gem update --system; gem list | cut -f1 -d' ' | xargs -n1 sudo gem update"
 alias npm+="npm install -g npm && npm update -g"
 alias pip+="sudo pip install --upgrade pip; pip list | cut -f1 -d' ' | xargs -n1 sudo pip install --upgrade"
