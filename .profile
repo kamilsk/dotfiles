@@ -12,8 +12,8 @@ function git_config {
     git config --global alias.commend 'commit --amend --no-edit'
 
     # правильно форсим
-    git config --global alias.force   '!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git push -f origin \$branch'
-    git config --global alias.please  '!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git push --force-with-lease origin \$branch'
+    git config --global alias.force   "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git push -f origin \$branch"
+    git config --global alias.please  "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git push --force-with-lease origin \$branch"
 
     # правильно инициализируем
     git config --global alias.it      '!git init && git commit -m "root" --allow-empty'
