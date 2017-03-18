@@ -36,7 +36,7 @@ function git_config {
 }
 
 function git_mirror {
-    git remote -v | grep mirror > /dev/null
+    git remote | grep mirror > /dev/null
     exists=$?
     if [ "${exists}" != 0 ]; then
         if [ "$1" = "" ]; then
@@ -48,7 +48,8 @@ function git_mirror {
     elif [ "$1" != "" ]; then
         git remote set-url mirror "$1"
     fi
-    git config alias.pub "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git push origin \$branch --tags && git push mirror \$branch --tags"
+
+    git config alias.pub "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); for remote in \$(git remote); do git push \$remote \$branch --tags; done"
 }
 
 alias docker+img="docker images --all | tail -n +2 | sort -f"
@@ -58,7 +59,7 @@ alias docker-="docker+img | grep '<none>' | awk '{print $3}' | xargs docker rmi 
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
 alias g+="git fetch --all -p && git pull && git submodule update --init --recursive"
 alias g-="git reset --hard && git clean -df && git submodule update --init --recursive"
-alias g^="branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git push origin \$branch --tags && git push mirror \$branch --tags"
+alias g^="branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); for remote in \$(git remote); do git push \$remote \$branch --tags; done"
 
 alias v+="source .virtenv/bin/activate"
 alias v-="deactivate"
