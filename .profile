@@ -40,7 +40,7 @@ function git_mirror {
     exists=$?
     if [ "${exists}" != 0 ]; then
         if [ "$1" = "" ]; then
-            echo "usage: g++ <url>"
+            echo "usage: git_mirror <url>"
             return 1
         else
             git remote add mirror "$1"
