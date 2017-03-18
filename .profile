@@ -53,6 +53,7 @@ function git_mirror {
 
 alias docker+img="docker images --all | tail -n +2 | sort -f"
 alias docker-img="docker+img | grep -v '<none>'"
+alias docker-="docker+img | grep '<none>' | awk '{print $3}' | xargs docker rmi -f && docker system prune -f"
 
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
 alias g+="git fetch --all -p && git pull && git submodule update --init --recursive"
