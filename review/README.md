@@ -4,6 +4,17 @@
 
 - https://github.com/fd0/machma
 
+## Database
+
+- https://github.com/knq/usql
+
+## Declarative query
+
+- https://github.com/cloudson/gitql
+- https://github.com/dinedal/textql
+- https://github.com/facebook/osquery
+- https://github.com/stedolan/jq
+
 ## Git
 
 - https://github.com/arc90/git-sweep
@@ -18,13 +29,6 @@
 - https://github.com/github/hub
 - https://github.com/sairam/gitnotify
 - https://github.com/tcnksm/ghr
-
-## Declarative query
-
-- https://github.com/cloudson/gitql
-- https://github.com/dinedal/textql
-- https://github.com/facebook/osquery
-- https://github.com/stedolan/jq
 
 ## Image
 
