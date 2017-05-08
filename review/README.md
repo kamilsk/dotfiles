@@ -2,6 +2,7 @@
 
 ## Execution
 
+- https://github.com/bcicen/ctop
 - https://github.com/fd0/machma
 
 ## Database
