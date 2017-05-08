@@ -22,6 +22,10 @@
 - https://github.com/facebook/osquery
 - https://github.com/stedolan/jq
 
+## Image
+
+- https://github.com/google/guetzli
+
 ---
 
 # Sorting
