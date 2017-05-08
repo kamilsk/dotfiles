@@ -42,6 +42,13 @@ function git_jira_flow {
     git config alias.ready    'commit --amend'
 }
 
+function git_github_flow {
+    git config alias.issue  "!commit() { git commit -m \"issue \$1\"; }; commit"
+    git config alias.issues "!commit() { git commit -m \"issues \$1\"; }; commit"
+    git config alias.fix    "!commit() { git commit -m \"fix issue \$1\"; }; commit"
+    git config alias.fixes  "!commit() { git commit -m \"fix issues \$1\"; }; commit"
+}
+
 function git_mirror {
     git remote | grep mirror > /dev/null
     exists=$?
@@ -88,7 +95,7 @@ export COMPOSERPATH="$HOME/.composer"
 
 export PATH="$PATH:/usr/local/sbin:$GOPATH/bin:$COMPOSERPATH/vendor/bin"
 
-# refactoring, ignore below
+# TODO refactoring, ignore below
 
 alias b-="brew unlink $1 && brew link $2"
 alias boxup="vagrant box list | awk '{print \$1}' | sort | uniq | xargs -n1 vagrant box update --box \$1"
