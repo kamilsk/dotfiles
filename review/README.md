@@ -30,6 +30,11 @@
 
 - https://github.com/robphoenix/trawl
 
+## Security
+
+- https://github.com/future-architect/vuls
+- https://github.com/uber/focuson
+
 ---
 
 # Sorting
