@@ -1,7 +1,9 @@
-# cp ./.gitignore ~/.gitignore
+# cp .gitignore ~/.gitignore
 # git config --global core.excludesfile ~/.gitignore
 
 .DS_Store
 .idea
 .vagrant
 .virtenv
+
+*.egg-info
