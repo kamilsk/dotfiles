@@ -69,6 +69,7 @@ pkg-config
 python
 python3
 qcachegrind
+qt
 qt5
 re2c
 readline
