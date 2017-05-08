@@ -30,12 +30,16 @@ function git_config {
     # сжатый статус
     git config --global alias.st        'status --short --branch'
     git config --global alias.shorty    'status --short --branch'
-    # графический лог
-    git config --global alias.grog      'log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)"'
     git config --global alias.branches  'for-each-ref --sort=committerdate refs/heads/ --format="%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))"'
 
-    # упрощенный git flow
-    git config --global alias.flow      "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); commit() { git commit -m \"[\$branch] \$1\"; }; commit"
+    # графический лог
+    git config --global alias.grog      'log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)"'
+}
+
+function git_jira_flow {
+    git config alias.flow     "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); commit() { git commit -m \"[\$branch] \$1\"; }; commit"
+    git config alias.progress "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git commit --amend --no-edit && git push --force-with-lease mirror \$branch"
+    git config alias.ready    'commit --amend'
 }
 
 function git_mirror {
