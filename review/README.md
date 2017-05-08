@@ -1,5 +1,9 @@
 # CLI
 
+## Execution
+
+- https://github.com/fd0/machma
+
 ## Git
 
 - https://github.com/arc90/git-sweep
