@@ -1,5 +1,11 @@
 # CLI
 
+## Encoding
+
+### Image
+
+- https://github.com/google/guetzli
+
 ## Execution
 
 - https://github.com/bcicen/ctop
@@ -31,9 +37,9 @@
 - https://github.com/sairam/gitnotify
 - https://github.com/tcnksm/ghr
 
-## Image
+## Misc
 
-- https://github.com/google/guetzli
+- https://github.com/tj/mmake
 
 ## Network
 
