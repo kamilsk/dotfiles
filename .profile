@@ -66,6 +66,25 @@ function git_mirror {
     git config alias.pub "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); for remote in \$(git remote | grep -v upstream); do git push \$remote \$branch --tags; done"
 }
 
+function git_update_all {
+    for item in $(ls); do
+        if test -d $item; then
+            ( \
+                echo "current directiry is:" $item && cd $item; \
+
+                # g+
+                git fetch --all -p && git pull && git submodule update --init --recursive; \
+
+                exists=$?; \
+                if [ "${exists}" != 0 ]; then \
+                    branch=$(git branch | cut -f2 -d' ' | awk 'NF > 0'); \
+                    git branch --set-upstream-to=origin/$branch $branch; \
+                fi \
+            )
+        fi;
+    done
+}
+
 alias docker+img="docker images --all | tail -n +2 | sort -f"
 alias docker-img="docker+img | grep -v '<none>'"
 alias docker+="docker-img | awk '{print \$1\":\"\$2}' | xargs -n1 docker pull"
