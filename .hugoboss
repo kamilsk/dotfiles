@@ -1,0 +1,56 @@
+entrypoint: 8080
+
+# under the hood
+# - local: {name}.local (e.g. kamil.samigullin.info.local)
+# - container: hugo-{name}
+
+sites:
+- name: kamil.samigullin.info
+  port:
+    hugo:  8081
+    nginx: 8091
+
+- name: howilive.ru
+  port:
+    hugo:  8082
+    nginx: 8092
+
+- name: managewp.ru
+  port:
+    hugo:  8083
+    nginx: 8093
+
+- name: www.octolab.ru
+  port:
+    hugo:  8084
+    nginx: 8094
+
+- name: blog.octolab.ru
+  port:
+    hugo:  8085
+    nginx: 8095
+
+- name: idea.octolab.ru
+  port:
+    hugo:  8086
+    nginx: 8096
+
+- name: getlocation.net
+  port:
+    hugo:  8087
+    nginx: 8097
+
+- name: www.octolab.org
+  port:
+    hugo:  8088
+    nginx: 8098
+
+- name: blog.octolab.org
+  port:
+    hugo:  8089
+    nginx: 8099
+
+- name: idea.octolab.org
+  port:
+    hugo:  8090
+    nginx: 8100
