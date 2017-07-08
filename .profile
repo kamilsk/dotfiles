@@ -5,9 +5,17 @@ fi
 # Git
 
 function git_config {
+    git config --global alias.user      'config user.email'
+    git config --global alias.current   'branch | cut -f2 -d' ' | awk "NF > 0"'
+    git config --global alias.release   'tag --list | sort -gr | head -1'
+
     git config --global alias.up        '!git fetch --all -p && git pull && git submodule update --init --recursive'
     git config --global alias.down      '!git reset --hard && git clean -df && git submodule update --init --recursive'
     git config --global alias.sync      "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git fetch --all -p && git pull --rebase && for remote in \$(git remote | grep -v upstream); do git push \$remote \$branch; done"
+
+    git config --global alias.m         'checkout master'
+    git config --global alias.mm        'checkout master && git pull --rebase'
+    git config --global alias.mmm       'checkout master && git sync'
 
     git config --global alias.cmm       'commit -m'
     # git add <пропущенное> и git commend - прикрепляем к последнему коммиту
@@ -92,10 +100,6 @@ function git_update_all {
 
 # TODO ревью https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
 function git_review_203 {
-    git config alias.user      'config user.email'
-    git config alias.branch    'branch | cut -f2 -d' ' | awk "NF > 0"'
-    git config alias.release   'tag --list | sort -gr | head -1'
-
     git config alias.stats     'shortlog -sn --all --no-merges'
     git config alias.recent    'for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
     git config alias.overview  'log --all --since="1 week" --oneline --no-merges'
@@ -103,8 +107,8 @@ function git_review_203 {
     git config alias.today     "log --since='00:00:00' --all --no-merges --oneline --author=\$(git user)"
     git config alias.yesterday "log --since='1 day' --until='00:00:00' --all --no-merges --oneline --author=\$(git user)"
     git config alias.changelog "log --oneline --no-merges \$(git release).."
-    git config alias.ahead     "log --oneline --no-merges origin/\$(git branch).."
-    git config alias.behind    "log --oneline --no-merges ..origin/\$(git branch)"
+    git config alias.ahead     "log --oneline --no-merges origin/\$(git current).."
+    git config alias.behind    "log --oneline --no-merges ..origin/\$(git current)"
 }
 
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
