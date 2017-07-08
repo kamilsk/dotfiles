@@ -1,4 +1,5 @@
 brew cask list | cat | sort
 
+minikube
 vagrant
 virtualbox

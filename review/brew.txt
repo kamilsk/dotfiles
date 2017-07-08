@@ -30,7 +30,6 @@ go
 graphviz
 hicolor-icon-theme
 htop-osx
-httpie
 hub
 icu4c
 jemalloc
@@ -73,8 +72,8 @@ qt
 qt5
 re2c
 readline
+retry
 ruby
-saltstack
 sqlite
 ssh-copy-id
 tbb
@@ -83,11 +82,9 @@ trash
 tree
 unixodbc
 utf8proc
-vim
 webp
 wget
 xz
 z
-zeromq
 zlib
 zsh
