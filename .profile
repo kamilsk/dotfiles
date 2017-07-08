@@ -7,14 +7,15 @@ fi
 function git_config {
     git config --global alias.up        '!git fetch --all -p && git pull && git submodule update --init --recursive'
     git config --global alias.down      '!git reset --hard && git clean -df && git submodule update --init --recursive'
+    git config --global alias.sync      "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git fetch --all -p && git pull --rebase && for remote in \$(git remote | grep -v upstream); do git push \$remote \$branch; done"
 
     git config --global alias.cmm       'commit -m'
     # git add <пропущенное> и git commend - прикрепляем к последнему коммиту
     git config --global alias.commend   'commit --amend --no-edit'
 
     # правильно форсим
-    git config --global alias.force     "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git push -f origin \$branch"
-    git config --global alias.please    "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git push --force-with-lease origin \$branch"
+    git config --global alias.force     "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); for remote in \$(git remote | grep -v upstream); do git push -f \$remote \$branch; done"
+    git config --global alias.please    "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); for remote in \$(git remote | grep -v upstream); do git push  --force-with-lease \$remote \$branch; done"
 
     # правильно инициализируем
     git config --global alias.it        '!git init && git commit -m "root" --allow-empty'
