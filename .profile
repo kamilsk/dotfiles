@@ -90,6 +90,23 @@ function git_update_all {
     done
 }
 
+# TODO ревью https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
+function git_review_203 {
+    git config alias.user      'config user.email'
+    git config alias.branch    'branch | cut -f2 -d' ' | awk "NF > 0"'
+    git config alias.release   'tag --list | sort -gr | head -1'
+
+    git config alias.stats     'shortlog -sn --all --no-merges'
+    git config alias.recent    'for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
+    git config alias.overview  'log --all --since="1 week" --oneline --no-merges'
+    git config alias.recap     "log --all --oneline --no-merges --since='1 week' --author=\$(git user)"
+    git config alias.today     "log --since='00:00:00' --all --no-merges --oneline --author=\$(git user)"
+    git config alias.yesterday "log --since='1 day' --until='00:00:00' --all --no-merges --oneline --author=\$(git user)"
+    git config alias.changelog "log --oneline --no-merges \$(git release).."
+    git config alias.ahead     "log --oneline --no-merges origin/\$(git branch).."
+    git config alias.behind    "log --oneline --no-merges ..origin/\$(git branch)"
+}
+
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
 alias g+="git fetch --all -p && git pull && git submodule update --init --recursive"
 alias g-="git reset --hard && git clean -df && git submodule update --init --recursive"
