@@ -1,6 +1,7 @@
 brew list | cat | sort
 
 ack
+adns
 ansible
 autoconf
 automake
@@ -26,6 +27,8 @@ glib
 glide
 glog
 gmp
+gnupg
+gnutls
 go
 graphviz
 hicolor-icon-theme
@@ -36,14 +39,21 @@ jemalloc
 jpeg
 jq
 kubernetes-cli
+libassuan
 libcroco
 libelf
 libevent
 libffi
+libgcrypt
+libgpg-error
+libksba
 libpng
 libssh2
+libtasn1
 libtiff
 libtool
+libunistring
+libusb
 libxml2
 libyaml
 libzip
@@ -52,17 +62,21 @@ mcrypt
 md5sha1sum
 mhash
 mpfr
+nettle
 node
+npth
 ocaml
 oniguruma
 openssl
 openssl@1.1
 ossp-uuid
+p11-kit
 pcre
 perl
 php70
 php70-intl
 php70-xdebug
+pinentry
 pixman
 pkg-config
 python
