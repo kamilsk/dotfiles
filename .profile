@@ -5,28 +5,33 @@ fi
 # Git
 
 function git_config {
+    # subl ~/.gitconfig --wait
+    # subl ~/.gitignore --wait
+    # subl .git/config --wait
+
+    # метаинформация
     git config --global alias.user      'config user.email'
-    git config --global alias.current   'branch | cut -f2 -d' ' | awk "NF > 0"'
-    git config --global alias.release   'tag --list | sort -gr | head -1'
+    git config --global alias.current   '!git branch | cut -f2 -d" " | awk "NF > 0"'
+    git config --global alias.release   '!git describe --tags | cut -d - -f 1'
 
     git config --global alias.up        '!git fetch --all -p && git pull && git submodule update --init --recursive'
     git config --global alias.down      '!git reset --hard && git clean -df && git submodule update --init --recursive'
-    git config --global alias.sync      "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git fetch --all -p && git pull --rebase && for remote in \$(git remote | grep -v upstream); do git push \$remote \$branch; done"
+    git config --global alias.sync      "!git fetch --all -p && git pull --rebase && for remote in \$(git remote | grep -v upstream); do git push \$remote \$(git current); done"
 
     git config --global alias.m         'checkout master'
-    git config --global alias.mm        'checkout master && git pull --rebase'
-    git config --global alias.mmm       'checkout master && git sync'
+    git config --global alias.mm        '!git checkout master && git pull --rebase'
+    git config --global alias.mmm       '!git checkout master && git sync'
 
     git config --global alias.cmm       'commit -m'
     # git add <пропущенное> и git commend - прикрепляем к последнему коммиту
     git config --global alias.commend   'commit --amend --no-edit'
 
     # правильно форсим
-    git config --global alias.force     "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); for remote in \$(git remote | grep -v upstream); do git push -f \$remote \$branch; done"
-    git config --global alias.please    "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); for remote in \$(git remote | grep -v upstream); do git push  --force-with-lease \$remote \$branch; done"
+    git config --global alias.force     "!for remote in \$(git remote | grep -v upstream); do git push -f \$remote \$(git current); done"
+    git config --global alias.please    "!for remote in \$(git remote | grep -v upstream); do git push --force-with-lease \$remote \$(git current); done"
 
     # правильно инициализируем
-    git config --global alias.it        '!git init && git commit -m "root" --allow-empty'
+    git config --global alias.it        '!git init && git cmm "root" --allow-empty'
 
     # скрывает только непроиндексированные изменения в отслеживаемых файлах
     git config --global alias.stsh      'stash --keep-index'
@@ -39,7 +44,6 @@ function git_config {
 
     # сжатый статус
     git config --global alias.st        'status --short --branch'
-    git config --global alias.shorty    'status --short --branch'
     git config --global alias.branches  'for-each-ref --sort=committerdate refs/heads/ --format="%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))"'
 
     # графический лог
@@ -50,15 +54,15 @@ function git_config {
 }
 
 function git_github_flow {
-    git config alias.issue  "!commit() { git commit -m \"issue \$1\"; }; commit"
-    git config alias.issues "!commit() { git commit -m \"issues \$1\"; }; commit"
-    git config alias.fix    "!commit() { git commit -m \"fix issue \$1\"; }; commit"
-    git config alias.fixes  "!commit() { git commit -m \"fix issues \$1\"; }; commit"
+    git config alias.issue  "!commit() { git cmm \"issue \$1\"; }; commit"
+    git config alias.issues "!commit() { git cmm \"issues \$1\"; }; commit"
+    git config alias.fix    "!commit() { git cmm \"fix issue \$1\"; }; commit"
+    git config alias.fixes  "!commit() { git cmm \"fix issues \$1\"; }; commit"
 }
 
 function git_jira_flow {
-    git config alias.flow     "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); commit() { git commit -m \"[\$branch] \$1\"; }; commit"
-    git config alias.progress "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); git commit --amend --no-edit && git push --force-with-lease mirror \$branch"
+    git config alias.flow     "!commit() { git cmm \"[\$(git current)] \$1\"; }; commit"
+    git config alias.progress "!git commit --amend --no-edit && git push --force-with-lease mirror \$branch"
     git config alias.ready    'commit --amend'
 }
 
@@ -102,13 +106,38 @@ function git_update_all {
 function git_review_203 {
     git config alias.stats     'shortlog -sn --all --no-merges'
     git config alias.recent    'for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
-    git config alias.overview  'log --all --since="1 week" --oneline --no-merges'
-    git config alias.recap     "log --all --oneline --no-merges --since='1 week' --author=\$(git user)"
-    git config alias.today     "log --since='00:00:00' --all --no-merges --oneline --author=\$(git user)"
-    git config alias.yesterday "log --since='1 day' --until='00:00:00' --all --no-merges --oneline --author=\$(git user)"
-    git config alias.changelog "log --oneline --no-merges \$(git release).."
-    git config alias.ahead     "log --oneline --no-merges origin/\$(git current).."
-    git config alias.behind    "log --oneline --no-merges ..origin/\$(git current)"
+    git config alias.overview  'log --all --oneline --no-merges --since="1 week"'
+    git config alias.recap     "!git log --oneline --no-merges --author=\$(git user) --since='1 week'"
+    git config alias.today     "!git log --oneline --no-merges --author=\$(git user) --since='00:00:00'"
+    git config alias.yesterday "!git log --oneline --no-merges --author=\$(git user) --since='1 day' --until='00:00:00'"
+    git config alias.changelog "!git log --oneline --no-merges \$(git release).."
+    git config alias.ahead     "!git log --oneline --no-merges origin/\$(git current).."
+    git config alias.behind    "!git log --oneline --no-merges ..origin/\$(git current)"
+}
+
+# TODO ревью https://blog.scottnonnenberg.com/better-git-configuration/
+# перечитать
+# - https://github.com/pstadler/keybase-gpg-github
+# - https://help.github.com/articles/telling-git-about-your-gpg-key/
+function git_review_173 {
+    git config alias.overview  'log --oneline --no-merges @{1.week.ago}..'
+    git config alias.recap     "!git log --oneline --no-merges --author=\$(git user) @{1.week.ago}.."
+    git config alias.today     "!git log --oneline --no-merges --author=\$(git user) @{00:00:00}.."
+    git config alias.yesterday "!git log --oneline --no-merges --author=\$(git user) @{yesterday}..@{00:00:00}"
+    git config alias.undo      'reset --soft HEAD^'
+
+    # gpg --list-secret-keys --keyid-format LONG
+    # git config user.signingkey ...
+    git config commit.gpgSign  'true'
+    git config alias.cmm       'commit -S -m'
+    export GPG_TTY=$(tty)
+
+    git config merge.ff                  'only'
+    git config merge.conflictstyle       'diff3'
+    git config push.default              'simple'
+    git config push.followTags           'true'
+    git config status.showUntrackedFiles 'all'
+    git config transfer.fsckobjects      'true'
 }
 
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
