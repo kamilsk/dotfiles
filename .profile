@@ -5,9 +5,11 @@ fi
 # Git
 
 function git_config {
-    # subl ~/.gitconfig --wait
-    # subl ~/.gitignore --wait
-    # subl .git/config --wait
+    subl ~/.gitconfig --wait
+    subl ~/.gitignore --wait
+    if [ -d .git ]; then
+        subl .git/config --wait
+    fi
 
     # метаинформация
     git config --global alias.user      'config user.email'
