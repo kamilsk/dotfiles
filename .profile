@@ -188,5 +188,9 @@ export COMPOSERPATH="$HOME/.composer"
 
 set +o histexpand
 
+set -o errexit
+set -o nounset
+set -o pipefail
+
 export PATH="$PATH:/usr/local/sbin:$GOPATH/bin:$COMPOSERPATH/vendor/bin"
 export GITHUB_TOKEN="%place_here%"
