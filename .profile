@@ -87,7 +87,7 @@ function git_update_all {
     for item in $(ls); do
         if test -d $item; then
             ( \
-                echo "current directiry is:" $item && cd $item; \
+                echo "current directory is:" $item && cd $item; \
 
                 # g+
                 git fetch --all -p && git pull && git submodule update --init --recursive; \
@@ -106,10 +106,10 @@ function git_update_all {
 function git_review_203 {
     git config alias.stats     'shortlog -sn --all --no-merges'
     git config alias.recent    'for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
-    git config alias.overview  'log --all --oneline --no-merges --since="1 week"'
-    git config alias.recap     "!git log --oneline --no-merges --author=\$(git user) --since='1 week'"
-    git config alias.today     "!git log --oneline --no-merges --author=\$(git user) --since='00:00:00'"
-    git config alias.yesterday "!git log --oneline --no-merges --author=\$(git user) --since='1 day' --until='00:00:00'"
+    git config alias.overview  '!git log --oneline --no-merges --all --since="1 week"'
+    git config alias.recap     "!git log --oneline --no-merges --all --author=\$(git user) --since='1 week'"
+    git config alias.today     "!git log --oneline --no-merges --all --author=\$(git user) --since='00:00:00'"
+    git config alias.yesterday "!git log --oneline --no-merges --all --author=\$(git user) --since='1 day' --until='00:00:00'"
     git config alias.changelog "!git log --oneline --no-merges \$(git release).."
     git config alias.ahead     "!git log --oneline --no-merges origin/\$(git current).."
     git config alias.behind    "!git log --oneline --no-merges ..origin/\$(git current)"
@@ -124,6 +124,7 @@ function git_review_173 {
     git config alias.recap     "!git log --oneline --no-merges --author=\$(git user) @{1.week.ago}.."
     git config alias.today     "!git log --oneline --no-merges --author=\$(git user) @{00:00:00}.."
     git config alias.yesterday "!git log --oneline --no-merges --author=\$(git user) @{yesterday}..@{00:00:00}"
+
     git config alias.undo      'reset --soft HEAD^'
 
     # gpg --list-secret-keys --keyid-format LONG
