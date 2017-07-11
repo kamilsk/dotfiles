@@ -1,6 +1,6 @@
 # cp .git-commit-template ~/.git-commit-template
 # git config --global commit.template ~/.git-commit-template
 
-[refs #00000] Subject line
+[refs #00000] Subject
 
 Body (72 chars)

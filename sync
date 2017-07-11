@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 set -o xtrace
+set -o errexit
+set -o nounset
+set -o pipefail
 
-if ! [ -d "${HOME}"/.dotfiles ]; then \
-    git clone git@github.com:kamilsk/shared.git "${HOME}"/.dotfiles; \
-    cd "${HOME}"/.dotfiles && git checkout dotfiles; \
-fi
+if ! [ -d "${HOME}"/.dotfiles ]; then git clone git@github.com:kamilsk/shared.git "${HOME}"/.dotfiles; fi
 
-cd "${HOME}"/.dotfiles && git pull
+cd "${HOME}"/.dotfiles && git reset --hard && git clean -df && git checkout dotfiles && git pull
 
 if [ -f "${HOME}"/.zshrc ]; then
     `which zsh` -c "source "${HOME}"/.zshrc";

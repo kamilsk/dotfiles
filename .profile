@@ -185,16 +185,12 @@ alias netl="netstat -an | grep LISTEN"
 
 # Environment
 
-export GOPATH="$HOME/Development/go"
-export COMPOSERPATH="$HOME/.composer"
+set +o histexpand
+
+export GOPATH="${HOME}/Development/go"
+export COMPOSERPATH="${HOME}/.composer"
+export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${COMPOSERPATH}/vendor/bin"
 
 # Recommendation
 
-set +o histexpand
-
-set -o errexit
-set -o nounset
-set -o pipefail
-
-export PATH="$PATH:/usr/local/sbin:$GOPATH/bin:$COMPOSERPATH/vendor/bin"
-export GITHUB_TOKEN="%place_here%"
+export GITHUB_TOKEN=""
