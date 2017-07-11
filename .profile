@@ -1,5 +1,9 @@
-if [ "$(ps cax | grep ssh | awk '{print $1}')" = '' ]; then
+if ! ps cax | grep ssh-agent &>/dev/null; then
     ssh-add >/dev/null 2>&1
+fi
+
+if ! ps cax | grep gpg-agent &>/dev/null; then
+    # todo register gpg
 fi
 
 # Git
@@ -7,7 +11,7 @@ fi
 function git_config {
     subl ~/.gitconfig --wait
     subl ~/.gitignore --wait
-    if [ -d .git ]; then
+    if [ -f .git/config ]; then
         subl .git/config --wait
     fi
 
@@ -55,14 +59,14 @@ function git_config {
     git config --global alias.attach    "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); attach() { git branch --set-upstream-to=\$1/\$branch \$branch; }; attach"
 }
 
-function git_github_flow {
+function git_flow_github {
     git config alias.issue  "!commit() { git cmm \"issue \$1\"; }; commit"
     git config alias.issues "!commit() { git cmm \"issues \$1\"; }; commit"
     git config alias.fix    "!commit() { git cmm \"fix issue \$1\"; }; commit"
     git config alias.fixes  "!commit() { git cmm \"fix issues \$1\"; }; commit"
 }
 
-function git_jira_flow {
+function git_flow_jira {
     git config alias.flow     "!commit() { git cmm \"[\$(git current)] \$1\"; }; commit"
     git config alias.progress "!git commit --amend --no-edit && git push --force-with-lease mirror \$branch"
     git config alias.ready    'commit --amend'
@@ -163,7 +167,6 @@ function docker~ {
 
 alias v+="source .virtenv/bin/activate"
 alias v-="deactivate"
-alias pip+="sudo pip install --upgrade pip; pip list | cut -f1 -d' ' | xargs -n1 sudo pip install --upgrade"
 
 # Package management
 
@@ -174,6 +177,7 @@ alias brew+="brew update && brew upgrade && \
 alias composer+="sudo composer self-update && composer global update"
 alias gem+="sudo gem update --system; gem list | cut -f1 -d' ' | xargs -n1 sudo gem update"
 alias npm+="npm install -g npm && npm update -g"
+alias pip+="sudo pip install --upgrade pip; pip list | cut -f1 -d' ' | xargs -n1 sudo pip install --upgrade"
 
 # Network
 

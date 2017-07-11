@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -o xtrace
+
+if ! [ -d "${HOME}"/.dotfiles ]; then \
+    git clone git@github.com:kamilsk/shared.git "${HOME}"/.dotfiles; \
+    cd "${HOME}"/.dotfiles && git checkout dotfiles; \
+fi
+
+cd "${HOME}"/.dotfiles && git pull
+
+if [ -f "${HOME}"/.zshrc ]; then
+    `which zsh` -c "source "${HOME}"/.zshrc";
+elif [ -f "${HOME}"/.bash_profile ]; then
+    `which bash` -c "source "${HOME}"/.bash_profile";
+fi
