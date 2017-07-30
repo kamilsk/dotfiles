@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # cp bash_completion.d/egg.sh /usr/local/etc/bash_completion.d/egg
 
 _egg() {

@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # cp bash_completion.d/semaphore.sh /usr/local/etc/bash_completion.d/retry
 
 _semaphore() {
