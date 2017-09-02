@@ -10,7 +10,7 @@ if ! [ -d "${HOME}"/.dotfiles ]; then git clone git@github.com:kamilsk/shared.gi
 cd "${HOME}"/.dotfiles && git reset --hard && git clean -df && git checkout dotfiles && git pull
 
 if [ -f "${HOME}"/.zshrc ]; then
-    `which zsh` -c "source "${HOME}"/.zshrc";
+    `which zsh` -c "source ${HOME}/.zshrc";
 elif [ -f "${HOME}"/.bash_profile ]; then
-    `which bash` -c "source "${HOME}"/.bash_profile";
+    `which bash` -c "source ${HOME}/.bash_profile";
 fi
