@@ -1,12 +1,14 @@
-brew list | cat | sort
+brew list | cat | sort >> review/brew.txt
 
 ansible
 bash-completion
 composer
+dep
 freetype
 gdbm
 gettext
 git
+glide
 go
 htop-osx
 icu4c
@@ -14,9 +16,9 @@ jpeg
 jq
 libevent
 libpng
-libssh2
 libxml2
 libyaml
+mercurial
 node
 oniguruma
 openssl
@@ -35,8 +37,25 @@ ssh-copy-id
 tmux
 trash
 unixodbc
-webp
 wget
 xz
 z
 zsh
+
+brew tap | cat | sort >> review/brew.txt
+
+blackfireio/blackfire
+caskroom/cask
+hhvm/hhvm
+homebrew/completions
+homebrew/core
+homebrew/dupes
+homebrew/php
+homebrew/versions
+kamilsk/tap
+
+brew cask list | cat | sort >> review/brew.txt
+
+minikube
+vagrant
+virtualbox

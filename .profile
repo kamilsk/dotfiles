@@ -7,7 +7,7 @@ if ! ps cax | grep ssh-agent &>/dev/null; then
 fi
 
 if ! ps cax | grep gpg-agent &>/dev/null; then
-    # todo register gpg
+    echo 'todo register gpg'
 fi
 
 # Git
@@ -197,4 +197,4 @@ export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${COMPOSERPATH}/vendor/bin"
 
 # Recommendation
 
-export GITHUB_TOKEN=""
+export GITHUB_TOKEN=
