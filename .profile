@@ -1,3 +1,7 @@
+if -f /usr/local/etc/bash_completion; then
+    source /usr/local/etc/bash_completion
+fi
+
 if ! ps cax | grep ssh-agent &>/dev/null; then
     ssh-add >/dev/null 2>&1
 fi
