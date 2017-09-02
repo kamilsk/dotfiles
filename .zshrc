@@ -105,6 +105,6 @@ plugins=( \
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# bash-completion
+# Completion
 
 autoload -U bashcompinit && bashcompinit

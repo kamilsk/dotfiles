@@ -1,13 +1,15 @@
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    source $(brew --prefix)/etc/bash_completion
-fi
-
 if ! ps cax | grep ssh-agent &>/dev/null; then
     ssh-add >/dev/null 2>&1
 fi
 
 if ! ps cax | grep gpg-agent &>/dev/null; then
     echo 'todo register gpg'
+fi
+
+# Completion
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    source $(brew --prefix)/etc/bash_completion
 fi
 
 # Git
