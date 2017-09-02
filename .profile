@@ -1,5 +1,5 @@
 [[ $PS1 && -f /usr/local/etc/bash_completion ]] && \
-    source /usr/share/bash-completion/bash_completion
+    source /usr/local/etc/bash_completion
 
 if ! ps cax | grep ssh-agent &>/dev/null; then
     ssh-add >/dev/null 2>&1
