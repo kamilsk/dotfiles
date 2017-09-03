@@ -5,9 +5,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-CWD=$(pwd)
-
-if [ "${CWD}" != "${HOME}"/.dotfiles ]; then
+if [ "$(pwd)" != "${HOME}"/.dotfiles ]; then
     if ! [ -d "${HOME}"/.dotfiles ]; then
         git clone git@github.com:kamilsk/shared.git "${HOME}"/.dotfiles;
     fi

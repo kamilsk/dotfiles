@@ -107,4 +107,6 @@ plugins=( \
 
 # Completion
 
-autoload -U bashcompinit && bashcompinit
+fpath=("${HOME}"/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
+autoload -Uz bashcompinit && bashcompinit -i

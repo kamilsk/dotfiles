@@ -32,6 +32,7 @@ python3
 readline
 retry
 ruby
+semaphore
 sqlite
 ssh-copy-id
 tmux
@@ -44,14 +45,9 @@ zsh
 
 brew tap | cat | sort >> review/brew.txt
 
-blackfireio/blackfire
 caskroom/cask
-hhvm/hhvm
-homebrew/completions
 homebrew/core
-homebrew/dupes
 homebrew/php
-homebrew/versions
 kamilsk/tap
 
 brew cask list | cat | sort >> review/brew.txt

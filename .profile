@@ -1,3 +1,5 @@
+# Common
+
 if ! ps cax | grep ssh-agent &>/dev/null; then
     ssh-add >/dev/null 2>&1
 fi
@@ -6,11 +8,13 @@ if ! ps cax | grep gpg-agent &>/dev/null; then
     echo 'todo register gpg'
 fi
 
-# Completion
+# Environment
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    source $(brew --prefix)/etc/bash_completion
-fi
+set +o histexpand
+
+export GOPATH="${HOME}/Development/go"
+export COMPOSERPATH="${HOME}/.composer"
+export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${COMPOSERPATH}/vendor/bin"
 
 # Git
 
@@ -169,10 +173,9 @@ function docker~ {
     docker exec -it $1 /bin/sh
 }
 
-# Python
+# Network
 
-alias v+="source .virtenv/bin/activate"
-alias v-="deactivate"
+alias netl="netstat -an | grep LISTEN"
 
 # Package management
 
@@ -185,17 +188,10 @@ alias gem+="sudo gem update --system; gem list | cut -f1 -d' ' | xargs -n1 sudo 
 alias npm+="npm install -g npm && npm update -g"
 alias pip+="sudo pip install --upgrade pip; pip list | cut -f1 -d' ' | xargs -n1 sudo pip install --upgrade"
 
-# Network
+# Python
 
-alias netl="netstat -an | grep LISTEN"
-
-# Environment
-
-set +o histexpand
-
-export GOPATH="${HOME}/Development/go"
-export COMPOSERPATH="${HOME}/.composer"
-export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${COMPOSERPATH}/vendor/bin"
+alias v+="source .virtenv/bin/activate"
+alias v-="deactivate"
 
 # Recommendation
 
