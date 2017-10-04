@@ -175,6 +175,11 @@ function docker~ {
     docker exec -it $1 /bin/sh
 }
 
+# Fun
+
+alias shrug="echo '¯\_(ツ)_/¯' | pbcopy";
+alias fight="echo '(ง'̀-'́)ง' | pbcopy";
+
 # Network
 
 alias netl="netstat -an | grep LISTEN"
@@ -190,6 +195,11 @@ alias gem+="sudo gem update --system; gem list | cut -f1 -d' ' | xargs -n1 sudo 
 alias npm+="npm install -g npm && npm update -g"
 alias pip+="sudo pip install --upgrade pip; pip list | cut -f1 -d' ' | xargs -n1 sudo pip install --upgrade"
 
+# PHP
+
+alias phpspec="vendor/bin/phpspec"
+alias phpunit="vendor/bin/phpunit"
+
 # Python
 
 alias v+="source .virtenv/bin/activate"
@@ -198,3 +208,17 @@ alias v-="deactivate"
 # Recommendation
 
 export GITHUB_TOKEN=
+
+# Useful
+
+alias ..="cd ../"
+alias ...="cd ../../"
+
+### Credits
+# - https://habrahabr.ru/company/mailru/blog/318508/
+# - https://csswizardry.com/2017/03/configuring-git-and-vim/
+# - https://blog.scottnonnenberg.com/better-git-configuration/
+# - https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
+# - https://laravel-news.com/bash-aliases
+# - https://laravel-news.com/laravel-homestead-aliases
+###
