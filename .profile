@@ -16,7 +16,7 @@ export GOPATH="${HOME}/Development/go"
 export COMPOSERPATH="${HOME}/.composer"
 export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${COMPOSERPATH}/vendor/bin"
 
-alias sefl-update="(cd ${HOME}/.dotfiles && git pull)"
+alias self-update="(cd ${HOME}/.dotfiles && git pull)"
 
 # Git
 
