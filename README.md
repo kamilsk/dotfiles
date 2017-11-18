@@ -18,3 +18,5 @@
 ### Articles
 
 - [Command-line completion](https://docs.docker.com/compose/completion/)
+
+[![Analytics](https://ga-beacon.appspot.com/UA-109817251-4/shared/dotfiles:readme)](https://github.com/igrigorik/ga-beacon)
