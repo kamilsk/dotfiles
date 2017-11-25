@@ -2,6 +2,9 @@
 >
 > My dotfiles to share through environments.
 
+[![Patreon](https://img.shields.io/badge/patreon-donate-orange.svg)](https://www.patreon.com/octolab)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](LICENSE)
+
 ## Useful
 
 - [brew.sh](http://brew.sh), [brew.sh at github](https://github.com/Homebrew/brew)
@@ -18,5 +21,14 @@
 ### Articles
 
 - [Command-line completion](https://docs.docker.com/compose/completion/)
+
+## Feedback
+
+[![@kamilsk](https://img.shields.io/badge/author-%40ikamilsk-blue.svg)](https://twitter.com/ikamilsk)
+[![@octolab](https://img.shields.io/badge/sponsor-%40octolab-blue.svg)](https://twitter.com/octolab_inc)
+
+## Notes
+
+- made with ❤️ by [OctoLab](https://www.octolab.org/)
 
 [![Analytics](https://ga-beacon.appspot.com/UA-109817251-4/shared/dotfiles:readme)](https://github.com/igrigorik/ga-beacon)
