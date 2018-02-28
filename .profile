@@ -194,22 +194,25 @@ alias netl="netstat -an | grep LISTEN"
 # Package management
 
 if command -v brew > /dev/null; then
-    alias brew+="brew update && brew upgrade && \
-                brew cleanup && brew cask cleanup && \
-                brew doctor && brew cask doctor && \
-                brew prune"
+    alias brew+="brew update && brew upgrade; \
+                 brew cleanup && brew cask cleanup; \
+                 brew doctor && brew cask doctor; \
+                 brew prune"
 fi
 if command -v composer > /dev/null; then
-    alias composer+="sudo composer self-update && composer global update"
+    alias composer+="sudo composer self-update; \
+                     composer global update"
 fi
 if command -v gem > /dev/null; then
-    alias gem+="sudo gem update --system; gem list | cut -f1 -d' ' | xargs -n1 sudo gem update"
+    alias gem+="sudo gem update --system; \
+                gem list | cut -f1 -d' ' | xargs -n1 sudo gem update"
 fi
 if command -v npm > /dev/null; then
     alias npm+="npm install -g npm && npm update -g"
 fi
 if command -v pip > /dev/null; then
-    alias pip+="sudo pip install --upgrade pip; pip list | cut -f1 -d' ' | xargs -n1 sudo pip install --upgrade"
+    alias pip+="sudo pip install --upgrade pip; \
+                pip list | cut -f1 -d' ' | xargs -n1 sudo pip install --upgrade"
 fi
 
 # Python
