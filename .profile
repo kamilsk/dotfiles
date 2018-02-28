@@ -1,11 +1,15 @@
 # Common
 
-if ! ps cax | grep ssh-agent &>/dev/null; then
-    ssh-add >/dev/null 2>&1
+if command -v ssh-agent > /dev/null; then
+    if ! ps cax | grep ssh-agent &>/dev/null; then
+        ssh-add >/dev/null 2>&1
+    fi
 fi
 
-if ! ps cax | grep gpg-agent &>/dev/null; then
-    echo 'todo register gpg'
+if command -v gpg-agent > /dev/null; then
+    if ! ps cax | grep gpg-agent &>/dev/null; then
+        echo 'todo register gpg'
+    fi
 fi
 
 # Environment
@@ -167,14 +171,16 @@ alias g^="branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); for remote in \$
 
 # Docker
 
-alias docker+img="docker images --all | tail -n +2 | sort -f"
-alias docker-img="docker+img | grep -v '<none>'"
-alias docker+="docker-img | awk '{print \$1\":\"\$2}' | xargs -n1 docker pull"
-alias docker-="docker rmi \$(docker images -q -f dangling=true) && docker system prune -f"
-alias connect="docker~"
-function docker~ {
-    docker exec -it $1 /bin/sh
-}
+if command -v docker > /dev/null; then
+    alias docker+img="docker images --all | tail -n +2 | sort -f"
+    alias docker-img="docker+img | grep -v '<none>'"
+    alias docker+="docker-img | awk '{print \$1\":\"\$2}' | xargs -n1 docker pull"
+    alias docker-="docker rmi \$(docker images -q -f dangling=true) && docker system prune -f"
+    alias connect="docker~"
+    function docker~ {
+        docker exec -it $1 /bin/sh
+    }
+fi
 
 # Fun
 
@@ -187,19 +193,24 @@ alias netl="netstat -an | grep LISTEN"
 
 # Package management
 
-alias brew+="brew update && brew upgrade && \
-             brew cleanup && brew cask cleanup && \
-             brew doctor && brew cask doctor && \
-             brew prune"
-alias composer+="sudo composer self-update && composer global update"
-alias gem+="sudo gem update --system; gem list | cut -f1 -d' ' | xargs -n1 sudo gem update"
-alias npm+="npm install -g npm && npm update -g"
-alias pip+="sudo pip install --upgrade pip; pip list | cut -f1 -d' ' | xargs -n1 sudo pip install --upgrade"
-
-# PHP
-
-alias phpspec="vendor/bin/phpspec"
-alias phpunit="vendor/bin/phpunit"
+if command -v brew > /dev/null; then
+    alias brew+="brew update && brew upgrade && \
+                brew cleanup && brew cask cleanup && \
+                brew doctor && brew cask doctor && \
+                brew prune"
+fi
+if command -v composer > /dev/null; then
+    alias composer+="sudo composer self-update && composer global update"
+fi
+if command -v gem > /dev/null; then
+    alias gem+="sudo gem update --system; gem list | cut -f1 -d' ' | xargs -n1 sudo gem update"
+fi
+if command -v npm > /dev/null; then
+    alias npm+="npm install -g npm && npm update -g"
+fi
+if command -v pip > /dev/null; then
+    alias pip+="sudo pip install --upgrade pip; pip list | cut -f1 -d' ' | xargs -n1 sudo pip install --upgrade"
+fi
 
 # Python
 
