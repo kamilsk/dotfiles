@@ -22,6 +22,7 @@
 ### Articles
 
 - [Command-line completion](https://docs.docker.com/compose/completion/)
+- [Flight rules for Git](https://github.com/k88hudson/git-flight-rules)
 
 ---
 
