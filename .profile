@@ -12,9 +12,12 @@ fi
 
 set +o histexpand
 
-export GOPATH="${HOME}/Development/go"
-export COMPOSERPATH="${HOME}/.composer"
-export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${COMPOSERPATH}/vendor/bin"
+export GOPATH="${HOME}/Development/go" # go env
+export CMPSR_PATH="${HOME}/.composer"  # composer config --list --global
+export GEM_PATH=""                     # gem environment
+export PIP_PATH=""                     # pip show <pkg>
+export NPM_PATH=""                     # npm root -g
+export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${CMPSR_PATH}/vendor/bin"
 
 alias self-update="(cd ${HOME}/.dotfiles && git pull)"
 
@@ -72,10 +75,8 @@ function git_config {
 }
 
 function git_flow_github {
-    git config alias.issue  "!commit() { git cmm \"issue \$1\"; }; commit"
-    git config alias.issues "!commit() { git cmm \"issues \$1\"; }; commit"
-    git config alias.fix    "!commit() { git cmm \"fix issue \$1\"; }; commit"
-    git config alias.fixes  "!commit() { git cmm \"fix issues \$1\"; }; commit"
+    git config alias.fix   "!commit() { git cmm \"fix \$1\"; }; commit"
+    git config alias.issue "!commit() { git cmm \"issue \$1\"; }; commit"
 }
 
 function git_flow_jira {
