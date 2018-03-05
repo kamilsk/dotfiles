@@ -24,6 +24,11 @@
 - [Command-line completion](https://docs.docker.com/compose/completion/)
 - [Flight rules for Git](https://github.com/k88hudson/git-flight-rules)
 
+### Inspiration
+
+- [github.com/caarlos0/dotfiles](https://github.com/caarlos0/dotfiles)
+- [caarlos0's dotfiles list](https://github.com/getantibody/antibody#in-the-wild)
+
 ---
 
 [![@kamilsk](https://img.shields.io/badge/author-%40kamilsk-blue.svg)](https://twitter.com/ikamilsk)
