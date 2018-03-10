@@ -23,6 +23,7 @@
 
 - [Command-line completion](https://docs.docker.com/compose/completion/)
 - [Flight rules for Git](https://github.com/k88hudson/git-flight-rules)
+- [Most commonly used git tips and tricks](https://github.com/git-tips/tips)
 
 ### Inspiration
 
