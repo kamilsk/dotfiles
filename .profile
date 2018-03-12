@@ -212,8 +212,9 @@ if command -v npm > /dev/null; then
     alias npm+="npm install -g npm && npm update -g"
 fi
 if command -v pip > /dev/null; then
-    alias pip+="sudo pip install --upgrade pip; \
-                pip list | cut -f1 -d' ' | xargs -n1 sudo pip install --upgrade"
+    alias pip+="pip list | cut -f1 -d' ' | xargs -n1 sudo pip install --upgrade"
+elif command -v pip3 > /dev/null; then
+    alias pip+="pip3 list | cut -f1 -d' ' | tail +3 | xargs -n1 pip3 install --upgrade"
 fi
 
 # Python
