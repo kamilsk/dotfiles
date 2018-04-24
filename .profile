@@ -176,7 +176,7 @@ if command -v docker > /dev/null; then
     alias docker+img="docker images --all | tail -n +2 | sort -f"
     alias docker-img="docker+img | grep -v '<none>'"
     alias docker+="docker-img | awk '{print \$1\":\"\$2}' | xargs -n1 docker pull"
-    alias docker-="docker rmi \$(docker images -q -f dangling=true) && docker system prune -f"
+    alias docker-="(docker rmi \$(docker images -q -f dangling=true) 2>/dev/null || true) && docker system prune -f"
     alias connect="docker~"
     function docker~ {
         docker exec -it $1 /bin/sh
