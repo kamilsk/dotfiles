@@ -1,6 +1,6 @@
 # bash completion for check                                -*- shell-script -*-
 
-___debug()
+__check_debug()
 {
     if [[ -n ${BASH_COMP_DEBUG_FILE} ]]; then
         echo "$*" >> "${BASH_COMP_DEBUG_FILE}"
@@ -9,13 +9,13 @@ ___debug()
 
 # Homebrew on Macs have version 1.3 of bash-completion which doesn't include
 # _init_completion. This is a very minimal version of that function.
-___init_completion()
+__check_init_completion()
 {
     COMPREPLY=()
     _get_comp_words_by_ref "$@" cur prev words cword
 }
 
-___index_of_word()
+__check_index_of_word()
 {
     local w word=$1
     shift
@@ -27,7 +27,7 @@ ___index_of_word()
     index=-1
 }
 
-___contains_word()
+__check_contains_word()
 {
     local w word=$1; shift
     for w in "$@"; do
@@ -36,9 +36,9 @@ ___contains_word()
     return 1
 }
 
-___handle_reply()
+__check_handle_reply()
 {
-    ___debug "${FUNCNAME[0]}"
+    __check_debug "${FUNCNAME[0]}"
     case $cur in
         -*)
             if [[ $(type -t compopt) = "builtin" ]]; then
@@ -63,7 +63,7 @@ ___handle_reply()
 
                 local index flag
                 flag="${cur%=*}"
-                ___index_of_word "${flag}" "${flags_with_completion[@]}"
+                __check_index_of_word "${flag}" "${flags_with_completion[@]}"
                 COMPREPLY=()
                 if [[ ${index} -ge 0 ]]; then
                     PREFIX=""
@@ -81,7 +81,7 @@ ___handle_reply()
 
     # check if we are handling a flag with special work handling
     local index
-    ___index_of_word "${prev}" "${flags_with_completion[@]}"
+    __check_index_of_word "${prev}" "${flags_with_completion[@]}"
     if [[ ${index} -ge 0 ]]; then
         ${flags_completion[${index}]}
         return
@@ -123,21 +123,21 @@ ___handle_reply()
 }
 
 # The arguments should be in the form "ext1|ext2|extn"
-___handle_filename_extension_flag()
+__check_handle_filename_extension_flag()
 {
     local ext="$1"
     _filedir "@(${ext})"
 }
 
-___handle_subdirs_in_dir_flag()
+__check_handle_subdirs_in_dir_flag()
 {
     local dir="$1"
     pushd "${dir}" >/dev/null 2>&1 && _filedir -d && popd >/dev/null 2>&1
 }
 
-___handle_flag()
+__check_handle_flag()
 {
-    ___debug "${FUNCNAME[0]}: c is $c words[c] is ${words[c]}"
+    __check_debug "${FUNCNAME[0]}: c is $c words[c] is ${words[c]}"
 
     # if a command required a flag, and we found it, unset must_have_one_flag()
     local flagname=${words[c]}
@@ -148,13 +148,13 @@ ___handle_flag()
         flagname=${flagname%=*} # strip everything after the =
         flagname="${flagname}=" # but put the = back
     fi
-    ___debug "${FUNCNAME[0]}: looking for ${flagname}"
-    if ___contains_word "${flagname}" "${must_have_one_flag[@]}"; then
+    __check_debug "${FUNCNAME[0]}: looking for ${flagname}"
+    if __check_contains_word "${flagname}" "${must_have_one_flag[@]}"; then
         must_have_one_flag=()
     fi
 
     # if you set a flag which only applies to this command, don't show subcommands
-    if ___contains_word "${flagname}" "${local_nonpersistent_flags[@]}"; then
+    if __check_contains_word "${flagname}" "${local_nonpersistent_flags[@]}"; then
       commands=()
     fi
 
@@ -171,7 +171,7 @@ ___handle_flag()
     fi
 
     # skip the argument to a two word flag
-    if ___contains_word "${words[c]}" "${two_word_flags[@]}"; then
+    if __check_contains_word "${words[c]}" "${two_word_flags[@]}"; then
         c=$((c+1))
         # if we are looking for a flags value, don't show commands
         if [[ $c -eq $cword ]]; then
@@ -183,13 +183,13 @@ ___handle_flag()
 
 }
 
-___handle_noun()
+__check_handle_noun()
 {
-    ___debug "${FUNCNAME[0]}: c is $c words[c] is ${words[c]}"
+    __check_debug "${FUNCNAME[0]}: c is $c words[c] is ${words[c]}"
 
-    if ___contains_word "${words[c]}" "${must_have_one_noun[@]}"; then
+    if __check_contains_word "${words[c]}" "${must_have_one_noun[@]}"; then
         must_have_one_noun=()
-    elif ___contains_word "${words[c]}" "${noun_aliases[@]}"; then
+    elif __check_contains_word "${words[c]}" "${noun_aliases[@]}"; then
         must_have_one_noun=()
     fi
 
@@ -197,47 +197,47 @@ ___handle_noun()
     c=$((c+1))
 }
 
-___handle_command()
+__check_handle_command()
 {
-    ___debug "${FUNCNAME[0]}: c is $c words[c] is ${words[c]}"
+    __check_debug "${FUNCNAME[0]}: c is $c words[c] is ${words[c]}"
 
     local next_command
     if [[ -n ${last_command} ]]; then
         next_command="_${last_command}_${words[c]//:/__}"
     else
         if [[ $c -eq 0 ]]; then
-            next_command="__root_command"
+            next_command="_check_root_command"
         else
             next_command="_${words[c]//:/__}"
         fi
     fi
     c=$((c+1))
-    ___debug "${FUNCNAME[0]}: looking for ${next_command}"
+    __check_debug "${FUNCNAME[0]}: looking for ${next_command}"
     declare -F "$next_command" >/dev/null && $next_command
 }
 
-___handle_word()
+__check_handle_word()
 {
     if [[ $c -ge $cword ]]; then
-        ___handle_reply
+        __check_handle_reply
         return
     fi
-    ___debug "${FUNCNAME[0]}: c is $c words[c] is ${words[c]}"
+    __check_debug "${FUNCNAME[0]}: c is $c words[c] is ${words[c]}"
     if [[ "${words[c]}" == -* ]]; then
-        ___handle_flag
-    elif ___contains_word "${words[c]}" "${commands[@]}"; then
-        ___handle_command
+        __check_handle_flag
+    elif __check_contains_word "${words[c]}" "${commands[@]}"; then
+        __check_handle_command
     elif [[ $c -eq 0 ]]; then
-        ___handle_command
+        __check_handle_command
     else
-        ___handle_noun
+        __check_handle_noun
     fi
-    ___handle_word
+    __check_handle_word
 }
 
-__completion()
+_check_completion()
 {
-    last_command="_completion"
+    last_command="check_completion"
     commands=()
 
     flags=()
@@ -255,9 +255,9 @@ __completion()
     noun_aliases=()
 }
 
-__urls()
+_check_urls()
 {
-    last_command="_urls"
+    last_command="check_urls"
     commands=()
 
     flags=()
@@ -275,9 +275,9 @@ __urls()
     noun_aliases=()
 }
 
-__version()
+_check_version()
 {
-    last_command="_version"
+    last_command="check_version"
     commands=()
 
     flags=()
@@ -292,9 +292,9 @@ __version()
     noun_aliases=()
 }
 
-__root_command()
+_check_root_command()
 {
-    last_command=""
+    last_command="check"
     commands=()
     commands+=("completion")
     commands+=("urls")
@@ -312,14 +312,14 @@ __root_command()
     noun_aliases=()
 }
 
-__start_()
+__start_check()
 {
     local cur prev words cword
     declare -A flaghash 2>/dev/null || :
     if declare -F _init_completion >/dev/null 2>&1; then
         _init_completion -s || return
     else
-        ___init_completion -n "=" || return
+        __check_init_completion -n "=" || return
     fi
 
     local c=0
@@ -328,19 +328,19 @@ __start_()
     local local_nonpersistent_flags=()
     local flags_with_completion=()
     local flags_completion=()
-    local commands=("")
+    local commands=("check")
     local must_have_one_flag=()
     local must_have_one_noun=()
     local last_command
     local nouns=()
 
-    ___handle_word
+    __check_handle_word
 }
 
 if [[ $(type -t compopt) = "builtin" ]]; then
-    complete -o default -F __start_ 
+    complete -o default -F __start_check check
 else
-    complete -o default -o nospace -F __start_ 
+    complete -o default -o nospace -F __start_check check
 fi
 
 # ex: ts=4 sw=4 et filetype=sh

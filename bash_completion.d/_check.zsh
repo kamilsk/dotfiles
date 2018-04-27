@@ -6,7 +6,7 @@ _arguments \
 case $state in
   level1)
     case $words[1] in
-      )
+      check)
         _arguments '1: :(completion help urls version)'
       ;;
       *)
