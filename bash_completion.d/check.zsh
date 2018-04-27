@@ -1,4 +1,4 @@
-#compdef 
+#compdef check
 
 _arguments \
   '1: :->level1' \

@@ -1,4 +1,4 @@
-# bash completion for                                      -*- shell-script -*-
+# bash completion for check                                -*- shell-script -*-
 
 ___debug()
 {
