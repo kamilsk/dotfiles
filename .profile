@@ -27,9 +27,9 @@ alias self-update="(cd ${HOME}/.dotfiles && git pull)"
 
 # Fun
 
-alias shrug="echo '¯\_(ツ)_/¯'   | pbcopy";
-alias fight="echo '(ง'̀-'́)ง'      | pbcopy";
-alias flip="echo '（╯°□°）╯︵┻━┻' | pbcopy";
+alias shrug="echo '¯\_(ツ)_/¯'";
+alias fight="echo '(ง'̀-'́)ง'";
+alias flip="echo '（╯°□°）╯︵┻━┻'";
 
 # Git
 
