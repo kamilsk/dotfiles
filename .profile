@@ -24,7 +24,7 @@ export NPM_PATH=""                     # npm root -g
 export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${CMPSR_PATH}/vendor/bin"
 
 alias self-update="(cd ${HOME}/.dotfiles && git pull)"
-alias reload="exec $0"
+alias reload="exec $SHELL"
 
 # Fun
 
