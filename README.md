@@ -5,7 +5,13 @@
 [![Patreon](https://img.shields.io/badge/patreon-donate-orange.svg)](https://www.patreon.com/octolab)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-## Useful
+## Articles
+
+- [Command-line completion](https://docs.docker.com/compose/completion/)
+- [Flight rules for Git](https://github.com/k88hudson/git-flight-rules)
+- [Most commonly used git tips and tricks](https://github.com/git-tips/tips)
+
+## Environment
 
 - [brew.sh](http://brew.sh/), [brew.sh at github](https://github.com/Homebrew/brew)
 
@@ -19,13 +25,7 @@
   - [vim-go github](https://github.com/fatih/vim-go)
     - [vim-go tutorial at github](https://github.com/fatih/vim-go-tutorial)
 
-### Articles
-
-- [Command-line completion](https://docs.docker.com/compose/completion/)
-- [Flight rules for Git](https://github.com/k88hudson/git-flight-rules)
-- [Most commonly used git tips and tricks](https://github.com/git-tips/tips)
-
-### Inspiration
+## Inspiration
 
 - [github.com/caarlos0/dotfiles](https://github.com/caarlos0/dotfiles)
 - [caarlos0's dotfiles list](https://github.com/getantibody/antibody#in-the-wild)
