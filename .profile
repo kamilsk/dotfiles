@@ -25,6 +25,12 @@ export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${CMPSR_PATH}/vendor/bin"
 
 alias self-update="(cd ${HOME}/.dotfiles && git pull)"
 
+# Fun
+
+alias shrug="echo '¯\_(ツ)_/¯'   | pbcopy";
+alias fight="echo '(ง'̀-'́)ง'      | pbcopy";
+alias flip="echo '（╯°□°）╯︵┻━┻' | pbcopy";
+
 # Git
 
 function git_config {
@@ -177,6 +183,7 @@ if command -v docker > /dev/null; then
     alias docker-img="docker+img | grep -v '<none>'"
     alias docker+="docker-img | awk '{print \$1\":\"\$2}' | xargs -n1 docker pull"
     alias docker-="(docker rmi \$(docker images -q -f dangling=true) 2>/dev/null || true) && docker system prune -f"
+    alias $(flip)docker="echo 'not implemented yet'"
     function container {
         docker exec -it $1 /bin/sh
     }
@@ -184,11 +191,6 @@ if command -v docker > /dev/null; then
         docker run --rm -it -v $1:/view -w /view alpine:latest
     }
 fi
-
-# Fun
-
-alias shrug="echo '¯\_(ツ)_/¯' | pbcopy";
-alias fight="echo '(ง'̀-'́)ง'    | pbcopy";
 
 # Network
 
