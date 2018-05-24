@@ -8,7 +8,7 @@ fi
 
 if command -v gpg-agent > /dev/null; then
     if ! ps cax | grep gpg-agent &>/dev/null; then
-        # todo register gpg
+        echo 'todo register gpg' >/dev/null
     fi
 fi
 
