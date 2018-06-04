@@ -195,10 +195,6 @@ if command -v docker > /dev/null; then
     }
 fi
 
-# Network
-
-alias netl="netstat -an | grep LISTEN"
-
 # Package management
 
 if command -v brew > /dev/null; then
@@ -237,9 +233,11 @@ export GITHUB_TOKEN=
 
 alias ..="cd ../"
 alias ...="cd ../../"
+alias cwd="pwd | tr -d '\n' | pbcopy"
+alias netl="netstat -an | grep LISTEN"
 
 ### Credits
-# - https://habrahabr.ru/company/mailru/blog/318508/
+# - https://habr.com/company/mailru/blog/318508/
 # - https://csswizardry.com/2017/03/configuring-git-and-vim/
 # - https://blog.scottnonnenberg.com/better-git-configuration/
 # - https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
