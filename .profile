@@ -181,18 +181,26 @@ alias g^="branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); for remote in \$
 # Docker
 
 if command -v docker > /dev/null; then
-    alias docker+img="docker images --all | tail -n +2 | sort -f"
-    alias docker-img="docker+img | grep -v '<none>'"
-    alias docker+="docker-img | awk '{print \$1\":\"\$2}' | xargs -n1 docker pull"
-    alias images-="(docker rmi \$(docker images -q -f dangling=true) 2>/dev/null || true) && docker system prune -f"
-    alias volumes-="docker volume ls | tail +2 | awk '{print $$2}' | egrep '[[:alnum:]]{64}' | xargs docker volume rm || true"
-    alias （╯°□°）╯︵┻━┻docker="container- && volume-"
     function container {
         docker exec -it $1 /bin/sh
+    }
+    function images {
+        case "$1" in
+            "all")
+                docker images --all | tail -n +2 | sort -f
+            ;;
+            *)
+                images all | grep -v '<none>'
+            ;;
+        esac
     }
     function volume {
         docker run --rm -it -v $1:/view -w /view alpine:latest
     }
+    alias images+="images | awk '{print \$1\":\"\$2}' | xargs -n1 docker pull"
+    alias images-="(docker rmi \$(docker images -q -f dangling=true) 2>/dev/null || true) && docker system prune -f"
+    alias volumes-="docker volume ls | tail +2 | awk '{print $$2}' | egrep '[[:alnum:]]{64}' | xargs docker volume rm || true"
+    alias （╯°□°）╯︵┻━┻docker="container- && volume-"
 fi
 
 # Package management
