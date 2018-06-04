@@ -30,7 +30,7 @@ alias self-update="(cd ${HOME}/.dotfiles && git pull) && reload"
 
 alias shrug="echo '¯\_(ツ)_/¯'";
 alias fight="echo '(ง'̀-'́)ง'";
-alias flip="echo '（╯°□°）╯︵┻━┻'";
+alias tflip="echo '（╯°□°）╯︵┻━┻'";
 
 # Git
 
