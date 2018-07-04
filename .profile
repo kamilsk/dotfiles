@@ -1,3 +1,12 @@
+### Credits
+# - https://habr.com/company/mailru/blog/318508/
+# - https://csswizardry.com/2017/03/configuring-git-and-vim/
+# - https://blog.scottnonnenberg.com/better-git-configuration/
+# - https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
+# - https://laravel-news.com/bash-aliases
+# - https://laravel-news.com/laravel-homestead-aliases
+###
+
 # Common
 
 if command -v ssh-agent > /dev/null; then
@@ -23,8 +32,15 @@ export PIP_PATH=""                     # pip show <pkg>
 export NPM_PATH=""                     # npm root -g
 export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${CMPSR_PATH}/vendor/bin"
 
+export GITHUB_TOKEN=
+
 alias reload="exec $SHELL"
 alias self-update="(cd ${HOME}/.dotfiles && git pull) && reload"
+
+alias ..="cd ../"
+alias ...="cd ../../"
+alias cwd="pwd | tr -d '\n' | pbcopy"
+alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 
 # Fun
 
@@ -232,23 +248,3 @@ fi
 
 alias v+="source .virtenv/bin/activate"
 alias v-="deactivate"
-
-# Recommendation
-
-export GITHUB_TOKEN=
-
-# Useful
-
-alias ..="cd ../"
-alias ...="cd ../../"
-alias cwd="pwd | tr -d '\n' | pbcopy"
-alias netl="netstat -an | grep LISTEN"
-
-### Credits
-# - https://habr.com/company/mailru/blog/318508/
-# - https://csswizardry.com/2017/03/configuring-git-and-vim/
-# - https://blog.scottnonnenberg.com/better-git-configuration/
-# - https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
-# - https://laravel-news.com/bash-aliases
-# - https://laravel-news.com/laravel-homestead-aliases
-###
