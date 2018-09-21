@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# local
+for branch in $(git branch --merged | grep -v master); do
+    git -d $branch
+done
+
+# remote
+for target in $(git branch -r --merged | grep -v /master); do
+    remote=$(echo ${target//\//' '} | awk '{print $1}')
+    branch=$(echo ${target//\//' '} | awk '{print $2}')
+    git push "$remote" ":${branch}"
+done
+
+git fetch --all -p
