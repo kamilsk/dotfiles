@@ -1,12 +1,3 @@
-### Credits
-# - https://habr.com/company/mailru/blog/318508/
-# - https://csswizardry.com/2017/03/configuring-git-and-vim/
-# - https://blog.scottnonnenberg.com/better-git-configuration/
-# - https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
-# - https://laravel-news.com/bash-aliases
-# - https://laravel-news.com/laravel-homestead-aliases
-###
-
 # Common
 
 if command -v ssh-agent > /dev/null; then
@@ -25,14 +16,17 @@ fi
 
 set +o histexpand
 
-export GOPATH="${HOME}/Development/go" # go env
-export CMPSR_PATH="${HOME}/.composer"  # composer config --list --global
-export GEM_PATH=""                     # gem environment
-export PIP_PATH=""                     # pip show <pkg>
-export NPM_PATH=""                     # npm root -g
+export GOPATH="${HOME}"/Development/go # go env
+export CMPSR_PATH="${HOME}"/.composer  # composer config --list --global
+export GEM_PATH=                       # gem environment
+export PIP_PATH=                       # pip show <pkg>
+export NPM_PATH=                       # npm root -g
 export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${CMPSR_PATH}/vendor/bin"
 
 export GITHUB_TOKEN=
+export CLICK_TOKEN=10000000-2000-4000-8000-160000000004 # demo
+export FORMA_TOKEN=10000000-2000-4000-8000-160000000003 # demo
+export GUARD_TOKEN=10000000-2000-4000-8000-160000000000 # demo
 
 alias reload="exec $SHELL"
 alias self-update="(cd ${HOME}/.dotfiles && git pull) && reload"
@@ -133,7 +127,7 @@ function git_mirror {
 
 function git_update_all {
     for item in $(ls); do
-        if test -d $item; then
+        if test -d $item && test -d $item/.git; then
             ( \
                 echo "current directory is:" $item && cd $item; \
 
@@ -148,45 +142,6 @@ function git_update_all {
             )
         fi;
     done
-}
-
-# TODO ревью https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
-function git_review_203 {
-    git config alias.stats     'shortlog -sn --all --no-merges'
-    git config alias.recent    'for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
-    git config alias.overview  '!git log --oneline --no-merges --all --since="1 week"'
-    git config alias.recap     "!git log --oneline --no-merges --all --author=\$(git user) --since='1 week'"
-    git config alias.today     "!git log --oneline --no-merges --all --author=\$(git user) --since='00:00:00'"
-    git config alias.yesterday "!git log --oneline --no-merges --all --author=\$(git user) --since='1 day' --until='00:00:00'"
-    git config alias.changelog "!git log --oneline --no-merges \$(git release).."
-    git config alias.ahead     "!git log --oneline --no-merges origin/\$(git current).."
-    git config alias.behind    "!git log --oneline --no-merges ..origin/\$(git current)"
-}
-
-# TODO ревью https://blog.scottnonnenberg.com/better-git-configuration/
-# перечитать
-# - https://github.com/pstadler/keybase-gpg-github
-# - https://help.github.com/articles/telling-git-about-your-gpg-key/
-function git_review_173 {
-    git config alias.overview  'log --oneline --no-merges @{1.week.ago}..'
-    git config alias.recap     "!git log --oneline --no-merges --author=\$(git user) @{1.week.ago}.."
-    git config alias.today     "!git log --oneline --no-merges --author=\$(git user) @{00:00:00}.."
-    git config alias.yesterday "!git log --oneline --no-merges --author=\$(git user) @{yesterday}..@{00:00:00}"
-
-    git config alias.undo      'reset --soft HEAD^'
-
-    # gpg --list-secret-keys --keyid-format LONG
-    # git config user.signingkey ...
-    git config commit.gpgSign  'true'
-    git config alias.cmm       'commit -S -m'
-    export GPG_TTY=$(tty)
-
-    git config merge.ff                  'only'
-    git config merge.conflictstyle       'diff3'
-    git config push.default              'simple'
-    git config push.followTags           'true'
-    git config status.showUntrackedFiles 'all'
-    git config transfer.fsckobjects      'true'
 }
 
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
@@ -216,7 +171,7 @@ if command -v docker > /dev/null; then
     alias images+="images | awk '{print \$1\":\"\$2}' | xargs -n1 docker pull"
     alias images-="(docker rmi \$(docker images -q -f dangling=true) 2>/dev/null || true) && docker system prune -f"
     alias volumes-="docker volume ls | tail +2 | awk '{print $$2}' | egrep '[[:alnum:]]{64}' | xargs docker volume rm || true"
-    alias （╯°□°）╯︵┻━┻docker="container- && volume-"
+    alias （╯°□°）╯︵┻━┻docker="images- && volumes-" # TODO eval "$(tflip)docker"
 fi
 
 # Package management

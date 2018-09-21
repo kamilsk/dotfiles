@@ -1,9 +1,9 @@
 > # shared:dotfiles
-> [![Analytics](https://ga-beacon.appspot.com/UA-109817251-4/shared/dotfiles:readme?pixel)](https://github.com/kamilsk/shared/tree/dotfiles)
+> [![Analytics][analytics_pixel]](https://github.com/kamilsk/shared/tree/dotfiles)
 > My dotfiles to share through environments.
 
-[![Patreon](https://img.shields.io/badge/patreon-donate-orange.svg)](https://www.patreon.com/octolab)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Patreon][icon_patreon]](https://www.patreon.com/octolab)
+[![License][icon_license]](LICENSE)
 
 ## Articles
 
@@ -32,7 +32,15 @@
 
 ---
 
-[![@kamilsk](https://img.shields.io/badge/author-%40kamilsk-blue.svg)](https://twitter.com/ikamilsk)
-[![@octolab](https://img.shields.io/badge/sponsor-%40octolab-blue.svg)](https://twitter.com/octolab_inc)
+[![@kamilsk][icon_tw_author]](https://twitter.com/ikamilsk)
+[![@octolab][icon_tw_sponsor]](https://twitter.com/octolab_inc)
 
 made with ❤️ by [OctoLab](https://www.octolab.org/)
+
+[analytics_pixel]: https://ga-beacon.appspot.com/UA-109817251-4/shared/dotfiles:readme?pixel
+
+[icon_license]:    https://img.shields.io/badge/license-MIT-blue.svg
+[icon_patreon]:    https://img.shields.io/badge/patreon-donate-orange.svg
+[icon_tw_author]:  https://img.shields.io/badge/author-%40kamilsk-blue.svg
+[icon_tw_sponsor]: https://img.shields.io/badge/sponsor-%40octolab-blue.svg
+[icon_twitter]:    https://img.shields.io/twitter/url/http/shields.io.svg?style=social
