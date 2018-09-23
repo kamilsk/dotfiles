@@ -58,8 +58,8 @@ function git_config {
     git config --global alias.current   '!git branch | cut -f2 -d" " | awk "NF > 0"'
     git config --global alias.release   '!git describe --tags | cut -d - -f 1'
     git config --global alias.stats     '!git log --pretty=format:"%an <%ae>" | sort | uniq -c'
-    git config --global alias.week      '!git log --oneline --no-merges --all --author=\$(git user) --since=1.week | cat'
-    git config --global alias.month     '!git log --oneline --no-merges --all --author=\$(git user) --since=1.month | cat'
+    git config --global alias.week      '!git log --oneline --no-merges --all --author=$(git user) --since=1.week | cat'
+    git config --global alias.month     '!git log --oneline --no-merges --all --author=$(git user) --since=1.month | cat'
 
     git config --global alias.up        '!git fetch --all -p && git pull && git submodule update --init --recursive'
     git config --global alias.down      '!git reset --hard && git clean -df && git submodule update --init --recursive'
