@@ -26,7 +26,7 @@ export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${CMPSR_PATH}/vendor/bin"
 export GITHUB_TOKEN=
 export CLICK_TOKEN=10000000-2000-4000-8000-160000000004 # demo
 export FORMA_TOKEN=10000000-2000-4000-8000-160000000003 # demo
-export GUARD_TOKEN=10000000-2000-4000-8000-160000000000 # demo
+export GUARD_TOKEN=10000000-2000-4000-8000-160000000002 # demo
 
 alias reload="exec $SHELL"
 alias self-update="(cd ${HOME}/.dotfiles && git pull) && reload"
