@@ -107,7 +107,13 @@ __click_handle_reply()
     fi
 
     if [[ ${#COMPREPLY[@]} -eq 0 ]]; then
-        declare -F __custom_func >/dev/null && __custom_func
+		if declare -F __click_custom_func >/dev/null; then
+			# try command name qualified custom func
+			__click_custom_func
+		else
+			# otherwise fall back to unqualified for compatibility
+			declare -F ___custom_func >/dev/null && __custom_func
+		fi
     fi
 
     # available in bash-completion >= 2, not always present on macOS
@@ -229,6 +235,14 @@ __click_handle_word()
         __click_handle_command
     elif [[ $c -eq 0 ]]; then
         __click_handle_command
+    elif __click_contains_word "${words[c]}" "${command_aliases[@]}"; then
+        # aliashash variable is an associative array which is only supported in bash > 3.
+        if [[ -z "${BASH_VERSION}" || "${BASH_VERSINFO[0]}" -gt 3 ]]; then
+            words[c]=${aliashash[${words[c]}]}
+            __click_handle_command
+        else
+            __click_handle_noun
+        fi
     else
         __click_handle_noun
     fi
@@ -238,6 +252,9 @@ __click_handle_word()
 _click_completion()
 {
     last_command="click_completion"
+
+    command_aliases=()
+
     commands=()
 
     flags=()
@@ -246,9 +263,196 @@ _click_completion()
     flags_with_completion=()
     flags_completion=()
 
+    flags+=("--format=")
+    two_word_flags+=("-f")
+    local_nonpersistent_flags+=("--format=")
     flags+=("--help")
     flags+=("-h")
     local_nonpersistent_flags+=("--help")
+
+    must_have_one_flag=()
+    must_have_one_flag+=("--format=")
+    must_have_one_flag+=("-f")
+    must_have_one_noun=()
+    noun_aliases=()
+}
+
+_click_ctl_create()
+{
+    last_command="click_ctl_create"
+
+    command_aliases=()
+
+    commands=()
+
+    flags=()
+    two_word_flags=()
+    local_nonpersistent_flags=()
+    flags_with_completion=()
+    flags_completion=()
+
+    flags+=("--dry-run")
+    flags+=("--filename=")
+    two_word_flags+=("-f")
+    flags+=("--grpc-host=")
+    flags+=("--output=")
+    two_word_flags+=("-o")
+    flags+=("--timeout=")
+    two_word_flags+=("-t")
+    flags+=("--token=")
+
+    must_have_one_flag=()
+    must_have_one_noun=()
+    noun_aliases=()
+}
+
+_click_ctl_delete()
+{
+    last_command="click_ctl_delete"
+
+    command_aliases=()
+
+    commands=()
+
+    flags=()
+    two_word_flags=()
+    local_nonpersistent_flags=()
+    flags_with_completion=()
+    flags_completion=()
+
+    flags+=("--dry-run")
+    flags+=("--filename=")
+    two_word_flags+=("-f")
+    flags+=("--grpc-host=")
+    flags+=("--output=")
+    two_word_flags+=("-o")
+    flags+=("--timeout=")
+    two_word_flags+=("-t")
+    flags+=("--token=")
+
+    must_have_one_flag=()
+    must_have_one_noun=()
+    noun_aliases=()
+}
+
+_click_ctl_read()
+{
+    last_command="click_ctl_read"
+
+    command_aliases=()
+
+    commands=()
+
+    flags=()
+    two_word_flags=()
+    local_nonpersistent_flags=()
+    flags_with_completion=()
+    flags_completion=()
+
+    flags+=("--dry-run")
+    flags+=("--filename=")
+    two_word_flags+=("-f")
+    flags+=("--grpc-host=")
+    flags+=("--output=")
+    two_word_flags+=("-o")
+    flags+=("--timeout=")
+    two_word_flags+=("-t")
+    flags+=("--token=")
+
+    must_have_one_flag=()
+    must_have_one_noun=()
+    noun_aliases=()
+}
+
+_click_ctl_schema()
+{
+    last_command="click_ctl_schema"
+
+    command_aliases=()
+
+    commands=()
+
+    flags=()
+    two_word_flags=()
+    local_nonpersistent_flags=()
+    flags_with_completion=()
+    flags_completion=()
+
+    flags+=("--for=")
+    local_nonpersistent_flags+=("--for=")
+    flags+=("--dry-run")
+    flags+=("--filename=")
+    two_word_flags+=("-f")
+    flags+=("--grpc-host=")
+    flags+=("--output=")
+    two_word_flags+=("-o")
+    flags+=("--timeout=")
+    two_word_flags+=("-t")
+    flags+=("--token=")
+
+    must_have_one_flag=()
+    must_have_one_flag+=("--for=")
+    must_have_one_noun=()
+    noun_aliases=()
+}
+
+_click_ctl_update()
+{
+    last_command="click_ctl_update"
+
+    command_aliases=()
+
+    commands=()
+
+    flags=()
+    two_word_flags=()
+    local_nonpersistent_flags=()
+    flags_with_completion=()
+    flags_completion=()
+
+    flags+=("--dry-run")
+    flags+=("--filename=")
+    two_word_flags+=("-f")
+    flags+=("--grpc-host=")
+    flags+=("--output=")
+    two_word_flags+=("-o")
+    flags+=("--timeout=")
+    two_word_flags+=("-t")
+    flags+=("--token=")
+
+    must_have_one_flag=()
+    must_have_one_noun=()
+    noun_aliases=()
+}
+
+_click_ctl()
+{
+    last_command="click_ctl"
+
+    command_aliases=()
+
+    commands=()
+    commands+=("create")
+    commands+=("delete")
+    commands+=("read")
+    commands+=("schema")
+    commands+=("update")
+
+    flags=()
+    two_word_flags=()
+    local_nonpersistent_flags=()
+    flags_with_completion=()
+    flags_completion=()
+
+    flags+=("--dry-run")
+    flags+=("--filename=")
+    two_word_flags+=("-f")
+    flags+=("--grpc-host=")
+    flags+=("--output=")
+    two_word_flags+=("-o")
+    flags+=("--timeout=")
+    two_word_flags+=("-t")
+    flags+=("--token=")
 
     must_have_one_flag=()
     must_have_one_noun=()
@@ -258,6 +462,9 @@ _click_completion()
 _click_migrate()
 {
     last_command="click_migrate"
+
+    command_aliases=()
+
     commands=()
 
     flags=()
@@ -266,31 +473,24 @@ _click_migrate()
     flags_with_completion=()
     flags_completion=()
 
-    flags+=("--db_host=")
-    local_nonpersistent_flags+=("--db_host=")
-    flags+=("--db_idle_conn=")
-    local_nonpersistent_flags+=("--db_idle_conn=")
-    flags+=("--db_name=")
-    local_nonpersistent_flags+=("--db_name=")
-    flags+=("--db_open_conn=")
-    local_nonpersistent_flags+=("--db_open_conn=")
-    flags+=("--db_pass=")
-    local_nonpersistent_flags+=("--db_pass=")
-    flags+=("--db_port=")
-    local_nonpersistent_flags+=("--db_port=")
-    flags+=("--db_ssl_mode=")
-    local_nonpersistent_flags+=("--db_ssl_mode=")
-    flags+=("--db_timeout=")
-    local_nonpersistent_flags+=("--db_timeout=")
-    flags+=("--db_user=")
-    local_nonpersistent_flags+=("--db_user=")
+    flags+=("--db-conn-max-lt=")
+    local_nonpersistent_flags+=("--db-conn-max-lt=")
+    flags+=("--db-idle-conn=")
+    local_nonpersistent_flags+=("--db-idle-conn=")
+    flags+=("--db-open-conn=")
+    local_nonpersistent_flags+=("--db-open-conn=")
     flags+=("--dry-run")
     local_nonpersistent_flags+=("--dry-run")
+    flags+=("--dsn=")
+    local_nonpersistent_flags+=("--dsn=")
     flags+=("--limit=")
+    two_word_flags+=("-l")
     local_nonpersistent_flags+=("--limit=")
     flags+=("--schema=")
+    two_word_flags+=("-s")
     local_nonpersistent_flags+=("--schema=")
     flags+=("--table=")
+    two_word_flags+=("-t")
     local_nonpersistent_flags+=("--table=")
     flags+=("--with-demo")
     local_nonpersistent_flags+=("--with-demo")
@@ -303,6 +503,9 @@ _click_migrate()
 _click_run()
 {
     last_command="click_run"
+
+    command_aliases=()
+
     commands=()
 
     flags=()
@@ -311,40 +514,36 @@ _click_run()
     flags_with_completion=()
     flags_completion=()
 
-    flags+=("--bind=")
-    local_nonpersistent_flags+=("--bind=")
     flags+=("--cpus=")
+    two_word_flags+=("-C")
     local_nonpersistent_flags+=("--cpus=")
-    flags+=("--db_host=")
-    local_nonpersistent_flags+=("--db_host=")
-    flags+=("--db_idle_conn=")
-    local_nonpersistent_flags+=("--db_idle_conn=")
-    flags+=("--db_name=")
-    local_nonpersistent_flags+=("--db_name=")
-    flags+=("--db_open_conn=")
-    local_nonpersistent_flags+=("--db_open_conn=")
-    flags+=("--db_pass=")
-    local_nonpersistent_flags+=("--db_pass=")
-    flags+=("--db_port=")
-    local_nonpersistent_flags+=("--db_port=")
-    flags+=("--db_ssl_mode=")
-    local_nonpersistent_flags+=("--db_ssl_mode=")
-    flags+=("--db_timeout=")
-    local_nonpersistent_flags+=("--db_timeout=")
-    flags+=("--db_user=")
-    local_nonpersistent_flags+=("--db_user=")
+    flags+=("--db-conn-max-lt=")
+    local_nonpersistent_flags+=("--db-conn-max-lt=")
+    flags+=("--db-idle-conn=")
+    local_nonpersistent_flags+=("--db-idle-conn=")
+    flags+=("--db-open-conn=")
+    local_nonpersistent_flags+=("--db-open-conn=")
+    flags+=("--dsn=")
+    local_nonpersistent_flags+=("--dsn=")
+    flags+=("--grpc-host=")
+    local_nonpersistent_flags+=("--grpc-host=")
+    flags+=("--host=")
+    two_word_flags+=("-H")
+    local_nonpersistent_flags+=("--host=")
     flags+=("--idle-timeout=")
     local_nonpersistent_flags+=("--idle-timeout=")
-    flags+=("--port=")
-    local_nonpersistent_flags+=("--port=")
+    flags+=("--monitoring-host=")
+    local_nonpersistent_flags+=("--monitoring-host=")
+    flags+=("--profiling-host=")
+    local_nonpersistent_flags+=("--profiling-host=")
     flags+=("--read-header-timeout=")
     local_nonpersistent_flags+=("--read-header-timeout=")
     flags+=("--read-timeout=")
     local_nonpersistent_flags+=("--read-timeout=")
     flags+=("--with-monitoring")
     local_nonpersistent_flags+=("--with-monitoring")
-    flags+=("--with-profiler")
-    local_nonpersistent_flags+=("--with-profiler")
+    flags+=("--with-profiling")
+    local_nonpersistent_flags+=("--with-profiling")
     flags+=("--write-timeout=")
     local_nonpersistent_flags+=("--write-timeout=")
 
@@ -356,6 +555,9 @@ _click_run()
 _click_version()
 {
     last_command="click_version"
+
+    command_aliases=()
+
     commands=()
 
     flags=()
@@ -373,8 +575,12 @@ _click_version()
 _click_root_command()
 {
     last_command="click"
+
+    command_aliases=()
+
     commands=()
     commands+=("completion")
+    commands+=("ctl")
     commands+=("migrate")
     commands+=("run")
     commands+=("version")
@@ -395,6 +601,7 @@ __start_click()
 {
     local cur prev words cword
     declare -A flaghash 2>/dev/null || :
+    declare -A aliashash 2>/dev/null || :
     if declare -F _init_completion >/dev/null 2>&1; then
         _init_completion -s || return
     else
