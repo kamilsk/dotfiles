@@ -7,13 +7,12 @@ set -o pipefail
 
 if [ "$(pwd)" != "${HOME}"/.dotfiles ]; then
     if ! [ -d "${HOME}"/.dotfiles ]; then
-        git clone git@github.com:kamilsk/shared.git "${HOME}"/.dotfiles;
+        git clone git@github.com:kamilsk/dotfiles.git "${HOME}"/.dotfiles;
     fi
     (
         cd "${HOME}"/.dotfiles \
         && git reset --hard \
         && git clean -df \
-        && git checkout dotfiles \
         && git pull
     )
 fi
