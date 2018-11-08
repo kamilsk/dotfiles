@@ -5,6 +5,35 @@
 [![Patreon][icon_patreon]](https://www.patreon.com/octolab)
 [![License][icon_license]](LICENSE)
 
+## Quick start
+
+```bash
+$ git clone git@github.com:kamilsk/dotfiles.git ~/.dotfiles
+$ git config --global core.excludesfile ~/.dotfiles/.gitignore
+# configure your Bash/Zsh
+$ self-update
+```
+
+### Bash
+
+```bash
+# ~/.bash_profile
+
+source "${HOME}"/.dotfiles/.profile
+source "${HOME}"/.dotfiles/.bash_profile
+```
+
+### Zsh
+
+```bash
+# ~/.zshrc
+
+fpath=(/usr/local/share/zsh-completions "${HOME}"/.dotfiles/bash_completion.d $fpath)
+
+source "${HOME}"/.dotfiles/.profile
+source "${HOME}"/.dotfiles/.zshrc
+```
+
 ## Articles
 
 - [Command-line completion](https://docs.docker.com/compose/completion/)
