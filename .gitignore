@@ -1,9 +1,10 @@
-# cp .gitignore ~/.gitignore
-# git config --global core.excludesfile ~/.gitignore
+# git config --global core.excludesfile ~/.dotfiles/.gitignore
 
 .DS_Store
 .idea
 .vagrant
 .virtenv
+.vscode
 
 *.egg-info
+__pycache__
