@@ -36,8 +36,9 @@ alias tflip="echo '（╯°□°）╯︵┻━┻'";
 
 function git_config {
     if command -v subl > /dev/null; then
-        subl ~/.gitconfig --wait
-        subl ~/.gitignore --wait
+        if [ -f ~/.gitconfig ]; then
+            subl ~/.gitconfig --wait
+        fi
         if [ -f .git/config ]; then
             subl .git/config --wait
         fi
@@ -136,6 +137,26 @@ function git_update_all {
             )
         fi;
     done
+}
+
+function git_shake {
+    set -o errexit
+    set -o nounset
+    set -o pipefail
+
+    # local
+    for branch in $(git branch --merged | grep -v master); do
+        git -d $branch
+    done
+
+    # remote
+    for target in $(git branch -r --merged | grep -v /master); do
+        remote=$(echo ${target//\//' '} | awk '{print $1}')
+        branch=$(echo ${target//\//' '} | awk '{print $2}')
+        git push "$remote" ":${branch}"
+    done
+
+    git fetch --all -p
 }
 
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
