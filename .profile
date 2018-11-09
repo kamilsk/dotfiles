@@ -1,17 +1,3 @@
-# Common
-
-if command -v ssh-agent > /dev/null; then
-    if ! ps cax | grep ssh-agent &>/dev/null; then
-        ssh-add >/dev/null 2>&1
-    fi
-fi
-
-if command -v gpg-agent > /dev/null; then
-    if ! ps cax | grep gpg-agent &>/dev/null; then
-        echo 'todo register gpg' >/dev/null
-    fi
-fi
-
 # Environment
 
 set +o histexpand
@@ -29,12 +15,15 @@ export FORMA_TOKEN=10000000-2000-4000-8000-160000000003     # demo
 export GUARD_TOKEN=10000000-2000-4000-8000-160000000003     # demo
 export PASSPORT_TOKEN=10000000-2000-4000-8000-160000000003  # demo
 
+# Common
+
 alias reload="exec $SHELL"
 alias self-update="(cd ${HOME}/.dotfiles && git pull) && reload"
 
 alias ..="cd ../"
 alias ...="cd ../../"
 alias cwd="pwd | tr -d '\n' | pbcopy"
+alias dots="ls \.*"
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 
 # Fun
