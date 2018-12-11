@@ -36,6 +36,9 @@ function prepare {
 
 function self-update {
     (cd "${HOME}/.dotfiles && git pull")
+    echo 'TODO upgrade_oh_my_zsh'
+    echo 'TODO brew+'
+    echo 'TODO images+'
     reload
 }
 
