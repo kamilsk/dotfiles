@@ -3,28 +3,32 @@
 set +o histexpand
 
 export GOPATH="${HOME}"/Development/go # go env
-export CMPSR_PATH="${HOME}"/.composer  # composer config --list --global
+export CPR_PATH="${HOME}"/.composer    # composer config --list --global
 export GEM_PATH=                       # gem environment
 export PIP_PATH=                       # pip show <pkg>
 export NPM_PATH=                       # npm root -g
-export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${CMPSR_PATH}/vendor/bin"
+export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin"
 
 export GITHUB_TOKEN=
-export CLICK_TOKEN=10000000-2000-4000-8000-160000000003     # demo
-export FORMA_TOKEN=10000000-2000-4000-8000-160000000003     # demo
-export GUARD_TOKEN=10000000-2000-4000-8000-160000000003     # demo
-export PASSPORT_TOKEN=10000000-2000-4000-8000-160000000003  # demo
+export HUGS_TOKEN=10000000-2000-4000-8000-160000000003
+export CLICK_TOKEN=$HUGS_TOKEN
+export FORMA_TOKEN=$HUGS_TOKEN
+export GUARD_TOKEN=$HUGS_TOKEN
+export PASSPORT_TOKEN=$HUGS_TOKEN
 
 # Common
-
-alias reload="exec $SHELL"
-alias self-update="(cd ${HOME}/.dotfiles && git pull) && reload"
 
 alias ..="cd ../"
 alias ...="cd ../../"
 alias cwd="pwd | tr -d '\n' | pbcopy"
 alias dots="ls \.*"
+
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
+alias reload="exec $SHELL"
+
+function self-update {
+    (cd "${HOME}/.dotfiles && git pull" && reload)
+}
 
 # Fun
 
