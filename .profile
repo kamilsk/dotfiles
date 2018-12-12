@@ -7,7 +7,7 @@ export CPR_PATH="${HOME}"/.composer    # composer config --list --global
 export GEM_PATH=                       # gem environment
 export PIP_PATH=                       # pip show <pkg>
 export NPM_PATH=                       # npm root -g
-export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin"
+export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${HOME}/.dotfiles/bin"
 
 export GITHUB_TOKEN=
 export HUGS_TOKEN=10000000-2000-4000-8000-160000000003
@@ -154,31 +154,6 @@ function git_update_all {
             )
         fi;
     done
-}
-
-function git_shake {
-    set -o errexit
-    set -o nounset
-    set -o pipefail
-
-    git fetch --all -p
-    default=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
-
-    # local
-    for branch in $(git branch --merged | grep -v $default); do
-        git -d $branch
-    done
-
-    case "$1" in
-        "full")
-            # remote
-            for target in $(git branch -r --merged | grep -v /$default); do
-                remote=$(echo ${target//\//' '} | awk '{print $1}')
-                branch=$(echo ${target//\//' '} | awk '{print $2}')
-                git push "$remote" ":${branch}"
-            done
-        ;;
-    esac
 }
 
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
