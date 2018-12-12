@@ -11,7 +11,7 @@ for branch in $(git branch --merged | grep -v $default); do
     git branch -d $branch
 done
 
-if [ ! -z "$1" ]; then
+if [ -n "${1-}" ]; then
     case "$1" in
         "full")
             # remote
