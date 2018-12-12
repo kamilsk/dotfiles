@@ -11,13 +11,15 @@ for branch in $(git branch --merged | grep -v $default); do
     git branch -d $branch
 done
 
-case "$1" in
-    "full")
-        # remote
-        for target in $(git branch -r --merged | grep -v /$default); do
-            remote=$(echo ${target//\//' '} | awk '{print $1}')
-            branch=$(echo ${target//\//' '} | awk '{print $2}')
-            git push "$remote" ":${branch}"
-        done
-    ;;
-esac
+if [ ! -z "$1" ]; then
+    case "$1" in
+        "full")
+            # remote
+            for target in $(git branch -r --merged | grep -v /$default); do
+                remote=$(echo ${target//\//' '} | awk '{print $1}')
+                branch=$(echo ${target//\//' '} | awk '{print $2}')
+                git push "$remote" ":${branch}"
+            done
+        ;;
+    esac
+fi
