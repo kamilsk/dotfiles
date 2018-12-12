@@ -26,15 +26,17 @@ fi
 # local
 for branch in $(git branch --merged | grep -v "${default}"); do
     git branch -d "${branch}"
+    echo $branch was deleted
 done
 
 case "${1-}" in
     "full")
         # remote
         for target in $(git branch -r --merged | grep -v "/${default}"); do
-            remote=$(echo "${target//\//' '}" | awk '{print $1}')
-            branch=$(echo "${target//\//' '}" | awk '{print $2}')
+            remote=$(echo ${target//\//' '} | awk '{print $1}')
+            branch=$(echo ${target//\//' '} | awk '{print $2}')
             git push "${remote}" ":${branch}"
+            echo $remote:$branch was deleted
         done
     ;;
 esac
