@@ -4,8 +4,24 @@ set -o nounset
 set -o pipefail
 
 git fetch --all -p
-default=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
-git checkout "${default}"
+
+remote=$(git remote | head -1)
+if [ -z "${remote}" ]; then
+    echo 'no remote found, see `git remote`'
+    exit 1
+fi
+
+current=$(git symbolic-ref --short HEAD)
+
+default=$(git symbolic-ref refs/remotes/"${remote}"/HEAD | sed "s@^refs/remotes/${remote}/@@")
+if [ -z "${default}" ]; then
+    echo "no default branch found, see `git symbolic-ref refs/remotes/${remote}/HEAD`"
+    exit 1
+fi
+
+if [ "${current}" != "${default}" ]; then
+    git checkout "${default}"
+fi
 
 # local
 for branch in $(git branch --merged | grep -v "${default}"); do
@@ -22,3 +38,7 @@ case "${1-}" in
         done
     ;;
 esac
+
+if [ "${current}" != "${default}" ]; then
+    git checkout "${current}"
+fi
