@@ -8,7 +8,7 @@ default=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origi
 
 # local
 for branch in $(git branch --merged | grep -v $default); do
-    git -d $branch
+    git branch -d $branch
 done
 
 case "$1" in
