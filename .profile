@@ -51,14 +51,14 @@ alias tflip="echo '（╯°□°）╯︵┻━┻'";
 # Git
 
 function git_config {
-    if command -v subl > /dev/null; then
-        if [ -f ~/.gitconfig ]; then
-            subl ~/.gitconfig --wait
-        fi
-        if [ -f .git/config ]; then
-            subl .git/config --wait
-        fi
-    fi
+    # if command -v subl > /dev/null; then
+    #     if [ -f ~/.gitconfig ]; then
+    #         subl ~/.gitconfig --wait
+    #     fi
+    #     if [ -f .git/config ]; then
+    #         subl .git/config --wait
+    #     fi
+    # fi
 
     # метаинформация
     git config --global alias.user      'config user.email'
@@ -71,6 +71,7 @@ function git_config {
     git config --global alias.up        '!git fetch --all -p && git pull && git submodule update --init --recursive'
     git config --global alias.down      '!git reset --hard && git clean -df && git submodule update --init --recursive'
     git config --global alias.sync      "!git fetch --all -p && git pull --rebase && for remote in \$(git remote | grep -v upstream); do git push \$remote \$(git current); done"
+    git config --global alias.shake     "!git_shake"
 
     git config --global alias.m         'checkout master'
     git config --global alias.mm        '!git checkout master && git pull --rebase'
@@ -160,19 +161,24 @@ function git_shake {
     set -o nounset
     set -o pipefail
 
+    git fetch --all -p
+    default=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+
     # local
-    for branch in $(git branch --merged | grep -v master); do
+    for branch in $(git branch --merged | grep -v $default); do
         git -d $branch
     done
 
-    # remote
-    for target in $(git branch -r --merged | grep -v /master); do
-        remote=$(echo ${target//\//' '} | awk '{print $1}')
-        branch=$(echo ${target//\//' '} | awk '{print $2}')
-        git push "$remote" ":${branch}"
-    done
-
-    git fetch --all -p
+    case "$1" in
+        "full")
+            # remote
+            for target in $(git branch -r --merged | grep -v /$default); do
+                remote=$(echo ${target//\//' '} | awk '{print $1}')
+                branch=$(echo ${target//\//' '} | awk '{print $2}')
+                git push "$remote" ":${branch}"
+            done
+        ;;
+    esac
 }
 
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
