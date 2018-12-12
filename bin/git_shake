@@ -5,20 +5,21 @@ set -o pipefail
 
 git fetch --all -p
 default=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+git checkout "${default}"
 
 # local
-for branch in $(git branch --merged | grep -v $default); do
-    git branch -d $branch
+for branch in $(git branch --merged | grep -v "${default}"); do
+    git branch -d "${branch}"
 done
 
 if [ -n "${1-}" ]; then
     case "$1" in
         "full")
             # remote
-            for target in $(git branch -r --merged | grep -v /$default); do
-                remote=$(echo ${target//\//' '} | awk '{print $1}')
-                branch=$(echo ${target//\//' '} | awk '{print $2}')
-                git push "$remote" ":${branch}"
+            for target in $(git branch -r --merged | grep -v "/${default}"); do
+                remote=$(echo "${target//\//' '}" | awk '{print $1}')
+                branch=$(echo "${target//\//' '}" | awk '{print $2}')
+                git push "${remote}" ":${branch}"
             done
         ;;
     esac
