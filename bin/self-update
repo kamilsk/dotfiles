@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+(cd "${HOME}"/.dotfiles && git pull)
+
+echo 'TODO install brew...'
+echo 'TODO brew install zsh zsh_completion ...'
+echo 'TODO install oh my zsh'
+echo 'TODO install code alias (vscode)'
+
+echo 'TODO upgrade_oh_my_zsh'
+echo 'TODO brew+'
+echo 'TODO images+'
+
+reload

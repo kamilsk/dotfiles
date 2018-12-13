@@ -26,22 +26,6 @@ alias dots="ls \.*"
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 alias reload="exec $SHELL"
 
-function prepare {
-    echo 'TODO install brew...'
-    echo 'TODO brew install zsh zsh_completion ...'
-    echo 'TODO install oh my zsh'
-    echo 'TODO install code alias (vscode)'
-    reload
-}
-
-function self-update {
-    (cd "${HOME}"/.dotfiles && git pull)
-    echo 'TODO upgrade_oh_my_zsh'
-    echo 'TODO brew+'
-    echo 'TODO images+'
-    reload
-}
-
 # Fun
 
 alias shrug="echo '¯\_(ツ)_/¯'";
