@@ -34,23 +34,6 @@ alias tflip="echo '（╯°□°）╯︵┻━┻'";
 
 # Git
 
-function git_mirror {
-    git remote | grep mirror > /dev/null
-    exists=$?
-    if [ "${exists}" != 0 ]; then
-        if [ "$1" = "" ]; then
-            echo "usage: git_mirror <url>"
-            return 1
-        else
-            git remote add mirror "$1"
-        fi
-    elif [ "$1" != "" ]; then
-        git remote set-url mirror "$1"
-    fi
-
-    git config alias.pub "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); for remote in \$(git remote | grep -v upstream); do git push \$remote \$branch --tags; done"
-}
-
 function git_update_all {
     for item in $(ls); do
         if test -d $item && test -d $item/.git; then
