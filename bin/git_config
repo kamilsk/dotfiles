@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+# if command -v subl > /dev/null; then
+#     if [ -f ~/.gitconfig ]; then
+#         subl ~/.gitconfig --wait
+#     fi
+#     if [ -f .git/config ]; then
+#         subl .git/config --wait
+#     fi
+# fi
+
+# метаинформация
+git config --global alias.user      'config user.email'
+git config --global alias.current   '!git branch | cut -f2 -d" " | awk "NF > 0"'
+git config --global alias.release   '!git describe --tags | cut -d - -f 1'
+git config --global alias.stats     '!git log --pretty=format:"%an <%ae>" | sort | uniq -c'
+git config --global alias.week      '!git log --oneline --no-merges --all --author=$(git user) --since=1.week | cat'
+git config --global alias.month     '!git log --oneline --no-merges --all --author=$(git user) --since=1.month | cat'
+
+git config --global alias.up        '!git fetch --all -p && git pull && git submodule update --init --recursive'
+git config --global alias.down      '!git reset --hard && git clean -df && git submodule update --init --recursive'
+git config --global alias.sync      "!git fetch --all -p && git pull --rebase && for remote in \$(git remote | grep -v upstream); do git push \$remote \$(git current); done"
+git config --global alias.shake     "!git_shake"
+
+git config --global alias.m         'checkout master'
+git config --global alias.mm        '!git checkout master && git pull --rebase'
+git config --global alias.mmm       '!git checkout master && git sync'
+
+git config --global alias.cmm       'commit -m'
+# git add <пропущенное> и git commend - прикрепляем к последнему коммиту
+git config --global alias.commend   'commit --amend --no-edit'
+
+# правильно форсим
+git config --global alias.force     "!for remote in \$(git remote | grep -v upstream); do git push -f \$remote \$(git current); done"
+git config --global alias.please    "!for remote in \$(git remote | grep -v upstream); do git push --force-with-lease \$remote \$(git current); done"
+
+# правильно инициализируем
+git config --global alias.it        '!git init && git cmm "root" --allow-empty'
+
+# скрывает только непроиндексированные изменения в отслеживаемых файлах
+git config --global alias.stsh      'stash --keep-index'
+# скрывает все изменения в отслеживаемых файлах
+# git stash
+# скрывает неотслеживаемые и отслеживаемые файлы
+git config --global alias.staash    'stash --include-untracked'
+# скрывает игнорируемые, неотслеживаемые и отслеживаемые файлы
+git config --global alias.staaash   'stash --all'
+
+# сжатый статус
+git config --global alias.st        'status --short --branch'
+git config --global alias.branches  'for-each-ref --sort=committerdate refs/heads/ --format="%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))"'
+git config --global alias.commits   'log --oneline --graph'
+
+# графический лог
+git config --global alias.grog      'log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)"'
+
+# цепляет текущую ветку к origin
+git config --global alias.attach    "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); attach() { git branch --set-upstream-to=\$1/\$branch \$branch; }; attach"
