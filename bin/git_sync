@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+for item in $(ls); do
+    if test -d $item && test -d $item/.git; then
+        ( \
+            echo "current directory is:" $item && cd $item; \
+
+            # g+
+            git fetch --all -p && git pull && git submodule update --init --recursive; \
+
+            exists=$?; \
+            if [ "${exists}" != 0 ]; then \
+                branch=$(git branch | cut -f2 -d' ' | awk 'NF > 0'); \
+                git branch --set-upstream-to=origin/$branch $branch; \
+            fi \
+        )
+    fi;
+done

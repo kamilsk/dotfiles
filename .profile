@@ -34,25 +34,6 @@ alias tflip="echo '（╯°□°）╯︵┻━┻'";
 
 # Git
 
-function git_update_all {
-    for item in $(ls); do
-        if test -d $item && test -d $item/.git; then
-            ( \
-                echo "current directory is:" $item && cd $item; \
-
-                # g+
-                git fetch --all -p && git pull && git submodule update --init --recursive; \
-
-                exists=$?; \
-                if [ "${exists}" != 0 ]; then \
-                    branch=$(git branch | cut -f2 -d' ' | awk 'NF > 0'); \
-                    git branch --set-upstream-to=origin/$branch $branch; \
-                fi \
-            )
-        fi;
-    done
-}
-
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
 alias g+="git fetch --all -p && git pull && git submodule update --init --recursive"
 alias g-="git reset --hard && git clean -df && git submodule update --init --recursive"
