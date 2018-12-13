@@ -14,4 +14,4 @@ echo 'TODO upgrade_oh_my_zsh'
 echo 'TODO brew+'
 echo 'TODO images+'
 
-reload
+exec $SHELL
