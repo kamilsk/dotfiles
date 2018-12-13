@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+case "${1-}" in
+    "github")
+        git config alias.fix   "!commit() { git cmm \"fix \$1\"; }; commit"
+        git config alias.issue "!commit() { git cmm \"issue \$1\"; }; commit"
+    ;;
+    "jira")
+        git config alias.flow     "!commit() { git cmm \"[\$(git current)] \$1\"; }; commit"
+        git config alias.progress "!git commit --amend --no-edit && git push --force-with-lease mirror \$branch"
+        git config alias.ready    'commit --amend'
+    ;;
+esac

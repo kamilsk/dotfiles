@@ -34,17 +34,6 @@ alias tflip="echo '（╯°□°）╯︵┻━┻'";
 
 # Git
 
-function git_flow_github {
-    git config alias.fix   "!commit() { git cmm \"fix \$1\"; }; commit"
-    git config alias.issue "!commit() { git cmm \"issue \$1\"; }; commit"
-}
-
-function git_flow_jira {
-    git config alias.flow     "!commit() { git cmm \"[\$(git current)] \$1\"; }; commit"
-    git config alias.progress "!git commit --amend --no-edit && git push --force-with-lease mirror \$branch"
-    git config alias.ready    'commit --amend'
-}
-
 function git_mirror {
     git remote | grep mirror > /dev/null
     exists=$?
