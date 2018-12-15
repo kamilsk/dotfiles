@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+if ! command -v git > /dev/null; then
+    echo Git not found
+    exit 1
+fi
+
+if ! command -v ruby > /dev/null; then
+    echo Ruby not found
+    exit 1
+fi
+
+if ! command -v curl > /dev/null; then
+    echo cURL not found
+    exit 1
+fi
+
+if ! command -v brew > /dev/null; then
+    echo Installing Homebrew...
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+echo Installing useful Homebrew packages...
+brew install -f \
+             ansible \
+             bat \
+             dep \
+             dive \
+             git \
+             go \
+             httpie \
+             jq \
+             kubernetes-cli \
+             kubernetes-helm \
+             node \
+             php \
+             python \
+             zsh \
+             zsh-completion
+
+echo 'TODO install oh my zsh'
+echo 'TODO install code alias (vscode)'
+
+exec $SHELL
