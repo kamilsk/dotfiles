@@ -107,6 +107,6 @@ plugins=( \
 
 # Completion
 
-fpath=("${HOME}"/.zsh/completion $fpath)
+fpath=(/usr/local/share/zsh-completions "${HOME}"/.dotfiles/bash_completion.d $fpath)
 autoload -Uz compinit && compinit -i
 autoload -Uz bashcompinit && bashcompinit -i
