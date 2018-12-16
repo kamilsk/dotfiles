@@ -28,11 +28,17 @@ source "${HOME}"/.dotfiles/.bash_profile
 ```bash
 # ~/.zshrc
 
-fpath=(/usr/local/share/zsh-completions "${HOME}"/.dotfiles/bash_completion.d $fpath)
-
 source "${HOME}"/.dotfiles/.profile
 source "${HOME}"/.dotfiles/.zshrc
 ```
+
+### Installation (work in progress)
+
+```bash
+$ curl -sL https://git.io/fpN1B | bash
+```
+
+- [ ] `curl -sL https://kamil.samigullin.info/install/dotfiles | bash`
 
 ## Articles
 
