@@ -3,15 +3,6 @@
 set -o nounset
 set -o pipefail
 
-# if command -v subl > /dev/null; then
-#     if [ -f ~/.gitconfig ]; then
-#         subl ~/.gitconfig --wait
-#     fi
-#     if [ -f .git/config ]; then
-#         subl .git/config --wait
-#     fi
-# fi
-
 # метаинформация
 git config --global alias.user      'config user.email'
 git config --global alias.current   '!git branch | cut -f2 -d" " | awk "NF > 0"'
@@ -32,6 +23,8 @@ git config --global alias.mmm       '!git checkout master && git sync'
 git config --global alias.cmm       'commit -m'
 # git add <пропущенное> и git commend - прикрепляем к последнему коммиту
 git config --global alias.commend   'commit --amend --no-edit'
+# git flow jira | git flow jira wrapped | git flow github
+git config --global alias.flow      '!git_flow'
 
 # правильно форсим
 git config --global alias.force     "!for remote in \$(git remote | grep -v upstream); do git push -f \$remote \$(git current); done"

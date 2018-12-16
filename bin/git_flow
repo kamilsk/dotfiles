@@ -3,6 +3,13 @@
 set -o nounset
 set -o pipefail
 
+# Deprecated: legacy
+# TODO remove it
+git config --unset alias.fix
+git config --unset alias.issue
+git config --unset alias.progress
+git config --unset alias.ready
+
 case "${1-}" in
     "github")
         git config alias.fix   "!commit() { git cmm \"fix \$1\"; }; commit"
