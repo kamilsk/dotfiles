@@ -3,10 +3,21 @@
 set -o nounset
 set -o pipefail
 
-(cd "${HOME}"/.dotfiles && git pull)
+(
+    cd "${HOME}"/.dotfiles
+    git pull
+)
 
-echo 'TODO upgrade_oh_my_zsh'
-echo 'TODO brew+'
-echo 'TODO images+'
+if [ -n "${ZSH}" ] && [ -f "${ZSH}"/tools/upgrade.sh ]; then
+    env ZSH="${ZSH}" sh "${ZSH}"/tools/upgrade.sh
+fi
+
+if command -v brew > /dev/null; then
+    echo 'TODO brew+'
+fi
+
+if command -v docker > /dev/null; then
+    echo 'TODO images+'
+fi
 
 exec $SHELL
