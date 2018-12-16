@@ -5,7 +5,7 @@ set -o pipefail
 
 # метаинформация
 git config --global alias.user      'config user.email'
-git config --global alias.current   '!git branch | cut -f2 -d" " | awk "NF > 0"'
+git config --global alias.current   'symbolic-ref --short HEAD'
 git config --global alias.release   '!git describe --tags | cut -d - -f 1'
 git config --global alias.stats     '!git log --pretty=format:"%an <%ae>" | sort | uniq -c'
 git config --global alias.week      '!git log --oneline --no-merges --all --author=$(git user) --since=1.week | cat'

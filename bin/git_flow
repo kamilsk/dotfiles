@@ -3,7 +3,7 @@
 set -o nounset
 set -o pipefail
 
-# Deprecated: legacy
+# Deprecated: legacy, run `git config --unset alias.flow` before
 # TODO remove it
 git config --unset alias.fix
 git config --unset alias.issue
@@ -12,12 +12,13 @@ git config --unset alias.ready
 
 case "${1-}" in
     "github")
-        git config alias.fix   "!commit() { git cmm \"fix \$1\"; }; commit"
-        git config alias.issue "!commit() { git cmm \"issue \$1\"; }; commit"
+        git config alias.progress '!commit() { git cmm "$*"; }; commit'
     ;;
     "jira")
-        git config alias.flow     "!commit() { git cmm \"[\$(git current)] \$1\"; }; commit"
-        git config alias.progress "!git commit --amend --no-edit && git push --force-with-lease mirror \$branch"
-        git config alias.ready    'commit --amend'
+        if [ "${2-}" = 'wrapped' ]; then
+            git config alias.progress "!commit() { git cmm \"[\$(git current | awk -F- '{print \$1\"-\"\$2}')] \$*\"; }; commit"
+        else
+            git config alias.progress "!commit() { git cmm \"\$(git current | awk -F- '{print \$1\"-\"\$2}') \$*\"; }; commit"
+        fi
     ;;
 esac
