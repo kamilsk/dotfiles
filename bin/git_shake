@@ -7,36 +7,34 @@ git fetch --all -p
 
 remote=$(git remote | head -1)
 if [ -z "${remote}" ]; then
-    echo 'no remote found, see `git remote`'
+    echo no remote found, see '`git remote`'
+    exit 1
+fi
+
+default=$(git symbolic-ref refs/remotes/"${remote}"/HEAD | sed "s@^refs/remotes/${remote}/@@")
+if [ -z "${default}" ]; then
+    echo no default branch found, see "`git symbolic-ref refs/remotes/${remote}/HEAD`"
     exit 1
 fi
 
 current=$(git symbolic-ref --short HEAD)
 
-default=$(git symbolic-ref refs/remotes/"${remote}"/HEAD | sed "s@^refs/remotes/${remote}/@@")
-if [ -z "${default}" ]; then
-    echo "no default branch found, see `git symbolic-ref refs/remotes/${remote}/HEAD`"
-    exit 1
-fi
-
 if [ "${current}" != "${default}" ]; then
     git checkout "${default}"
 fi
 
-# local
 for branch in $(git branch --merged | grep -v "${default}"); do
     git branch -d "${branch}"
-    echo $branch was deleted
+    echo local branch $branch was deleted
 done
 
 case "${1-}" in
     "full")
-        # remote
         for target in $(git branch -r --merged | grep -v "/${default}"); do
             remote=$(echo ${target//\//' '} | awk '{print $1}')
             branch=$(echo ${target//\//' '} | awk '{print $2}')
             git push "${remote}" ":${branch}"
-            echo $remote:$branch was deleted
+            echo remote branch $remote:$branch was deleted
         done
     ;;
 esac

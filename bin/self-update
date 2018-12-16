@@ -6,18 +6,22 @@ set -o pipefail
 (
     cd "${HOME}"/.dotfiles
     git pull
+    echo dotfiles were updated
 )
 
 if [ -n "${ZSH}" ] && [ -f "${ZSH}"/tools/upgrade.sh ]; then
     env ZSH="${ZSH}" sh "${ZSH}"/tools/upgrade.sh
+    echo Oh My Zsh was updated
 fi
 
 if command -v brew > /dev/null; then
-    echo 'TODO brew+'
+    brew_update
+    echo Homebrew was updated
 fi
 
 if command -v docker > /dev/null; then
-    echo 'TODO images+'
+    docker_images update
+    echo Docker images were updated
 fi
 
 exec $SHELL

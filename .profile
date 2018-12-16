@@ -66,9 +66,7 @@ fi
 # Package management
 
 if command -v brew > /dev/null; then
-    alias brew+="brew update && brew upgrade && brew cask upgrade; \
-                 brew doctor && brew cask doctor; \
-                 brew cleanup && brew prune"
+    alias brew+="brew_update"
 fi
 if command -v composer > /dev/null; then
     alias composer+="sudo composer self-update; \
