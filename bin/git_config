@@ -25,7 +25,7 @@ git config --global alias.cmm       'commit -m'
 git config --global alias.commend   'commit --amend --no-edit'
 # git flow jira | git flow jira wrapped | git flow github
 git config --global alias.flow      '!git_flow'
-git config --global alias.undo      'reset --soft HEAD^1'
+git config --global alias.undo      '!undo() { git reset --soft HEAD^${1-1}; }; undo'
 
 # правильно форсим
 git config --global alias.force     "!for remote in \$(git remote | grep -v upstream); do git push -f \$remote \$(git current); done"
