@@ -21,9 +21,7 @@ git config --global alias.mm        '!git checkout master && git pull --rebase'
 git config --global alias.mmm       '!git checkout master && git sync'
 
 git config --global alias.cmm       'commit -m'
-# git add <пропущенное> и git commend - прикрепляем к последнему коммиту
 git config --global alias.commend   'commit --amend --no-edit'
-# git flow jira | git flow jira wrapped | git flow github
 git config --global alias.flow      '!git_flow'
 git config --global alias.undo      '!undo() { git reset --soft HEAD^${1-1}; }; undo'
 
@@ -36,8 +34,6 @@ git config --global alias.it        '!git init && git cmm "root" --allow-empty'
 
 # скрывает только непроиндексированные изменения в отслеживаемых файлах
 git config --global alias.stsh      'stash --keep-index'
-# скрывает все изменения в отслеживаемых файлах
-# git stash
 # скрывает неотслеживаемые и отслеживаемые файлы
 git config --global alias.staash    'stash --include-untracked'
 # скрывает игнорируемые, неотслеживаемые и отслеживаемые файлы
