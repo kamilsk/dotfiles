@@ -6,10 +6,11 @@ set -o pipefail
 # метаинформация
 git config --global alias.user      'config user.email'
 git config --global alias.current   'symbolic-ref --short HEAD'
+git config --global alias.default   '!git_default'
 git config --global alias.release   '!git describe --tags | cut -d - -f 1'
 git config --global alias.stats     '!git log --pretty=format:"%an <%ae>" | sort | uniq -c'
-git config --global alias.week      '!git log --oneline --no-merges --all --author=$(git user) --since=1.week | cat'
-git config --global alias.month     '!git log --oneline --no-merges --all --author=$(git user) --since=1.month | cat'
+git config --global alias.week      '!git log --oneline --no-merges --all --author=$(git user) --since=1.week  | bat'
+git config --global alias.month     '!git log --oneline --no-merges --all --author=$(git user) --since=1.month | bat'
 
 git config --global alias.up        '!git fetch --all -p && git pull && git submodule update --init --recursive'
 git config --global alias.down      '!git reset --hard && git clean -df && git submodule update --init --recursive'

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+git fetch --all -p
+
+current=$(git current)
+default=$(git default)
+
+if [ "${current}" != "${default}" ]; then
+    git checkout "${default}"
+fi
+
+git pull --rebase
+
+case "${1-}" in
+    "jira")
+        issue=$(echo $2 | awk '{print toupper($0)}')
+        branch=$(echo $issue ${@:3} | sed 's/ /-/g')
+        git checkout -b "${branch}"
+    ;;
+esac

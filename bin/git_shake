@@ -5,19 +5,8 @@ set -o pipefail
 
 git fetch --all -p
 
-remote=$(git remote | head -1)
-if [ -z "${remote}" ]; then
-    echo no remote found, see '`git remote`'
-    exit 1
-fi
-
-default=$(git symbolic-ref refs/remotes/"${remote}"/HEAD | sed "s@^refs/remotes/${remote}/@@")
-if [ -z "${default}" ]; then
-    echo no default branch found, see "`git symbolic-ref refs/remotes/${remote}/HEAD`"
-    exit 1
-fi
-
-current=$(git symbolic-ref --short HEAD)
+current=$(git current)
+default=$(git default)
 
 if [ "${current}" != "${default}" ]; then
     git checkout "${default}"
