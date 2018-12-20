@@ -64,6 +64,7 @@ $ curl -sL https://git.io/fpN1B | bash
 
 - [github.com/caarlos0/dotfiles](https://github.com/caarlos0/dotfiles)
 - [caarlos0's dotfiles list](https://github.com/getantibody/antibody#in-the-wild)
+- [github.com/mitchellh/dotfiles](https://github.com/mitchellh/dotfiles)
 
 ---
 
