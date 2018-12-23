@@ -90,6 +90,12 @@ fi
 alias v+="source .virtenv/bin/activate"
 alias v-="deactivate"
 
+# Sublime
+
+if ! command -v subl > /dev/null && [ -x "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ]; then
+    alias subl="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+fi
+
 # Visual Studio Code
 
 if [ -x "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" ]; then
