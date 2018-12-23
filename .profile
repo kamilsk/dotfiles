@@ -20,6 +20,7 @@ export PASSPORT_TOKEN=$HUGS_TOKEN
 
 alias ..="cd ../"
 alias ...="cd ../../"
+alias dotfiles="cd ~/.dotfiles"
 
 alias cwd="pwd | tr -d '\n' | pbcopy"
 alias dots="ls \.*"
