@@ -89,3 +89,9 @@ fi
 
 alias v+="source .virtenv/bin/activate"
 alias v-="deactivate"
+
+# Visual Studio Code
+
+if [ -x "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" ]; then
+    alias code="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
+fi
