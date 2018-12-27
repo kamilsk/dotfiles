@@ -10,7 +10,7 @@ git config --unset alias.issue
 git config --unset alias.progress
 git config --unset alias.ready
 
-case "${1-}" in
+case "${1}" in
     "github")
         git config alias.start    '!git_start github'
         git config alias.progress '!commit() { git cmm "$*"; }; commit'
