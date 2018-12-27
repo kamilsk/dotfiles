@@ -16,3 +16,4 @@ if [ -z "${default}" ]; then
 fi
 
 echo $default
+exit 0

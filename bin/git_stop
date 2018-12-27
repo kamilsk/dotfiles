@@ -5,3 +5,12 @@ set -o pipefail
 
 current=$(git current)
 default=$(git default)
+
+if [ "${current}" != "${default}" ]; then
+    git checkout "${default}"
+else
+    echo nothing to do
+fi
+
+echo done
+exit 0
