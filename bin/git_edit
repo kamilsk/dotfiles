@@ -4,17 +4,20 @@ set -o nounset
 set -o pipefail
 
 editor=code
-
 if ! command -v code > /dev/null; then
     editor=subl
 fi
 
 editor=${1:-$editor}
-
 if ! command -v $editor > /dev/null; then
-    echo No editor found
+    echo no editor found
     exit 1
 fi
 
 $editor ~/.gitconfig --wait
-$editor .git/config --wait
+if [ -f .git/config ]; then
+    $editor .git/config --wait
+fi
+
+echo done
+exit 0
