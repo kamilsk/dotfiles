@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+current=$(git current)
+default=$(git default)
