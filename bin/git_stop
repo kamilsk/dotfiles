@@ -8,9 +8,9 @@ default=$(git default)
 
 if [ "${current}" != "${default}" ]; then
     git checkout "${default}"
-else
-    echo nothing to do
+    echo done
+    exit 0
 fi
 
-echo done
-exit 0
+echo nothing to do
+exit 1

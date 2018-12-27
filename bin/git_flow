@@ -27,4 +27,11 @@ case "${1}" in
         fi
         git config alias.done '!echo TODO not implemented yet'
     ;;
+    *)
+        echo nothing to do
+        exit 1
+    ;;
 esac
+
+echo done
+exit 0
