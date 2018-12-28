@@ -5,7 +5,7 @@ set -o pipefail
 
 # метаинформация
 git config --global alias.user      'config user.email'
-git config --global alias.current   'symbolic-ref --short HEAD'
+git config --global alias.current   '!git_current'
 git config --global alias.default   '!git_default'
 git config --global alias.release   '!git describe --tags | cut -d - -f 1'
 git config --global alias.stats     '!git log --pretty=format:"%an <%ae>" | sort | uniq -c'
@@ -27,8 +27,8 @@ git config --global alias.flow      '!git_flow'
 git config --global alias.undo      '!undo() { git reset --soft HEAD^${1-1}; }; undo'
 
 # правильно форсим
-git config --global alias.force     "!for remote in \$(git remote | grep -v upstream); do git push -f \$remote \$(git current); done"
-git config --global alias.please    "!for remote in \$(git remote | grep -v upstream); do git push --force-with-lease \$remote \$(git current); done"
+git config --global alias.force     '!git_force'
+git config --global alias.please    '!git_please'
 
 # правильно инициализируем
 git config --global alias.it        '!git init && git cmm "root" --allow-empty'
