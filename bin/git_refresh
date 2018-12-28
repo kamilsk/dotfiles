@@ -3,5 +3,28 @@
 set -o nounset
 set -o pipefail
 
-current=$(git current)
-default=$(git default)
+current="$(git current)"
+default="$(git default)"
+
+if [ "${current}" = "${default}" ]; then
+    git pull --rebase
+    exit $?
+fi
+
+if $(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null); then
+    git pull --rebase
+fi
+
+remote="$(git current remote)"
+if [ -z "${remote}" ]; then
+    echo nothing to do
+    exit 1
+fi
+
+base="${remote}/${default}"
+
+git fetch --all -p
+git rebase "${base}"
+
+echo done
+exit 0
