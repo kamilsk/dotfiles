@@ -8,15 +8,15 @@ if ! command -v code > /dev/null; then
     editor=subl
 fi
 
-editor=${1:-$editor}
-if ! command -v $editor > /dev/null; then
+editor="${1:-$editor}"
+if ! command -v "${editor}" > /dev/null; then
     echo no editor found
     exit 1
 fi
 
-$editor ~/.gitconfig --wait
+"${editor}" ~/.gitconfig --wait
 if [ -f .git/config ]; then
-    $editor .git/config --wait
+    "${editor}" .git/config --wait
 fi
 
 echo done

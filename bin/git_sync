@@ -12,9 +12,9 @@ for item in $(ls); do
             git fetch --all -p && git pull && git submodule update --init --recursive; \
 
             exists=$?; \
-            if [ "${exists}" != 0 ]; then \
-                branch=$(git branch | cut -f2 -d' ' | awk 'NF > 0'); \
-                git branch --set-upstream-to=origin/$branch $branch; \
+            if [ $exists != 0 ]; then \
+                branch="$(git branch | cut -f2 -d' ' | awk 'NF > 0')"; \
+                git branch --set-upstream-to=origin/"${branch}" "${branch}"; \
             fi \
         )
     fi;

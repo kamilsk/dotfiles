@@ -5,8 +5,8 @@ set -o pipefail
 
 git fetch --all -p
 
-current=$(git current)
-default=$(git default)
+current="$(git current)"
+default="$(git default)"
 
 if [ "${current}" != "${default}" ]; then
     git checkout "${default}"
@@ -20,8 +20,8 @@ done
 case "${1-}" in
     "full")
         for target in $(git branch -r --merged | grep -v "/${default}"); do
-            remote=$(echo ${target//\//' '} | awk '{print $1}')
-            branch=$(echo ${target//\//' '} | awk '{print $2}')
+            remote="$(echo ${target//\//' '} | awk '{print $1}')"
+            branch="$(echo ${target//\//' '} | awk '{print $2}')"
             git push "${remote}" ":${branch}"
             echo remote branch $remote:$branch was deleted
         done
