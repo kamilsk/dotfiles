@@ -3,7 +3,7 @@
 set -o nounset
 set -o pipefail
 
-remote="$(git remote | head -1)"
+remote="$(git current remote)"
 if [ -z "${remote}" ]; then
     echo no remote found, see '`git remote`'
     exit 1
