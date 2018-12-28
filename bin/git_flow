@@ -15,7 +15,7 @@ case "${1}" in
         git config alias.start    '!git_start github'
         git config alias.stop     '!git_stop'
         git config alias.progress '!commit() { git commit -m "$*"; }; commit'
-        git config alias.done     '!echo TODO not implemented yet'
+        git config alias.done     '!git refresh && git please && git checkout $(git default)'
     ;;
     jira)
         git config alias.start '!git_start jira'
@@ -25,7 +25,7 @@ case "${1}" in
         else
             git config alias.progress "!commit() { git commit -m  \"\$(git current | awk -F- '{print \$1\"-\"\$2}') \$*\"; }; commit"
         fi
-        git config alias.done '!echo TODO not implemented yet'
+        git config alias.done '!git refresh && git please && git checkout $(git default)'
     ;;
     *)
         echo nothing to do

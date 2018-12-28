@@ -12,13 +12,13 @@ if [ "${current}" != "${default}" ]; then
     git checkout "${default}"
 fi
 
-for branch in $(git branch --merged | grep -v "${default}"); do
+for branch in "$(git branch --merged | grep -v "${default}")"; do
     git branch -d "${branch}"
     echo local branch $branch was deleted
 done
 
 case "${1-}" in
-    "full")
+    all)
         for target in $(git branch -r --merged | grep -v "/${default}"); do
             remote="$(echo ${target//\//' '} | awk '{print $1}')"
             branch="$(echo ${target//\//' '} | awk '{print $2}')"
