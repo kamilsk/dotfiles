@@ -3,8 +3,8 @@
 set -o nounset
 set -o pipefail
 
-current=$(git current)
-default=$(git default)
+current="$(git current)"
+default="$(git default)"
 
 if [ "${current}" != "${default}" ]; then
     git checkout "${default}"

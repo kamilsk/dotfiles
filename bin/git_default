@@ -3,13 +3,13 @@
 set -o nounset
 set -o pipefail
 
-remote=$(git remote | head -1)
+remote="$(git remote | head -1)"
 if [ -z "${remote}" ]; then
     echo no remote found, see '`git remote`'
     exit 1
 fi
 
-default=$(git symbolic-ref refs/remotes/"${remote}"/HEAD | sed "s@^refs/remotes/${remote}/@@")
+default="$(git symbolic-ref refs/remotes/"${remote}"/HEAD | sed "s@^refs/remotes/${remote}/@@")"
 if [ -z "${default}" ]; then
     echo no default branch found, see "`git symbolic-ref refs/remotes/${remote}/HEAD`"
     exit 1
