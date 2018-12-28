@@ -16,6 +16,8 @@ case "${1}" in
         if [ "$(git branch --list | grep "${issue}-")" ]; then
             branch="$(git branch --list | grep "${issue}-" | awk '{print $1}')"
             git checkout "${branch}"
+        elif [ "$(git branch --list | grep "${issue}")" ]; then
+            git checkout "${issue}"
         else
             branch="$(echo $issue ${@:3} | sed 's/ /-/g')"
             git pull --rebase
