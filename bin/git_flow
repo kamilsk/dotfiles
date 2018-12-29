@@ -3,13 +3,6 @@
 set -o nounset
 set -o pipefail
 
-# Deprecated: legacy
-# TODO remove it
-git config --unset alias.fix
-git config --unset alias.issue
-git config --unset alias.progress
-git config --unset alias.ready
-
 case "${1}" in
     github)
         git config alias.start    '!git_start github'
@@ -26,6 +19,14 @@ case "${1}" in
             git config alias.progress "!commit() { git commit -m  \"\$(git current | awk -F- '{print \$1\"-\"\$2}') \$*\"; }; commit"
         fi
         git config alias.done '!git refresh && git please && git checkout $(git default)'
+    ;;
+    clear)
+        # Deprecated: legacy
+        # TODO remove it
+        git config --unset alias.fix
+        git config --unset alias.issue
+        git config --unset alias.progress
+        git config --unset alias.ready
     ;;
     *)
         echo nothing to do
