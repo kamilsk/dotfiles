@@ -55,6 +55,7 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=( \
 	brew \
+	command-not-found \
 	common-aliases \
 	composer \
 	docker \
@@ -62,16 +63,21 @@ plugins=( \
 	fabric \
 	git \
 	golang \
+	helm \
 	history \
 	history-substring-search \
 	httpie \
+	iterm2 \
+	kubectl \
+	minikube \
 	npm \
 	osx \
 	pip \
 	rsync \
 	screen \
-	sublime \
+	terraform \
 	vagrant \
+	vault \
 )
 
 . "${ZSH}"/oh-my-zsh.sh
