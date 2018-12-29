@@ -3,7 +3,7 @@
 set -o nounset
 set -o pipefail
 
-# Deprecated: legacy, run `git config --unset alias.flow` before
+# Deprecated: legacy
 # TODO remove it
 git config --unset alias.fix
 git config --unset alias.issue

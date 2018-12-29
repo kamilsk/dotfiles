@@ -5,9 +5,10 @@ set -o pipefail
 
 # Deprecated: legacy
 # TODO remove it
-git config --unset alias.m
-git config --unset alias.mm
-git config --unset alias.mmm
+git config --unset --global alias.m
+git config --unset --global alias.mm
+git config --unset --global alias.mmm
+echo run '`git config --unset alias.flow`' in legacy projects
 
 # метаинформация
 git config --global alias.user      'config user.email'
