@@ -1,0 +1,3 @@
+[submodule "screensavers/space-gophers"]
+	path = screensavers/space-gophers
+	url = git@github.com:apiarian/space-gophers.git
