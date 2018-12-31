@@ -9,7 +9,7 @@ case "${1-all}" in
             echo nothing to do
             exit 1
         fi
-        for remote in "$(git remote | grep -v upstream)"; do
+        for remote in $(git remote | grep -v upstream); do
             git push -f "${remote}" "$(git current)"
         done
     ;;

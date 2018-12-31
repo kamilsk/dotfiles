@@ -12,7 +12,7 @@ if [ "${current}" != "${default}" ]; then
 fi
 git refresh
 
-for branch in "$(git branch --merged | grep -v "${default}")"; do
+for branch in $(git branch --merged | grep -v "${default}"); do
     if [ -n "${branch}" ]; then
         git branch -d "${branch##*( )}"
         echo local branch $branch was deleted
@@ -21,7 +21,7 @@ done
 
 case "${1-}" in
     all)
-        for target in "$(git branch -r --merged | grep -v "/${default}")"; do
+        for target in $(git branch -r --merged | grep -v "/${default}"); do
             if [ -n "${target}" ]; then
                 remote="$(echo ${target//\//' '} | awk '{print $1}')"
                 branch="$(echo ${target//\//' '} | awk '{print $2}')"
