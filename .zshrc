@@ -53,32 +53,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( \
-	brew \
-	command-not-found \
-	common-aliases \
-	composer \
-	docker \
-	docker-compose \
-	fabric \
-	git \
-	golang \
-	helm \
-	history \
-	history-substring-search \
-	httpie \
-	iterm2 \
-	kubectl \
-	minikube \
-	npm \
-	osx \
-	pip \
-	rsync \
-	screen \
-	terraform \
-	vagrant \
-	vault \
-)
+plugins=(common-aliases)
 
 . "${ZSH}"/oh-my-zsh.sh
 
