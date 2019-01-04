@@ -26,6 +26,13 @@ alias cwd="pwd | tr -d '\n' | pbcopy"
 alias dots="ls \.*"
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 
+# Fixes
+
+function fix_xcrun {
+    sudo xcode-select --reset
+    xcode-select --install
+}
+
 # Fun
 
 alias shrug="echo '¯\_(ツ)_/¯'";
