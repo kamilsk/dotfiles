@@ -66,6 +66,10 @@ $ curl -sL https://git.io/fpN1B | bash
 - [caarlos0's dotfiles list](https://github.com/getantibody/antibody#in-the-wild)
 - [github.com/mitchellh/dotfiles](https://github.com/mitchellh/dotfiles)
 
+## Useful
+
+- [explainshell.com - match command-line arguments to their help text](https://www.explainshell.com/)
+
 ---
 
 [![@kamilsk][icon_tw_author]](https://twitter.com/ikamilsk)
