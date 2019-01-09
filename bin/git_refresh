@@ -17,7 +17,7 @@ fi
 
 remote="$(git current remote)"
 if [ -z "${remote}" ]; then
-    echo nothing to do
+    (>&2 echo nothing to do)
     exit 1
 fi
 

@@ -10,7 +10,7 @@ fi
 
 editor="${1:-$editor}"
 if ! command -v "${editor}" > /dev/null; then
-    echo no editor found
+    (>&2 echo no editor found)
     exit 1
 fi
 

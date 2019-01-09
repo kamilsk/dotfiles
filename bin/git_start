@@ -20,12 +20,12 @@ case "${1}" in
             git checkout "${issue}"
         else
             branch="$(echo $issue ${@:3} | sed 's/ /-/g')"
-            git pull --rebase
+            git pull --rebase 2>/dev/null || true
             git checkout -b "${branch}"
         fi
     ;;
     *)
-        echo nothing to do
+        (>&2 echo nothing to do)
         exit 1
     ;;
 esac

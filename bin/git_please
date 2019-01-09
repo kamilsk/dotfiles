@@ -6,7 +6,7 @@ set -o pipefail
 case "${1-all}" in
     all)
         if [ $(git remote | wc -l) = 0 ]; then
-            echo nothing to do
+            (>&2 echo nothing to do)
             exit 1
         fi
         for remote in $(git remote | grep -v upstream); do
@@ -16,13 +16,13 @@ case "${1-all}" in
     current)
         remote="$(git current remote)"
         if [ -z "${remote}" ]; then
-            echo nothing to do
+            (>&2 echo nothing to do)
             exit 1
         fi
         git push --force-with-lease "${remote}"
     ;;
     *)
-        echo nothing to do
+        (>&2 echo nothing to do)
         exit 1
     ;;
 esac

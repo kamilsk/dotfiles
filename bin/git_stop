@@ -12,5 +12,5 @@ if [ "${current}" != "${default}" ]; then
     exit 0
 fi
 
-echo nothing to do
+(>&2 echo nothing to do)
 exit 1

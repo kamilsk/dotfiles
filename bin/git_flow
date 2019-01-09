@@ -27,7 +27,7 @@ case "${1}" in
         git config --unset alias.ready
     ;;
     *)
-        echo nothing to do
+        (>&2 echo nothing to do)
         exit 1
     ;;
 esac
