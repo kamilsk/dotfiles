@@ -9,4 +9,3 @@ brew cask upgrade
 brew doctor
 brew cask doctor
 brew cleanup
-brew prune
