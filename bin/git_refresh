@@ -11,8 +11,9 @@ if [ "${current}" = "${default}" ]; then
     exit $?
 fi
 
-if $(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null); then
+if $(git rev-parse --abbrev-ref --symbolic-full-name @{u} > /dev/null 2>&1 ); then
     git pull --rebase
+    exit $?
 fi
 
 remote="$(git current remote)"
