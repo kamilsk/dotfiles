@@ -2,12 +2,8 @@
 
 set +o histexpand
 
-export GOPATH="${HOME}"/Development/go # go env
-export CPR_PATH="${HOME}"/.composer    # composer config --list --global
-export GEM_PATH=                       # gem environment
-export PIP_PATH=                       # pip show <pkg>
-export NPM_PATH=                       # npm root -g
-export PATH="${PATH}:/usr/local/sbin:${GOPATH}/bin:${HOME}/.dotfiles/bin"
+export GOPATH="${HOME}/Development/go"
+export PATH="${HOME}/.dotfiles/bin:${PATH}"
 
 export GITHUB_TOKEN=
 export HUGS_TOKEN=10000000-2000-4000-8000-160000000003
