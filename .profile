@@ -3,7 +3,7 @@
 set +o histexpand
 
 export GOPATH="${HOME}/Development/go"
-export PATH="${HOME}/.dotfiles/bin:${PATH}"
+export PATH="${HOME}/.dotfiles/bin:${GOPATH}/bin:${PATH}"
 
 export GITHUB_TOKEN=
 export HUGS_TOKEN=10000000-2000-4000-8000-160000000003
