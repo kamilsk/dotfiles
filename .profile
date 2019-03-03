@@ -22,11 +22,21 @@ alias cwd="pwd | tr -d '\n' | pbcopy"
 alias dots="ls \.*"
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 
-# Fixes
+# macOS
 
 function fix_xcrun {
     sudo xcode-select --reset
     xcode-select --install
+}
+
+function touch_sudo {
+    if ! grep 'pam_tid.so' /etc/pam.d/sudo; then
+        echo '# sudo: auth account password session' > /tmp/sudo
+        echo 'auth       sufficient     pam_tid.so' >> /tmp/sudo
+        cat /etc/pam.d/sudo | grep -v '# sudo' >> /tmp/sudo
+        sudo mv /tmp/sudo /etc/pam.d/sudo
+        cat /etc/pam.d/sudo
+    fi
 }
 
 # Fun
