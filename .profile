@@ -58,6 +58,16 @@ if command -v docker > /dev/null; then
     function container {
         docker exec -it $1 /bin/sh
     }
+    function containers {
+        case "${1-}" in
+            "all")
+                docker ps --all | tail +2
+            ;;
+            *)
+                docker ps | tail +2
+            ;;
+        esac
+    }
     function images {
         case "${1-}" in
             "all")
@@ -75,27 +85,26 @@ if command -v docker > /dev/null; then
             ;;
         esac
     }
+    function volume {
+        docker run --rm -it -v $1:/view -w /view alpine:latest
+    }
     function volumes {
         case "${1-}" in
             "all")
                 docker volume ls | tail +2
             ;;
             "clean")
-                $0 \
-                | awk '{print $$2}' \
+                $0 all \
+                | awk '{print $2}' \
                 | egrep '[[:alnum:]]{64}' \
-                | xargs docker volume rm || true
+                | xargs docker volume rm
             ;;
             *)
                 $0 all | egrep -v '[[:alnum:]]{64}'
             ;;
         esac
     }
-    function volume {
-        docker run --rm -it -v $1:/view -w /view alpine:latest
-    }
-    alias volumes-="docker volume ls | tail +2 | awk '{print $$2}' | egrep '[[:alnum:]]{64}' | xargs docker volume rm || true"
-    alias （╯°□°）╯︵┻━┻docker="images- && volumes-" # TODO eval "$(tflip)docker"
+    alias （╯°□°）╯︵┻━┻docker="images clean && volumes clean" # TODO:implement eval "$(tflip)docker"
 fi
 
 # Package management
