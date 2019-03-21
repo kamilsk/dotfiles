@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+case "${1-}" in
+    "all")
+        docker images --all | tail +2 | sort -f
+    ;;
+    "cleanup")
+        docker volume ls \
+        | tail +2 \
+        | awk '{print $$2}' \
+        | egrep '[[:alnum:]]{64}' \
+        | xargs docker volume rm || true
+    ;;
+    *)
+        docker volume ls | tail +2 | sort -f
+    ;;
+esac

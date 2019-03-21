@@ -59,20 +59,10 @@ if command -v docker > /dev/null; then
         docker exec -it $1 /bin/sh
     }
     function images {
-        case "${1-}" in
-            "all")
-                docker images --all | tail -n +2 | sort -f
-            ;;
-            "clean")
-                docker_images cleanup
-            ;;
-            "pull")
-                docker_images update
-            ;;
-            *)
-                images all | grep -v '<none>'
-            ;;
-        esac
+        docker_images $@
+    }
+    function volumes {
+        docker_volumes $@
     }
     function volume {
         docker run --rm -it -v $1:/view -w /view alpine:latest
