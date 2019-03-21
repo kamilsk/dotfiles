@@ -63,6 +63,12 @@ if command -v docker > /dev/null; then
             "all")
                 docker images --all | tail -n +2 | sort -f
             ;;
+            "clean")
+                docker_images cleanup
+            ;;
+            "pull")
+                docker_images update
+            ;;
             *)
                 images all | grep -v '<none>'
             ;;
@@ -71,8 +77,6 @@ if command -v docker > /dev/null; then
     function volume {
         docker run --rm -it -v $1:/view -w /view alpine:latest
     }
-    alias images+="docker_images update"
-    alias images-="docker_images cleanup"
     alias volumes-="docker volume ls | tail +2 | awk '{print $$2}' | egrep '[[:alnum:]]{64}' | xargs docker volume rm || true"
     alias （╯°□°）╯︵┻━┻docker="images- && volumes-" # TODO eval "$(tflip)docker"
 fi
