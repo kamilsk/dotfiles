@@ -59,10 +59,37 @@ if command -v docker > /dev/null; then
         docker exec -it $1 /bin/sh
     }
     function images {
-        docker_images $@
+        case "${1-}" in
+            "all")
+                docker images --all | tail +2
+            ;;
+            "clean")
+                docker rmi $(docker images -q -f dangling=true) 2>/dev/null
+                docker system prune -f
+            ;;
+            "pull")
+                $0 | awk '{print $1":"$2}' | xargs -n1 docker pull
+            ;;
+            *)
+                docker images | grep -v '<none>' | tail +2
+            ;;
+        esac
     }
     function volumes {
-        docker_volumes $@
+        case "${1-}" in
+            "all")
+                docker volume ls | tail +2
+            ;;
+            "clean")
+                $0 \
+                | awk '{print $$2}' \
+                | egrep '[[:alnum:]]{64}' \
+                | xargs docker volume rm || true
+            ;;
+            *)
+                $0 all | egrep -v '[[:alnum:]]{64}'
+            ;;
+        esac
     }
     function volume {
         docker run --rm -it -v $1:/view -w /view alpine:latest
