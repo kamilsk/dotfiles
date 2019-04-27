@@ -12,16 +12,34 @@ fi
 
 case "${1}" in
     jira)
-        issue="$(echo $2 | awk '{print toupper($0)}')"
-        if [ "$(git branch --list | grep "${issue}-")" ]; then
-            branch="$(git branch --list | grep "${issue}-" | awk '{print $1}')"
-            git checkout "${branch}"
-        elif [ "$(git branch --list | grep "${issue}")" ]; then
-            git checkout "${issue}"
+        issue="$(echo ${2} | awk '{print toupper($0)}')"
+        brief="$(echo ${@:3} | sed 's/ /-/g')"
+        if [ -z "${brief}" ]; then
+            branches="$(git branch --list | grep "${issue}-" | awk '{print $1}')"
+            if [ $(echo "${branches}" | wc -l) -gt 1 ]; then
+                echo please refine the branch:
+                for branch in $branches; do
+                    echo - $branch
+                done
+            else
+                branch="${branches}"
+                git checkout "${branch}"
+            fi
         else
-            branch="$(echo $issue ${@:3} | sed 's/ /-/g')"
-            git pull --rebase 2>/dev/null || true
-            git checkout -b "${branch}"
+            branches="$(git branch --list | grep "${issue}-${brief}" | awk '{print $1}')"
+            if [ $(echo "${branches}" | wc -l) -gt 1 ]; then
+                echo please refine the branch:
+                for branch in $branches; do
+                    echo - $branch
+                done
+            elif [ -n "${branches}" ]; then
+                branch="${branches}"
+                git checkout "${branch}"
+            else
+                branch="${issue}-${brief}"
+                git pull --rebase 2>/dev/null || true
+                git checkout -b "${branch}"
+            fi
         fi
     ;;
     *)
