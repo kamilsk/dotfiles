@@ -18,12 +18,14 @@ case "${1}" in
         git config alias.issue    "!open ${2}/browse/\$(git current | awk -F- '{print \$1\"-\"\$2}')"
         git config alias.done     '!git refresh && git please && git checkout $(git default)'
     ;;
-    clear)
-        # Deprecated: legacy
-        # TODO remove it
-        git config --unset alias.fix
-        git config --unset alias.issue
+    reset)
+        git config --unset alias.start
+        git config --unset alias.stop
         git config --unset alias.progress
+        git config --unset alias.issue
+        git config --unset alias.done
+        # Deprecated: legacy
+        git config --unset alias.fix
         git config --unset alias.ready
     ;;
     *)
