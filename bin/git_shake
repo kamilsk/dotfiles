@@ -21,7 +21,7 @@ done
 
 case "${1-}" in
     all)
-        for target in $(git branch -r --merged | grep -v "/${default}"); do
+        for target in $(git branch -r --merged | grep -v "/${default}" | grep -v 'upstream/'); do
             if [ -n "${target}" ]; then
                 remote="$(echo ${target//\//' '} | awk '{print $1}')"
                 branch="$(echo ${target//\//' '} | awk '{print $2}')"
