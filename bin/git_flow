@@ -5,17 +5,22 @@ set -o pipefail
 
 case "${1}" in
     github)
+        entrypoint=${2:-}
+        if [ -z "${entrypoint}" ]; then
+            read -p 'enter project url at GitHub: ' entrypoint
+        fi
         git config alias.start    '!git_start github'
         git config alias.stop     '!git_stop'
-        git config alias.progress '!commit() { git commit -m "$*"; }; commit'
-        git config alias.issue    "!open ${2}/issues/\$(git current | awk -F- '{print \$2}')"
+        git config alias.progress "!commit() { git commit -m \"\$(git current | awk -F- '{print \$1\" #\"\$2}') \$*\"; }; commit"
+        git config alias.issue    "!open ${entrypoint}/issues/\$(git current | awk -F- '{print \$2}')"
         git config alias.done     '!git refresh && git please && git checkout $(git default)'
     ;;
     jira)
+        entrypoint=${2:-'https://jr.avito.ru'}
         git config alias.start    '!git_start jira'
         git config alias.stop     '!git_stop'
         git config alias.progress "!commit() { git commit -m  \"\$(git current | awk -F- '{print \$1\"-\"\$2}') \$*\"; }; commit"
-        git config alias.issue    "!open ${2}/browse/\$(git current | awk -F- '{print \$1\"-\"\$2}')"
+        git config alias.issue    "!open ${entrypoint}/browse/\$(git current | awk -F- '{print \$1\"-\"\$2}')"
         git config alias.done     '!git refresh && git please && git checkout $(git default)'
     ;;
     reset)
