@@ -11,9 +11,50 @@ if [ "${current}" != "${default}" ]; then
 fi
 
 case "${1}" in
+    github)
+        id=${2:-}
+        if [ -z "${id}" ]; then
+            git branch --list | cat
+            read -p 'enter issue id: ' id
+        fi
+        issue="issue-${id}"
+        brief="$(echo ${@:3} | sed 's/ /-/g' | awk '{print tolower($0)}')"
+        if [ -z "${brief}" ]; then
+            branches="$(git branch --list | grep "${issue}-" | awk '{print $1}')"
+            if [ $(echo "${branches}" | wc -l) -gt 1 ]; then
+                echo please refine the branch:
+                for branch in $branches; do
+                    echo - $branch
+                done
+            else
+                branch="${branches}"
+                git checkout "${branch}"
+            fi
+        else
+            branches="$(git branch --list | grep "${issue}-${brief}" | awk '{print $1}')"
+            if [ $(echo "${branches}" | wc -l) -gt 1 ]; then
+                echo please refine the branch:
+                for branch in $branches; do
+                    echo - $branch
+                done
+            elif [ -n "${branches}" ]; then
+                branch="${branches}"
+                git checkout "${branch}"
+            else
+                branch="${issue}-${brief}"
+                git pull --rebase 2>/dev/null || true
+                git checkout -b "${branch}"
+            fi
+        fi
+    ;;
     jira)
-        issue="$(echo ${2} | awk '{print toupper($0)}')"
-        brief="$(echo ${@:3} | sed 's/ /-/g')"
+        id=${2:-}
+        if [ -z "${id}" ]; then
+            git branch --list | cat
+            read -p 'enter issue id: ' id
+        fi
+        issue="$(echo ${id} | awk '{print toupper($0)}')"
+        brief="$(echo ${@:3} | sed 's/ /-/g' | awk '{print tolower($0)}')"
         if [ -z "${brief}" ]; then
             branches="$(git branch --list | grep "${issue}-" | awk '{print $1}')"
             if [ $(echo "${branches}" | wc -l) -gt 1 ]; then
