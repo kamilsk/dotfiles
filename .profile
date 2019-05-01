@@ -48,8 +48,8 @@ alias tflip="echo '（╯°□°）╯︵┻━┻'";
 # Git
 
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
-alias g+="git fetch --all -p && git pull && git submodule update --init --recursive"
-alias g-="git reset --hard && git clean -df && git submodule update --init --recursive"
+alias g+="git pull --all --prune && git submodule update --init --recursive"
+alias g-="git reset --hard && git clean -df && git submodule deinit --all"
 alias g^="branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); for remote in \$(git remote | grep -v upstream); do git push \$remote \$branch --tags; done"
 
 # Docker
