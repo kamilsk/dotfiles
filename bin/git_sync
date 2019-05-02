@@ -6,10 +6,9 @@ set -o pipefail
 for item in $(ls); do
     if test -d $item && test -d $item/.git; then
         ( \
-            echo "current directory is:" $item && cd $item; \
+            echo current directory is: $item && cd $item; \
 
-            # g+
-            git fetch --all -p && git pull && git submodule update --init --recursive; \
+            git pull --all --prune --tags --force --rebase && git submodule update --init --recursive; \ # g+
 
             exists=$?; \
             if [ $exists != 0 ]; then \

@@ -5,7 +5,7 @@ set -o pipefail
 
 (
     cd "${HOME}"/.dotfiles
-    git pull
+    git pull --all --prune --tags --force --rebase && git submodule update --init --recursive # g+
     echo dotfiles were updated
 )
 

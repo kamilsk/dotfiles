@@ -7,12 +7,12 @@ current="$(git current)"
 default="$(git default)"
 
 if [ "${current}" = "${default}" ]; then
-    git pull --rebase
+    git pull --all --prune --tags --force --rebase && git submodule update --init --recursive # g+
     exit $?
 fi
 
 if $(git rev-parse --abbrev-ref --symbolic-full-name @{u} > /dev/null 2>&1 ); then
-    git pull --rebase
+    git pull --all --prune --tags --force --rebase && git submodule update --init --recursive # g+
     exit $?
 fi
 
@@ -24,8 +24,7 @@ fi
 
 base="${remote}/${default}"
 
-git fetch --all -p
-git rebase "${base}"
+git pull --all --prune --tags --force --rebase "${base}"
 
 echo done
 exit 0

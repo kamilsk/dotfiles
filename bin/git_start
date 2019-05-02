@@ -21,7 +21,7 @@ case "${1}" in
         brief="$(echo ${@:3} | sed 's/ /-/g' | awk '{print tolower($0)}')"
         if [ -z "${brief}" ]; then
             branches="$(git branch --list | grep "${issue}-" | awk '{print $1}')"
-            if [ $(echo "${branches}" | wc -l) -gt 1 ]; then
+            if [ $(echo ${branches} | wc -l) -gt 1 ]; then
                 echo please refine the branch:
                 for branch in $branches; do
                     echo - $branch
@@ -32,7 +32,7 @@ case "${1}" in
             fi
         else
             branches="$(git branch --list | grep "${issue}-${brief}" | awk '{print $1}')"
-            if [ $(echo "${branches}" | wc -l) -gt 1 ]; then
+            if [ $(echo ${branches} | wc -l) -gt 1 ]; then
                 echo please refine the branch:
                 for branch in $branches; do
                     echo - $branch
@@ -42,7 +42,7 @@ case "${1}" in
                 git checkout "${branch}"
             else
                 branch="${issue}-${brief}"
-                git pull --rebase 2>/dev/null || true
+                git pull --all --prune --tags --force --rebase 2>/dev/null || true
                 git checkout -b "${branch}"
             fi
         fi
@@ -57,7 +57,7 @@ case "${1}" in
         brief="$(echo ${@:3} | sed 's/ /-/g' | awk '{print tolower($0)}')"
         if [ -z "${brief}" ]; then
             branches="$(git branch --list | grep "${issue}-" | awk '{print $1}')"
-            if [ $(echo "${branches}" | wc -l) -gt 1 ]; then
+            if [ $(echo ${branches} | wc -l) -gt 1 ]; then
                 echo please refine the branch:
                 for branch in $branches; do
                     echo - $branch
@@ -68,7 +68,7 @@ case "${1}" in
             fi
         else
             branches="$(git branch --list | grep "${issue}-${brief}" | awk '{print $1}')"
-            if [ $(echo "${branches}" | wc -l) -gt 1 ]; then
+            if [ $(echo ${branches} | wc -l) -gt 1 ]; then
                 echo please refine the branch:
                 for branch in $branches; do
                     echo - $branch
@@ -78,7 +78,7 @@ case "${1}" in
                 git checkout "${branch}"
             else
                 branch="${issue}-${brief}"
-                git pull --rebase 2>/dev/null || true
+                git pull --all --prune --tags --force --rebase 2>/dev/null || true
                 git checkout -b "${branch}"
             fi
         fi

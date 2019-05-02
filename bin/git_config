@@ -47,9 +47,9 @@ git config --global alias.staaash   'stash --all'
 
 # TODO refactor it
 git config --global alias.attach    "!branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); attach() { git branch --set-upstream-to=\$1/\$branch \$branch; }; attach"
-git config --global alias.up        '!git fetch --all -p && git pull && git submodule update --init --recursive'
-git config --global alias.down      '!git reset --hard && git clean -df && git submodule update --init --recursive'
-git config --global alias.sync      "!git fetch --all -p && git pull --rebase && for remote in \$(git remote | grep -v upstream); do git push \$remote \$(git current); done"
+git config --global alias.up        '!git pull --all --prune --tags --force --rebase && git submodule update --init --recursive' # g+
+git config --global alias.down      '!git reset --hard && git clean -df && git submodule deinit --all'                  # g-
+git config --global alias.sync      "!git pull --all --prune --tags --force --rebase && for remote in \$(git remote | grep -v upstream); do git push \$remote \$(git current) --tags; done"
 
 echo done
 exit 0
