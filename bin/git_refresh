@@ -24,7 +24,8 @@ fi
 
 base="${remote}/${default}"
 
-git pull --all --prune --tags --force --rebase "${base}"
+git fetch --all --prune --tags --force
+git rebase "${base}"
 
 echo done
 exit 0
