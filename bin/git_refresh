@@ -11,19 +11,18 @@ if [ "${current}" = "${default}" ]; then
     exit $?
 fi
 
-if $(git rev-parse --abbrev-ref --symbolic-full-name @{u} > /dev/null 2>&1 ); then
-    git pull --all --prune --tags --force --rebase && git submodule update --init --recursive # g+
-    exit $?
+remote="${1:-$(git current remote)}"
+if [ -z "${remote}" ]; then
+    (>&2 echo nothing to do because remote is undefined)
+    exit 1
 fi
 
-remote="$(git current remote)"
-if [ -z "${remote}" ]; then
-    (>&2 echo nothing to do)
+if ! git remote | grep "${remote}" > /dev/null; then
+    (>&2 echo nothing to do because remote is not found or invalid)
     exit 1
 fi
 
 base="${remote}/${default}"
-
 git fetch --all --prune --tags --force
 git rebase "${base}"
 
