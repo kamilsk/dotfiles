@@ -7,6 +7,8 @@ set -o pipefail
     cd "${HOME}"/.dotfiles
     git pull --all --prune --tags --force --rebase && git submodule update --init --recursive # g+
     echo dotfiles were updated
+    ./bin/git_config > /dev/null
+    echo git config was applied
 )
 
 if [ -n "${ZSH-}" ] && [ -f "${ZSH}"/tools/upgrade.sh ]; then
