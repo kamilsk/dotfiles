@@ -1,0 +1,69 @@
+#!/usr/bin/env python3
+from typing import Dict
+from sys import stdin
+
+groups = [
+    {
+        'title': 'Метаинформация',
+        'sections': [
+            [
+                'alias.user',
+                'alias.stats',
+                'alias.day',
+                'alias.week',
+                'alias.month',
+            ],
+            [
+                'alias.current',
+                'alias.default',
+                'alias.release',
+            ],
+            [
+                'alias.st',
+                'alias.branches',
+                'alias.commits',
+                'alias.last',
+                'alias.grog',
+            ],
+        ],
+    },
+    {
+        'title': 'Процессы',
+        'sections': [
+            [
+                'alias.flow',
+                'alias.it',
+            ],
+        ],
+    },
+]
+
+
+def dump(aliases: Dict[str, str]):
+    for group in groups:
+        printed = False
+        for section in group['sections']:
+            for item in section:
+                if item in aliases:
+                    if not printed:
+                        printed = True
+                        print('# {}\n'.format(group['title']))
+                    row = '{}\t\t{}'.format(item[len('alias.'):], aliases[item])
+                    print(row if len(row) < 104 else '{}...'.format(row[:104]))
+                    aliases.pop(item)
+            print()
+
+    if aliases:
+        print('# Другое\n')
+        for alias, value in aliases.items():
+            row = '{}\t\t{}'.format(alias[len('alias.'):], value)
+            print(row if len(row) < 104 else '{}...'.format(row[:104]))
+
+
+if __name__ == '__main__':
+    aliases = {}
+    for alias in list(stdin.read().split('\n')):
+        if alias:
+            name, value = alias.split(' ', 1)
+            aliases[name] = value
+    dump(aliases)
