@@ -1,4 +1,4 @@
-> # dotfiles
+> # 🗂 dotfiles
 >
 > My dotfiles to share through environments.
 
@@ -72,13 +72,7 @@ $ curl -sL https://git.io/fpN1B | bash
 
 ---
 
-[![@kamilsk][icon_tw_author]](https://twitter.com/ikamilsk)
-[![@octolab][icon_tw_sponsor]](https://twitter.com/octolab_inc)
+made with ❤️ for everyone
 
-made with ❤️ by [OctoLab](https://www.octolab.org/)
-
-[icon_license]:    https://img.shields.io/badge/license-MIT-blue.svg
-[icon_patreon]:    https://img.shields.io/badge/patreon-donate-orange.svg
-[icon_tw_author]:  https://img.shields.io/badge/author-%40kamilsk-blue.svg
-[icon_tw_sponsor]: https://img.shields.io/badge/sponsor-%40octolab-blue.svg
-[icon_twitter]:    https://img.shields.io/twitter/url/http/shields.io.svg?style=social
+[icon_license]: https://img.shields.io/badge/license-MIT-blue.svg
+[icon_patreon]: https://img.shields.io/badge/patreon-donate-orange.svg
