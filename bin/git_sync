@@ -8,10 +8,8 @@ for item in $(ls); do
         ( \
             echo current directory is: $item && cd $item; \
 
-            git pull --all --prune --tags --force --rebase && git submodule update --init --recursive; \ # g+
-
-            exists=$?; \
-            if [ $exists != 0 ]; then \
+            # g+
+            if git pull --all --prune --tags --force --rebase && git submodule update --init --recursive; then \
                 branch="$(git branch | cut -f2 -d' ' | awk 'NF > 0')"; \
                 git branch --set-upstream-to=origin/"${branch}" "${branch}"; \
             fi \
