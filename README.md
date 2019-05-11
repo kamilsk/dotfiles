@@ -1,6 +1,6 @@
 > # 🗂 dotfiles
 >
-> My dotfiles to share through environments.
+> My dotfiles for productive work.
 
 [![Patreon][icon_patreon]](https://www.patreon.com/octolab)
 [![License][icon_license]](LICENSE)
@@ -40,12 +40,6 @@ $ curl -sL https://git.io/fpN1B | bash
 
 - [ ] `curl -sL https://kamil.samigullin.info/install/dotfiles | bash`
 
-## Articles
-
-- [Command-line completion](https://docs.docker.com/compose/completion/)
-- [Flight rules for Git](https://github.com/k88hudson/git-flight-rules)
-- [Most commonly used git tips and tricks](https://github.com/git-tips/tips)
-
 ## Environment
 
 - [brew.sh](http://brew.sh/), [brew.sh at github](https://github.com/Homebrew/brew)
@@ -59,16 +53,6 @@ $ curl -sL https://git.io/fpN1B | bash
 - [vim](http://www.vim.org/), [vim at github](https://github.com/vim/vim)
   - [vim-go github](https://github.com/fatih/vim-go)
     - [vim-go tutorial at github](https://github.com/fatih/vim-go-tutorial)
-
-## Inspiration
-
-- [github.com/caarlos0/dotfiles](https://github.com/caarlos0/dotfiles)
-- [caarlos0's dotfiles list](https://github.com/getantibody/antibody#in-the-wild)
-- [github.com/mitchellh/dotfiles](https://github.com/mitchellh/dotfiles)
-
-## Useful
-
-- [explainshell.com - match command-line arguments to their help text](https://www.explainshell.com/)
 
 ---
 
