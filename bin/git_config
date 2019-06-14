@@ -36,7 +36,8 @@ git config --global alias.commend   'commit --amend --no-edit'
 git config --global alias.undo      '!undo() { git reset --soft HEAD^${1-1}; }; undo'
 
 git config --global alias.refresh   '!git_refresh'
-git config --global alias.shake     "!git_shake"
+git config --global alias.shake     '!git_shake'
+git config --global alias.untag     '!git_untag'
 
 git config --global alias.force     '!git_force'
 git config --global alias.please    '!git_please'
