@@ -61,24 +61,24 @@ if command -v docker > /dev/null; then
     function containers {
         case "${1-}" in
             "all")
-                docker ps --all | tail +2
+                docker ps --all | tail -n +2
             ;;
             *)
-                docker ps | tail +2
+                docker ps | tail -n +2
             ;;
         esac
     }
     function images {
         case "${1-}" in
             "all")
-                docker images --all | tail +2
+                docker images --all | tail -n +2
             ;;
             "clean")
                 docker rmi $(docker images -q -f dangling=true) 2>/dev/null
                 docker system prune -f
             ;;
             "pull")
-                $0 | awk '{print $1":"$2}' | xargs -n1 docker pull
+                images | awk '{print $1":"$2}' | xargs -n1 docker pull
             ;;
             *)
                 docker images | grep -v '<none>' | tail -n +2
@@ -91,16 +91,16 @@ if command -v docker > /dev/null; then
     function volumes {
         case "${1-}" in
             "all")
-                docker volume ls | tail +2
+                docker volume ls | tail -n +2
             ;;
             "clean")
-                $0 all \
+                volumes all \
                 | awk '{print $2}' \
                 | egrep '[[:alnum:]]{64}' \
                 | xargs docker volume rm
             ;;
             *)
-                $0 all | egrep -v '[[:alnum:]]{64}'
+                volumes all | egrep -v '[[:alnum:]]{64}' || true
             ;;
         esac
     }
@@ -126,7 +126,7 @@ fi
 if command -v pip > /dev/null; then
     alias pip+="pip list | cut -f1 -d' ' | xargs -n1 sudo pip install --upgrade"
 elif command -v pip3 > /dev/null; then
-    alias pip+="pip3 list | cut -f1 -d' ' | tail +3 | xargs -n1 pip3 install --upgrade"
+    alias pip+="pip3 list | cut -f1 -d' ' | tail -n +3 | xargs -n1 pip3 install --upgrade"
 fi
 
 # Python
