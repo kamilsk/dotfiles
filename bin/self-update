@@ -3,27 +3,85 @@
 set -o nounset
 set -o pipefail
 
-(
+function update_brew() {
+    echo brew...
+}
+
+function update_docker() {
+    echo docker...
+}
+
+function update_dotfiles() {
     cd "${HOME}"/.dotfiles
     git pull --all --prune --tags --force --rebase && git submodule update --init --recursive # g+
     echo dotfiles were updated
     ./bin/git_config > /dev/null
     echo git config was applied
-)
+}
 
-if [ -n "${ZSH-}" ] && [ -f "${ZSH}"/tools/upgrade.sh ]; then
-    env ZSH="${ZSH}" sh "${ZSH}"/tools/upgrade.sh
-    echo Oh My Zsh was updated
+UPDATE=()
+
+if [ $# -eq 0 ]; then
+    UPDATE+=(update_dotfiles)
+else
+    for type in "$@"; do
+        echo $type
+        case "${type}" in
+            "+brew")
+                UPDATE+=(update_brew)
+                echo $type - brew?
+                echo $UPDATE
+            ;;
+            "+docker")
+                UPDATE+=(update_docker)
+                echo $type - docker?
+                echo $UPDATE
+            ;;
+            "+dots")
+                UPDATE+=(update_dotfiles)
+                echo $type - dots?
+                echo $UPDATE
+            ;;
+            *)
+                echo unknown type $type
+            ;;
+        esac
+    done
 fi
 
-if command -v brew > /dev/null; then
-    brew_update
-    echo Homebrew was updated
-fi
+echo $UPDATE
 
-if command -v docker > /dev/null; then
-    docker images --all | tail -n +2 | awk '{print $1":"$2}' | xargs -n1 docker pull
-    echo Docker images were updated
-fi
+for update in "${UPDATE}"; do
+    eval $update
+done
 
-exec $SHELL
+# if [ -n "${ZSH-}" ] && [ -f "${ZSH}"/tools/upgrade.sh ]; then
+#     env ZSH="${ZSH}" sh "${ZSH}"/tools/upgrade.sh
+#     echo Oh My Zsh was updated
+# fi
+
+# if command -v brew > /dev/null; then
+#     brew_update
+#     echo Homebrew was updated
+# fi
+
+# if command -v docker > /dev/null; then
+#     docker images --all | tail -n +2 | awk '{print $1":"$2}' | xargs -n1 docker pull
+#     echo Docker images were updated
+# fi
+
+case $(basename $SHELL) in
+    "bash")
+        echo source "${HOME}"/.bash_profile
+    ;;
+    "zsh")
+        echo source "${HOME}"/.zshrc
+    ;;
+    *)
+        echo unknown shell $SHELL
+        exit 1
+    ;;
+esac
+
+echo done
+exit 0
