@@ -29,7 +29,7 @@ git config --global alias.grog      'log --graph --abbrev-commit --decorate --al
 
 # процессы
 git config --global alias.flow      '!git_flow'
-git config --global alias.it        '!git init && git cmm root --allow-empty'
+git config --global alias.it        '!git init && git commit --allow-empty --edit -m root'
 
 git config --global alias.cmm       '!commit() { git commit -m "$*"; }; commit'
 git config --global alias.commend   'commit --amend --no-edit'
