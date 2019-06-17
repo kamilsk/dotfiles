@@ -3,13 +3,7 @@
 set -o nounset
 set -o pipefail
 
-current="$(git current)"
 default="$(git default)"
-
-if [ "${current}" = "${default}" ]; then
-    git pull --all --prune --tags --force --rebase && git submodule update --init --recursive # g+
-    exit $?
-fi
 
 remote="${1:-$(git current remote)}"
 if [ -z "${remote}" ]; then
