@@ -20,7 +20,7 @@ case "${1}" in
         issue="issue-${id}"
         brief="$(echo ${@:3} | sed 's/ /-/g' | awk '{print tolower($0)}')"
         if [ -z "${brief}" ]; then
-            branches="$(git branch --list | grep "${issue}-" | awk '{print $1}')"
+            branches="$(git branch --list | grep -e "${issue}-" -e "${issue}\$" | awk '{print $1}')"
             if [ -z "${branches}" ]; then
                 branch="${issue}"
                 git pull --all --prune --tags --force --rebase 2>/dev/null || true
