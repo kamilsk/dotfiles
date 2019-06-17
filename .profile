@@ -81,7 +81,7 @@ if command -v docker > /dev/null; then
                 $0 | awk '{print $1":"$2}' | xargs -n1 docker pull
             ;;
             *)
-                docker images | grep -v '<none>' | tail +2
+                docker images | grep -v '<none>' | tail -n +2
             ;;
         esac
     }
