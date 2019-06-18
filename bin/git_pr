@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+url=$(git push -u 2>&1 | grep 'remote:.*http' | awk '{print $2}')
+
+if [ -n "${url}" ]; then
+    read -p "Do you need to open the pull request at ${url}: " decision </dev/tty
+    case "$(echo "${decision}" | awk '{print tolower($0)}')" in
+        y|yes|yep)
+            open "${url}"
+        ;;
+        n|no|nope)
+            echo 👌
+        ;;
+        *)
+            echo I am not sure that understand you... '¯\_(ツ)_/¯'
+        ;;
+    esac
+fi
+
+exit 0

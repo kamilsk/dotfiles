@@ -41,16 +41,16 @@ elif [ "${1:-}" = "all" ]; then
 else
     for type in "$@"; do
         case "${type}" in
-            "+brew")
+            +brew)
                 UPDATE+=(update_brew)
             ;;
-            "+docker")
+            +docker)
                 UPDATE+=(update_docker)
             ;;
-            "+dots")
+            +dots)
                 UPDATE+=(update_dotfiles)
             ;;
-            "+zsh")
+            +zsh)
                 UPDATE+=(update_zsh)
             ;;
             *)
@@ -65,10 +65,10 @@ for update in "${UPDATE[@]}"; do
 done
 
 case $(basename $SHELL) in
-    "bash")
+    bash)
         echo source "${HOME}"/.bash_profile
     ;;
-    "zsh")
+    zsh)
         echo source "${HOME}"/.zshrc
     ;;
     *)
