@@ -2,9 +2,6 @@
 >
 > My dotfiles for productive work.
 
-[![Patreon][icon_patreon]](https://www.patreon.com/octolab)
-[![License][icon_license]](LICENSE)
-
 ## Quick start
 
 ```bash
@@ -57,6 +54,3 @@ $ curl -sL https://git.io/fpN1B | bash
 ---
 
 made with ❤️ for everyone
-
-[icon_license]: https://img.shields.io/badge/license-MIT-blue.svg
-[icon_patreon]: https://img.shields.io/badge/patreon-donate-orange.svg
