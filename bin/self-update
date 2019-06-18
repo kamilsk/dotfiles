@@ -37,7 +37,7 @@ UPDATE=()
 if [ $# -eq 0 ]; then
     UPDATE+=(update_dotfiles)
 elif [ "${1:-}" = "all" ]; then
-    UPDATE=(update_brew update_docker update_dotfiles update_zsh)
+    UPDATE=(update_dotfiles update_brew update_docker update_zsh)
 else
     for type in "$@"; do
         case "${type}" in
