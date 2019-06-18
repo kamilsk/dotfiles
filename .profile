@@ -41,9 +41,9 @@ function touch_sudo {
 
 # Fun
 
-alias shrug="echo ¯\_(ツ)_/¯";
-alias fight="echo (ง'̀-'́)ง";
-alias tflip="echo （╯°□°）╯︵┻━┻";
+alias shrug='echo "¯\_(ツ)_/¯" $@';
+alias fight='echo "(ง'̀-'́)ง" $@';
+alias tflip='echo "（╯°□°）╯︵┻━┻" $@';
 
 # Git
 
@@ -60,7 +60,7 @@ if command -v docker > /dev/null; then
     }
     function containers {
         case "${1-}" in
-            "all")
+            all)
                 docker ps --all | tail -n +2
             ;;
             *)
@@ -70,14 +70,14 @@ if command -v docker > /dev/null; then
     }
     function images {
         case "${1-}" in
-            "all")
+            all)
                 docker images --all | tail -n +2
             ;;
-            "clean")
+            clean)
                 docker rmi $(docker images -q -f dangling=true) 2>/dev/null
                 docker system prune -f
             ;;
-            "pull")
+            pull)
                 images | awk '{print $1":"$2}' | xargs -n1 docker pull
             ;;
             *)
@@ -90,10 +90,10 @@ if command -v docker > /dev/null; then
     }
     function volumes {
         case "${1-}" in
-            "all")
+            all)
                 docker volume ls | tail -n +2
             ;;
-            "clean")
+            clean)
                 volumes all \
                 | awk '{print $2}' \
                 | egrep '[[:alnum:]]{64}' \

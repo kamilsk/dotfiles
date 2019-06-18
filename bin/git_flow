@@ -13,6 +13,7 @@ case "${1}" in
         git config alias.stop     '!git_stop'
         git config alias.progress "!commit() { git commit -m \"\$(git current | awk -F- '{print \$1\" #\"\$2}') \$*\"; }; commit"
         git config alias.issue    "!echo ${entrypoint}/issues/\$(git current | awk -F- '{print \$2}')"
+        git config alias.pr       '!git_pr'
         git config alias.done     '!git refresh && git please && git checkout $(git default)'
     ;;
     jira)
@@ -21,6 +22,7 @@ case "${1}" in
         git config alias.stop     '!git_stop'
         git config alias.progress "!commit() { git commit -m  \"\$(git current | awk -F- '{print \$1\"-\"\$2}') \$*\"; }; commit"
         git config alias.issue    "!echo ${entrypoint}/browse/\$(git current | awk -F- '{print \$1\"-\"\$2}')"
+        git config alias.pr       '!git_pr'
         git config alias.done     '!git refresh && git please && git checkout $(git default)'
     ;;
     reset)
