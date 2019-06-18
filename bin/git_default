@@ -8,6 +8,9 @@ if [ -z "${remote}" ]; then
     (>&2 echo cannot define default remote branch, '`master`' will be used)
     default=master
 else
+    if ! git symbolic-ref refs/remotes/"${remote}"/HEAD > /dev/null; then
+        git remote set-head "${remote}" --auto
+    fi
     default="$(git symbolic-ref refs/remotes/"${remote}"/HEAD | sed "s@^refs/remotes/${remote}/@@")"
     if [ -z "${default}" ]; then
         (>&2 echo no default branch found, see "`git symbolic-ref refs/remotes/${remote}/HEAD`")
