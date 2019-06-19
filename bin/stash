@@ -10,6 +10,7 @@ fi
 
 if [ "${1:-}" = 'repeat' ]; then
     "${HOME}"/.stash
+    exit 0
 elif [ "${1:-}" = 'flush' ]; then
     "${HOME}"/.stash
     cat > "${HOME}"/.stash << EOL
@@ -24,5 +25,6 @@ fi
 
 cmd="$@"
 
-echo $cmd >> "${HOME}"/.stash
-eval $cmd
+if eval $cmd; then
+    echo $cmd >> "${HOME}"/.stash
+fi
