@@ -19,9 +19,9 @@ case "${1:-}" in
         "${HOME}"/.stash
         cat > "${HOME}"/.stash << EOL
 #!/usr/bin/env bash
-set -o xtrace
 set -o nounset
 set -o pipefail
+set -o xtrace
 
 EOL
     ;;
