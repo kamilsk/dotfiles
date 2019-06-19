@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+if [ ! -f "${HOME}"/.stash ]; then
+    touch "${HOME}"/.stash
+    chmod +x "${HOME}"/.stash
+fi
+
+if [ "${1:-}" = 'repeat' ]; then
+    "${HOME}"/.stash
+elif [ "${1:-}" = 'flush' ]; then
+    "${HOME}"/.stash
+    cat > "${HOME}"/.stash << EOL
+#!/usr/bin/env bash
+set -o xtrace
+set -o nounset
+set -o pipefail
+
+EOL
+    exit 0
+fi
+
+cmd="$@"
+
+echo $cmd >> "${HOME}"/.stash
+eval $cmd
