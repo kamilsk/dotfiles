@@ -8,23 +8,35 @@ if [ ! -f "${HOME}"/.stash ]; then
     chmod +x "${HOME}"/.stash
 fi
 
-if [ "${1:-}" = 'repeat' ]; then
-    "${HOME}"/.stash
-    exit 0
-elif [ "${1:-}" = 'flush' ]; then
-    "${HOME}"/.stash
-    cat > "${HOME}"/.stash << EOL
+case "${1:-}" in
+    drop)
+        > "${HOME}"/.stash
+    ;;
+    dry)
+        cat "${HOME}"/.stash
+    ;;
+    flush)
+        "${HOME}"/.stash
+        cat > "${HOME}"/.stash << EOL
 #!/usr/bin/env bash
 set -o xtrace
 set -o nounset
 set -o pipefail
 
 EOL
-    exit 0
-fi
+    ;;
+    repeat)
+        "${HOME}"/.stash
+    ;;
+    *)
+        cmd="$@"
+        eval $cmd
+        code=$?
+        if [ $code -eq 0 ]; then
+            echo $cmd >> "${HOME}"/.stash
+        fi
+        exit $code
+    ;;
+esac
 
-cmd="$@"
-
-if eval $cmd; then
-    echo $cmd >> "${HOME}"/.stash
-fi
+exit 0
