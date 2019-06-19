@@ -3,19 +3,28 @@
 set -o nounset
 set -o pipefail
 
-url=$(git push -u 2>&1 | grep 'remote:.*http' | awk '{print $2}')
+url=$(grep 'remote:.*http' | awk '{print $2}')
+
+decision=''
+case "${1:-}" in
+    -y)
+        decision='y'
+    ;;
+    -n)
+        decision='n'
+    ;;
+esac
 
 if [ -n "${url}" ]; then
-    read -p "Do you need to open the pull request at ${url}: " decision </dev/tty
+    if [ -z "${decision}" ]; then
+        read -p "Do you need to open the pull request at ${url}: " decision </dev/tty
+    fi
     case "$(echo "${decision}" | awk '{print tolower($0)}')" in
         y|yes|yep)
             open "${url}"
         ;;
         n|no|nope)
             echo 👌
-        ;;
-        *)
-            echo I am not sure that understand you... '¯\_(ツ)_/¯'
         ;;
     esac
 fi
