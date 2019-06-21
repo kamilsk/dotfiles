@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+cmd="$@"
+encoded=$(python -c "import urllib; print urllib.quote('''${cmd}''')")
+explain="https://www.explainshell.com/explain?cmd=${encoded}"
+
+case "${1:-}" in
+    -o)
+        echo $explain
+    ;;
+    *)
+        open $explain
+    ;;
+esac
+
+exit 0
