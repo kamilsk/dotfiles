@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Required features:
+# - [ ] multiple stashes: stash -id xyz echo scripting; stash -id xyz apply|pop
+# - [ ] renaming: flush -> pop; repeat -> apply; dry -> show
+# - [ ] new command: list, clear
+# - [ ] pipe building: stash cat file | stash -pipe grep text | stash -pipe wc -l
+#   - check stdin to automate the process?
+
 set -o nounset
 set -o pipefail
 
