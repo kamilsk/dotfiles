@@ -12,6 +12,8 @@ export FORMA_TOKEN=$HUGS_TOKEN
 export GUARD_TOKEN=$HUGS_TOKEN
 export PASSPORT_TOKEN=$HUGS_TOKEN
 
+export TMOUT=300
+
 # Common
 
 alias ..="cd ../"
