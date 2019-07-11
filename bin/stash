@@ -19,13 +19,6 @@ fi
 
 case "${1:-}" in
     drop)
-        > "${HOME}"/.stash
-    ;;
-    dry)
-        cat "${HOME}"/.stash
-    ;;
-    flush)
-        "${HOME}"/.stash
         cat > "${HOME}"/.stash << EOL
 #!/usr/bin/env bash
 set -o nounset
@@ -33,6 +26,13 @@ set -o pipefail
 set -o xtrace
 
 EOL
+    ;;
+    dry)
+        cat "${HOME}"/.stash
+    ;;
+    flush)
+        "${HOME}"/.stash
+        $0 drop
     ;;
     repeat)
         "${HOME}"/.stash
