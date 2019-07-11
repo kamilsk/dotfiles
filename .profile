@@ -7,10 +7,10 @@ export PATH="${HOME}/.dotfiles/bin:${GOPATH}/bin:${PATH}"
 
 export GITHUB_TOKEN=
 export HUGS_TOKEN=10000000-2000-4000-8000-160000000003
-export CLICK_TOKEN=$HUGS_TOKEN
-export FORMA_TOKEN=$HUGS_TOKEN
-export GUARD_TOKEN=$HUGS_TOKEN
-export PASSPORT_TOKEN=$HUGS_TOKEN
+export CLICK_TOKEN=${HUGS_TOKEN}
+export FORMA_TOKEN=${HUGS_TOKEN}
+export GUARD_TOKEN=${HUGS_TOKEN}
+export PASSPORT_TOKEN=${HUGS_TOKEN}
 
 # export TMOUT=300
 
@@ -26,8 +26,8 @@ alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 
 function lookup {
     target=$(which ${1:-})
-    if [ ! -f "${target}" ]; then
-        echo $target
+    if [[ ! -f "${target}" ]]; then
+        echo ${target}
         return
     fi
     if file "${target}" | grep 'shell script'; then
@@ -37,7 +37,7 @@ function lookup {
     if file "${target}" | grep 'text'; then
         less "${target}"
         return
-    return
+    fi
     file "${target}"
 }
 
@@ -61,7 +61,6 @@ function touch_sudo {
 # Fun
 
 alias shrug='echo "¯\_(ツ)_/¯"';
-alias fight='echo "(ง'̀-'́)ง"';
 alias tflip='echo "（╯°□°）╯︵┻━┻"';
 
 # Git
@@ -123,7 +122,6 @@ if command -v docker > /dev/null; then
             ;;
         esac
     }
-    alias （╯°□°）╯︵┻━┻docker="images clean && volumes clean" # TODO:implement eval "$(tflip)docker"
 fi
 
 # Package management
@@ -155,12 +153,12 @@ alias v-="deactivate"
 
 # Sublime
 
-if ! command -v subl > /dev/null && [ -x "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ]; then
+if ! command -v subl > /dev/null && [[ -x "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ]]; then
     alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 fi
 
 # Visual Studio Code
 
-if ! command -v code > /dev/null && [ -x "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" ]; then
+if ! command -v code > /dev/null && [[ -x "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" ]]; then
     alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 fi
