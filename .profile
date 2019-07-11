@@ -24,6 +24,23 @@ alias cwd="pwd | tr -d '\n' | pbcopy"
 alias dots="ls \.*"
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 
+function lookup {
+    target=$(which ${1:-})
+    if [ ! -f "${target}" ]; then
+        echo $target
+        return
+    fi
+    if file "${target}" | grep 'shell script'; then
+        cat "${target}"
+        return
+    fi
+    if file "${target}" | grep 'text'; then
+        less "${target}"
+        return
+    return
+    file "${target}"
+}
+
 # macOS
 
 function fix_xcrun {
@@ -43,9 +60,9 @@ function touch_sudo {
 
 # Fun
 
-alias shrug='echo "¯\_(ツ)_/¯" $@';
-alias fight='echo "(ง'̀-'́)ง" $@';
-alias tflip='echo "（╯°□°）╯︵┻━┻" $@';
+alias shrug='echo "¯\_(ツ)_/¯"';
+alias fight='echo "(ง'̀-'́)ง"';
+alias tflip='echo "（╯°□°）╯︵┻━┻"';
 
 # Git
 
