@@ -54,7 +54,7 @@ else
                 UPDATE+=(update_zsh)
             ;;
             *)
-                echo unknown type $type
+                UPDATE+=("echo unknown type: ${type}")
             ;;
         esac
     done
