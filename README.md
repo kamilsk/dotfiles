@@ -2,7 +2,7 @@
 >
 > My dotfiles for productive work.
 
-## Quick start
+## 🏃‍♂️ Quick start
 
 ```bash
 $ git clone git@github.com:kamilsk/dotfiles.git ~/.dotfiles
@@ -29,15 +29,13 @@ source "${HOME}"/.dotfiles/.profile
 source "${HOME}"/.dotfiles/.zshrc
 ```
 
-### Installation (work in progress)
+## 🧩 Installation
 
 ```bash
 $ curl -sL https://git.io/fpN1B | bash
 ```
 
-- [ ] `curl -sL https://kamil.samigullin.info/install/dotfiles | bash`
-
-## Environment
+### Environment
 
 - [brew.sh](http://brew.sh/), [brew.sh at github](https://github.com/Homebrew/brew)
 
@@ -45,11 +43,11 @@ $ curl -sL https://git.io/fpN1B | bash
   - [ohmyz.sh](http://ohmyz.sh/), [ohmyz.sh at github](https://github.com/robbyrussell/oh-my-zsh)
   - [spaceship](https://denysdovhan.com/spaceship-prompt/), [spaceship at github](https://github.com/denysdovhan/spaceship-prompt)
   - [powerline at github](https://github.com/powerline/powerline)
-    - [powerline fonts at github](https://github.com/powerline/fonts)
+  - [powerline fonts at github](https://github.com/powerline/fonts)
 
 - [vim](http://www.vim.org/), [vim at github](https://github.com/vim/vim)
   - [vim-go github](https://github.com/fatih/vim-go)
-    - [vim-go tutorial at github](https://github.com/fatih/vim-go-tutorial)
+  - [vim-go tutorial at github](https://github.com/fatih/vim-go-tutorial)
 
 ---
 
