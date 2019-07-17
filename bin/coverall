@@ -17,7 +17,13 @@ for pkg in $pkgs; do
     fi
 done
 
-echo "${buff}" | sed 's/ of statements//' | sed 's/coverage://' | sed 's/\[no test files\]/0.0%/' | sed -E 's/[0-9.]+s//' | column -t | sort -r
+echo "${buff}" \
+   | sed 's/ of statements//' \
+   | sed 's/ \[no tests to run\]//' \
+   | sed 's/coverage://' \
+   | sed 's/\[no test files\]/0.0%/' \
+   | sed -E 's/[0-9.]+s//' \
+   | column -t | sort -r
 go tool cover -func c.out | grep 'total:' | awk '{print $1 " " $3}'
 
 exit 0
