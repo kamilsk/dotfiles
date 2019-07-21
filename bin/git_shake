@@ -10,7 +10,8 @@ default="$(git default)"
 if [ "${current}" != "${default}" ]; then
     git checkout "${default}"
 fi
-git refresh
+
+git fetch --all --prune --tags --force
 
 for branch in $(git branch --merged | grep -v "${default}"); do
     if [ -n "${branch}" ]; then
