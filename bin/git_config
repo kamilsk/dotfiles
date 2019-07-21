@@ -3,12 +3,6 @@
 set -o nounset
 set -o pipefail
 
-# Deprecated: legacy
-git config --unset --global alias.m
-git config --unset --global alias.mm
-git config --unset --global alias.mmm
-echo run '`git config --unset alias.flow`' in legacy projects
-
 git config --global alias.aliases   '!git config --get-regexp alias | git_aliases'
 
 # метаинформация
