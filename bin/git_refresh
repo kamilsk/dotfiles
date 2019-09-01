@@ -3,8 +3,6 @@
 set -o nounset
 set -o pipefail
 
-default="$(git default)"
-
 remote="${1:-$(git current remote)}"
 if [ -z "${remote}" ]; then
     (>&2 echo nothing to do because remote is undefined)
@@ -16,9 +14,9 @@ if ! git remote | grep "${remote}" > /dev/null; then
     exit 1
 fi
 
-base="${remote}/${default}"
+branch="${remote}/${2:-$(git default)}"
 git fetch --all --prune --tags --force
-git rebase "${base}"
+git rebase "${branch}"
 
 echo done
 exit 0
