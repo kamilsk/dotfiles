@@ -7,6 +7,7 @@ git config --global alias.aliases   '!git config --get-regexp alias | git_aliase
 
 # метаинформация
 git config --global alias.user      'config user.email'
+git config --global alias.url       '!git_url'
 git config --global alias.current   '!git_current'
 git config --global alias.default   '!git_default'
 git config --global alias.release   '!git describe --tags | cut -d - -f 1'
@@ -21,11 +22,10 @@ git config --global alias.commits   'log --oneline --graph'
 git config --global alias.last      '!last() { git log --pretty=oneline | head -${1-1}; }; last'
 git config --global alias.grog      'log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)"'
 
-git config --global alias.url       '!git_url'
-
 # процессы
 git config --global alias.flow      '!git_flow'
 git config --global alias.it        '!git init && git commit --allow-empty --edit -m root'
+git config --global alias.mirror    '!git_mirror'
 
 git config --global alias.cmm       '!commit() { git commit -m "$*"; }; commit'
 git config --global alias.commend   'commit --amend --no-edit'
