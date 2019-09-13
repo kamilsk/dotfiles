@@ -5,4 +5,4 @@ set -o pipefail
 
 root=$(dirname $(dirname $0))
 
-brew list | sort | awk '{print "https://formulae.brew.sh/formula/"$1}' | bat
+brew list | sort | awk '{print $1" https://formulae.brew.sh/formula/"$1}' | column -t | bat

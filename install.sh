@@ -39,28 +39,6 @@ if ! command -v brew > /dev/null; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-echo Applying useful Homebrew formulas...
-declare -a pkgs=(
-    ansible
-    bat
-    dep
-    dive
-    fzf
-    git
-    go
-    httpie
-    jq
-    kubernetes-cli
-    kubernetes-helm
-    node
-    php
-    protobuf
-    python
-    zsh
-    zsh-completions
-)
-
+echo Installing useful Homebrew bundle...
 brew update
-for pkg in ${pkgs[@]}; do
-    brew list $pkg &>/dev/null || brew install $pkg
-done
+brew bundle --file=$(dirname $0)/env/Brewfile --no-upgrade
