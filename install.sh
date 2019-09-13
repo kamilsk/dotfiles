@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# TODO
+#  - install oh my zsh
+#  - install code alias (vscode)
+
 set -o nounset
 set -o pipefail
 
@@ -19,6 +23,7 @@ if ! command -v curl > /dev/null; then
 fi
 
 if [ ! -d "${HOME}"/.dotfiles ]; then
+    echo Installing dotfiles...
     mkdir -p "${HOME}"/.dotfiles
     git clone git@github.com:kamilsk/dotfiles.git "${HOME}"/.dotfiles
 
@@ -35,23 +40,27 @@ if ! command -v brew > /dev/null; then
 fi
 
 echo Installing useful Homebrew packages...
-brew install -f \
-    ansible \
-    bat \
-    dep \
-    dive \
-    fzf \
-    git \
-    go \
-    httpie \
-    jq \
-    kubernetes-cli \
-    kubernetes-helm \
-    node \
-    php \
-    python \
-    zsh \
-    zsh-completion
+declare -a pkgs=(
+    ansible
+    bat
+    dep
+    dive
+    fzf
+    git
+    go
+    httpie
+    jq
+    kubernetes-cli
+    kubernetes-helm
+    node
+    php
+    protobuf
+    python
+    zsh
+    zsh-completions
+)
 
-echo 'TODO install oh my zsh'
-echo 'TODO install code alias (vscode)'
+brew update
+for pkg in ${pkgs[@]}; do
+    brew list $pkg &>/dev/null || brew install $pkg
+done
