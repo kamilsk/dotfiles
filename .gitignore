@@ -1,5 +1,3 @@
-# git config --global core.excludesfile ~/.dotfiles/.gitignore
-
 .DS_Store
 .idea
 .vagrant

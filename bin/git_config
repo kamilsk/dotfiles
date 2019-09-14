@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
+# TODO
+#  - git config --global commit.template
+
 set -o nounset
 set -o pipefail
+
+git config --global core.excludesfile $(dirname $(dirname $0))/.gitignore
 
 git config --global alias.aliases   '!git config --get-regexp alias | git_aliases'
 
@@ -47,6 +52,3 @@ git config --global alias.attach    "!branch=\$(git branch | cut -f2 -d' ' | awk
 git config --global alias.up        '!git pull --all --prune --tags --force --rebase && git submodule update --init --recursive'
 git config --global alias.down      '!git reset --hard && git clean -df && git submodule deinit --all'
 git config --global alias.sync      "!git pull --all --prune --tags --force --rebase && for remote in \$(git remote | grep -v upstream); do git push \$remote \$(git current) --tags; done"
-
-echo done
-exit 0
