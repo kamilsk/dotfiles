@@ -34,10 +34,7 @@ case "${1}" in
         git config --unset alias.ready
     ;;
     *)
-        (>&2 echo nothing to do)
+        (>&2 echo use github, jira or reset as an argument)
         exit 1
     ;;
 esac
-
-echo done
-exit 0

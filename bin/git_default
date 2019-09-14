@@ -19,4 +19,3 @@ else
 fi
 
 echo $default
-exit 0

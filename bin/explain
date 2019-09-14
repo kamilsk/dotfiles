@@ -15,5 +15,3 @@ case "${1:-}" in
         open $explain
     ;;
 esac
-
-exit 0

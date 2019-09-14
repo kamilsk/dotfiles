@@ -22,10 +22,7 @@ case "${1-all}" in
         git push -f "${remote}"
     ;;
     *)
-        (>&2 echo nothing to do)
+        (>&2 echo use all or current as an argument)
         exit 1
     ;;
 esac
-
-echo done
-exit 0

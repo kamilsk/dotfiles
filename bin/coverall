@@ -5,6 +5,8 @@ set -o pipefail
 
 function cover_go() {
    tmp=$(mktemp -t c.out)
+   trap "{ unlink '${tmp}'; }" EXIT
+
    echo 'mode: count' > "${tmp}"
 
    pkgs=$(go list ./... | grep -v vendor | grep -v examples)
@@ -27,7 +29,6 @@ function cover_go() {
       | sed -E 's/[0-9.]+s//' \
       | column -t | sort -r
    go tool cover -func "${tmp}" | grep 'total:' | awk '{print $1 " " $3}'
-   unlink "${tmp}"
 }
 
 function cover_php() {

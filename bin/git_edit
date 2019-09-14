@@ -14,10 +14,7 @@ if ! command -v "${editor}" > /dev/null; then
     exit 1
 fi
 
-"${editor}" ~/.gitconfig --wait
+"${editor}" "${HOME}"/.gitconfig --wait
 if [ -f .git/config ]; then
     "${editor}" .git/config --wait
 fi
-
-echo done
-exit 0

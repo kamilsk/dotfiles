@@ -9,7 +9,6 @@ if [ "${mirror}" != "" ]; then
         git remote add mirror "${mirror}"
     fi
     git remote set-url mirror "${mirror}"
-    echo done
     exit 0
 fi
 
@@ -19,7 +18,6 @@ if [ "${mirror}" != "" ]; then
         git remote add mirror "${mirror}"
     fi
     git remote set-url mirror "${mirror}"
-    echo done
     exit 0
 fi
 

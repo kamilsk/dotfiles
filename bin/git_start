@@ -92,10 +92,7 @@ case "${1}" in
         fi
     ;;
     *)
-        (>&2 echo nothing to do)
+        (>&2 echo use github or jira as an argument)
         exit 1
     ;;
 esac
-
-echo done
-exit 0

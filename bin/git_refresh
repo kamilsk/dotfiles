@@ -17,6 +17,3 @@ fi
 branch="${remote}/${2:-$(git default)}"
 git fetch --all --prune --tags --force
 git rebase "${branch}"
-
-echo done
-exit 0

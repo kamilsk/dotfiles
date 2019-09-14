@@ -12,10 +12,7 @@ case "${1:-}" in
       git config --unset alias.pub
    ;;
    *)
-      echo no rules
+      (>&2 echo use git as an argument)
       exit 1
    ;;
 esac
-
-echo done
-exit 0

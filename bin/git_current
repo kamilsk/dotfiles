@@ -6,7 +6,6 @@ set -o pipefail
 case "${1-branch}" in
     branch)
         git symbolic-ref --short HEAD
-        exit 0
     ;;
     remote)
         upstream="$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null)"
@@ -22,10 +21,9 @@ case "${1-branch}" in
             exit 1
         fi
         echo $remote
-        exit 0
     ;;
     *)
-        (>&2 echo nothing to do)
+        (>&2 echo use branch or remote as an argument)
         exit 1
     ;;
 esac

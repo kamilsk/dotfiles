@@ -76,6 +76,3 @@ case $(basename $SHELL) in
         exit 1
     ;;
 esac
-
-echo done
-exit 0

@@ -16,6 +16,3 @@ git tag -d "${tag}" || true
 for remote in $(git remote | grep -v upstream); do
     git push "${remote}" :refs/tags/"${tag}"
 done
-
-echo done
-exit 0
