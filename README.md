@@ -5,34 +5,14 @@
 ## 🏃‍♂️ Quick start
 
 ```bash
-$ git clone git@github.com:kamilsk/dotfiles.git ~/.dotfiles
-$ git config --global core.excludesfile ~/.dotfiles/.gitignore
-# configure your Bash/Zsh
+$ curl -sL https://git.io/JeY2y | bash
+```
+
+## 🧩 Integration
+
+```bash
+$ git_config
 $ self-update
-```
-
-### Bash
-
-```bash
-# ~/.bash_profile
-
-source "${HOME}"/.dotfiles/.profile
-source "${HOME}"/.dotfiles/.bash_profile
-```
-
-### Zsh
-
-```bash
-# ~/.zshrc
-
-source "${HOME}"/.dotfiles/.profile
-source "${HOME}"/.dotfiles/.zshrc
-```
-
-## 🧩 Installation
-
-```bash
-$ curl -sL https://git.io/fpN1B | bash
 ```
 
 ### Environment
