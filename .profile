@@ -24,6 +24,8 @@ alias cwd="pwd | tr -d '\n' | pbcopy"
 alias dots="ls \.*"
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 
+alias timestamp="date +%s"
+
 function lookup {
     target=$(which ${1:-})
     if [[ ! -f "${target}" ]]; then
