@@ -7,6 +7,8 @@
 set -o nounset
 set -o pipefail
 
+root="${HOME}"/.dotfiles
+
 if ! command -v git > /dev/null; then
     echo Git not found
     exit 1
@@ -22,21 +24,21 @@ if ! command -v curl > /dev/null; then
     exit 1
 fi
 
-if [ ! -d "${HOME}"/.dotfiles ]; then
+if [ ! -d "${root}" ]; then
     echo Installing dotfiles...
-    mkdir -p "${HOME}"/.dotfiles
-    git clone git@github.com:kamilsk/dotfiles.git "${HOME}"/.dotfiles
+    mkdir -p "${root}"
+    git clone git@github.com:kamilsk/dotfiles.git "${root}"
 
     if command -v bash > /dev/null; then
         echo Integrating with Bash...
-        echo 'source "${HOME}"/.dotfiles/.profile'      >> "${HOME}"/.bash_profile
-        echo 'source "${HOME}"/.dotfiles/.bash_profile' >> "${HOME}"/.bash_profile
+        echo "source '${root}'/.profile"      >> "${HOME}"/.bash_profile
+        echo "source '${root}'/.bash_profile" >> "${HOME}"/.bash_profile
     fi
 
     if command -v zsh > /dev/null; then
         echo Integration with Zsh...
-        echo 'source "${HOME}"/.dotfiles/.profile' >> "${HOME}"/.zshrc
-        echo 'source "${HOME}"/.dotfiles/.zshrc'   >> "${HOME}"/.zshrc
+        echo "source '${root}'/.profile" >> "${HOME}"/.zshrc
+        echo "source '${root}'/.zshrc"   >> "${HOME}"/.zshrc
     fi
 fi
 
@@ -47,4 +49,4 @@ fi
 
 echo Installing Homebrew bundle...
 brew update
-brew bundle --file="${HOME}"/.dotfiles/env/Brewfile --no-upgrade
+brew bundle --file="${root}"/env/Brewfile --no-upgrade
