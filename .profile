@@ -43,6 +43,14 @@ function lookup {
     file "${target}"
 }
 
+function realpath {
+    if [[ -z "${1:-}" ]]; then
+        echo 'Please provide a file/dir name'
+        return
+    fi
+    echo "$(cd `dirname ${1}` && pwd)/${1}"
+}
+
 # macOS
 
 function fix_xcrun {
