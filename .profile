@@ -68,6 +68,17 @@ function touch_sudo {
     fi
 }
 
+if command -v lsof > /dev/null; then
+    function wholisten {
+        port=${1:-}
+        if [[ -z "${port}" ]]; then
+            lsof -nP | grep LISTEN
+        else
+            lsof -nP -i4TCP:"${port}" | grep LISTEN
+        fi
+    }
+fi
+
 # Fun
 
 alias shrug='echo "¯\_(ツ)_/¯"';
