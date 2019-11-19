@@ -11,7 +11,6 @@ $ curl -sL https://git.io/JeY2y | bash
 ## 🧩 Integration
 
 ```bash
-$ git_config
 $ self-update
 ```
 
