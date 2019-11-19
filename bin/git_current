@@ -22,6 +22,21 @@ case "${1-branch}" in
         fi
         echo $remote
     ;;
+    release)
+        latest=$(git describe --tags)
+        if [[ $? > 0 ]]; then
+            (>&2 echo no have any release)
+            exit 1
+        fi
+        if [[ $latest =~ -[0-9]+-gc[a-z0-9]{6}$ ]]; then
+            latest=$(echo $latest | rev | cut -d - -f3- | rev)
+        fi
+        if [[ $latest =~ - ]]; then
+            echo $latest | sed 's/-/ /' | awk '{print $1" ["$2"]"}'
+        else
+            echo $latest
+        fi
+    ;;
     *)
         (>&2 echo use branch or remote as an argument)
         exit 1
