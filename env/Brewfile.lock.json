@@ -2,7 +2,7 @@
   "entries": {
     "brew": {
       "ansible": {
-        "version": "2.8.4_2",
+        "version": "2.9.0",
         "bottle": {
           "cellar": ":any",
           "prefix": "/usr/local",
@@ -65,7 +65,7 @@
         }
       },
       "git": {
-        "version": "2.23.0_1",
+        "version": "2.24.0_1",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
@@ -132,7 +132,7 @@
         }
       },
       "kubernetes-cli": {
-        "version": "1.15.3",
+        "version": "1.16.3",
         "bottle": {
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
@@ -154,7 +154,7 @@
       },
       "kubernetes-helm": null,
       "node": {
-        "version": "12.10.0",
+        "version": "13.1.0",
         "bottle": {
           "cellar": ":any",
           "prefix": "/usr/local",
@@ -175,7 +175,7 @@
         }
       },
       "php": {
-        "version": "7.3.9_1",
+        "version": "7.3.11",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
@@ -217,7 +217,7 @@
         }
       },
       "python": {
-        "version": "3.7.4_1",
+        "version": "3.7.5",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
@@ -263,7 +263,7 @@
         }
       },
       "zsh-completions": {
-        "version": "0.30.0",
+        "version": "0.31.0",
         "bottle": false
       }
     }
@@ -273,7 +273,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.1.16",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "ba4bb6511a6701fab792645cd9fed47677d1b5d0",
+        "Homebrew/homebrew-core": "c3e5374693e080939a2a09e19f0d4c6fb339b64e",
         "CLT": "1100.0.33.12",
         "Xcode": "11.0",
         "macOS": "10.15.1"
