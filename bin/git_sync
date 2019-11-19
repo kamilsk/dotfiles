@@ -9,7 +9,7 @@ for item in $(ls); do
             echo current directory is: $item && cd $item; \
 
             if git pull --all --prune --tags --force --rebase && git submodule update --init --recursive; then \
-                branch="$(git branch | cut -f2 -d' ' | awk 'NF > 0')"; \
+                branch="$(git branch | cut -d ' ' -f2 | awk 'NF > 0')"; \
                 git branch --set-upstream-to=origin/"${branch}" "${branch}"; \
             fi \
         )

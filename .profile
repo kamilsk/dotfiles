@@ -26,6 +26,19 @@ alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 
 alias timestamp="date +%s"
 
+function activate {
+    if [[ -f bin/activate ]]; then
+        source bin/activate
+        return
+    fi
+    if [[ -f .virtenv/bin/activate ]]; then
+        source  .virtenv/bin/activate
+        return
+    fi
+    (>&2 echo nothing to do)
+    return 1
+}
+
 function lookup {
     target=$(which ${1:-})
     if [[ ! -f "${target}" ]]; then
@@ -156,21 +169,23 @@ if command -v composer > /dev/null; then
 fi
 if command -v gem > /dev/null; then
     alias gem+="sudo gem update --system; \
-                gem list | cut -f1 -d' ' | xargs -n1 sudo gem update"
+                gem list | cut -d ' ' -f1 | xargs -n1 sudo gem update"
 fi
 if command -v npm > /dev/null; then
     alias npm+="npm install -g npm && npm update -g"
 fi
 if command -v pip > /dev/null; then
-    alias pip+="pip list | cut -f1 -d' ' | xargs -n1 sudo pip install --upgrade"
+    alias pip+="pip list | cut -d ' ' -f1 | xargs -n1 sudo pip install --upgrade"
 elif command -v pip3 > /dev/null; then
-    alias pip+="pip3 list | cut -f1 -d' ' | tail -n +3 | xargs -n1 pip3 install --upgrade"
+    alias pip+="pip3 list | cut -d ' ' -f1 | tail -n +3 | xargs -n1 pip3 install --upgrade"
 fi
 
 # Python
 
+alias v@="python3 -m venv .virtenv"
 alias v+="source .virtenv/bin/activate"
 alias v-="deactivate"
+alias v^="pip list | cut -d ' ' -f1 | tail -n +3 | xargs -n1 pip install --upgrade"
 
 # Sublime
 
