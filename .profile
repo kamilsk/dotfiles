@@ -5,15 +5,6 @@ set +o histexpand
 export GOPATH="${HOME}/Development/go"
 export PATH="${HOME}/.dotfiles/bin:${GOPATH}/bin:${PATH}"
 
-export GITHUB_TOKEN=
-export HUGS_TOKEN=10000000-2000-4000-8000-160000000003
-export CLICK_TOKEN=${HUGS_TOKEN}
-export FORMA_TOKEN=${HUGS_TOKEN}
-export GUARD_TOKEN=${HUGS_TOKEN}
-export PASSPORT_TOKEN=${HUGS_TOKEN}
-
-# export TMOUT=300
-
 # Common
 
 alias ..="cd ../"
@@ -191,6 +182,12 @@ alias v^="pip list | cut -d ' ' -f1 | tail -n +3 | xargs -n1 pip install --upgra
 
 if ! command -v subl > /dev/null && [[ -x "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ]]; then
     alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+fi
+
+# Ubuntu
+
+if ! command -v journalctl > /dev/null; then
+    alias oom="sudo journalctl -k | grep -i -e memory -e oom"
 fi
 
 # Visual Studio Code
