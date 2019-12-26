@@ -23,7 +23,7 @@ case "${1-branch}" in
         echo $remote
     ;;
     release)
-        latest=$(git describe --tags)
+        latest=$(git describe --tags 2>/dev/null)
         if [[ $? > 0 ]]; then
             (>&2 echo no have any release)
             exit 1
