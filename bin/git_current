@@ -28,14 +28,17 @@ case "${1-branch}" in
             (>&2 echo no have any release)
             exit 1
         fi
-        if [[ $latest =~ -[0-9]+-gc[a-z0-9]{6}$ ]]; then
-            latest=$(echo $latest | rev | cut -d - -f3- | rev)
+        if [[ ${latest} =~ -[0-9]+-g[a-z0-9]{7}$ ]]; then
+            ahead=$(echo ${latest} | rev | cut -d - -f2-2 | rev)
+            latest=$(echo ${latest} | rev | cut -d - -f3- | rev)
         fi
-        if [[ $latest =~ - ]]; then
-            echo $latest | sed 's/-/ /' | awk '{print $1" ["$2"]"}'
-        else
-            echo $latest
+        if [[ ${latest} =~ - ]]; then
+            latest=$(echo ${latest} | sed 's/-/ /' | awk '{print $1" ["$2"]"}')
         fi
+        if [[ ${ahead} ]]; then
+            latest=$(echo -e ${latest} ${ahead}↑)
+        fi
+        echo ${latest}
     ;;
     *)
         (>&2 echo use branch or remote as an argument)
