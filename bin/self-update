@@ -31,6 +31,16 @@ function update_dotfiles() {
     )
 }
 
+function update_tools() {
+    if command -v go > /dev/null; then
+        ( \
+            cd "${root}"/env; \
+            make deps install; \
+            echo tools were installed; \
+        )
+    fi
+}
+
 function update_zsh() {
     if [ -n "${ZSH-}" ] && [ -f "${ZSH}"/tools/upgrade.sh ]; then
         env ZSH="${ZSH}" sh "${ZSH}"/tools/upgrade.sh
@@ -43,20 +53,23 @@ UPDATE=()
 if [ $# -eq 0 ]; then
     UPDATE+=(update_dotfiles)
 elif [ "${1:-}" = "all" ]; then
-    UPDATE=(update_dotfiles update_brew update_docker update_zsh)
+    UPDATE=(update_dotfiles update_brew update_docker update_tools update_zsh)
 else
     for type in "$@"; do
         case "${type}" in
-            +brew)
+            brew)
                 UPDATE+=(update_brew)
             ;;
-            +docker)
+            docker)
                 UPDATE+=(update_docker)
             ;;
-            +dots)
+            dots)
                 UPDATE+=(update_dotfiles)
             ;;
-            +zsh)
+            tools)
+                UPDATE+=(update_tools)
+            ;;
+            zsh)
                 UPDATE+=(update_zsh)
             ;;
             *)
@@ -69,6 +82,8 @@ fi
 for update in "${UPDATE[@]}"; do
     eval $update
 done
+
+(cd "${root}" && git reset --hard) # clean up
 
 case $(basename $SHELL) in
     bash)
