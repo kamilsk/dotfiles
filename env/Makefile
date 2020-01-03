@@ -2,32 +2,38 @@
 
 SHELL = /bin/bash -euo pipefail
 
+GO    = GOPRIVATE=$(GOPRIVATE) GOFLAGS=$(GOFLAGS) go
+
 BINPATH     = $(GOPATH)/bin
 GO111MODULE = on
 GOFLAGS     = -mod=
-GOPRIVATE   =
+GOPRIVATE   = go.octolab.net
 GOPROXY     = direct
-MODULE      = $(shell go list -m)
+MODULE      = $(shell $(GO) list -m)
 
 export PATH := $(BINPATH):$(PATH)
 
 .PHONY: env
 env:
 	@echo "BINPATH:     $(BINPATH)"
-	@echo "GO111MODULE: $(shell go env GO111MODULE)"
-	@echo "GOFLAGS:     $(strip $(shell go env GOFLAGS))"
-	@echo "GOPRIVATE:   $(strip $(shell go env GOPRIVATE))"
-	@echo "GOPROXY:     $(strip $(shell go env GOPROXY))"
+	@echo "GO111MODULE: $(shell $(GO) env GO111MODULE)"
+	@echo "GOFLAGS:     $(strip $(shell $(GO) env GOFLAGS))"
+	@echo "GOPRIVATE:   $(strip $(shell $(GO) env GOPRIVATE))"
+	@echo "GOPROXY:     $(strip $(shell $(GO) env GOPROXY))"
 	@echo "MODULE:      $(MODULE)"
+
+.PHONY: clean
+clean:
+	@$(GO) clean -cache -modcache -testcache
 
 .PHONY: deps
 deps:
-	@GOPRIVATE=$(GOPRIVATE) go mod tidy
-
-.PHONY: update
-update:
-	@GOPRIVATE=$(GOPRIVATE) go get -mod= -u all
+	@$(GO) mod tidy
 
 .PHONY: install
 install:
-	@GOPRIVATE=$(GOPRIVATE) ROOT=$(dir $(BINPATH)) go generate ./tools.go
+	@ROOT=$(dir $(BINPATH)) $(GO) generate tools.go
+
+.PHONY: update
+update:
+	@$(GO) get -mod= -u $(shell egg deps list)
