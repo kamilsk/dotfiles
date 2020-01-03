@@ -7,7 +7,7 @@ require (
 	github.com/golangci/golangci-lint v1.22.2
 	github.com/goreleaser/godownloader v0.1.0
 	github.com/goreleaser/goreleaser v0.118.2
-	github.com/kamilsk/egg v0.0.7
+	github.com/kamilsk/egg v0.0.8
 	golang.org/x/tools v0.2.2
 )
 

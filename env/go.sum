@@ -325,8 +325,8 @@ github.com/jtolds/gls v4.2.1+incompatible/go.mod h1:QJZ7F/aHp+rZTRtaJ1ow/lLfFfVY
 github.com/jtolds/gls v4.20.0+incompatible h1:xdiiI2gbIgH/gLH7ADydsJ1uDOEzR8yvV7C0MuV77Wo=
 github.com/jtolds/gls v4.20.0+incompatible/go.mod h1:QJZ7F/aHp+rZTRtaJ1ow/lLfFfVYBRgL+9YlvaHOwJU=
 github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7VTCxuUUipMqKk8s4w=
-github.com/kamilsk/egg v0.0.7 h1:lNn8RkWdsRuQYeu6VP6+BtjlYsIPeO1iOLthLvi3xgY=
-github.com/kamilsk/egg v0.0.7/go.mod h1:JjKPTfUusOpRM/4OVen50p8QJgRseDR+JjGDjYBbhXE=
+github.com/kamilsk/egg v0.0.8 h1:wlc1GL+w+mPQ0m4hIlEiEG0ACGol9az8tzkOdLuE4HA=
+github.com/kamilsk/egg v0.0.8/go.mod h1:JjKPTfUusOpRM/4OVen50p8QJgRseDR+JjGDjYBbhXE=
 github.com/kamilsk/gex v0.6.0-e3 h1:lcTpIATU75B9D4YuwlYJFyZpchmncr5uxbG/ubVlRg0=
 github.com/kamilsk/gex v0.6.0-e3/go.mod h1:nDH4zt3QvsIJipyYDoedHcNrNzawwkseKfpqGTUDN2Q=
 github.com/kamilsk/go-tools v0.0.1 h1:hXIxg1FuzeZLpUARWW4wkj9NT2oyQbqKTneC2Ny5E3s=
