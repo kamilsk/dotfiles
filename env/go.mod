@@ -3,16 +3,16 @@ module github.com/kamilsk/dotfiles
 go 1.11
 
 require (
-	github.com/golang/mock v1.3.1
-	github.com/golangci/golangci-lint v1.22.2
+	github.com/golang/mock v1.4.0
+	github.com/golangci/golangci-lint v1.23.1
 	github.com/goreleaser/godownloader v0.1.0
 	github.com/goreleaser/goreleaser v0.118.2
-	github.com/kamilsk/egg v0.0.8
+	github.com/kamilsk/egg v0.0.10
 	golang.org/x/tools v0.2.2
 )
 
 // goimports: https://github.com/kamilsk/go-tools/releases/tag/goimports
-replace golang.org/x/tools => github.com/kamilsk/go-tools v0.0.1
+replace golang.org/x/tools => github.com/kamilsk/go-tools v0.0.2
 
 // egg: https://github.com/izumin5210/gex/compare/master...kamilsk:extended
 replace github.com/izumin5210/gex => github.com/kamilsk/gex v0.6.0-e3
