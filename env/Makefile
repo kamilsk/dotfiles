@@ -1,11 +1,11 @@
 .DEFAULT_GOAL = install
 
 SHELL = /bin/bash -euo pipefail
-
-GO    = GOPRIVATE=$(GOPRIVATE) GOFLAGS=$(GOFLAGS) go
+GO    = GOFLAGS=$(GOFLAGS) GOBIN=$(GOBIN) GOPRIVATE=$(GOPRIVATE) go
 
 BINPATH     = $(GOPATH)/bin
 GO111MODULE = on
+GOBIN       = $(BINPATH)
 GOFLAGS     = -mod=
 GOPRIVATE   = go.octolab.net
 GOPROXY     = direct
@@ -54,7 +54,7 @@ build-clean:
 
 .PHONY: install
 install:
-	@ROOT=$(dir $(BINPATH)) $(GO) generate tools.go
+	@$(GO) generate tools.go
 
 .PHONY: install-clean
 install-clean:
