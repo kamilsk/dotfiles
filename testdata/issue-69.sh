@@ -5,7 +5,7 @@ set -o pipefail
 
 while IFS= read -r latest; do
 
-    if [[ "${latest}" =~ -[0-9]+-g[a-z0-9]{7}$ ]]; then
+    if [[ "${latest}" =~ -[0-9]+-g[a-z0-9]+$ ]]; then
         ahead=$(echo ${latest} | rev | cut -d - -f2-2 | rev)
         latest=$(echo ${latest} | rev | cut -d - -f3- | rev)
     fi
