@@ -15,7 +15,10 @@ package=${package/stash.msk.avito.ru:7999/go.avito.ru}
 
 package=${package/:/\/}
 
+dir="${GOPATH}/src/${package}"
+
 set -o xtrace
 
-mkdir -p "${GOPATH}/${package}"
-git clone ${source} "${GOPATH}/${package}"
+mkdir -p "${dir}"
+git clone ${source} "${dir}"
+echo ${dir}
