@@ -17,6 +17,9 @@ alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 
 alias timestamp="date +%s"
 
+alias append="cat <<EOF >>"
+alias edit="cat <<EOF >"
+
 function activate {
     if [[ -f bin/activate ]]; then
         source bin/activate
