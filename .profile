@@ -62,7 +62,10 @@ function realpath {
 
 function fix_xcrun {
     sudo xcode-select --reset
-    xcode-select --install
+    sudo rm -rf /Library/Developer/CommandLineTools
+    if ! xcode-select --install; then
+        sudo xcode-select --install
+    fi
 }
 
 function touch_sudo {

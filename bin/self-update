@@ -35,7 +35,7 @@ function update_tools() {
     if command -v go > /dev/null; then
         ( \
             cd "${root}"/env; \
-            make deps install; \
+            go mod download && go generate tools.go; \
             echo tools were installed; \
         )
     fi
