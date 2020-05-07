@@ -2,7 +2,6 @@ module github.com/kamilsk/dotfiles/legacy
 
 go 1.11
 
-require github.com/goreleaser/godownloader v0.1.0
+require github.com/goreleaser/godownloader v0.1.1-0.20200426152203-fd8ad8f7dd78
 
-// godownloader: https://github.com/golangci/golangci-lint/issues/730
-replace github.com/go-macaron/cors v0.0.0-20190309005821-6fd6a9bfe14e9 => github.com/go-macaron/cors v0.0.0-20190418220122-6fd6a9bfe14e
+replace github.com/google/rpmpack => github.com/caarlos0/rpmpack v0.0.0-20191106130752-24a815bfaee0
