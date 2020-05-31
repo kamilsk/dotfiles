@@ -1,5 +1,6 @@
 brew "ansible"
 brew "bat"
+brew "doctl"
 brew "fzf"
 brew "git"
 brew "go"
@@ -14,11 +15,14 @@ brew "python"
 brew "zsh"
 brew "zsh-completions"
 
+tap "github/gh"
+brew "gh"
+
 tap "golangci/tap"
-brew "golangci/tap/golangci-lint"
+brew "golangci-lint"
 
 tap "goreleaser/tap"
-brew "goreleaser/tap/goreleaser"
+brew "goreleaser"
 
 tap "kamilsk/tap"
-brew "kamilsk/tap/goimports"
+brew "goimports"
