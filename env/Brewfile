@@ -26,4 +26,5 @@ tap "goreleaser/tap"
 brew "goreleaser"
 
 tap "kamilsk/tap"
+brew "egg"
 brew "goimports"
