@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+case "${1-}" in
+    amend)
+        git commit --amend --no-edit
+    ;;
+    at)
+        timestamp=$(date -j -v-${2-})
+        GIT_COMMITTER_DATE="${timestamp}"; git commit --date="${timestamp}" -m "${@:3}"
+    ;;
+    cmm)
+        git commit -m "${@:2}"
+    ;;
+    undo)
+        git reset --soft HEAD^${2-1}
+    ;;
+    *)
+        (>&2 echo unknown command)
+        exit 1
+    ;;
+esac

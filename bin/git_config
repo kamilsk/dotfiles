@@ -32,9 +32,10 @@ git config --global alias.flow      '!git_flow'
 git config --global alias.it        '!git init && git commit --allow-empty --edit -m root'
 git config --global alias.mirror    '!git_mirror'
 
-git config --global alias.cmm       '!commit() { git commit -m "$*"; }; commit'
-git config --global alias.commend   'commit --amend --no-edit'
-git config --global alias.undo      '!undo() { git reset --soft HEAD^${1-1}; }; undo'
+git config --global alias.at        '!git_commit at'
+git config --global alias.cmm       '!git_commit cmm'
+git config --global alias.commend   '!git_commit amend'
+git config --global alias.undo      '!git_commit undo'
 
 git config --global alias.refresh   '!git_refresh'
 git config --global alias.shake     '!git_shake'
