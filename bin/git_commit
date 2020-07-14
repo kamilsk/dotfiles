@@ -12,7 +12,8 @@ case "${1-}" in
         GIT_COMMITTER_DATE="${timestamp}"; git commit --date="${timestamp}" -m "${@:3}"
     ;;
     cmm)
-        git commit -m "${@:2}"
+        message="${@:2}"
+        git commit -m "${message}"
     ;;
     undo)
         git reset --soft HEAD^${2-1}
