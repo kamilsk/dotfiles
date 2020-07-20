@@ -5,6 +5,7 @@ go 1.14
 require (
 	github.com/bcicen/grmon v0.0.0-20190725134940-6c3770b6af49
 	github.com/bcicen/termui v0.0.0-20180326052246-4eb80249d3f5 // indirect
+	github.com/containous/yaegi v0.8.13
 	github.com/golang/mock v1.4.3
 	github.com/goreleaser/godownloader v0.1.1-0.20200426152203-fd8ad8f7dd78
 	github.com/mattn/go-runewidth v0.0.9 // indirect

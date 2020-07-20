@@ -6,12 +6,14 @@ package tools
 
 import (
 	_ "github.com/bcicen/grmon"
+	_ "github.com/containous/yaegi/cmd/yaegi"
 	_ "github.com/golang/mock/mockgen"
 	_ "github.com/goreleaser/godownloader"
 	_ "golang.org/x/exp/cmd/gorelease"
 )
 
 //go:generate go install github.com/bcicen/grmon
+//go:generate go install github.com/containous/yaegi/cmd/yaegi
 //go:generate go install github.com/golang/mock/mockgen
 //go:generate go install github.com/goreleaser/godownloader
 //go:generate go install golang.org/x/exp/cmd/gorelease
