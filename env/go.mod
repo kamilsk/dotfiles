@@ -8,6 +8,7 @@ require (
 	github.com/containous/yaegi v0.8.13
 	github.com/golang/mock v1.4.3
 	github.com/goreleaser/godownloader v0.1.1-0.20200426152203-fd8ad8f7dd78
+	github.com/kyoh86/looppointer v0.1.6
 	github.com/mattn/go-runewidth v0.0.9 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.0 // indirect
 	github.com/nsf/termbox-go v0.0.0-20200418040025-38ba6e5628f1 // indirect
