@@ -4,15 +4,15 @@ set -o nounset
 set -o pipefail
 
 case "${1:-}" in
-   git)
-      git config --unset --global alias.m
-      git config --unset --global alias.mm
-      git config --unset --global alias.mmm
-      git config --unset alias.flow
-      git config --unset alias.pub
-   ;;
-   *)
-      (>&2 echo use git as an argument)
-      exit 1
-   ;;
+git)
+  git config --unset --global alias.m
+  git config --unset --global alias.mm
+  git config --unset --global alias.mmm
+  git config --unset alias.flow
+  git config --unset alias.pub
+  ;;
+*)
+  (echo >&2 use git as an argument)
+  exit 1
+  ;;
 esac

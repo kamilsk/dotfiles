@@ -8,31 +8,31 @@ current="$(git current)"
 default="$(git default)"
 
 if [ "${current}" != "${default}" ]; then
-    git checkout "${default}"
+  git checkout "${default}"
 fi
 
 git fetch --all --prune --tags --force
 
 for branch in $(git branch --merged | grep -v "${default}"); do
-    if [ -n "${branch}" ]; then
-        git branch -d "${branch##*( )}"
-        echo local branch $branch was deleted
-    fi
+  if [ -n "${branch}" ]; then
+    git branch -d "${branch##*( )}"
+    echo "local branch ${branch} was deleted"
+  fi
 done
 
 case "${1-}" in
-    all)
-        for target in $(git branch -r --merged | grep -v "/${default}" | grep -v 'upstream/'); do
-            if [ -n "${target}" ]; then
-                remote="$(echo ${target//\//' '} | awk '{print $1}')"
-                branch="$(echo ${target//\//' '} | awk '{print $2}')"
-                git push "${remote}" ":${branch}"
-                echo remote branch $remote/$branch was deleted
-            fi
-        done
-    ;;
+all)
+  for target in $(git branch -r --merged | grep -v "/${default}" | grep -v 'upstream/'); do
+    if [ -n "${target}" ]; then
+      remote="$(echo "${target//\//' '}" | awk '{print $1}')"
+      branch="$(echo "${target//\//' '}" | awk '{print $2}')"
+      git push "${remote}" ":${branch}"
+      echo "remote branch ${remote}/${branch} was deleted"
+    fi
+  done
+  ;;
 esac
 
 if [ "${current}" != "${default}" ]; then
-    git checkout "${current}"
+  git checkout "${current}"
 fi

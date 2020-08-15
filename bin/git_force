@@ -4,25 +4,25 @@ set -o nounset
 set -o pipefail
 
 case "${1-all}" in
-    all)
-        if [ $(git remote | wc -l) = 0 ]; then
-            (>&2 echo nothing to do)
-            exit 1
-        fi
-        for remote in $(git remote | grep -v upstream); do
-            git push -f "${remote}" "$(git current)"
-        done
-    ;;
-    current)
-        remote="$(git current remote)"
-        if [ -z "${remote}" ]; then
-            (>&2 echo nothing to do)
-            exit 1
-        fi
-        git push -f "${remote}"
-    ;;
-    *)
-        (>&2 echo use all or current as an argument)
-        exit 1
-    ;;
+all)
+  if [ "$(git remote | wc -l)" = 0 ]; then
+    (echo >&2 'nothing to do')
+    exit 1
+  fi
+  for remote in $(git remote | grep -v upstream); do
+    git push -f "${remote}" "$(git current)"
+  done
+  ;;
+current)
+  remote="$(git current remote)"
+  if [ -z "${remote}" ]; then
+    (echo >&2 'nothing to do')
+    exit 1
+  fi
+  git push -f "${remote}"
+  ;;
+*)
+  (echo >&2 use all or current as an argument)
+  exit 1
+  ;;
 esac

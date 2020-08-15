@@ -13,44 +13,44 @@ set -o nounset
 set -o pipefail
 
 if [ ! -f "${HOME}"/.stash ]; then
-    touch "${HOME}"/.stash
-    chmod +x "${HOME}"/.stash
+  touch "${HOME}"/.stash
+  chmod +x "${HOME}"/.stash
 fi
 
 case "${1:-}" in
-    drop)
-        cat > "${HOME}"/.stash << EOL
+drop)
+  cat >"${HOME}"/.stash <<EOL
 #!/usr/bin/env bash
 set -o nounset
 set -o pipefail
 set -o xtrace
 
 EOL
-    ;;
-    dry)
-        cat "${HOME}"/.stash
-    ;;
-    flush)
-        "${HOME}"/.stash
-        $0 drop
-    ;;
-    repeat)
-        "${HOME}"/.stash
-    ;;
-    '')
-        cat $0
-    ;;
-    *)
-        cmd="$@"
-        eval $cmd
-        code=$?
-        if [ $code -eq 0 ]; then
-            echo $cmd >> "${HOME}"/.stash
-        fi
-        if [ "${1}" = cd ]; then
-            echo do not forget to do exit
-            exec $SHELL
-        fi
-        exit $code
-    ;;
+  ;;
+dry)
+  cat "${HOME}"/.stash
+  ;;
+flush)
+  "${HOME}"/.stash
+  $0 drop
+  ;;
+repeat)
+  "${HOME}"/.stash
+  ;;
+'')
+  cat "$0"
+  ;;
+*)
+  cmd="$*"
+  eval "${cmd}"
+  code=$?
+  if [ $code -eq 0 ]; then
+    echo "${cmd}" >>"${HOME}"/.stash
+  fi
+  if [ "${1}" = cd ]; then
+    echo 'do not forget to do exit'
+    exec "${SHELL}"
+  fi
+  exit $code
+  ;;
 esac

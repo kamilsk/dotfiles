@@ -5,13 +5,13 @@ set -o pipefail
 
 remote="${1:-$(git current remote)}"
 if [ -z "${remote}" ]; then
-    (>&2 echo nothing to do because remote is undefined)
-    exit 1
+  (echo >&2 'nothing to do because remote is undefined')
+  exit 1
 fi
 
-if ! git remote | grep "${remote}" > /dev/null; then
-    (>&2 echo nothing to do because remote is not found or invalid)
-    exit 1
+if ! git remote | grep "${remote}" >/dev/null; then
+  (echo >&2 'nothing to do because remote is not found or invalid')
+  exit 1
 fi
 
 branch="${remote}/${2:-$(git default)}"

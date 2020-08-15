@@ -4,9 +4,12 @@ set -o nounset
 set -o pipefail
 
 res=$(curl \
-   -H 'Content-Type: application/json' \
-   -H 'X-Timeout: 1h' \
-   $@)
+  -H 'Content-Type: application/json' \
+  -H 'X-Timeout: 1h' \
+  "$*")
 
 # Inspired by https://github.com/danielfgray/fzf-scripts/blob/master/fzrepl
-(export json=${res}; echo '' | fzf --print-query --preview='jq {q} <(printf "%s" "$json")')
+(
+  export json=${res}
+  echo '' | fzf --print-query --preview='jq {q} <(printf "%s" "$json")'
+)

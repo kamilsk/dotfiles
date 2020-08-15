@@ -7,12 +7,12 @@ shopt -s extglob
 tag=${1:-}
 
 if [ -z "${tag}" ]; then
-    (>&2 echo nothing to do)
-    exit 1
+  (echo >&2 'nothing to do')
+  exit 1
 fi
 
 git tag -d "${tag}" || true
 
 for remote in $(git remote | grep -v upstream); do
-    git push "${remote}" :refs/tags/"${tag}"
+  git push "${remote}" :refs/tags/"${tag}"
 done

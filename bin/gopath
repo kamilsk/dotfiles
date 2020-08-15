@@ -6,9 +6,9 @@ set -o pipefail
 source=${1}
 package=${source}
 
-package=${package/%.git}
-package=${package/#https:\/\/}
-package=${package/#*@}
+package=${package/%.git/}
+package=${package/#https:\/\//}
+package=${package/#*@/}
 
 # use `declare -A map` in Bash 4 instead
 package=${package/stash.msk.avito.ru:7999/go.avito.ru}
@@ -20,5 +20,5 @@ dir="${GOPATH}/src/${package}"
 set -o xtrace
 
 mkdir -p "${dir}"
-git clone ${source} "${dir}"
-echo ${dir}
+git clone "${source}" "${dir}"
+echo "${dir}"
