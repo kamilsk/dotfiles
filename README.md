@@ -5,7 +5,7 @@
 ## 🏃‍♂️ Quick start
 
 ```bash
-$ curl -sL https://git.io/JeY2y | bash
+$ curl -sSfL https://raw.githubusercontent.com/kamilsk/dotfiles/master/install | bash
 ```
 
 ## 🧩 Integration
