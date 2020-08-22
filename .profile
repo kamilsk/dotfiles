@@ -109,6 +109,7 @@ if command -v docker >/dev/null; then
   function container() {
     docker exec -it "${1}" /bin/sh
   }
+
   function containers() {
     case "${1-}" in
     all)
@@ -119,6 +120,7 @@ if command -v docker >/dev/null; then
       ;;
     esac
   }
+
   function images() {
     case "${1-}" in
     all)
@@ -136,9 +138,15 @@ if command -v docker >/dev/null; then
       ;;
     esac
   }
+
+  function trim() {
+    truncate -s 0 "$(docker inspect --format='{{.LogPath}}' "${1}")"
+  }
+
   function volume() {
     docker run --rm -it -v "${1}":/view -w /view alpine:latest
   }
+
   function volumes() {
     case "${1-}" in
     all)
