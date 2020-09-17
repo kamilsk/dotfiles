@@ -14,4 +14,4 @@ require (
 	golang.org/x/exp v0.0.0-20201008143054-e3b2a7f2fdc7
 )
 
-replace github.com/google/rpmpack => github.com/caarlos0/rpmpack v0.0.0-20191101142923-13d81472ccfe
+replace github.com/google/rpmpack => github.com/caarlos0/rpmpack v0.0.0-20191106130752-24a815bfaee0
