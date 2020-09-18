@@ -28,3 +28,6 @@ brew "goreleaser"
 tap "kamilsk/tap"
 brew "egg"
 brew "goimports"
+
+tap "traefik/tap"
+brew "yaegi"
