@@ -5,7 +5,6 @@ set -o pipefail
 
 brew update
 brew upgrade
-brew cask upgrade
-brew doctor
-brew cask doctor
+brew upgrade --cask
+brew doctor --verbose
 brew cleanup
