@@ -36,6 +36,7 @@ function activate() {
 }
 
 function lookup() {
+  local target
   target="$(command -v "${1:-}")"
   if [[ ! -f "${target}" ]]; then
     echo "${target}"
@@ -82,7 +83,7 @@ function touch_sudo() {
 
 if command -v lsof >/dev/null; then
   function wholisten() {
-    port=${1:-}
+    local port=${1:-}
     if [[ -z "${port}" ]]; then
       lsof -nP | grep LISTEN
     else
@@ -98,10 +99,18 @@ alias tflip='echo "（╯°□°）╯︵┻━┻"'
 
 # Git
 
+function push() {
+  local branch
+  branch="$(git branch | cut -f2 -d' ' | awk 'NF > 0')"
+  for remote in $(git remote | grep -v upstream); do
+    git push "${remote}" "${branch}" --tags
+  done
+}
+
 alias g@="git config user.name 'Kamil Samigullin' && git config user.email 'kamil@samigullin.info'"
 alias g+="git pull --all --prune --tags --force --rebase && git submodule update --init --recursive"
 alias g-="git reset --hard && git clean -df && git submodule deinit --all"
-alias g^="branch=\$(git branch | cut -f2 -d' ' | awk 'NF > 0'); for remote in \$(git remote | grep -v upstream); do git push \$remote \$branch --tags; done"
+alias g^="push"
 
 # Docker
 
