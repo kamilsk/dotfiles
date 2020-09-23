@@ -5,11 +5,13 @@ set -o pipefail
 
 case "${1:-}" in
 git)
-  git config --unset --global alias.m
-  git config --unset --global alias.mm
-  git config --unset --global alias.mmm
-  git config --unset alias.flow
-  git config --unset alias.pub
+  git config --unset --global alias.m || true
+  git config --unset --global alias.mm || true
+  git config --unset --global alias.mmm || true
+  git config --unset --global alias.user || true
+
+  git config --unset alias.flow || true
+  git config --unset alias.pub || true
   ;;
 *)
   (echo >&2 use git as an argument)
