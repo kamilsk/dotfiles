@@ -36,6 +36,15 @@ function activate() {
 }
 
 function lookup() {
+  if [[ "${1:-}" == "git" ]]; then
+    local alias
+    alias="$(git config alias."${2:-}")"
+    echo git alias: "${alias}"
+
+    lookup "$(echo "${alias}" | awk '{print $1}' | sed 's/!//g')"
+    return
+  fi
+
   local target
   target="$(command -v "${1:-}")"
   if [[ ! -f "${target}" ]]; then
