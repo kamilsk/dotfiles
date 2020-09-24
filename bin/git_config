@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# TODO
-#  - git config --global commit.template
-
 set -o nounset
 set -o pipefail
 
@@ -28,21 +25,22 @@ git config --global alias.last "!last() { git log --pretty=oneline | head -\${1-
 git config --global alias.grog 'log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)"'
 
 # процессы
-git config --global alias.flow '!git_flow'
-git config --global alias.it '!git init && git commit --allow-empty --edit -m root'
-git config --global alias.mirror '!git_mirror'
+git config --global alias.flow "!git_flow"
+git config --global alias.it "!git init && git commit --allow-empty --edit -m root"
+git config --global alias.mirror "!git_mirror"
 
-git config --global alias.at '!git_commit at'
-git config --global alias.cmm '!git_commit cmm'
-git config --global alias.commend '!git_commit amend'
-git config --global alias.undo '!git_commit undo'
+git config --global alias.at "!git_commit at"
+git config --global alias.cmm "!git_commit cmm"
+git config --global alias.commend "!git_commit amend"
+git config --global alias.undo "!git_commit undo"
 
-git config --global alias.refresh '!git_refresh'
-git config --global alias.shake '!git_shake'
-git config --global alias.untag '!git_untag'
+git config --global alias.refresh "!git_refresh"
+git config --global alias.shake "!git_shake"
+git config --global alias.untag "!git_untag"
 
-git config --global alias.force '!git_force'
-git config --global alias.please '!git_please'
+git config --global alias.force "!git_force"
+git config --global alias.please "!git_please"
+git config --global alias.tableflip "!git reset --hard && git clean -df"
 
 git config --global alias.stsh 'stash --keep-index'
 git config --global alias.staash 'stash --include-untracked'
