@@ -4,16 +4,18 @@ set -o nounset
 set -o pipefail
 
 function cover_go() {
+  local tmp
   tmp=$(mktemp -t c.out)
   trap '{ unlink "${tmp}"; }' EXIT
-
   echo 'mode: count' >"${tmp}"
 
+  local pkgs
   pkgs=$(go list ./... | grep -v vendor | grep -v examples)
-  buff=''
+
+  local buff=''
 
   for pkg in $pkgs; do
-    report="coverage_${pkg##*/}.out"
+    local report="coverage_${pkg##*/}.out"
     buff=${buff}$'\n'$(go test -covermode count -coverprofile "${report}" "$*" "${pkg}")
     if [ -f "${report}" ]; then
       sed '1d' "${report}" >>"${tmp}"
