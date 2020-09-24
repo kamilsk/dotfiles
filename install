@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# TODO
-#  - install oh my zsh
-#  - install code alias (vscode)
-
 set -o nounset
 set -o pipefail
 

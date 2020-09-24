@@ -27,6 +27,7 @@ git config --global alias.grog 'log --graph --abbrev-commit --decorate --all --f
 # процессы
 git config --global alias.flow "!git_flow"
 git config --global alias.it "!git init && git commit --allow-empty --edit -m root"
+git config --global alias.attach "!branch=\$(git branch | cut -d ' ' -f2 | awk 'NF > 0'); attach() { git branch --set-upstream-to=\$1/\$branch \$branch; }; attach"
 git config --global alias.mirror "!git_mirror"
 
 git config --global alias.at "!git_commit at"
@@ -45,9 +46,3 @@ git config --global alias.tableflip "!git reset --hard && git clean -df"
 git config --global alias.stsh 'stash --keep-index'
 git config --global alias.staash 'stash --include-untracked'
 git config --global alias.staaash 'stash --all'
-
-# TODO refactor it
-git config --global alias.attach "!branch=\$(git branch | cut -d ' ' -f2 | awk 'NF > 0'); attach() { git branch --set-upstream-to=\$1/\$branch \$branch; }; attach"
-git config --global alias.up '!git pull --all --prune --tags --force --rebase && git submodule update --init --recursive'
-git config --global alias.down '!git reset --hard && git clean -df && git submodule deinit --all'
-git config --global alias.sync "!git pull --all --prune --tags --force --rebase && for remote in \$(git remote | grep -v upstream); do git push \$remote \$(git current) --tags; done"
