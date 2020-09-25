@@ -1,10 +1,12 @@
 brew "ansible"
 brew "bat"
+brew "dive"
 brew "doctl"
 brew "fzf"
 brew "git"
 brew "go"
 brew "grpcurl"
+brew "httpie"
 brew "hugo"
 brew "jq"
 brew "kubernetes-cli"
@@ -24,6 +26,9 @@ brew "golangci-lint"
 
 tap "goreleaser/tap"
 brew "goreleaser"
+
+tap "isacikgoz/taps"
+brew "gitin"
 
 tap "kamilsk/tap"
 brew "egg"
