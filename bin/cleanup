@@ -10,6 +10,10 @@ git)
   git config --unset --global alias.mmm || true
   git config --unset --global alias.user || true
 
+  git config --unset --global alias.up || true
+  git config --unset --global alias.down || true
+  git config --unset --global alias.sync || true
+
   git config --unset alias.flow || true
   git config --unset alias.pub || true
   ;;
