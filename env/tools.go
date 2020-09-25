@@ -7,6 +7,7 @@ package tools
 import (
 	_ "github.com/bcicen/grmon"
 	_ "github.com/ericchiang/pup"
+	_ "github.com/evanw/esbuild/cmd/esbuild"
 	_ "github.com/golang/mock/mockgen"
 	_ "github.com/goreleaser/godownloader"
 	_ "github.com/kyoh86/looppointer/cmd/looppointer"
@@ -15,6 +16,7 @@ import (
 
 //go:generate go install github.com/bcicen/grmon
 //go:generate go install github.com/ericchiang/pup
+//go:generate go install github.com/evanw/esbuild/cmd/esbuild
 //go:generate go install github.com/golang/mock/mockgen
 //go:generate go install github.com/goreleaser/godownloader
 //go:generate go install github.com/kyoh86/looppointer/cmd/looppointer
