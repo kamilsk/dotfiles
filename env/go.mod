@@ -5,6 +5,7 @@ go 1.15
 require (
 	github.com/bcicen/grmon v0.0.0-20190725134940-6c3770b6af49
 	github.com/bcicen/termui v0.0.0-20180326052246-4eb80249d3f5 // indirect
+	github.com/ericchiang/pup v0.4.0
 	github.com/golang/mock v1.4.4
 	github.com/goreleaser/godownloader v0.1.1-0.20200426152203-fd8ad8f7dd78
 	github.com/kyoh86/looppointer v0.1.7
