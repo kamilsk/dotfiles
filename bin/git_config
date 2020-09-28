@@ -26,11 +26,12 @@ git config --global alias.grog 'log --graph --abbrev-commit --decorate --all --f
 
 # процессы
 git config --global alias.flow "!git_flow"
-git config --global alias.it "!git init && git commit --allow-empty --edit -m root"
 git config --global alias.attach "!branch=\$(git branch | cut -d ' ' -f2 | awk 'NF > 0'); attach() { git branch --set-upstream-to=\$1/\$branch \$branch; }; attach"
 git config --global alias.mirror "!git_mirror"
 
 git config --global alias.at "!git_commit at"
+git config --global alias.it "!git_commit it"
+
 git config --global alias.cmm "!git_commit cmm"
 git config --global alias.commend "!git_commit amend"
 git config --global alias.undo "!git_commit undo"
