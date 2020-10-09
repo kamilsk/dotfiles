@@ -42,7 +42,7 @@ git config --global alias.untag "!git_untag"
 
 git config --global alias.force "!git_force"
 git config --global alias.please "!git_please"
-git config --global alias.tableflip "!git reset --hard && git clean -df"
+git config --global alias.tableflip "!git reset --hard && git clean -df && git submodule deinit --all"
 
 git config --global alias.stsh 'stash --keep-index'
 git config --global alias.staash 'stash --include-untracked'

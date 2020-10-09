@@ -2,6 +2,8 @@
 >
 > My dotfiles for productive work.
 
+[![Mirror][mirror.icon]][mirror.page]
+
 ## 🏃‍♂️ Quick start
 
 ```bash
@@ -31,3 +33,6 @@ $ self-update
 ---
 
 made with ❤️ for everyone
+
+[mirror.page]:      https://bitbucket.org/kamilsk/dotfiles
+[mirror.icon]:      https://img.shields.io/badge/mirror-bitbucket-blue
