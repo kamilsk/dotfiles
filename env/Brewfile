@@ -34,5 +34,8 @@ tap "kamilsk/tap"
 brew "egg"
 brew "goimports"
 
+tap "octolab/tap"
+brew "maintainer"
+
 tap "traefik/tap"
 brew "yaegi"
