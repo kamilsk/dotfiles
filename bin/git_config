@@ -8,6 +8,7 @@ git config --global core.excludesfile "$(dirname "$(dirname "$0")")"/.gitignore
 git config --global alias.aliases '!git config --get-regexp alias | git_aliases'
 
 # метаинформация
+git config --global alias.state "!git status && git stash list"
 git config --global alias.url "!git_url"
 git config --global alias.whoami "!echo \$(git config user.name) \<\$(git config user.email)\>"
 git config --global alias.default "!git_default"
