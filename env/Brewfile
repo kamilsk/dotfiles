@@ -28,7 +28,9 @@ tap "goreleaser/tap"    # https://github.com/goreleaser/homebrew-tap
 brew "goreleaser"       # https://github.com/goreleaser/goreleaser (go)
 
 tap "isacikgoz/taps"    # https://github.com/isacikgoz/homebrew-taps
+brew "gitbatch"         # https://github.com/isacikgoz/gitbatch (go)
 brew "gitin"            # https://github.com/isacikgoz/gitin (go)
+brew "tldr"             # https://github.com/isacikgoz/tldr (go)
 
 tap "kamilsk/tap"       # https://github.com/kamilsk/homebrew-tap
 brew "egg"              # https://github.com/kamilsk/egg (go)
