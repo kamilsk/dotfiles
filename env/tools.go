@@ -11,6 +11,7 @@ import (
 	_ "github.com/golang/mock/mockgen"
 	_ "github.com/goreleaser/godownloader"
 	_ "github.com/kyoh86/looppointer/cmd/looppointer"
+	_ "github.com/mrnugget/fzz"
 	_ "golang.org/x/exp/cmd/gorelease"
 )
 
@@ -20,4 +21,5 @@ import (
 //go:generate go install github.com/golang/mock/mockgen
 //go:generate go install github.com/goreleaser/godownloader
 //go:generate go install github.com/kyoh86/looppointer/cmd/looppointer
+//go:generate go install github.com/mrnugget/fzz
 //go:generate go install golang.org/x/exp/cmd/gorelease

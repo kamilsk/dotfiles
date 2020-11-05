@@ -11,6 +11,7 @@ require (
 	github.com/goreleaser/godownloader v0.1.1-0.20200426152203-fd8ad8f7dd78
 	github.com/kyoh86/looppointer v0.1.7
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
+	github.com/mrnugget/fzz v1.1.0
 	github.com/nsf/termbox-go v0.0.0-20201124104050-ed494de23a00 // indirect
 	golang.org/x/exp v0.0.0-20201221025956-e89b829e73ea
 )

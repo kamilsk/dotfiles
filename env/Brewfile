@@ -15,6 +15,7 @@ brew "node"
 brew "php"
 brew "protobuf"
 brew "python"
+brew "tmux"
 brew "zsh"
 brew "zsh-completions"
 
