@@ -22,6 +22,8 @@ brew "tmux"                 # https://github.com/tmux/tmux (c)
 brew "zsh"                  # https://github.com/zsh-users/zsh (c)
 brew "zsh-completions"      # https://github.com/zsh-users/zsh-completions (shell)
 
+cask "osquery"              # https://github.com/osquery/osquery (c++)
+
 tap "git-chglog/git-chglog" # https://github.com/git-chglog/homebrew-git-chglog
 brew "git-chglog"           # https://github.com/git-chglog/git-chglog (go)
 
