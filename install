@@ -45,4 +45,4 @@ fi
 
 echo Installing Homebrew bundle...
 brew update
-brew bundle --file="${root}"/env/Brewfile --no-upgrade
+brew bundle --file="${root}"/toolset/Brewfile --no-upgrade

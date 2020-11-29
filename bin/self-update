@@ -8,8 +8,8 @@ root=$(dirname "$(dirname "$0")")
 function update_brew() {
   if command -v brew >/dev/null; then
     brew update
-    brew bundle --file="${root}"/env/Brewfile --no-upgrade
-    brew bundle --file="${root}"/env/Brewfile cleanup
+    brew bundle --file="${root}"/toolset/Brewfile --no-upgrade
+    brew bundle --file="${root}"/toolset/Brewfile cleanup
     brew_update
     echo Homebrew was updated
   fi
@@ -35,7 +35,7 @@ function update_dotfiles() {
 function update_tools() {
   if command -v go >/dev/null; then
     (
-      cd "${root}"/env || exit 1
+      cd "${root}"/toolset || exit 1
       go mod download && go generate tools.go
       echo tools were installed
     )
