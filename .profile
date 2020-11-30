@@ -4,7 +4,7 @@
 
 set +o histexpand
 
-export GOPATH="${HOME}/Development/go"
+export GOPATH="${HOME}/go"
 export PATH="${HOME}/.dotfiles/bin:${GOPATH}/bin:/usr/local/sbin:${PATH}"
 
 # Common
