@@ -53,7 +53,11 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(common-aliases)
+plugins=(
+  common-aliases
+  docker
+  docker-compose
+)
 
 . "${ZSH}"/oh-my-zsh.sh
 
@@ -88,6 +92,9 @@ plugins=(common-aliases)
 
 # Completion
 
-fpath=(/usr/local/share/zsh-completions "${HOME}"/.dotfiles/bash_completion.d $fpath)
-autoload -Uz compinit && compinit -i
-autoload -Uz bashcompinit && bashcompinit -i
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi

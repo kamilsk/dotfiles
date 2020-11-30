@@ -1,10 +1,3 @@
 #!/usr/bin/env bash
 
-# Completion
-
-if command -v brew >/dev/null; then
-  if [ -f "$(brew --prefix)"/etc/bash_completion ]; then
-    # shellcheck source=/usr/local/etc/bash_completion
-    source "$(brew --prefix)"/etc/bash_completion
-  fi
-fi
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
