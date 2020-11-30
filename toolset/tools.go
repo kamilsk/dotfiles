@@ -13,6 +13,7 @@ import (
 	_ "github.com/isacikgoz/gia"
 	_ "github.com/kyoh86/looppointer/cmd/looppointer"
 	_ "github.com/mrnugget/fzz"
+	_ "github.com/rakyll/gotest"
 	_ "golang.org/x/exp/cmd/gorelease"
 )
 
@@ -24,4 +25,5 @@ import (
 //go:generate go install github.com/isacikgoz/gia
 //go:generate go install github.com/kyoh86/looppointer/cmd/looppointer
 //go:generate go install github.com/mrnugget/fzz
+//go:generate go install github.com/rakyll/gotest
 //go:generate go install golang.org/x/exp/cmd/gorelease
