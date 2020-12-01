@@ -90,9 +90,7 @@ plugins=(
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Completion
-
-if type brew &>/dev/null; then
+if command -v brew >/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
   autoload -Uz compinit
