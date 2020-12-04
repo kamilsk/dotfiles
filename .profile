@@ -109,7 +109,8 @@ alias tflip='echo "（╯°□°）╯︵┻━┻"'
 # Git
 
 function pull() {
-  git pull --all --prune --tags --force --rebase
+  git fetch --all --tags || true
+  git pull --all --force --prune --rebase
   git submodule update --init --recursive
 }
 
