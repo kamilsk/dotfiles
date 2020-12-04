@@ -25,7 +25,7 @@ cmm)
   git commit -m "${message}"
   ;;
 undo)
-  git reset --soft HEAD^"${2-1}"
+  git reset --soft HEAD~"${2-1}"
   ;;
 *)
   (echo >&2 unknown command)
