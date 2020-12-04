@@ -48,7 +48,7 @@ function lookup() {
   local target
   target="$(command -v "${1:-}")"
   if [[ ! -f "${target}" ]]; then
-    echo "${target}"
+    which "${target}"
     return
   fi
   if file "${target}" | grep 'shell script'; then
