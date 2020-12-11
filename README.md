@@ -30,9 +30,7 @@ $ self-update
   - [vim-go github](https://github.com/fatih/vim-go)
   - [vim-go tutorial at github](https://github.com/fatih/vim-go-tutorial)
 
----
-
-made with ❤️ for everyone
+<p align="right">made with ❤️ for everyone</p>
 
 [mirror.page]:      https://bitbucket.org/kamilsk/dotfiles
 [mirror.icon]:      https://img.shields.io/badge/mirror-bitbucket-blue
