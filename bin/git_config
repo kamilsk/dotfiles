@@ -8,7 +8,7 @@ git config --global core.excludesfile "$(dirname "$(dirname "$0")")"/.gitignore
 git config --global alias.aliases '!git config --get-regexp alias | git_aliases'
 
 # метаинформация
-git config --global alias.state "!git status && git stash list"
+git config --global alias.state "!git status && (echo; echo Stash content) && (git stash list | grep . || echo -)"
 git config --global alias.url "!git_url"
 git config --global alias.whoami "!echo \$(git config user.name) \<\$(git config user.email)\>"
 git config --global alias.default "!git_default"
@@ -32,6 +32,7 @@ git config --global alias.mirror "!git_mirror"
 
 git config --global alias.at "!git_commit at"
 git config --global alias.it "!git_commit it"
+git config --global alias.configure "!git_config"
 
 git config --global alias.cmm "!git_commit cmm"
 git config --global alias.commend "!git_commit amend"
