@@ -57,6 +57,9 @@ plugins=(
   common-aliases
   docker
   docker-compose
+  git
+  golang
+  kubectl
 )
 
 . "${ZSH}"/oh-my-zsh.sh
