@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -e
+set -o nounset
+set -o pipefail
+
+import() {
+  local script=${1:-}
+  if [ -z "${script}" ]; then return 1; fi
+
+  if [[ "${script}" != /* ]]; then script=$(CDPATH='' cd "$(dirname "${0}")" && pwd -P)/${script}; fi
+  # shellcheck source=.
+  source "${script}"
+}
+
+import "${@}"

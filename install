@@ -1,0 +1,143 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+root="${HOME}"/.dotfiles
+
+check() {
+  if ! command -v git >/dev/null; then
+    echo Git not found, please install it first
+    return 1
+  fi
+
+  if ! command -v curl >/dev/null; then
+    echo cURL not found, please install it first
+    return 1
+  fi
+
+  retunr 0
+}
+
+install-apps() {
+  if [[ ! "$(uname)" =~ Darwin ]]; then return 0; fi
+
+  pushd "${root}" || return 1
+  echo Installing apps...
+  toolset/Apps install
+  popd
+  return $?
+}
+
+install-clt() {
+  if [[ ! "$(uname)" =~ Darwin ]]; then return 0; fi
+  if command -v xcode-select >/dev/null; then return 0; fi
+
+  echo Installing Command Line Tools for Xcode...
+  xcode-select --install
+  return $?
+}
+
+install-dotfiles() {
+  if [ -d "${root}" ]; then return 0; fi
+
+  echo Installing dotfiles...
+  mkdir -p "${root}"
+  git clone git@github.com:kamilsk/dotfiles.git "${root}"
+  return $?
+}
+
+install-homebrew() {
+  if command -v brew >/dev/null; then return 0; fi
+
+  echo Installing Homebrew... # https://docs.brew.sh/Installation
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  local bin
+  if [ -x '/usr/local/bin/brew' ]; then bin='/usr/local/bin/brew'; fi
+  if [ -x '/opt/homebrew/bin/brew' ]; then bin='/opt/homebrew/bin/brew'; fi
+  if [ -x '/home/linuxbrew/.linuxbrew/bin/brew' ]; then bin='/home/linuxbrew/.linuxbrew/bin/brew'; fi
+  if [ -z "${bin}" ]; then
+    echo Homebrew not found after installation
+    return 1
+  fi
+  eval "$(${bin} shellenv)"
+  chmod -R go-w "$(brew --prefix)/share/zsh"
+  return $?
+}
+
+install-bundle() {
+  echo Installing Homebrew bundle...
+  brew update --force --quiet
+  brew bundle --file="${root}"/toolset/Brewfile --no-upgrade -v
+  brew bundle --file="${root}"/toolset/Brewfile cleanup -v
+  return $?
+}
+
+install-tools() {
+  pushd "${root}" || return 1
+  echo Installing tools...
+  make install
+  popd
+  return $?
+}
+
+integrate-cli() {
+  if command -v bash >/dev/null; then
+    local rc="${HOME}"/.bash_profile
+
+    if [ ! -f "${rc}" ] || ! grep -q "source '${root}'" "${rc}"; then
+      echo Integrating with Bash...
+      echo "source '${root}'/config/bash/.bash_profile" >>"${rc}"
+    fi
+  fi
+
+  if command -v zsh >/dev/null; then
+    local rc="${HOME}"/.zshrc
+
+    if [ ! -f "${rc}" ] || ! grep -q "source '${root}'" "${rc}"; then
+      echo Integrating with Zsh...
+      echo "source '${root}'/config/zsh/.zshrc" >>"${rc}"
+    fi
+
+    if [ ! -d "${HOME}/.oh-my-zsh" ]; then
+      echo Installing Oh My Zsh...
+      bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+      echo Installing fonts...
+      pushd "${root}/fonts" || return 1
+      ./install.sh
+      popd || return 1
+      echo don\'t forget to "use built-in Powerline glyphs | Preferences > Profiles > Text"
+    fi
+  fi
+
+  return 0
+}
+
+if ! check; then return 0; fi
+install-clt
+install-dotfiles
+install-homebrew
+install-bundle
+install-tools
+install-apps
+integrate-cli
+
+#
+# gpg signing automation
+#
+# Key ID: 35155645C6216420
+# $ gpg --list-secret-keys --keyid-format=long | grep rsa4096/35155645C6216420
+#
+# Public key
+# $ gpg --armor --export 35155645C6216420
+#
+# Integration with Git
+# $ git config --global user.signingKey 35155645C6216420
+# $ git config --global commit.gpgSign true
+# $ git config --global tag.gpgSign true
+#
+# Passphrase (alternative for Mac OS Keychain)
+# $ brew install pinentry-mac
+# $ echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
+# $ killall gpg-agent
+#

@@ -1,0 +1,9 @@
+.DS_Store
+.idea
+.obsidian
+.vagrant
+.virtenv
+.vscode
+
+*.egg-info
+__pycache__

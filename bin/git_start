@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+current="$(git current)"
+default="$(git default)"
+
+if [ "${current}" != "${default}" ]; then
+  git checkout "${default}"
+fi
+
+case "${1}" in
+github)
+  id=${2:-}
+  if [ -z "${id}" ]; then
+    git branch --list | cat
+    read -r -p 'enter issue id: ' id
+  fi
+  issue="issue-${id}"
+  brief="$(echo "${@:3}" | sed 's/ /-/g' | awk '{print tolower($0)}')"
+  if [ -z "${brief}" ]; then
+    branches="$(git branch --list | grep -e "${issue}-" -e "${issue}\$" | awk '{print $1}')"
+    if [ -z "${branches}" ]; then
+      branch="${issue}"
+      git pull --all --prune --tags --force --rebase 2>/dev/null || true
+      git checkout -b "${branch}"
+    elif [ "$(echo "${branches}" | wc -l)" -gt 1 ]; then
+      echo please refine the branch:
+      for branch in $branches; do
+        echo "- ${branch}"
+      done
+    else
+      branch="${branches}"
+      git checkout "${branch}"
+    fi
+  else
+    branches="$(git branch --list | grep "${issue}-${brief}" | awk '{print $1}')"
+    if [ "$(echo "${branches}" | wc -l)" -gt 1 ]; then
+      echo please refine the branch:
+      for branch in $branches; do
+        echo "- ${branch}"
+      done
+    elif [ -n "${branches}" ]; then
+      branch="${branches}"
+      git checkout "${branch}"
+    else
+      branch="${issue}-${brief}"
+      git pull --all --prune --tags --force --rebase 2>/dev/null || true
+      git checkout -b "${branch}"
+    fi
+  fi
+  ;;
+jira)
+  id=${2:-}
+  if [ -z "${id}" ]; then
+    git branch --list | cat
+    read -r -p 'enter issue id: ' id
+  fi
+  issue="$(echo "${id}" | awk '{print toupper($0)}')"
+  brief="$(echo "${@:3}" | sed 's/ /-/g' | awk '{print tolower($0)}')"
+  if [ -z "${brief}" ]; then
+    branches="$(git branch --list | grep "${issue}-" | awk '{print $1}')"
+    if [ -z "${branches}" ]; then
+      branch="${issue}"
+      git pull --all --prune --tags --force --rebase 2>/dev/null || true
+      git checkout -b "${branch}"
+    elif [ "$(echo "${branches}" | wc -l)" -gt 1 ]; then
+      echo please refine the branch:
+      for branch in $branches; do
+        echo "- ${branch}"
+      done
+    else
+      branch="${branches}"
+      git checkout "${branch}"
+    fi
+  else
+    branches="$(git branch --list | grep "${issue}-${brief}" | awk '{print $1}')"
+    if [ "$(echo "${branches}" | wc -l)" -gt 1 ]; then
+      echo please refine the branch:
+      for branch in $branches; do
+        echo "- ${branch}"
+      done
+    elif [ -n "${branches}" ]; then
+      branch="${branches}"
+      git checkout "${branch}"
+    else
+      branch="${issue}-${brief}"
+      git pull --all --prune --tags --force --rebase 2>/dev/null || true
+      git checkout -b "${branch}"
+    fi
+  fi
+  ;;
+*)
+  (echo >&2 use github or jira as an argument)
+  exit 1
+  ;;
+esac

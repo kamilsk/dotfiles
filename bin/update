@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+__go=$(which go)
+__npm=$(which npm)
+__php=$(which composer)
+
+__git() {
+  git diff --exit-code >/dev/null
+  git diff --cached --exit-code >/dev/null
+  ! git ls-files --others --exclude-standard | grep -q ^
+}
+
+go() {
+  trap '{ [ $? != 0 ] && echo please stash or commit changes; }' EXIT
+  __git
+
+  local packages=("${@}")
+  if [ ${#packages[@]} = 0 ]; then
+    local filter='{{if not (or .Main .Indirect)}}{{.Path}}{{end}}'
+    IFS=' ' read -r -a packages <<<"$($__go list -f "${filter}" -m -mod=readonly all | tr -s '\n' ' ')"
+  fi
+
+  for pkg in "${packages[@]}"; do
+    $__go mod edit -require="${pkg}@latest"
+    $__go mod tidy
+    if ! git diff --exit-code >/dev/null; then
+      printf '\nPackage %s was updated, please commit changes\n' "${pkg}"
+      return
+    fi
+  done
+  echo is up-to-date
+}
+
+npm() {
+  trap '{ [ $? != 0 ] && echo please stash or commit changes; }' EXIT
+  __git
+
+  local packages=("${@}")
+  if [ ${#packages[@]} = 0 ]; then
+    local filter='.dependencies | keys | join(" ")'
+    IFS=' ' read -r -a packages <<<"$($__npm ls --depth=0 --prod --json | jq -r "${filter}")"
+  fi
+
+  for pkg in "${packages[@]}"; do
+    $__npm install "${pkg}"@latest
+    if ! git diff --exit-code >/dev/null; then
+      printf '\nPackage %s was updated, please commit changes\n' "${pkg}"
+      return
+    fi
+  done
+  echo is up-to-date
+}
+
+php() {
+  trap '{ [ $? != 0 ] && echo please stash or commit changes; }' EXIT
+  __git
+
+  local packages=("${@}")
+  if [ ${#packages[@]} = 0 ]; then
+    local filter='[.require | keys | .[] | select(contains("/"))] | sort | join(" ")'
+    IFS=' ' read -r -a packages <<<"$(jq -r "${filter}" composer.json)"
+  fi
+
+  for pkg in "${packages[@]}"; do
+    $__php require "${pkg}"
+    if ! git diff --exit-code >/dev/null; then
+      printf '\nPackage %s was updated, please commit changes\n' "${pkg}"
+      return
+    fi
+  done
+  echo is up-to-date
+}
+
+function help() {
+  echo "$0 <target>"
+
+  echo "Targets:"
+  compgen -A function | grep -v '^__' | grep -v 'help' | sort | cat -n
+}
+
+"${@:-help}"

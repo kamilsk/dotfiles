@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+function cover_go() {
+  local tmp
+  tmp=$(mktemp -t c.out)
+  trap '{ unlink "${tmp}"; }' EXIT
+  echo 'mode: count' >"${tmp}"
+
+  local pkgs
+  pkgs=$(go list ./... | grep -v vendor | grep -v examples)
+
+  local buff=''
+
+  for pkg in $pkgs; do
+    local report="coverage_${pkg##*/}.out"
+    buff=${buff}$'\n'$(go test -covermode count -coverprofile "${report}" "$*" "${pkg}")
+    if [ -f "${report}" ]; then
+      sed '1d' "${report}" >>"${tmp}"
+      unlink "${report}"
+    fi
+  done
+
+  echo "${buff}" |
+    sed 's/ of statements//' |
+    sed 's/ \[no tests to run\]//' |
+    sed 's/coverage://' |
+    sed 's/\[no test files\]/0.0%/' |
+    sed -E 's/[0-9.]+s//' |
+    column -t | sort -r
+  go tool cover -func "${tmp}" | grep 'total:' | awk '{print $1 " " $3}'
+}
+
+function cover_php() {
+  echo not implemented, "$*"
+}
+
+function cover_python() {
+  echo not implemented, "$*"
+}
+
+if [ -f go.mod ] || [ -f Gopkg.toml ]; then
+  cover_go "$*"
+elif [ -f composer.json ]; then
+  cover_php "$*"
+elif [ -f requirements.txt ]; then
+  cover_python "$*"
+fi

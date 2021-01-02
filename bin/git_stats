@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+case "${1:-}" in
+details)
+  git shortlog -s "${@:2}" -- "$(pwd)" | cut -c8- | while read -r i; do
+    git log --author="$i" --pretty=tformat: --numstat "${@:2}" -- "$(pwd)" ":!vendor" |
+      awk -v name="$i" '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "%s:\n\tadded lines: %s, removed lines: %s, total lines: %s\n", name, add, subs, loc }'
+  done
+  ;;
+week)
+  $0 details --since=1.week
+  ;;
+month)
+  $0 details --since=1.month
+  ;;
+*)
+  git log --pretty=format:"%an <%ae>" | sort | uniq -c
+  ;;
+esac

@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+remote="$(git current remote)"
+if [ -z "${remote}" ]; then
+  (echo >&2 cannot define default remote branch, \`master\` will be used)
+  default=master
+else
+  if ! git symbolic-ref refs/remotes/"${remote}"/HEAD >/dev/null; then
+    git remote set-head "${remote}" --auto
+  fi
+  default="$(git symbolic-ref refs/remotes/"${remote}"/HEAD | sed "s@^refs/remotes/${remote}/@@")"
+  if [ -z "${default}" ]; then
+    (echo >&2 no default branch found, see "$(git symbolic-ref refs/remotes/"${remote}"/HEAD)")
+    exit 1
+  fi
+fi
+
+echo "${default}"

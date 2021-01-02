@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+current="$(git current)"
+default="$(git default)"
+
+if [ "${current}" != "${default}" ]; then
+  git checkout "${default}"
+  echo 'done'
+  exit 0
+fi
+
+(echo >&2 'nothing to do')
+exit 1

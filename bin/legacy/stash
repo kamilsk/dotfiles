@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+# Required features:
+# - [ ] multiple stashes: stash -id xyz echo scripting; stash -id xyz apply|pop
+# - [ ] renaming: flush -> pop; repeat -> apply; dry -> show
+# - [ ] new command: list, clear
+# - [ ] pipe building: stash cat file | stash -pipe grep text | stash -pipe wc -l
+#   - as alternative use --: stash cat file -- grep text -- wc -l
+#   - check stdin to automate the process?
+# - [ ] solve problem with `cd` case, e.g. stash exit should be drop current subshell chain
+
+set -o nounset
+set -o pipefail
+
+if [ ! -f "${HOME}"/.stash ]; then
+  touch "${HOME}"/.stash
+  chmod +x "${HOME}"/.stash
+fi
+
+case "${1:-}" in
+drop)
+  cat >"${HOME}"/.stash <<EOL
+#!/usr/bin/env bash
+set -o nounset
+set -o pipefail
+set -o xtrace
+
+EOL
+  ;;
+dry)
+  cat "${HOME}"/.stash
+  ;;
+flush)
+  "${HOME}"/.stash
+  $0 drop
+  ;;
+repeat)
+  "${HOME}"/.stash
+  ;;
+'')
+  cat "$0"
+  ;;
+*)
+  cmd="$*"
+  eval "${cmd}"
+  code=$?
+  if [ $code -eq 0 ]; then
+    echo "${cmd}" >>"${HOME}"/.stash
+  fi
+  if [ "${1}" = cd ]; then
+    echo 'do not forget to do exit'
+    exec "${SHELL}"
+  fi
+  exit $code
+  ;;
+esac

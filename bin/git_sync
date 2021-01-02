@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+for item in *; do
+  if test -d "${item}" && test -d "${item}"/.git; then
+    (
+      echo current directory is: "${item}" && { cd "${item}" || exit 1; }
+
+      if git pull --all --prune --tags --force --rebase && git submodule update --init --recursive; then
+        branch="$(git branch | cut -d ' ' -f2 | awk 'NF > 0')"
+        git branch --set-upstream-to=origin/"${branch}" "${branch}"
+      fi
+    )
+  fi
+done

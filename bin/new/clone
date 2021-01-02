@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+set -o nounset
+set -o pipefail
+
+# shellcheck source=../lib/sys/clone.bash
+. import ../lib/sys/clone.bash
+clone "${@}"

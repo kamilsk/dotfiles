@@ -1,0 +1,15 @@
+[submodule "fonts"]
+	path = fonts
+	url = git@github.com:powerline/fonts.git
+
+[submodule "test/bats"]
+	path = test/bats
+	url = git@github.com:bats-core/bats-core.git
+
+[submodule "test/helper/support"]
+	path = test/helper/support
+	url = git@github.com:bats-core/bats-support.git
+
+[submodule "test/helper/assert"]
+	path = test/helper/assert
+	url = git@github.com:bats-core/bats-assert.git

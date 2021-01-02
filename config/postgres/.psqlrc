@@ -1,0 +1,25 @@
+\set QUIET 1
+
+-- By default, NULL displays as an empty space. Is it actually an empty
+-- string, or is it null? This makes that distinction visible.
+\pset null ¤
+
+\set COMP_KEYWORD_CASE upper
+-- If a command is run more than once in a row,
+-- only store it once in the history.
+\set HISTCONTROL ignoredups
+-- Use a separate history file per-database.
+\set HISTFILE ~/.psql_history- :DBNAME
+-- Errors are ignored in interactive sessions,
+-- and not when reading script files.
+\set ON_ERROR_ROLLBACK interactive
+
+-- To have all queries display query times.
+\timing on
+
+-- Use table format (with headers across the top) by default,
+-- but switch to expanded table format when there's a lot of data,
+-- which makes it much easier to read.
+\x auto
+
+\unset QUIET

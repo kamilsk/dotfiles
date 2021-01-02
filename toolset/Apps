@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+function install() {
+  local list=(
+    1333542190 # 1Password 7
+    411643860  # DaisyDisk
+    1277179284 # FSNotes
+    823766827  # OneDrive
+    803453959  # Slack
+    747648890  # Telegram
+    966085870  # TickTick
+  )
+
+  for app in "${list[@]}"; do
+    if ! mas list | awk '{print $1}' | grep "^${app}$" >/dev/null; then
+      mas install "${app}"
+    fi
+  done
+}
+
+function __default() {
+  mas list
+}
+
+"${@:-__default}"

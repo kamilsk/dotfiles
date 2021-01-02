@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+case "${1:-all}" in
+all)
+  if [ "$(git remote | wc -l)" = 0 ]; then
+    (echo >&2 'nothing to do')
+    exit 1
+  fi
+  for remote in $(git remote | grep -v upstream); do
+    git push --force-with-lease "${remote}" "$(git current)"
+  done
+  ;;
+current)
+  remote="$(git current remote)"
+  if [ -z "${remote}" ]; then
+    (echo >&2 'nothing to do')
+    exit 1
+  fi
+  git push --force-with-lease "${remote}"
+  ;;
+*)
+  (echo >&2 use all or current as an argument)
+  exit 1
+  ;;
+esac

@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+remote=${1:-}
+if [ -z "${remote}" ] || [ "${remote}" == 'open' ]; then
+  remote=$(git rev-parse --abbrev-ref --symbolic-full-name '@{u}' | awk -F/ '{print $1}')
+fi
+remote=$(git remote -v | grep "${remote}" | grep '(fetch)' | awk '{print $2}')
+
+url="cannot parse url from remote ${remote}"
+code=1
+
+if echo "${remote}" | grep 'git@github.com' >/dev/null; then
+  url=$(echo "${remote}" | sed 's|:|/|g' | sed 's|git@|https\://|g' | sed 's|\.git||g')
+  code=$?
+elif echo "${remote}" | grep 'git@bitbucket.org' >/dev/null; then
+  url=$(echo "${remote}" | sed 's|:|/|g' | sed 's|git@|https\://|g' | sed 's|\.git||g')
+  code=$?
+fi
+
+if [ $code == 0 ] && { [ "${1:-}" == 'open' ] || [ "${2:-}" == 'open' ]; }; then
+  open "${url}"
+  exit $?
+fi
+
+echo "${url}"
+exit $code

@@ -1,0 +1,727 @@
+---
+
+- name: 1Password 7
+  site: https://1password.com
+  AppStore:
+    id: 1333542190
+    url: https://apps.apple.com/app/1password-7-password-manager/id1333542190
+    title: 1Password 7 - Password Manager
+  BrewCask:
+    id: 1password
+    url: https://formulae.brew.sh/cask/1password
+
+- name: Adobe Acrobat Reader DC
+  site: https://www.adobe.com/acrobat/pdf-reader.html
+  BrewCask:
+    id: adobe-acrobat-reader
+    url: https://formulae.brew.sh/cask/adobe-acrobat-reader
+
+- name: Airtable
+  site: https://www.airtable.com
+  BrewCask:
+    id: airtable
+    url: https://formulae.brew.sh/cask/airtable
+
+- name: Bartender 4
+  site: https://www.macbartender.com
+  BrewCask:
+    id: bartender
+    url: https://formulae.brew.sh/cask/bartender
+
+- name: CleanMyMac X
+  site: https://macpaw.com/cleanmymac
+  BrewCask:
+    id: cleanmymac
+    url: https://formulae.brew.sh/cask/cleanmymac
+
+- name: Dash
+  site: https://kapeli.com/dash
+  BrewCask:
+    id: dash
+    url: https://formulae.brew.sh/cask/dash
+
+- name: DaisyDisk
+  site: https://daisydiskapp.com
+  AppStore:
+    id: 411643860
+    url: https://apps.apple.com/app/daisydisk/id411643860
+    title: DaisyDisk
+  BrewCask:
+    id: daisydisk
+    url: https://formulae.brew.sh/cask/daisydisk
+
+- name: Docker
+  site: https://www.docker.com
+  BrewCask:
+    id: docker
+    url: https://formulae.brew.sh/cask/docker
+
+- name: Fellow
+  site: https://fellow.app
+  BrewCask:
+    id: fellow
+    url: https://formulae.brew.sh/cask/fellow
+
+- name: FSNotes
+  site: https://fsnot.es
+  AppStore:
+    id: 1277179284
+    url: https://apps.apple.com/app/fsnotes/id1277179284
+    title: FSNotes
+  BrewCask:
+    id: fsnotes
+    url: https://formulae.brew.sh/cask/fsnotes
+  Source:
+    git: https://github.com/glushchenko/fsnotes
+    lang: Swift
+
+- name: Google Chrome
+  site: https://www.google.com/chrome/
+  BrewCask:
+    id: google-chrome
+    url: https://formulae.brew.sh/cask/google-chrome
+
+- name: Google Drive
+  site: https://www.google.com/drive/
+  BrewCask:
+    id: google-drive
+    url: https://formulae.brew.sh/cask/google-drive
+
+- name: GPG Suite
+  site: https://gpgtools.org
+  BrewCask:
+    id: gpg-suite
+    url: https://formulae.brew.sh/cask/gpg-suite
+
+- name: iTerm
+  site: https://iterm2.com
+  BrewCask:
+    id: iterm2
+    url: https://formulae.brew.sh/cask/iterm2
+
+- name: JetBrains Toolbox
+  site: https://www.jetbrains.com/toolbox-app/
+  BrewCask:
+    id: jetbrains-toolbox
+    url: https://formulae.brew.sh/cask/jetbrains-toolbox
+
+- name: Keybase
+  site: https://keybase.io
+  BrewCask:
+    id: keybase
+    url: https://formulae.brew.sh/cask/keybase
+
+- name: Lens
+  site: https://k8slens.dev
+  BrewCask:
+    id: lens
+    url: https://formulae.brew.sh/cask/lens
+  Source:
+    git: https://github.com/lensapp/lens
+    lang: TypeScript
+
+- name: Loom
+  site: https://www.loom.com
+  BrewCask:
+    id: loom
+    url: https://formulae.brew.sh/cask/loom
+
+- name: Miro
+  site: https://miro.com
+  BrewCask:
+    id: miro
+    url: https://formulae.brew.sh/cask/miro
+
+- name: Notion
+  site: https://www.notion.so
+  BrewCask:
+    id: notion
+    url: https://formulae.brew.sh/cask/notion
+
+- name: Obsidian
+  site: https://obsidian.md
+  BrewCask:
+    id: obsidian
+    url: https://formulae.brew.sh/cask/obsidian
+
+- name: OneDrive
+  site: https://www.microsoft.com/en-ww/microsoft-365/onedrive/online-cloud-storage
+  AppStore:
+    id: 823766827
+    url: https://apps.apple.com/app/onedrive/id823766827
+    title: OneDrive
+  BrewCask:
+    id: onedrive
+    url: https://formulae.brew.sh/cask/onedrive
+
+- name: osquery
+  site: https://osquery.io
+  BrewCask:
+    id: osquery
+    url: https://formulae.brew.sh/cask/osquery
+  Source:
+    git: https://github.com/osquery/osquery
+    lang: C++
+
+- name: Outline
+  site: https://getoutline.org
+  AppStore:
+    id: 1356178125
+    url: https://apps.apple.com/app/outline-secure-internet-access/id1356178125
+    title: Outline-Secure internet access
+  Source:
+    git: https://github.com/Jigsaw-Code/outline-client
+    lang: TypeScript
+
+- name: Outline Manager
+  site: https://getoutline.org
+  BrewCask:
+    id: outline-manager
+    url: https://formulae.brew.sh/cask/outline-manager
+  Source:
+    git: https://github.com/Jigsaw-Code/outline-server
+    lang: TypeScript
+
+- name: Slack
+  site: https://slack.com
+  AppStore:
+    id: 803453959
+    url: https://apps.apple.com/app/slack-for-desktop/id803453959
+    title: Slack for Desktop
+  BrewCask:
+    id: slack
+    url: https://formulae.brew.sh/cask/slack
+
+- name: Sublime Merge
+  site: https://www.sublimemerge.com
+  BrewCask:
+    id: sublime-merge
+    url: https://formulae.brew.sh/cask/sublime-merge
+
+- name: Sublime Text
+  site: https://www.sublimetext.com
+  BrewCask:
+    id: sublime-text
+    url: https://formulae.brew.sh/cask/sublime-text
+
+- name: Telegram
+  site: https://telegram.org
+  AppStore:
+    id: 747648890
+    url: https://apps.apple.com/app/telegram/id747648890
+    title: Telegram
+  BrewCask:
+    id: telegram
+    url: https://formulae.brew.sh/cask/telegram
+  Source:
+    git: https://github.com/overtake/TelegramSwift
+    lang: Swift
+
+- name: TickTick
+  site: https://ticktick.com
+  AppStore:
+    id: 966085870
+    url: https://apps.apple.com/app/ticktick-to-do-list-calendar/id966085870
+    title: TickTick:To-Do List, Calendar
+  BrewCask:
+    id: ticktick
+    url: https://formulae.brew.sh/cask/ticktick
+
+- name: Visual Studio Code
+  site: https://code.visualstudio.com
+  BrewCask:
+    id: visual-studio-code
+    url: https://formulae.brew.sh/cask/visual-studio-code
+
+- name: Wireshark
+  site: https://www.wireshark.org
+  BrewCask:
+    id: wireshark
+    url: https://formulae.brew.sh/cask/wireshark
+
+- name: zoom.us
+  site: https://zoom.us
+  BrewCask:
+    id: zoom
+    url: https://formulae.brew.sh/cask/zoom
+
+---
+
+- name:
+  site:
+  Brew:
+    id: ansible
+    url: https://formulae.brew.sh/formula/ansible
+  Source:
+    git: https://github.com/ansible/ansible
+    lang: Python
+
+- name:
+  site:
+  Brew:
+    id: awscli
+    url: https://formulae.brew.sh/formula/awscli
+  Source:
+    git: https://github.com/aws/aws-cli
+    lang: Python
+
+- name:
+  site:
+  Brew:
+    id: bash
+    url: https://formulae.brew.sh/formula/bash
+  Source:
+    git: https://git.savannah.gnu.org/cgit/bash.git
+    lang: C
+
+- name:
+  site:
+  Brew:
+    id: bat
+    url: https://formulae.brew.sh/formula/bat
+  Source:
+    git: https://github.com/sharkdp/bat
+    lang: Rust
+
+- name:
+  site:
+  Brew:
+    id: composer
+    url: https://formulae.brew.sh/formula/composer
+  Source:
+    git: https://github.com/composer/composer
+    lang: PHP
+
+- name:
+  site:
+  Brew:
+    id: curl
+    url: https://formulae.brew.sh/formula/curl
+  Source:
+    git: https://github.com/curl/curl
+    lang: C
+
+- name:
+  site:
+  Brew:
+    id: doctl
+    url: https://formulae.brew.sh/formula/doctl
+  Source:
+    git: https://github.com/digitalocean/doctl
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: exa
+    url: https://formulae.brew.sh/formula/exa
+  Source:
+    git: https://github.com/ogham/exa
+    lang: Rust
+
+- name:
+  site:
+  Brew:
+    id: fish
+    url: https://formulae.brew.sh/formula/fish
+  Source:
+    git: https://github.com/fish-shell/fish-shell
+    lang: C++
+
+- name:
+  site:
+  Brew:
+    id: git
+    url: https://formulae.brew.sh/formula/git
+  Source:
+    git: https://github.com/git/git
+    lang: C
+
+- name:
+  site:
+  Brew:
+    id: git-delta
+    url: https://formulae.brew.sh/formula/git-delta
+  Source:
+    git: https://github.com/dandavison/delta
+    lang: Rust
+
+- name:
+  site:
+  Brew:
+    id: gh
+    url: https://formulae.brew.sh/formula/gh
+  Source:
+    git: https://github.com/cli/cli
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: go
+    url: https://formulae.brew.sh/formula/go
+  Source:
+    git: https://github.com/golang/go
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: grpcurl
+    url: https://formulae.brew.sh/formula/grpcurl
+  Source:
+    git: https://github.com/fullstorydev/grpcurl
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: httpie
+    url: https://formulae.brew.sh/formula/httpie
+  Source:
+    git: https://github.com/httpie/httpie
+    lang: Python
+
+- name:
+  site:
+  Brew:
+    id: helm
+    url: https://formulae.brew.sh/formula/helm
+  Source:
+    git: https://github.com/helm/helm
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: hugo
+    url: https://formulae.brew.sh/formula/hugo
+  Source:
+    git: https://github.com/gohugoio/hugo
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: jless
+    url: https://formulae.brew.sh/formula/jless
+  Source:
+    git: https://github.com/PaulJuliusMartinez/jless
+    lang: Rust
+
+- name:
+  site:
+  Brew:
+    id: jid
+    url: https://formulae.brew.sh/formula/jid
+  Source:
+    git: https://github.com/simeji/jid
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: jq
+    url: https://formulae.brew.sh/formula/jq
+  Source:
+    git: https://github.com/stedolan/jq
+    lang: C
+
+- name:
+  site:
+  Brew:
+    id: kubectx
+    url: https://formulae.brew.sh/formula/kubectx
+  Source:
+    git: https://github.com/ahmetb/kubectx
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: kubernetes-cli
+    url: https://formulae.brew.sh/formula/kubernetes-cli
+  Source:
+    git: https://github.com/kubernetes/kubernetes
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: mas
+    url: https://formulae.brew.sh/formula/mas
+  Source:
+    git: https://github.com/mas-cli/mas
+    lang: Swift
+
+- name:
+  site:
+  Brew:
+    id: minikube
+    url: https://formulae.brew.sh/formula/minikube
+  Source:
+    git: https://github.com/kubernetes/minikube
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: node
+    url: https://formulae.brew.sh/formula/node
+  Source:
+    git: https://github.com/nodejs/node
+    lang: C++
+
+- name:
+  site:
+  Brew:
+    id: nushell
+    url: https://formulae.brew.sh/formula/nushell
+  Source:
+    git: https://github.com/nushell/nushell
+    lang: Rust
+
+- name:
+  site:
+  Brew:
+    id: php
+    url: https://formulae.brew.sh/formula/php
+  Source:
+    git: https://github.com/php/php-src
+    lang: C
+
+- name:
+  site:
+  Brew:
+    id: protobuf
+    url: https://formulae.brew.sh/formula/protobuf
+  Source:
+    git: https://github.com/protocolbuffers/protobuf
+    lang: C++
+
+- name:
+  site:
+  Brew:
+    id: python
+    url: https://formulae.brew.sh/formula/python
+  Source:
+    git: https://github.com/python/cpython
+    lang: C
+
+- name:
+  site:
+  Brew:
+    id: restic
+    url: https://formulae.brew.sh/formula/restic
+  Source:
+    git: https://github.com/restic/restic
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: ruby
+    url: https://formulae.brew.sh/formula/ruby
+  Source:
+    git: https://github.com/ruby/ruby
+    lang: C
+
+- name:
+  site:
+  Brew:
+    id: terraform
+    url: https://formulae.brew.sh/formula/terraform
+  Source:
+    git: https://github.com/hashicorp/terraform
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: tmux
+    url: https://formulae.brew.sh/formula/tmux
+  Source:
+    git: https://github.com/tmux/tmux
+    lang: C
+
+- name:
+  site:
+  Brew:
+    id: tree
+    url: https://formulae.brew.sh/formula/tree
+  Source:
+    git:
+    lang: C
+
+- name:
+  site:
+  Brew:
+    id: wget
+    url: https://formulae.brew.sh/formula/wget
+  Source:
+    git: https://git.savannah.gnu.org/git/wget.git
+    lang: C
+
+- name:
+  site:
+  Brew:
+    id: zsh
+    url: https://formulae.brew.sh/formula/zsh
+  Source:
+    git: https://github.com/zsh-users/zsh
+    lang: C
+
+- name:
+  site:
+  Brew:
+    id: zsh-completions
+    url: https://formulae.brew.sh/formula/zsh-completions
+  Source:
+    git: https://github.com/zsh-users/zsh-completions
+    lang: Shell
+
+---
+
+- name:
+  site:
+  Brew:
+    id: batchcorp/public/plumber
+    url:
+    tap: https://github.com/batchcorp/homebrew-public
+  Source:
+    git: https://github.com/batchcorp/plumber
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: goreleaser/tap/goreleaser
+    url:
+    tap: https://github.com/goreleaser/homebrew-tap
+  Source:
+    git: https://github.com/goreleaser/goreleaser
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: isacikgoz/taps/gitbatch
+    url:
+    tap: https://github.com/isacikgoz/homebrew-taps
+  Source:
+    git: https://github.com/isacikgoz/gitbatch
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: isacikgoz/taps/gitin
+    url:
+    tap: https://github.com/isacikgoz/homebrew-taps
+  Source:
+    git: https://github.com/isacikgoz/gitin
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: isacikgoz/taps/tldr
+    url:
+    tap: https://github.com/isacikgoz/homebrew-taps
+  Source:
+    git: https://github.com/isacikgoz/tldr
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: kamilsk/tap/godownloader
+    url:
+    tap: https://github.com/kamilsk/homebrew-tap
+  Source:
+    git: https://github.com/kamilsk/godownloader
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: kamilsk/tap/goimports
+    url:
+    tap: https://github.com/kamilsk/homebrew-tap
+  Source:
+    git: https://github.com/kamilsk/go-tools
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: kamilsk/tap/golangci-lint
+    url:
+    tap: https://github.com/kamilsk/homebrew-tap
+  Source:
+    git: https://github.com/kamilsk/golangci-lint
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: mergestat/mergestat/mergestat
+    url:
+    tap: https://github.com/mergestat/homebrew-mergestat
+  Source:
+    git: https://github.com/mergestat/mergestat
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: octolab/tap/maintainer
+    url:
+    tap: https://github.com/octolab/homebrew-tap
+  Source:
+    git: https://github.com/octomation/maintainer
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: rs/tap/curlie
+    url:
+    tap: https://github.com/rs/homebrew-tap
+  Source:
+    git: https://github.com/rs/curlie
+    lang: Go
+
+- name:
+  site:
+  Brew:
+    id: traefik/tap/yaegi
+    url:
+    tap: https://github.com/traefik/homebrew-tap
+  Source:
+    git: https://github.com/traefik/yaegi
+    lang: Go
+
+--- # templates
+
+- name:
+  site:
+  AppStore:
+    id:
+    url:
+    title:
+  BrewCask:
+    id:
+    url:
+  Source:
+    git:
+    lang:
+
+- name:
+  site:
+  Brew:
+    id:
+    url:
+  Source:
+    git:
+    lang:

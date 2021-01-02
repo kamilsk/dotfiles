@@ -1,0 +1,115 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+root=$(dirname "$(dirname "${0}")")
+
+function update_apps() {
+  "${root}"/toolset/Apps install
+  mas upgrade
+}
+
+function update_brew() {
+  if ! command -v brew >/dev/null; then
+    return
+  fi
+
+  brew update
+  brew bundle --file="${root}"/toolset/Brewfile --no-upgrade -v
+  brew bundle --file="${root}"/toolset/Brewfile cleanup -v
+  brew upgrade
+  brew cu --all --cleanup
+  brew doctor --verbose
+  brew cleanup
+}
+
+function update_docker() {
+  if command -v docker >/dev/null; then
+    docker images --all |
+      tail -n +2 |
+      grep -v '<none>' |
+      awk '{print $1":"$2}' |
+      xargs -n1 docker pull
+    echo Docker images were updated
+  fi
+}
+
+function update_dotfiles() {
+  (
+    cd "${root}" || exit 1
+    git pull --all --prune --tags --force --rebase && git submodule update --init --recursive
+    echo dotfiles were updated
+    git_config >/dev/null
+    echo git config was applied
+  )
+}
+
+function update_tools() {
+  if command -v go >/dev/null; then
+    (
+      cd "${root}"/toolset || exit 1
+      go mod download && go generate tools.go
+      echo tools were installed
+    )
+  fi
+}
+
+function update_zsh() {
+  if [ -n "${ZSH-}" ] && [ -f "${ZSH}"/tools/upgrade.sh ]; then
+    env ZSH="${ZSH}" sh "${ZSH}"/tools/upgrade.sh
+    echo Oh My Zsh was updated
+  fi
+}
+
+UPDATE=()
+
+if [ $# -eq 0 ]; then
+  UPDATE+=(update_dotfiles)
+elif [ "${1:-}" = "all" ]; then
+  UPDATE=(update_apps update_dotfiles update_brew update_docker update_tools update_zsh)
+else
+  for type in "$@"; do
+    case "${type}" in
+    apps)
+      UPDATE+=(update_apps)
+      ;;
+    brew)
+      UPDATE+=(update_brew)
+      ;;
+    docker)
+      UPDATE+=(update_docker)
+      ;;
+    dots)
+      UPDATE+=(update_dotfiles)
+      ;;
+    tools)
+      UPDATE+=(update_tools)
+      ;;
+    zsh)
+      UPDATE+=(update_zsh)
+      ;;
+    *)
+      UPDATE+=("echo unknown type: ${type}")
+      ;;
+    esac
+  done
+fi
+
+for update in "${UPDATE[@]}"; do
+  eval "${update}"
+done
+
+(cd "${root}" && git reset --hard) # clean up
+
+case $(basename "${SHELL}") in
+bash)
+  echo source "${HOME}"/.bash_profile
+  ;;
+zsh)
+  echo source "${HOME}"/.zshrc
+  ;;
+*)
+  echo unknown shell "${SHELL}"
+  exit 1
+  ;;
+esac

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+shopt -s extglob
+
+tag=${1:-}
+
+if [ -z "${tag}" ]; then
+  (echo >&2 'nothing to do')
+  exit 1
+fi
+
+git tag -d "${tag}" || true
+
+cache=/tmp/git/tags/"$(basename "$(git rev-parse --show-toplevel)")/$(date +%j)"
+mkdir -p "${cache}"
+for remote in $(git remote | grep -v upstream); do
+  if [ ! -f "${cache}/${remote}" ]; then
+    git ls-remote --tags "${remote}" | awk '{print $2}' >"${cache}/${remote}"
+  fi
+done
+
+for remote in $(git remote | grep -v upstream); do
+  if grep "^refs/tags/${tag}\$" <"${cache}/${remote}" >/dev/null; then
+    git push "${remote}" :refs/tags/"${tag}"
+  fi
+done

@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+case "${1:-branch}" in
+branch)
+  git symbolic-ref --short HEAD
+  ;;
+remote)
+  upstream="$(git rev-parse --abbrev-ref --symbolic-full-name '@{u}' 2>/dev/null)"
+  remote="$(echo "${upstream}" | awk -F'/' '{print $1}')"
+  if [ "${remote}" == '@{u}' ]; then
+    remote="$(git remote | grep origin | head -1)"
+  fi
+  if [ -z "${remote}" ]; then
+    remote="$(git remote | head -1)"
+  fi
+  if [ -z "${remote}" ]; then
+    (echo >&2 no remote found, see \`git remote\`)
+    exit 1
+  fi
+  echo "${remote}"
+  ;;
+release)
+  latest=$(git describe --tags 2>/dev/null)
+  if [[ -z "${latest}" ]]; then
+    (echo >&2 no have any release)
+    exit 1
+  fi
+
+  # if commit has multiple tags: vX.Y.Z, X.Y.Z, latest
+  # choose one of them
+  if git tag --points-at "${latest}" | grep -v '[:alpha:]' >/dev/null; then
+    latest=$(
+      git tag --points-at "${latest}" |
+        grep -v '[:alpha:]' |
+        sort --version-sort |
+        head -1
+    )
+  fi
+
+  if [[ "${latest}" =~ -[0-9]+-g[a-z0-9]+$ ]]; then
+    ahead=$(echo "${latest}" | rev | cut -d - -f2-2 | rev)
+    latest=$(echo "${latest}" | rev | cut -d - -f3- | rev)
+  fi
+  if [[ "${latest}" =~ - ]]; then
+    latest=$(echo "${latest}" | sed 's/-/ /' | awk '{print $1" ["$2"]"}')
+  fi
+  if [[ "${ahead-}" ]]; then
+    latest="${latest} ${ahead}↑"
+  fi
+  echo "${latest}"
+  ;;
+*)
+  (echo >&2 use branch or remote as an argument)
+  exit 1
+  ;;
+esac

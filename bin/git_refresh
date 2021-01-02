@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+case "${1:-}" in
+please)
+  remote="$(git current remote)"
+  branch="${remote}/$(git default)"
+  ;;
+*)
+  remote="${1:-$(git current remote)}"
+  branch="${remote}/${2:-$(git default)}"
+  ;;
+esac
+
+if [ -z "${remote}" ]; then
+  (echo >&2 'nothing to do because remote is undefined')
+  exit 1
+fi
+
+if ! git remote | grep "${remote}" >/dev/null; then
+  (echo >&2 'nothing to do because remote is not found or invalid')
+  exit 1
+fi
+
+git fetch --all --prune --tags --force
+git rebase "${branch}"
+
+case "${1:-}" in
+please)
+  git please "${*:2}"
+  ;;
+esac
