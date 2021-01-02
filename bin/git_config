@@ -2,13 +2,25 @@
 
 set -euo pipefail
 
+# common things
 git config --global user.email 'kamil@samigullin.info'
 git config --global user.name 'Kamil Samigullin'
-git config --global core.excludesfile ~/.dotfiles/config/git/.gitignore
+git config --global core.excludesFile ~/.dotfiles/config/git/.gitignore
 
+# security
+key=rsa4096/35155645C6216420
+if command -v gpg >/dev/null && gpg --list-secret-keys --keyid-format=long | grep $key >/dev/null; then
+  git config --global user.signingKey 35155645C6216420
+  git config --global commit.gpgSign true
+  git config --global tag.gpgSign true
+else
+  echo WARNING
+  echo Please install GPG Suite and import personal GPG key $key.
+fi
+
+# aliases
 git config --global alias.aliases '!git config --get-regexp alias | git_aliases'
 
-# метаинформация
 git config --global alias.root 'rev-parse --show-toplevel'
 git config --global alias.state "!echo Remotes && (git remote -v | grep 'fetch' | column -t) &&
                                  (echo; git status) && (echo; echo Stash content) &&

@@ -121,23 +121,3 @@ install-bundle
 install-tools
 install-apps
 integrate-cli
-
-#
-# gpg signing automation
-#
-# Key ID: 35155645C6216420
-# $ gpg --list-secret-keys --keyid-format=long | grep rsa4096/35155645C6216420
-#
-# Public key
-# $ gpg --armor --export 35155645C6216420
-#
-# Integration with Git
-# $ git config --global user.signingKey 35155645C6216420
-# $ git config --global commit.gpgSign true
-# $ git config --global tag.gpgSign true
-#
-# Passphrase (alternative for Mac OS Keychain)
-# $ brew install pinentry-mac
-# $ echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
-# $ killall gpg-agent
-#
