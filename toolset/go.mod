@@ -10,9 +10,7 @@ require (
 	github.com/goreleaser/godownloader v0.1.1-0.20200426152203-fd8ad8f7dd78
 	github.com/isacikgoz/gia v0.2.0
 	github.com/kyoh86/looppointer v0.1.7
-	github.com/maruel/panicparse/v2 v2.1.1
 	github.com/mrnugget/fzz v1.1.0
-	github.com/rakyll/gotest v0.0.5
 	golang.org/x/exp v0.0.0-20210126221216-84987778548c
 )
 
