@@ -1,5 +1,8 @@
-.DEFAULT_GOAL = install-spot
+.DEFAULT_GOAL = install
 SHELL         = /bin/bash -euo pipefail
+
+install: install-git-blame install-spot install-go-tools
+.PHONY: install
 
 install-git-blame: LATEST = '"8d854c2d78cb98afdb9f5a73240e06393260b327"'
 install-git-blame:
