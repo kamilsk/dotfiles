@@ -3,7 +3,7 @@
 set -o nounset
 set -o pipefail
 
-case "${1-branch}" in
+case "${1:-branch}" in
 branch)
   git symbolic-ref --short HEAD
   ;;

@@ -20,7 +20,7 @@ for branch in $(git branch --merged | grep -v "${default}"); do
   fi
 done
 
-case "${1-}" in
+case "${1:-}" in
 all)
   for target in $(git branch -r --merged | grep -v "/${default}" | grep -v 'upstream/'); do
     if [ -n "${target}" ]; then
