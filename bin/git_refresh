@@ -3,7 +3,17 @@
 set -o nounset
 set -o pipefail
 
-remote="${1:-$(git current remote)}"
+case "${1:-}" in
+please)
+  remote="$(git current remote)"
+  branch="${remote}/$(git default)"
+  ;;
+*)
+  remote="${1:-$(git current remote)}"
+  branch="${remote}/${2:-$(git default)}"
+  ;;
+esac
+
 if [ -z "${remote}" ]; then
   (echo >&2 'nothing to do because remote is undefined')
   exit 1
@@ -14,6 +24,11 @@ if ! git remote | grep "${remote}" >/dev/null; then
   exit 1
 fi
 
-branch="${remote}/${2:-$(git default)}"
 git fetch --all --prune --tags --force
 git rebase "${branch}"
+
+case "${1:-}" in
+please)
+  git please "${*:2}"
+  ;;
+esac
