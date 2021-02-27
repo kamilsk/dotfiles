@@ -62,6 +62,15 @@ function lookup() {
   file "${target}"
 }
 
+function newdir() {
+  if [[ -z "${1:-}" ]]; then
+    echo 'Please provide a dir name'
+    return
+  fi
+  mkdir -p "${1}"
+  cd "${_}" || return
+}
+
 function realpath() {
   if [[ -z "${1:-}" ]]; then
     echo 'Please provide a file/dir name'
@@ -83,9 +92,9 @@ function fix_xcrun() {
 function touch_sudo() {
   cat /etc/pam.d/sudo
   if ! grep 'pam_tid.so' /etc/pam.d/sudo; then
-    echo '# sudo: auth account password session' > /tmp/sudo
-    echo 'auth       sufficient     pam_tid.so' >> /tmp/sudo
-    cat < /etc/pam.d/sudo | grep -v '# sudo' >> /tmp/sudo
+    echo '# sudo: auth account password session' >/tmp/sudo
+    echo 'auth       sufficient     pam_tid.so' >>/tmp/sudo
+    cat </etc/pam.d/sudo | grep -v '# sudo' >>/tmp/sudo
     sudo mv /tmp/sudo /etc/pam.d/sudo
     cat /etc/pam.d/sudo
   fi
