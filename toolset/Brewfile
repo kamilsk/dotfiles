@@ -1,11 +1,10 @@
 # https://formulae.brew.sh/formula/<Formulae>
+
 brew "ansible"              # https://github.com/ansible/ansible (python)
 brew "bash"                 # https://git.savannah.gnu.org/cgit/bash.git (c)
 brew "bash-completion@2"    # https://github.com/scop/bash-completion (shell)
 brew "bat"                  # https://github.com/sharkdp/bat (rust)
-brew "dive"                 # https://github.com/wagoodman/dive (go)
 brew "doctl"                # https://github.com/digitalocean/doctl (go)
-brew "fzf"                  # https://github.com/junegunn/fzf (go)
 brew "git"                  # https://github.com/git/git (c)
 brew "gh"                   # https://github.com/cli/cli (go)
 brew "go"                   # https://github.com/golang/go (go)
@@ -25,9 +24,6 @@ brew "zsh"                  # https://github.com/zsh-users/zsh (c)
 brew "zsh-completions"      # https://github.com/zsh-users/zsh-completions (shell)
 
 cask "osquery"              # https://github.com/osquery/osquery (c++)
-
-tap "git-chglog/git-chglog" # https://github.com/git-chglog/homebrew-git-chglog
-brew "git-chglog"           # https://github.com/git-chglog/git-chglog (go)
 
 tap "golangci/tap"          # https://github.com/golangci/homebrew-tap
 brew "golangci-lint"        # https://github.com/golangci/golangci-lint (go)
