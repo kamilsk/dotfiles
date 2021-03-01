@@ -2,9 +2,9 @@
 
 brew "ansible"              # https://github.com/ansible/ansible (python)
 brew "bash"                 # https://git.savannah.gnu.org/cgit/bash.git (c)
-brew "bash-completion@2"    # https://github.com/scop/bash-completion (shell)
 brew "bat"                  # https://github.com/sharkdp/bat (rust)
 brew "doctl"                # https://github.com/digitalocean/doctl (go)
+brew "fish"                 # https://github.com/fish-shell/fish-shell (c++)
 brew "git"                  # https://github.com/git/git (c)
 brew "gh"                   # https://github.com/cli/cli (go)
 brew "go"                   # https://github.com/golang/go (go)
