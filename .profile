@@ -7,6 +7,16 @@ set +o histexpand
 export GOPATH="${HOME}/go"
 export PATH="${HOME}/.dotfiles/bin:${GOPATH}/bin:/usr/local/sbin:${PATH}"
 
+function sign-in() {
+    if command -v ngrok >/dev/null && test -v NGROK_TOKEN; then
+      ngrok authtoken "${NGROK_TOKEN}"
+    fi
+
+    if command -v travis >/dev/null && test -v GITHUB_TOKEN; then
+      travis login --com --github-token="${GITHUB_TOKEN}"
+    fi
+}
+
 # Common
 
 alias ..="cd ../"
@@ -173,7 +183,7 @@ if command -v docker >/dev/null; then
     esac
   }
 
-  function trim() {
+  function truncate_docker_logs() {
     truncate -s 0 "$(docker inspect --format='{{.LogPath}}' "${1}")"
   }
 
@@ -206,11 +216,11 @@ if command -v brew >/dev/null; then
 fi
 if command -v composer >/dev/null; then
   alias composer+="sudo composer self-update; \
-                     composer global update"
+                   composer global update"
 fi
 if command -v gem >/dev/null; then
   alias gem+="sudo gem update --system; \
-                gem list | cut -d ' ' -f1 | xargs -n1 sudo gem update"
+              gem list | cut -d ' ' -f1 | xargs -n1 sudo gem update"
 fi
 if command -v npm >/dev/null; then
   alias npm+="npm install -g npm && npm update -g"
