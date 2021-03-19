@@ -51,7 +51,9 @@ function lookup() {
     alias="$(git config alias."${2:-}")"
     echo git alias: "${alias}"
 
-    lookup "$(echo "${alias}" | awk '{print $1}' | sed 's/!//g')"
+    if echo "${alias}" | grep "!git_" >/dev/null; then
+      lookup "$(echo "${alias}" | awk '{print $1}' | sed 's/!//g')"
+    fi
     return
   fi
 
