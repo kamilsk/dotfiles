@@ -25,8 +25,9 @@ alias dotfiles="cd ~/.dotfiles"
 
 alias cwd="pwd | tr -d '\n' | pbcopy"
 alias dots="ls \.*"
-alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 
+alias isodate="date +'%Y-%m-%d'"
+alias isodatetime="date +'%Y-%m-%dT%H:%M:%S%Z'"
 alias timestamp="date +%s"
 
 alias append="cat <<EOF >>"
@@ -92,6 +93,8 @@ function realpath() {
 }
 
 # macOS
+
+alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 
 function fix_xcrun() {
   sudo xcode-select --reset
