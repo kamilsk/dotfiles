@@ -11,6 +11,10 @@ $ curl -sSfL https://raw.githubusercontent.com/kamilsk/dotfiles/master/install |
 $ self-update
 ```
 
+## 📰 Articles
+
+- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/index.html).
+
 ## 💻 Environment
 
 - [brew.sh](http://brew.sh/), [brew.sh at github](https://github.com/Homebrew/brew)
