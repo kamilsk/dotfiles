@@ -103,8 +103,8 @@ github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21 h1:YEetp8
 github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21/go.mod h1:+020luEh2TKB4/GOp8oxxtq0Daoen/Cii55CzbTV6DU=
 github.com/ericchiang/pup v0.4.0 h1:h9ahJXbHA3V8MFfAmasxi8DCx0Gu+aLAAEtb8Q3KCOo=
 github.com/ericchiang/pup v0.4.0/go.mod h1:PpPzKkuAB7ypCQf9+wxC5MzaGaIDdgjtlpvc/0NaTJc=
-github.com/evanw/esbuild v0.9.6 h1:w7NbUL9q5U1H7QGJDZQsiqWqSkMOZk/Wuu2QE3tw5aA=
-github.com/evanw/esbuild v0.9.6/go.mod h1:y2AFBAGVelPqPodpdtxWWqe6n2jYf5FrsJbligmRmuw=
+github.com/evanw/esbuild v0.10.2 h1:aTkCGE1R5YYhXl375VKQKtJmW85mnsGo15KW5nnYYIs=
+github.com/evanw/esbuild v0.10.2/go.mod h1:y2AFBAGVelPqPodpdtxWWqe6n2jYf5FrsJbligmRmuw=
 github.com/fatih/color v1.7.0 h1:DkWD4oS2D8LGGgTQ6IvwJJXSL5Vp2ffcQg58nFV38Ys=
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=
 github.com/fortytw2/leaktest v1.2.0/go.mod h1:jDsjWgpAGjm2CA7WthBh/CdZYEPF31XHquHwclZch5g=
@@ -205,8 +205,8 @@ github.com/juju/testing v0.0.0-20160203233110-321edad6b2d1 h1:0WbpCsj5kC5p6YSWl0
 github.com/juju/testing v0.0.0-20160203233110-321edad6b2d1/go.mod h1:63prj8cnj0tU0S9OHjGJn+b1h0ZghCndfnbQolrYTwA=
 github.com/juju/utils v0.0.0-20160815113839-bdb77b07e7e3 h1:UmZwEQJiCr97I7qMfUB9VqS2BzRNQXx4VuAoHIfTQyA=
 github.com/juju/utils v0.0.0-20160815113839-bdb77b07e7e3/go.mod h1:6/KLg8Wz/y2KVGWEpkK9vMNGkOnu4k/cqs8Z1fKjTOk=
-github.com/junegunn/fzf v0.0.0-20210320053834-2e353aee9650 h1:2U91KBnoDI28XWae3G5cWgsqTSOOfuKjBEOHPwUlPvI=
-github.com/junegunn/fzf v0.0.0-20210320053834-2e353aee9650/go.mod h1:/iTLFInstK2Wj/eeCn2K65rNpqdlmYyLeN4p91QDUWM=
+github.com/junegunn/fzf v0.0.0-20210326084012-764316a53d0e h1:5HYw6tZfMPuj7orlLRl3WQF0L/E58yDJ7DqzNu8s/K0=
+github.com/junegunn/fzf v0.0.0-20210326084012-764316a53d0e/go.mod h1:/iTLFInstK2Wj/eeCn2K65rNpqdlmYyLeN4p91QDUWM=
 github.com/kamilsk/retry/v4 v4.3.1 h1:hNQmK1xAgybAVsadNAGvCNutFLS2h+Ycpw317u4d+i0=
 github.com/kamilsk/retry/v4 v4.3.1/go.mod h1:VaCDWufu3zVv7Ktt+Z7Dcslli2te4QEZoqt4QR7xgQg=
 github.com/kostya-sh/parquet-go v0.0.0-20180827163605-06b7130dc45c h1:yDup0TG7Ngp0EHJuGCtaiR3gFHMl8RCGNKzaM5Mfb0I=
