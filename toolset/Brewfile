@@ -24,11 +24,11 @@ brew "tmux"                 # https://github.com/tmux/tmux (c)
 brew "travis"               # https://github.com/travis-ci/travis.rb (ruby)
 brew "tree"                 # https://formulae.brew.sh/formula/tree (c)
 brew "wget"                 # https://git.savannah.gnu.org/git/wget.git (c)
-brew "wireshark"            # https://formulae.brew.sh/formula/wireshark (c)
 brew "zsh"                  # https://github.com/zsh-users/zsh (c)
 brew "zsh-completions"      # https://github.com/zsh-users/zsh-completions (shell)
 
 cask "osquery"              # https://github.com/osquery/osquery (c++)
+cask "wireshark"            # https://formulae.brew.sh/formula/wireshark (c)
 
 tap "golangci/tap"          # https://github.com/golangci/homebrew-tap
 brew "golangci-lint"        # https://github.com/golangci/golangci-lint (go)
