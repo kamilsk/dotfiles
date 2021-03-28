@@ -14,6 +14,7 @@ require (
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20210220032938-85be41e4509f
 	mvdan.cc/gofumpt v0.1.1
+	npf.io/gorram v0.0.0-20171017135841-7fc9597cc7e0
 )
 
 replace github.com/google/rpmpack => github.com/caarlos0/rpmpack v0.0.0-20191106130752-24a815bfaee0

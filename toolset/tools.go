@@ -16,6 +16,7 @@ import (
 	_ "github.com/mrnugget/fzz"
 	_ "golang.org/x/exp/cmd/gorelease"
 	_ "mvdan.cc/gofumpt"
+	_ "npf.io/gorram"
 )
 
 //go:generate go install github.com/cube2222/octosql/cmd/octosql
@@ -29,3 +30,4 @@ import (
 //go:generate go install github.com/mrnugget/fzz
 //go:generate go install golang.org/x/exp/cmd/gorelease
 //go:generate go install mvdan.cc/gofumpt
+//go:generate go install npf.io/gorram

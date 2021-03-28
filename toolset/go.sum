@@ -502,4 +502,6 @@ honnef.co/go/tools v0.0.0-20190106161140-3f1c8253044a/go.mod h1:rf3lG4BRIbNafJWh
 honnef.co/go/tools v0.0.0-20190418001031-e561f6794a2a/go.mod h1:rf3lG4BRIbNafJWhAfAdb/ePZxsR/4RtNHQocxwk9r4=
 mvdan.cc/gofumpt v0.1.1 h1:bi/1aS/5W00E2ny5q65w9SnKpWEF/UIOqDYBILpo9rA=
 mvdan.cc/gofumpt v0.1.1/go.mod h1:yXG1r1WqZVKWbVRtBWKWX9+CxGYfA51nSomhM0woR48=
+npf.io/gorram v0.0.0-20171017135841-7fc9597cc7e0 h1:v2QfbQl14KsWavZEMqul7HtwaNOeGE1scO8i9weqwaQ=
+npf.io/gorram v0.0.0-20171017135841-7fc9597cc7e0/go.mod h1:Ua252tLfYOhiBqAlTZ8EkGkVxNLtqJWUWGtg22Ex678=
 pack.ag/amqp v0.11.2/go.mod h1:4/cbmt4EJXSKlG6LCfWHoqmN0uFdy5i/+YFz+fTfhV4=
