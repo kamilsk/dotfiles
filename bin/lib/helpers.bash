@@ -23,6 +23,19 @@ function datetime() {
     return
   fi
 
+  # $ datetime 2021-03-28
+  # -> -416d
+  if [[ "$mutator" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+    local day=$((24*60*60))
+    local now req
+    now=$(date +%s)
+    req=$(date -jf %Y-%m-%d +%s "${mutator}")
+    echo $(((req - now) / day))d
+    return
+  fi
+
+  # $ datetime -416d
+  # -> 2021-03-28
   local sign=+
   if [[ "${mutator}" == -* ]]; then
     mutator="${mutator##-}"
