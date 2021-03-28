@@ -49,5 +49,8 @@ tap "octolab/tap"           # https://github.com/octolab/homebrew-tap
 brew "maintainer"           # https://github.com/octomation/maintainer (go)
 brew "testit"               # https://github.com/octolab/testit (go)
 
+tap "rs/tap"                # https://github.com/rs/homebrew-tap
+brew "curlie"               # https://github.com/rs/curlie (go)
+
 tap "traefik/tap"           # https://github.com/traefik/homebrew-tap
 brew "yaegi"                # https://github.com/traefik/yaegi (go)
