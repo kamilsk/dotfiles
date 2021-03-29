@@ -8,8 +8,11 @@
 
 ```bash
 $ curl -sSfL https://raw.githubusercontent.com/kamilsk/dotfiles/master/install | bash
-$ self-update
 ```
+
+> Don't forget about [security](https://www.idontplaydarts.com/2016/04/detecting-curl-pipe-bash-server-side/).
+
+When you have it, just use `$ self-update` to sync it with the remote.
 
 ## 📰 Articles
 

@@ -20,22 +20,25 @@ if ! command -v curl >/dev/null; then
   exit 1
 fi
 
-if [ ! -d "${root}" ]; then
-  echo Installing dotfiles...
-  mkdir -p "${root}"
-  git clone git@github.com:kamilsk/dotfiles.git "${root}"
+if [ -d "${root}" ]; then
+  echo You already have "${root}", use \`self-update\` instead
+  exit 1
+fi
 
-  if command -v bash >/dev/null; then
-    echo Integrating with Bash...
-    echo "source '${root}'/.profile" >>"${HOME}"/.bash_profile
-    echo "source '${root}'/.bash_profile" >>"${HOME}"/.bash_profile
-  fi
+echo Installing dotfiles...
+mkdir -p "${root}"
+git clone git@github.com:kamilsk/dotfiles.git "${root}"
 
-  if command -v zsh >/dev/null; then
-    echo Integration with Zsh...
-    echo "source '${root}'/.profile" >>"${HOME}"/.zshrc
-    echo "source '${root}'/.zshrc" >>"${HOME}"/.zshrc
-  fi
+if command -v bash >/dev/null; then
+  echo Integrating with Bash...
+  echo "source '${root}'/.profile" >>"${HOME}"/.bash_profile
+  echo "source '${root}'/.bash_profile" >>"${HOME}"/.bash_profile
+fi
+
+if command -v zsh >/dev/null; then
+  echo Integration with Zsh...
+  echo "source '${root}'/.profile" >>"${HOME}"/.zshrc
+  echo "source '${root}'/.zshrc" >>"${HOME}"/.zshrc
 fi
 
 if ! command -v brew >/dev/null; then

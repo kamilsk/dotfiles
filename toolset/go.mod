@@ -5,7 +5,7 @@ go 1.15
 require (
 	github.com/cube2222/octosql v0.3.0
 	github.com/ericchiang/pup v0.4.0
-	github.com/evanw/esbuild v0.10.2
+	github.com/evanw/esbuild v0.11.1
 	github.com/golang/mock v1.5.0
 	github.com/goreleaser/godownloader v0.1.1-0.20200426152203-fd8ad8f7dd78
 	github.com/isacikgoz/gia v0.2.0
