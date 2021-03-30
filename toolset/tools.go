@@ -11,8 +11,10 @@ import (
 	_ "github.com/golang/mock/mockgen"
 	_ "github.com/goreleaser/godownloader"
 	_ "github.com/isacikgoz/gia"
+	_ "github.com/itchyny/gojq/cmd/gojq"
 	_ "github.com/junegunn/fzf"
 	_ "github.com/kyoh86/looppointer/cmd/looppointer"
+	_ "github.com/mikefarah/yq/v4"
 	_ "github.com/mrnugget/fzz"
 	_ "golang.org/x/exp/cmd/gorelease"
 	_ "mvdan.cc/gofumpt"
@@ -25,8 +27,10 @@ import (
 //go:generate go install github.com/golang/mock/mockgen
 //go:generate go install github.com/goreleaser/godownloader
 //go:generate go install github.com/isacikgoz/gia
+//go:generate go install github.com/itchyny/gojq/cmd/gojq
 //go:generate go install github.com/junegunn/fzf
 //go:generate go install github.com/kyoh86/looppointer/cmd/looppointer
+//go:generate go install github.com/mikefarah/yq/v4
 //go:generate go install github.com/mrnugget/fzz
 //go:generate go install golang.org/x/exp/cmd/gorelease
 //go:generate go install mvdan.cc/gofumpt
