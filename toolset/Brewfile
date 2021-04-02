@@ -3,6 +3,7 @@
 brew "ansible"              # https://github.com/ansible/ansible (python)
 brew "bash"                 # https://git.savannah.gnu.org/cgit/bash.git (c)
 brew "bat"                  # https://github.com/sharkdp/bat (rust)
+brew "composer"             # https://github.com/composer/composer (php)
 brew "curl"                 # https://github.com/curl/curl (c)
 brew "doctl"                # https://github.com/digitalocean/doctl (go)
 brew "fish"                 # https://github.com/fish-shell/fish-shell (c++)
