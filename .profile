@@ -33,6 +33,8 @@ alias timestamp="date +%s"
 alias append="cat <<EOF >>"
 alias edit="cat <<EOF >"
 
+alias run="./Taskfile"
+
 function activate() {
   if [[ -f bin/activate ]]; then
     source bin/activate
