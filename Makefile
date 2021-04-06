@@ -1,22 +1,10 @@
 .DEFAULT_GOAL = install
 
 AT    := @
-SHELL := /bin/bash -euo pipefail
-
-verbose:
-	$(eval AT :=)
-	$(eval MAKE := $(MAKE) verbose)
-	@echo >/dev/null
-.PHONY: verbose
-
-todo:
-	$(AT) grep \
-		--exclude=Makefile \
-		--exclude-dir={bin,components,node_modules,vendor} \
-		--color \
-		--text \
-		-nRo -E ' TODO:.*|SkipNow' . || true
-.PHONY: todo
+ARCH  := $(shell uname -m | tr '[:upper:]' '[:lower:]')
+OS    := $(shell uname -s | tr '[:upper:]' '[:lower:]')
+DATE  := $(shell date +%Y-%m-%dT%T%Z)
+SHELL := /usr/bin/env bash -euo pipefail -c
 
 install: install-git-blame
 install: install-ngrok
@@ -58,3 +46,15 @@ install-spot:
 install-go-tools:
 	$(AT) cd toolset && go mod tidy && go generate -tags tools tools.go
 .PHONY: install-go-tools
+
+todo:
+	$(AT) grep \
+		--exclude=Makefile \
+		--color \
+		--text \
+		-nRo -E ' TODO:.*|SkipNow' . || true
+.PHONY: todo
+
+verbose:
+	$(eval AT :=) $(eval MAKE := $(MAKE) verbose) @true
+.PHONY: verbose
