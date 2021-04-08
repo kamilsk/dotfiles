@@ -11,7 +11,7 @@ require (
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.7
 	github.com/junegunn/fzf v0.0.0-20220429100416-6dcf5c3d7d6c
-	github.com/mikefarah/yq/v4 v4.25.1
+	github.com/mikefarah/yq/v4 v4.25.2
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20220428152302-39d4317da171
 	mvdan.cc/gofumpt v0.3.1
@@ -88,5 +88,5 @@ require (
 	google.golang.org/grpc v1.42.0 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/op/go-logging.v1 v1.0.0-20160211212156-b2cb9fa56473 // indirect
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
