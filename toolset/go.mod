@@ -5,14 +5,14 @@ go 1.15
 require (
 	github.com/cube2222/octosql v0.3.0
 	github.com/ericchiang/pup v0.4.0
-	github.com/evanw/esbuild v0.11.7
+	github.com/evanw/esbuild v0.11.11
 	github.com/golang/mock v1.5.0
 	github.com/goreleaser/godownloader v0.1.1-0.20200426152203-fd8ad8f7dd78
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.3
 	github.com/junegunn/fzf v0.0.0-20210410051919-c7c5e7670a9b
 	github.com/kyoh86/looppointer v0.1.7
-	github.com/mikefarah/yq/v4 v4.6.3
+	github.com/mikefarah/yq/v4 v4.7.0
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20210405174845-4513512abef3
 	mvdan.cc/gofumpt v0.1.1

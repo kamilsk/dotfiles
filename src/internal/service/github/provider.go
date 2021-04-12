@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/google/go-github/v33/github"
+	"github.com/google/go-github/v35/github"
 )
 
 func New(client *http.Client) (*service, error) {
