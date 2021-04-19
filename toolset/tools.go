@@ -5,6 +5,7 @@
 package tools
 
 import (
+	_ "github.com/adonovan/spaghetti"
 	_ "github.com/cube2222/octosql/cmd/octosql"
 	_ "github.com/ericchiang/pup"
 	_ "github.com/evanw/esbuild/cmd/esbuild"
@@ -21,6 +22,7 @@ import (
 	_ "npf.io/gorram"
 )
 
+//go:generate go install github.com/adonovan/spaghetti
 //go:generate go install github.com/cube2222/octosql/cmd/octosql
 //go:generate go install github.com/ericchiang/pup
 //go:generate go install github.com/evanw/esbuild/cmd/esbuild
