@@ -44,7 +44,7 @@ install-spot:
 .PHONY: install-spot
 
 install-go-tools:
-	$(AT) cd toolset && go mod tidy && go generate -tags tools tools.go
+	$(AT) cd toolset && go mod download && go generate -tags tools tools.go
 .PHONY: install-go-tools
 
 todo:
