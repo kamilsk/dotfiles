@@ -154,8 +154,6 @@ alias g+="pull"
 alias g-="git tableflip"
 alias g^="push"
 
-alias qase="GIT_SSH_COMMAND='ssh -i ~/.ssh/qase -o IdentitiesOnly=yes' git"
-
 # Docker
 
 if command -v docker >/dev/null; then
@@ -246,6 +244,10 @@ alias v@="python3 -m venv .virtenv"
 alias v+="source .virtenv/bin/activate"
 alias v-="deactivate"
 alias v^="pip list | cut -d ' ' -f1 | tail -n +3 | xargs -n1 pip install --upgrade"
+
+# SSH
+
+alias qase="ssh -i ~/.ssh/qase -o IdentitiesOnly=yes"
 
 # Sublime
 
