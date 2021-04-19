@@ -52,7 +52,7 @@ todo:
 		--exclude=Makefile \
 		--color \
 		--text \
-		-nRo -E ' TODO:.*|SkipNow' . || true
+		-inRo -E 'TODO:.*' . || true
 .PHONY: todo
 
 verbose:
