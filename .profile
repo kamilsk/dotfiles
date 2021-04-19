@@ -154,6 +154,8 @@ alias g+="pull"
 alias g-="git tableflip"
 alias g^="push"
 
+alias qase="GIT_SSH_COMMAND='ssh -i ~/.ssh/qase -o IdentitiesOnly=yes' git"
+
 # Docker
 
 if command -v docker >/dev/null; then
