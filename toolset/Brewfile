@@ -43,6 +43,7 @@ brew "wget"
 brew "zsh"
 brew "zsh-completions"
 
+cask "1password"
 cask "adobe-acrobat-reader"
 cask "airtable"
 cask "bartender"
@@ -81,6 +82,3 @@ brew "mergestat/mergestat/mergestat"
 brew "octolab/tap/maintainer"
 brew "rs/tap/curlie"
 brew "traefik/tap/yaegi"
-
-# ?
-brew "openssl@1.1" # https://github.com/openssl/openssl (c)

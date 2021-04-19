@@ -6,6 +6,9 @@
     id: 1333542190
     url: https://apps.apple.com/app/1password-7-password-manager/id1333542190
     title: 1Password 7 - Password Manager
+
+- name: 1Password 8
+  site: https://1password.com
   BrewCask:
     id: 1password
     url: https://formulae.brew.sh/cask/1password
