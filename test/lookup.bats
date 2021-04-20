@@ -28,11 +28,13 @@ setup() {
   assert_output --partial 'bin/git_commit: Bourne-Again shell script text executable'
 }
 
+#todo:fixme find way to work well with a function
 @test "'lookup' doesn't work well with a function" {
   run lookup.sh lookup demo_func
   assert_failure
 }
 
+#todo:fixme find way to work well with an alias
 @test "'lookup' doesn't work well with an alias" {
   run lookup.sh lookup demo_alias
   assert_failure

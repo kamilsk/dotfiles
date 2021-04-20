@@ -50,6 +50,7 @@ install-go-tools:
 todo:
 	$(AT) grep \
 		--exclude=Makefile \
+		--exclude-dir={./test/bats,./test/helper} \
 		--color \
 		--text \
 		-inRo -E 'TODO:.*' . || true
