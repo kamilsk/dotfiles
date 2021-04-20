@@ -24,7 +24,11 @@ function lookup() {
   local target
   target="$(command -v "${1:-}")"
   if [[ ! -f "${target}" ]]; then
-    which "${target}"
+    if [[ "${target}" =~ ^alias ]]; then
+      echo "${target}"
+    else
+      which "${target}"
+    fi
     return
   fi
 
