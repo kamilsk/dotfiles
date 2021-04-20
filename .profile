@@ -66,14 +66,17 @@ function lookup() {
     which "${target}"
     return
   fi
+
   if file "${target}" | grep 'shell script'; then
     cat "${target}"
     return
   fi
+
   if file "${target}" | grep 'text'; then
     less "${target}"
     return
   fi
+
   file "${target}"
 }
 
