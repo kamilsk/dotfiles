@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -o nounset
+set -o pipefail
+
 function help() {
   echo "$0 <task> <args>"
   echo "Tasks:"
