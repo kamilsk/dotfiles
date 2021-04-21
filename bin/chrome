@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+function chrome() {
+
+  while (($# > 0)); do
+    local flag="${1}"
+    shift
+    case "${flag}" in
+    swipe)
+      case "${1:-}" in
+      enable)
+        defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool TRUE
+        echo AppleEnableSwipeNavigateWithScrolls for com.google.Chrome is enabled
+        exit 0
+        ;;
+      disable)
+        defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
+        echo AppleEnableSwipeNavigateWithScrolls for com.google.Chrome is disabled
+        exit 0
+        ;;
+      esac
+      ;;
+    *)
+      echo Unknown argument "${flag}".
+      exit 1
+      ;;
+    esac
+  done
+
+}
+
+chrome "${@}"
