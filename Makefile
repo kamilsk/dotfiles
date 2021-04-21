@@ -7,9 +7,9 @@ DATE  := $(shell date +%Y-%m-%dT%T%Z)
 SHELL := /usr/bin/env bash -euo pipefail -c
 
 install: install-git-blame
+install: install-go-tools
 install: install-ngrok
 install: install-spot
-install: install-go-tools
 .PHONY: install
 
 install-git-blame: LATEST = '"8d854c2d78cb98afdb9f5a73240e06393260b327"'
@@ -21,6 +21,10 @@ install-git-blame:
 		git config --global alias.blame-someone-else "!gbse"; \
 	fi
 .PHONY: install-git-blame
+
+install-go-tools:
+	$(AT) cd toolset && go generate -mod=readonly -tags tools tools.go
+.PHONY: install-go-tools
 
 install-ngrok: HASH = c/4VmDzA7iaHb
 install-ngrok:
@@ -42,10 +46,6 @@ install-spot:
 		chmod +x bin/spot; \
 	fi
 .PHONY: install-spot
-
-install-go-tools:
-	$(AT) cd toolset && go generate -mod=readonly -tags tools tools.go
-.PHONY: install-go-tools
 
 todo:
 	$(AT) grep \

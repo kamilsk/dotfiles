@@ -3,11 +3,9 @@
 set -o nounset
 set -o pipefail
 
-alias demo_alias="test"
+alias some_alias="true"
 
-function demo_func() {
-  true
-}
+function some_func { true; }
 
 function lookup() {
   if [[ "${1:-}" == "git" ]]; then

@@ -10,50 +10,56 @@ setup() {
 }
 
 @test "'lookup' works well with git alias" {
-  run lookup.sh lookup git m
+  run lookup.bash lookup git m
   assert_success
   assert_output --partial "git alias: checkout master"
 }
 
 @test "'lookup' works well with git alias as inline script" {
-  run lookup.sh lookup git mm
+  run lookup.bash lookup git mm
   assert_success
   assert_output --partial 'git alias: !git checkout master && git pull --rebase'
 }
 
 @test "'lookup' works well with git alias as shell script" {
-  run lookup.sh lookup git cmm
+  run lookup.bash lookup git cmm
   assert_success
   assert_output --partial 'git alias: !git_commit cmm'
   assert_output --partial 'bin/git_commit: Bourne-Again shell script text executable'
 }
 
-#todo:fixme find way to work well with a function
-@test "'lookup' doesn't work well with a function" {
-  run lookup.sh lookup demo_func
+@test "'lookup' works well with a function under zsh, not sh|bash" {
+  run lookup.bash lookup some_func
   assert_failure
+
+  run lookup.zsh lookup some_func
+  assert_success
+  assert_output --partial 'some_func ()'
 }
 
-#todo:fixme find way to work well with an alias
-@test "'lookup' doesn't work well with an alias" {
-  run lookup.sh lookup demo_alias
+@test "'lookup' works well with an alias under zsh, not sh|bash" {
+  run lookup.bash lookup some_alias
   assert_failure
+
+  run lookup.zsh lookup some_alias
+  assert_success
+  assert_output --partial 'alias some_alias=true'
 }
 
 @test "'lookup' works well with shell script" {
-  run lookup.sh lookup explain
+  run lookup.bash lookup explain
   assert_success
   assert_output --partial 'bin/explain: Bourne-Again shell script text executable'
 }
 
 @test "'lookup' works well with text" {
-  run lookup.sh lookup git_aliases
+  run lookup.bash lookup git_aliases
   assert_success
   assert_output --partial 'bin/git_aliases: Python script text executable'
 }
 
 @test "'lookup' works well with binary" {
-  run lookup.sh lookup bash
+  run lookup.bash lookup bash
   assert_success
   assert_output --partial '/bin/bash'
 }
