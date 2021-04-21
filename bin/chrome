@@ -8,9 +8,13 @@ function chrome() {
   while (($# > 0)); do
     local flag="${1}"
     shift
+
     case "${flag}" in
     swipe)
-      case "${1:-}" in
+      local action="${1:-disable}"
+      shift
+
+      case "${action}" in
       enable)
         defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool TRUE
         echo AppleEnableSwipeNavigateWithScrolls for com.google.Chrome is enabled
@@ -22,6 +26,12 @@ function chrome() {
         exit 0
         ;;
       esac
+      ;;
+    open)
+      local location="${1:-https://www.google.com/}"
+      shift
+
+      open -a "Google Chrome" "${location}"
       ;;
     *)
       echo Unknown argument "${flag}".
