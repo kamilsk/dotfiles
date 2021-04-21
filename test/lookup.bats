@@ -4,9 +4,10 @@ setup() {
   load 'helper/support/load.bash'
   load 'helper/assert/load.bash'
 
-  local DIR
-  DIR=$(cd "$(dirname "${BATS_TEST_FILENAME}")" && pwd)
-  PATH="${DIR}:${PATH}"
+  local DIR BIN
+  DIR=$(cd "$(dirname "${BATS_TEST_FILENAME}")" && pwd) # TODO:deprecated use bin instead
+  BIN=$(cd "$(dirname "${BATS_TEST_FILENAME}")/../bin/" && pwd)
+  PATH="${BIN}:${DIR}:${PATH}"
 }
 
 @test "'lookup' works well with git alias" {
