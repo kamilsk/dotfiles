@@ -34,6 +34,9 @@ brew "zsh-completions"      # https://github.com/zsh-users/zsh-completions (shel
 cask "osquery"              # https://github.com/osquery/osquery (c++)
 cask "wireshark"            # https://formulae.brew.sh/formula/wireshark (c)
 
+tap "batchcorp/public"      # https://github.com/batchcorp/homebrew-public
+brew "plumber"              # https://github.com/batchcorp/plumber (go)
+
 tap "golangci/tap"          # https://github.com/golangci/homebrew-tap
 brew "golangci-lint"        # https://github.com/golangci/golangci-lint (go)
 
