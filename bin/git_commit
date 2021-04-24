@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-set -o nounset
-set -o pipefail
+set -uo pipefail
 
 # TODO:deprecated use bin instead
 function datetime() {
@@ -32,7 +31,14 @@ amend)
   git commit --amend --no-edit
   ;;
 at)
-  timestamp=$(datetime "${2:-}")
+  timestamp=$(datetime "${2}")
+  GIT_COMMITTER_DATE="${timestamp}" git commit --date="${timestamp}" -m "${*:3}"
+  ;;
+cmm)
+  git commit -m "${*:2}"
+  ;;
+contribute)
+  timestamp=$(datetime "$(maintainer github contribution suggest --short "${2}")")
   GIT_COMMITTER_DATE="${timestamp}" git commit --date="${timestamp}" -m "${*:3}"
   ;;
 it)
@@ -43,10 +49,6 @@ it)
   else
     git commit --allow-empty --edit -m root
   fi
-  ;;
-cmm)
-  message="${*:2}"
-  git commit -m "${message}"
   ;;
 undo)
   git reset --soft HEAD~"${2:-1}"
