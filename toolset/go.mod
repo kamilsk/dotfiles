@@ -13,7 +13,7 @@ require (
 	github.com/junegunn/fzf v0.0.0-20220525005010-3b7a962dc6db
 	github.com/mikefarah/yq/v4 v4.25.2
 	github.com/mrnugget/fzz v1.1.0
-	golang.org/x/exp v0.0.0-20220602145555-4a0574d9293f
+	golang.org/x/exp v0.0.0-20220613132600-b0d781184e0d
 	mvdan.cc/gofumpt v0.3.1
 	npf.io/gorram v0.0.0-20171017135841-7fc9597cc7e0
 )
@@ -34,7 +34,7 @@ require (
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/btree v1.0.0 // indirect
-	github.com/google/go-cmp v0.5.7 // indirect
+	github.com/google/go-cmp v0.5.8 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/gosuri/uilive v0.0.4 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
