@@ -38,8 +38,8 @@ cmm)
   git commit -m "${*:2}"
   ;;
 contribute)
-  timestamp=$(datetime "$(maintainer github contribution suggest --short "${2}")")
-  GIT_COMMITTER_DATE="${timestamp}" git commit --date="${timestamp}" -m "${*:3}"
+  timestamp=$(maintainer github contribution suggest --short "$(git --no-pager log -1 --format="%as")")
+  GIT_COMMITTER_DATE="${timestamp}" git commit --date="${timestamp}" -m "${*:2}"
   ;;
 it)
   git init
