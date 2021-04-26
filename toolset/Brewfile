@@ -1,6 +1,7 @@
 # https://formulae.brew.sh/formula/<Formulae>
 
 brew "ansible"              # https://github.com/ansible/ansible (python)
+brew "awscli"               # https://github.com/aws/aws-cli (python)
 brew "bash"                 # https://git.savannah.gnu.org/cgit/bash.git (c)
 brew "bat"                  # https://github.com/sharkdp/bat (rust)
 brew "composer"             # https://github.com/composer/composer (php)
