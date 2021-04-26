@@ -28,6 +28,18 @@ release)
     (echo >&2 no have any release)
     exit 1
   fi
+
+  # if commit has multiple tags: vX.Y.Z, X.Y.Z, latest
+  # choose one of them
+  if git tag --points-at "${latest}" | grep -v '[:alpha:]' >/dev/null; then
+    latest=$(
+      git tag --points-at "${latest}" |
+        grep -v '[:alpha:]' |
+        sort --version-sort |
+        head -1
+    )
+  fi
+
   if [[ "${latest}" =~ -[0-9]+-g[a-z0-9]+$ ]]; then
     ahead=$(echo "${latest}" | rev | cut -d - -f2-2 | rev)
     latest=$(echo "${latest}" | rev | cut -d - -f3- | rev)
