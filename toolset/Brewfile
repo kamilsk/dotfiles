@@ -39,8 +39,8 @@ cask "wireshark"            # https://formulae.brew.sh/formula/wireshark (c)
 tap "batchcorp/public"      # https://github.com/batchcorp/homebrew-public
 brew "plumber"              # https://github.com/batchcorp/plumber (go)
 
-tap "golangci/tap"          # https://github.com/golangci/homebrew-tap
-brew "golangci-lint"        # https://github.com/golangci/golangci-lint (go)
+# tap "golangci/tap"        # https://github.com/golangci/homebrew-tap
+# brew "golangci-lint"      # https://github.com/golangci/golangci-lint (go)
 
 tap "goreleaser/tap"        # https://github.com/goreleaser/homebrew-tap
 brew "goreleaser"           # https://github.com/goreleaser/goreleaser (go)
@@ -53,6 +53,7 @@ brew "tldr"                 # https://github.com/isacikgoz/tldr (go)
 tap "kamilsk/tap"           # https://github.com/kamilsk/homebrew-tap
 brew "egg"                  # https://github.com/kamilsk/egg (go)
 brew "goimports"            # https://github.com/kamilsk/go-tools (go)
+brew "golangci-lint"        # https://github.com/kamilsk/golangci-lint (go)
 
 tap "octolab/tap"           # https://github.com/octolab/homebrew-tap
 brew "maintainer"           # https://github.com/octomation/maintainer (go)
