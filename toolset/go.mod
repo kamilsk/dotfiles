@@ -12,7 +12,6 @@ require (
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.3
 	github.com/junegunn/fzf v0.0.0-20210526103526-a4bc08f5a35d
-	github.com/kyoh86/looppointer v0.1.7
 	github.com/mikefarah/yq/v4 v4.9.3
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20210526181343-b47a03e3048a
