@@ -13,6 +13,12 @@
     id: 1password
     url: https://formulae.brew.sh/cask/1password
 
+- name: 1Password CLI 2
+  site: https://developer.1password.com
+  BrewCask:
+    id: 1password/tap/1password-cli
+    url: https://github.com/1Password/homebrew-tap
+
 - name: Adobe Acrobat Reader DC
   site: https://www.adobe.com/acrobat/pdf-reader.html
   BrewCask:

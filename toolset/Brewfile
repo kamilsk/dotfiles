@@ -44,6 +44,7 @@ brew "zsh"
 brew "zsh-completions"
 
 cask "1password"
+cask "1password/tap/1password-cli"
 cask "adobe-acrobat-reader"
 cask "airtable"
 cask "bartender"
