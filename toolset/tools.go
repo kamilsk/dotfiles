@@ -15,6 +15,7 @@ import (
 	_ "github.com/junegunn/fzf"
 	_ "github.com/mikefarah/yq/v4"
 	_ "github.com/mrnugget/fzz"
+	_ "github.com/multiprocessio/dsq"
 	_ "golang.org/x/exp/cmd/gorelease"
 	_ "mvdan.cc/gofumpt"
 	_ "npf.io/gorram"
@@ -30,6 +31,7 @@ import (
 //go:generate go install github.com/junegunn/fzf
 //go:generate go install github.com/mikefarah/yq/v4
 //go:generate go install github.com/mrnugget/fzz
+//go:generate go install github.com/multiprocessio/dsq
 //go:generate go install golang.org/x/exp/cmd/gorelease
 //go:generate go install mvdan.cc/gofumpt
 //go:generate go install npf.io/gorram
