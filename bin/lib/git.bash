@@ -14,7 +14,7 @@ git-pull() {
 
   git fetch --all --prune --prune-tags --tags
   git pull --force --rebase
-  git submodule update --init --recursive
+  git submodule update --init --recursive --remote --rebase
 }
 
 git-push() {

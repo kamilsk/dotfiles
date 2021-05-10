@@ -6,15 +6,16 @@ __go=$(which go)
 __npm=$(which npm)
 __php=$(which composer)
 
-__git() {
+__check() {
+  trap '{ [ $? != 0 ] && echo please stash or commit changes; }' EXIT
+
   git diff --exit-code >/dev/null
   git diff --cached --exit-code >/dev/null
   ! git ls-files --others --exclude-standard | grep -q ^
 }
 
 go() {
-  trap '{ [ $? != 0 ] && echo please stash or commit changes; }' EXIT
-  __git
+  __check
 
   local packages=("${@}")
   if [ ${#packages[@]} = 0 ]; then
@@ -34,8 +35,7 @@ go() {
 }
 
 npm() {
-  trap '{ [ $? != 0 ] && echo please stash or commit changes; }' EXIT
-  __git
+  __check
 
   local packages=("${@}")
   if [ ${#packages[@]} = 0 ]; then
@@ -54,8 +54,7 @@ npm() {
 }
 
 php() {
-  trap '{ [ $? != 0 ] && echo please stash or commit changes; }' EXIT
-  __git
+  __check
 
   local packages=("${@}")
   if [ ${#packages[@]} = 0 ]; then
