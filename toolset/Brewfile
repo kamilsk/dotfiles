@@ -1,66 +1,64 @@
 # https://formulae.brew.sh/formula/<Formulae>
 
-brew "ansible"              # https://github.com/ansible/ansible (python)
-brew "awscli"               # https://github.com/aws/aws-cli (python)
-brew "bash"                 # https://git.savannah.gnu.org/cgit/bash.git (c)
-brew "bat"                  # https://github.com/sharkdp/bat (rust)
-brew "composer"             # https://github.com/composer/composer (php)
-brew "curl"                 # https://github.com/curl/curl (c)
-brew "doctl"                # https://github.com/digitalocean/doctl (go)
-brew "fish"                 # https://github.com/fish-shell/fish-shell (c++)
-brew "git"                  # https://github.com/git/git (c)
-brew "gh"                   # https://github.com/cli/cli (go)
-brew "go"                   # https://github.com/golang/go (go)
-brew "grpcurl"              # https://github.com/fullstorydev/grpcurl (go)
-brew "httpie"               # https://github.com/httpie/httpie (python)
-brew "helm"                 # https://github.com/helm/helm (go)
-brew "hugo"                 # https://github.com/gohugoio/hugo (go)
-brew "jq"                   # https://github.com/stedolan/jq (c)
-brew "jid"                  # https://github.com/simeji/jid (go)
-brew "kubectx"              # https://github.com/ahmetb/kubectx (go)
-brew "kubernetes-cli"       # https://github.com/kubernetes/kubernetes (go)
-brew "minikube"             # https://github.com/kubernetes/minikube (go)
-brew "node"                 # https://github.com/nodejs/node (c++)
-brew "php"                  # https://github.com/php/php-src (c)
-brew "protobuf"             # https://github.com/protocolbuffers/protobuf (c++)
-brew "python"               # https://github.com/python/cpython (c)
-brew "restic"               # https://github.com/restic/restic (go)
-brew "ruby"                 # https://github.com/ruby/ruby (c)
-brew "tmux"                 # https://github.com/tmux/tmux (c)
-brew "travis"               # https://github.com/travis-ci/travis.rb (ruby)
-brew "tree"                 # https://formulae.brew.sh/formula/tree (c)
-brew "wget"                 # https://git.savannah.gnu.org/git/wget.git (c)
-brew "zsh"                  # https://github.com/zsh-users/zsh (c)
-brew "zsh-completions"      # https://github.com/zsh-users/zsh-completions (shell)
+brew "ansible"                      # https://github.com/ansible/ansible (python)
+brew "awscli"                       # https://github.com/aws/aws-cli (python)
+brew "bash"                         # https://git.savannah.gnu.org/cgit/bash.git (c)
+brew "bat"                          # https://github.com/sharkdp/bat (rust)
+brew "composer"                     # https://github.com/composer/composer (php)
+brew "curl"                         # https://github.com/curl/curl (c)
+brew "doctl"                        # https://github.com/digitalocean/doctl (go)
+brew "fish"                         # https://github.com/fish-shell/fish-shell (c++)
+brew "git"                          # https://github.com/git/git (c)
+brew "gh"                           # https://github.com/cli/cli (go)
+brew "go"                           # https://github.com/golang/go (go)
+brew "grpcurl"                      # https://github.com/fullstorydev/grpcurl (go)
+brew "httpie"                       # https://github.com/httpie/httpie (python)
+brew "helm"                         # https://github.com/helm/helm (go)
+brew "hugo"                         # https://github.com/gohugoio/hugo (go)
+brew "jq"                           # https://github.com/stedolan/jq (c)
+brew "jid"                          # https://github.com/simeji/jid (go)
+brew "kubectx"                      # https://github.com/ahmetb/kubectx (go)
+brew "kubernetes-cli"               # https://github.com/kubernetes/kubernetes (go)
+brew "minikube"                     # https://github.com/kubernetes/minikube (go)
+brew "node"                         # https://github.com/nodejs/node (c++)
+brew "php"                          # https://github.com/php/php-src (c)
+brew "protobuf"                     # https://github.com/protocolbuffers/protobuf (c++)
+brew "python"                       # https://github.com/python/cpython (c)
+brew "restic"                       # https://github.com/restic/restic (go)
+brew "ruby"                         # https://github.com/ruby/ruby (c)
+brew "tmux"                         # https://github.com/tmux/tmux (c)
+brew "travis"                       # https://github.com/travis-ci/travis.rb (ruby)
+brew "tree"                         # https://formulae.brew.sh/formula/tree (c)
+brew "wget"                         # https://git.savannah.gnu.org/git/wget.git (c)
+brew "zsh"                          # https://github.com/zsh-users/zsh (c)
+brew "zsh-completions"              # https://github.com/zsh-users/zsh-completions (shell)
 
-cask "osquery"              # https://github.com/osquery/osquery (c++)
-cask "wireshark"            # https://formulae.brew.sh/formula/wireshark (c)
+# tap "golangci/tap"                # https://github.com/golangci/homebrew-tap
+# brew "golangci-lint"              # https://github.com/golangci/golangci-lint (go)
+tap "goreleaser/tap"                # https://github.com/goreleaser/homebrew-tap
+brew "goreleaser"                   # https://github.com/goreleaser/goreleaser (go)
+tap "rs/tap"                        # https://github.com/rs/homebrew-tap
+brew "curlie"                       # https://github.com/rs/curlie (go)
+tap "traefik/tap"                   # https://github.com/traefik/homebrew-tap
+brew "yaegi"                        # https://github.com/traefik/yaegi (go)
 
-tap "batchcorp/public"      # https://github.com/batchcorp/homebrew-public
-brew "plumber"              # https://github.com/batchcorp/plumber (go)
+cask "osquery"                      # https://github.com/osquery/osquery (c++)
+cask "wireshark"                    # https://formulae.brew.sh/formula/wireshark (c)
 
-# tap "golangci/tap"        # https://github.com/golangci/homebrew-tap
-# brew "golangci-lint"      # https://github.com/golangci/golangci-lint (go)
+tap "batchcorp/public"              # https://github.com/batchcorp/homebrew-public
+brew "batchcorp/public/plumber"     # https://github.com/batchcorp/plumber (go)
 
-tap "goreleaser/tap"        # https://github.com/goreleaser/homebrew-tap
-brew "goreleaser"           # https://github.com/goreleaser/goreleaser (go)
+tap "isacikgoz/taps"                # https://github.com/isacikgoz/homebrew-taps
+brew "gitbatch"                     # https://github.com/isacikgoz/gitbatch (go)
+brew "isacikgoz/taps/gitin"         # https://github.com/isacikgoz/gitin (go)
+brew "isacikgoz/taps/tldr"          # https://github.com/isacikgoz/tldr (go)
+# TODO:uninstall tldr
 
-tap "isacikgoz/taps"        # https://github.com/isacikgoz/homebrew-taps
-brew "gitbatch"             # https://github.com/isacikgoz/gitbatch (go)
-brew "gitin"                # https://github.com/isacikgoz/gitin (go)
-brew "tldr"                 # https://github.com/isacikgoz/tldr (go)
+tap "kamilsk/tap"                   # https://github.com/kamilsk/homebrew-tap
+brew "kamilsk/tap/egg"              # https://github.com/kamilsk/egg (go)
+brew "kamilsk/tap/goimports"        # https://github.com/kamilsk/go-tools (go)
+brew "kamilsk/tap/golangci-lint"    # https://github.com/kamilsk/golangci-lint (go)
 
-tap "kamilsk/tap"           # https://github.com/kamilsk/homebrew-tap
-brew "egg"                  # https://github.com/kamilsk/egg (go)
-brew "goimports"            # https://github.com/kamilsk/go-tools (go)
-brew "golangci-lint"        # https://github.com/kamilsk/golangci-lint (go)
-
-tap "octolab/tap"           # https://github.com/octolab/homebrew-tap
-brew "maintainer"           # https://github.com/octomation/maintainer (go)
-brew "testit"               # https://github.com/octolab/testit (go)
-
-tap "rs/tap"                # https://github.com/rs/homebrew-tap
-brew "curlie"               # https://github.com/rs/curlie (go)
-
-tap "traefik/tap"           # https://github.com/traefik/homebrew-tap
-brew "yaegi"                # https://github.com/traefik/yaegi (go)
+tap "octolab/tap"                   # https://github.com/octolab/homebrew-tap
+brew "octolab/tap/maintainer"       # https://github.com/octomation/maintainer (go)
+brew "octolab/tap/testit"           # https://github.com/octolab/testit (go)
