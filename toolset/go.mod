@@ -10,7 +10,7 @@ require (
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.8
-	github.com/junegunn/fzf v0.0.0-20220525005010-3b7a962dc6db
+	github.com/junegunn/fzf v0.0.0-20220617034804-70529878e20c
 	github.com/mikefarah/yq/v4 v4.25.2
 	github.com/mrnugget/fzz v1.1.0
 	github.com/multiprocessio/dsq v0.0.0-20220616123423-10fb2d7ba62c // 0.20.1
