@@ -11,7 +11,7 @@ require (
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.8
 	github.com/junegunn/fzf v0.0.0-20220617034804-70529878e20c
-	github.com/mikefarah/yq/v4 v4.25.2
+	github.com/mikefarah/yq/v4 v4.25.3
 	github.com/mrnugget/fzz v1.1.0
 	github.com/multiprocessio/dsq v0.0.0-20220620134730-43e72ff1d2c8
 	golang.org/x/exp v0.0.0-20220613132600-b0d781184e0d
@@ -140,7 +140,7 @@ require (
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966 // indirect
 	github.com/snowflakedb/gosnowflake v1.6.9 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
-	github.com/spf13/cobra v1.4.0 // indirect
+	github.com/spf13/cobra v1.5.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/tidwall/btree v1.3.1 // indirect
 	github.com/timtadh/data-structures v0.5.3 // indirect
