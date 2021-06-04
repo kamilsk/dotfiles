@@ -10,10 +10,10 @@ require (
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.8
-	github.com/junegunn/fzf v0.0.0-20220617034804-70529878e20c
+	github.com/junegunn/fzf v0.0.0-20220701073232-51fdaad002a5
 	github.com/mikefarah/yq/v4 v4.25.3
 	github.com/mrnugget/fzz v1.1.0
-	github.com/multiprocessio/dsq v0.0.0-20220620134730-43e72ff1d2c8
+	github.com/multiprocessio/dsq v0.0.0-20220629173252-e58372b0855a
 	golang.org/x/exp v0.0.0-20220613132600-b0d781184e0d
 	mvdan.cc/gofumpt v0.3.1
 	npf.io/gorram v0.0.0-20171017135841-7fc9597cc7e0
@@ -29,6 +29,7 @@ require (
 	github.com/ClickHouse/clickhouse-go/v2 v2.0.14 // indirect
 	github.com/Masterminds/semver v1.5.0 // indirect
 	github.com/a8m/envsubst v1.3.0 // indirect
+	github.com/alexbrainman/odbc v0.0.0-20211220213544-9c9a2e61c5e2 // indirect
 	github.com/andybalholm/brotli v1.0.3 // indirect
 	github.com/apache/arrow/go/arrow v0.0.0-20211112161151-bc219186db40 // indirect
 	github.com/apache/thrift v0.15.0 // indirect
@@ -107,7 +108,7 @@ require (
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826 // indirect
-	github.com/multiprocessio/datastation/runner v0.0.0-20220616090857-d42388371862 // indirect
+	github.com/multiprocessio/datastation/runner v0.0.0-20220629131342-6165f9d14a67 // indirect
 	github.com/multiprocessio/go-json v0.0.0-20220308002443-61d497dd7b9e // indirect
 	github.com/multiprocessio/go-openoffice v0.0.0-20220110232726-064f5dda1956 // indirect
 	github.com/multiprocessio/go-sqlite3-stdlib v0.0.0-20220601025455-7a933dfc26ed // indirect
