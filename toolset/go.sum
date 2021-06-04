@@ -198,8 +198,8 @@ github.com/cockroachdb/apd v1.1.0 h1:3LFP3629v+1aKXU5Q37mxmRxX/pIu1nijXydLShEq5I
 github.com/colinmarc/hdfs/v2 v2.1.1/go.mod h1:M3x+k8UKKmxtFu++uAZ0OtDU8jR3jnaZIAc6yK4Ue0c=
 github.com/cpuguy83/go-md2man/v2 v2.0.2/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
-github.com/cube2222/octosql v0.7.4 h1:gxRbnaVoT8qA8nGzQhFsEv36hxTTAzPv30eTaxp6F0M=
-github.com/cube2222/octosql v0.7.4/go.mod h1:JV9tQwHkaUDegX2LvmBo3ayd5fDo4I4uaHa3xdUxlWM=
+github.com/cube2222/octosql v0.8.0 h1:hrV4j646WBGds10lv0bYiQ8mv2quo8mq5GaGKdU9Yvk=
+github.com/cube2222/octosql v0.8.0/go.mod h1:JV9tQwHkaUDegX2LvmBo3ayd5fDo4I4uaHa3xdUxlWM=
 github.com/cube2222/parquet-go v0.0.0-20220512155810-0e06eee50261 h1:spZr4fKCspC6e2RRa7Fn5kKrwjaYwDyltFf2uZquHVU=
 github.com/cube2222/parquet-go v0.0.0-20220512155810-0e06eee50261/go.mod h1:DMN6PChc8JaI7whze9XQn1aCv+8D7nhQKMfL8zXNjX4=
 github.com/cyberdelia/templates v0.0.0-20141128023046-ca7fffd4298c/go.mod h1:GyV+0YP4qX0UQ7r2MoYZ+AvYDp12OF5yg4q8rGnyNh4=

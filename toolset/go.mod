@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619
-	github.com/cube2222/octosql v0.7.4
+	github.com/cube2222/octosql v0.8.0
 	github.com/ericchiang/pup v0.4.0
 	github.com/evanw/esbuild v0.14.48
 	github.com/golang/mock v1.6.0
