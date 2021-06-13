@@ -13,8 +13,8 @@ require (
 	github.com/junegunn/fzf v0.0.0-20220701073232-51fdaad002a5
 	github.com/mikefarah/yq/v4 v4.25.3
 	github.com/mrnugget/fzz v1.1.0
-	github.com/multiprocessio/dsq v0.0.0-20220629173252-e58372b0855a
-	golang.org/x/exp v0.0.0-20220613132600-b0d781184e0d
+	github.com/multiprocessio/dsq v0.0.0-20220707143053-d166208c6374
+	golang.org/x/exp v0.0.0-20220706164943-b4a6d9510983
 	mvdan.cc/gofumpt v0.3.1
 	npf.io/gorram v0.0.0-20171017135841-7fc9597cc7e0
 )
