@@ -236,6 +236,12 @@
     id: ticktick
     url: https://formulae.brew.sh/cask/ticktick
 
+- name: Typora
+  site: https://typora.io
+  BrewCask:
+    id: typora
+    url: https://formulae.brew.sh/cask/typora
+
 - name: Visual Studio Code
   site: https://code.visualstudio.com
   BrewCask:
