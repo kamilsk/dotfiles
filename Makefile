@@ -26,7 +26,7 @@ install-go-tools:
 	$(AT) cd toolset && go generate -mod=readonly -tags tools tools.go
 .PHONY: install-go-tools
 
-install-ngrok: HASH = c/4VmDzA7iaHb
+install-ngrok: HASH = c/bNyj1mQVY4c
 install-ngrok:
 	$(AT) if ! command -v ngrok >/dev/null; then \
 		curl -sSfL https://bin.equinox.io/$(HASH)/ngrok-stable-darwin-amd64.zip \
