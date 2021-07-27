@@ -10,11 +10,11 @@ require (
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.8
-	github.com/junegunn/fzf v0.0.0-20220701073232-51fdaad002a5
+	github.com/junegunn/fzf v0.0.0-20220715065323-c79c306adb40
 	github.com/mikefarah/yq/v4 v4.26.1
 	github.com/mrnugget/fzz v1.1.0
 	github.com/multiprocessio/dsq v0.0.0-20220707143053-d166208c6374
-	golang.org/x/exp v0.0.0-20220706164943-b4a6d9510983
+	golang.org/x/exp v0.0.0-20220713135740-79cabaa25d75
 	mvdan.cc/gofumpt v0.3.1
 	npf.io/gorram v0.0.0-20171017135841-7fc9597cc7e0
 )
