@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619
-	github.com/cube2222/octosql v0.8.0
+	github.com/cube2222/octosql v0.8.1
 	github.com/ericchiang/pup v0.4.0
 	github.com/evanw/esbuild v0.14.49
 	github.com/golang/mock v1.6.0
@@ -72,7 +72,7 @@ require (
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
-	github.com/google/btree v1.0.0 // indirect
+	github.com/google/btree v1.1.2 // indirect
 	github.com/google/flatbuffers v2.0.5+incompatible // indirect
 	github.com/google/go-cmp v0.5.8 // indirect
 	github.com/google/uuid v1.3.0 // indirect
