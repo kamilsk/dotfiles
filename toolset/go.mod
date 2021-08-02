@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619
-	github.com/cube2222/octosql v0.8.1
+	github.com/cube2222/octosql v0.9.0
 	github.com/ericchiang/pup v0.4.0
 	github.com/evanw/esbuild v0.14.49
 	github.com/golang/mock v1.6.0
@@ -60,6 +60,7 @@ require (
 	github.com/fatih/color v1.13.0 // indirect
 	github.com/flosch/pongo2 v0.0.0-20200913210552-0d938eb266f3 // indirect
 	github.com/form3tech-oss/jwt-go v3.2.5+incompatible // indirect
+	github.com/fsnotify/fsnotify v1.5.1 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.0 // indirect
 	github.com/gdamore/encoding v1.0.0 // indirect
 	github.com/gdamore/tcell v1.4.0 // indirect
@@ -117,6 +118,7 @@ require (
 	github.com/neo4j/neo4j-go-driver/v4 v4.4.2 // indirect
 	github.com/nsf/termbox-go v0.0.0-20190325093121-288510b9734e // indirect
 	github.com/nwaples/rardecode v1.1.2 // indirect
+	github.com/nxadm/tail v1.4.8 // indirect
 	github.com/oklog/ulid/v2 v2.0.2 // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/paulmach/orb v0.5.0 // indirect
@@ -175,6 +177,7 @@ require (
 	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/op/go-logging.v1 v1.0.0-20160211212156-b2cb9fa56473 // indirect
+	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
