@@ -6,7 +6,7 @@ require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619
 	github.com/cube2222/octosql v0.9.1
 	github.com/ericchiang/pup v0.4.0
-	github.com/evanw/esbuild v0.14.49
+	github.com/evanw/esbuild v0.14.50
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.8
@@ -164,7 +164,7 @@ require (
 	golang.org/x/net v0.0.0-20220708220712-1185a9018129 // indirect
 	golang.org/x/oauth2 v0.0.0-20220309155454-6242fa91716a // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
-	golang.org/x/sys v0.0.0-20220712014510-0a85c31ab51e // indirect
+	golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8 // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/tools v0.1.10 // indirect
