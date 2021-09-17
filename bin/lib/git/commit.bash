@@ -8,6 +8,11 @@ git-amend() {
   _cd=$(git --no-pager log -1 --format="%cI")
 
   # https://git-scm.com/docs/git-commit#_commit_information
+  # https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---amend
   # https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---dateltdategt
-  GIT_COMMITTER_DATE="${_cd}" git commit --date="${_ad}" --amend --no-edit "${@:1}"
+  # https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---no-edit
+  GIT_COMMITTER_DATE="${_cd}" git commit --amend --date="${_ad}" --no-edit "${@:1}"
 }
+
+# https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html, see "$* vs. $@"
+git-commit() { git commit -m "${*:1}"; }

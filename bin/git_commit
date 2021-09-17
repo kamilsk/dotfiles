@@ -31,9 +31,6 @@ at)
   timestamp=$(datetime "${2}")
   GIT_COMMITTER_DATE="${timestamp}" git commit --date="${timestamp}" -m "${*:3}"
   ;;
-cmm)
-  git commit -m "${*:2}"
-  ;;
 contribute)
   timestamp=$(maintainer github contribution suggest --short "$(git --no-pager log -1 --format="%as")")
   GIT_COMMITTER_DATE="${timestamp}" git commit --date="${timestamp}" -m "${*:2}"
