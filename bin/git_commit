@@ -27,9 +27,6 @@ function datetime() {
 }
 
 case "${1:-}" in
-amend)
-  git commit --amend --no-edit
-  ;;
 at)
   timestamp=$(datetime "${2}")
   GIT_COMMITTER_DATE="${timestamp}" git commit --date="${timestamp}" -m "${*:3}"

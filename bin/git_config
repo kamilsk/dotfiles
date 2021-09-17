@@ -53,7 +53,7 @@ git config --global alias.at "!git_commit at"
 git config --global alias.it "!git_commit it"
 git config --global alias.configure "!git_config"
 
-git config --global alias.amend "!git_commit amend"
+git config --global alias.amend "!@ git-amend"
 git config --global alias.cmm "!git_commit cmm"
 git config --global alias.contribute "!git_commit contribute"
 git config --global alias.undo "!git_commit undo"

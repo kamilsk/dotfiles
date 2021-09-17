@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# shellcheck source=./lib/git.bash
+source ~/.dotfiles/bin/lib/git.bash
+
+"${@}"
