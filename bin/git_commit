@@ -40,9 +40,6 @@ it)
     git commit --allow-empty --edit -m root
   fi
   ;;
-undo)
-  git reset --soft HEAD~"${2:-1}"
-  ;;
 *)
   (echo >&2 unknown command)
   exit 1

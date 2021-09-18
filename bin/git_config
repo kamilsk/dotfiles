@@ -57,7 +57,7 @@ git config --global alias.at "!git_commit at"
 git config --global alias.cmm "!@ git-commit"
 git config --global alias.contribute "!@ git-contribute"
 git config --global alias.it "!git_commit it"
-git config --global alias.undo "!git_commit undo"
+git config --global alias.undo "!@ git-undo"
 
 git config --global alias.refresh "!git_refresh"
 git config --global alias.shake "!git_shake"

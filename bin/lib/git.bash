@@ -22,6 +22,8 @@ git-contribute() {
 
   GIT_COMMITTER_DATE="${_ts}" git commit --date="${_ts}" -m "${*}"
 }
+
+git-undo() { git reset --soft HEAD~"${1:-1}"; }
 #end
 
 #include:bin/lib/git/sync.bash|uncomment
