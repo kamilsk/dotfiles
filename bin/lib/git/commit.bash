@@ -11,8 +11,8 @@ git-amend() {
   # https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---amend
   # https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---dateltdategt
   # https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---no-edit
-  GIT_COMMITTER_DATE="${_cd}" git commit --amend --date="${_ad}" --no-edit "${@:1}"
+  GIT_COMMITTER_DATE="${_cd}" git commit --amend --date="${_ad}" --no-edit "${@}"
 }
 
 # https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html, see "$* vs. $@"
-git-commit() { git commit -m "${*:1}"; }
+git-commit() { git commit -m "${*}"; }

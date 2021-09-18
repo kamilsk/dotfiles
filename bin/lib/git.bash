@@ -11,10 +11,10 @@ git-amend() {
   _ad=$(git --no-pager log -1 --format="%aI")
   _cd=$(git --no-pager log -1 --format="%cI")
 
-  GIT_COMMITTER_DATE="${_cd}" git commit --amend --date="${_ad}" --no-edit "${@:1}"
+  GIT_COMMITTER_DATE="${_cd}" git commit --amend --date="${_ad}" --no-edit "${@}"
 }
 
-git-commit() { git commit -m "${*:1}"; }
+git-commit() { git commit -m "${*}"; }
 #end
 
 #include:bin/lib/git/sync.bash|uncomment
