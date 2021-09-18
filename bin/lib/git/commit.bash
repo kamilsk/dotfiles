@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+git-at() {
+  local _ts
+  # TODO:deps(datetime) implicit dependency
+  _ts=$(datetime "${1}")
+
+  GIT_COMMITTER_DATE="${_ts}" git commit --date="${_ts}" -m "${*:2}"
+}
+
 git-amend() {
   local _ad _cd
   # https://git-scm.com/docs/git-log#Documentation/git-log.txt-emaIem

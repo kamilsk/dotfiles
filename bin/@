@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+set -uo pipefail
+
+# TODO:deps(datetime) implicit dependency
+# shellcheck source=./lib/helpers.bash
+source ~/.dotfiles/bin/lib/helpers.bash
+
 # shellcheck source=./lib/git.bash
 source ~/.dotfiles/bin/lib/git.bash
 

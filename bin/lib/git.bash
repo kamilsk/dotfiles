@@ -6,6 +6,13 @@ alias push=git-push
 #end
 
 #include:bin/lib/git/commit.bash|uncomment
+git-at() {
+  local _ts
+  _ts=$(datetime "${1}")
+
+  GIT_COMMITTER_DATE="${_ts}" git commit --date="${_ts}" -m "${*:2}"
+}
+
 git-amend() {
   local _ad _cd
   _ad=$(git --no-pager log -1 --format="%aI")
