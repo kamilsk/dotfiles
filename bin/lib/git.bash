@@ -15,6 +15,13 @@ git-amend() {
 }
 
 git-commit() { git commit -m "${*}"; }
+
+git-contribute() {
+  local _ts
+  _ts=$(maintainer github contribution suggest --short "$(git --no-pager log -1 --format="%as")")
+
+  GIT_COMMITTER_DATE="${_ts}" git commit --date="${_ts}" -m "${*}"
+}
 #end
 
 #include:bin/lib/git/sync.bash|uncomment

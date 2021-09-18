@@ -16,3 +16,10 @@ git-amend() {
 
 # https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html, see "$* vs. $@"
 git-commit() { git commit -m "${*}"; }
+
+git-contribute() {
+  local _ts
+  _ts=$(maintainer github contribution suggest --short "$(git --no-pager log -1 --format="%as")")
+
+  GIT_COMMITTER_DATE="${_ts}" git commit --date="${_ts}" -m "${*}"
+}
