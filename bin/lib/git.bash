@@ -30,6 +30,19 @@ git-contribute() {
   GIT_COMMITTER_DATE="${_ts}" git commit --date="${_ts}" -m "${*}"
 }
 
+git-it() {
+  git init
+
+  if [[ -n "${1:-}" ]]; then
+    local _ts
+    _ts=$(datetime "${1:-}")
+
+    GIT_COMMITTER_DATE="${_ts}" git commit --allow-empty --date="${_ts}" --edit -m root
+    return
+  fi
+  git commit --allow-empty --edit -m root
+}
+
 git-undo() { git reset --soft HEAD~"${1:-1}"; }
 #end
 

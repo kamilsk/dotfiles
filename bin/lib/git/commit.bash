@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
+# TODO:deps(datetime) implicit dependency
 git-at() {
   local _ts
-  # TODO:deps(datetime) implicit dependency
   _ts=$(datetime "${1}")
 
   GIT_COMMITTER_DATE="${_ts}" git commit --date="${_ts}" -m "${*:2}"
@@ -30,6 +30,20 @@ git-contribute() {
   _ts=$(maintainer github contribution suggest --short "$(git --no-pager log -1 --format="%as")")
 
   GIT_COMMITTER_DATE="${_ts}" git commit --date="${_ts}" -m "${*}"
+}
+
+# TODO:deps(datetime) implicit dependency
+git-it() {
+  git init
+
+  if [[ -n "${1:-}" ]]; then
+    local _ts
+    _ts=$(datetime "${1:-}")
+
+    GIT_COMMITTER_DATE="${_ts}" git commit --allow-empty --date="${_ts}" --edit -m root
+    return
+  fi
+  git commit --allow-empty --edit -m root
 }
 
 git-undo() { git reset --soft HEAD~"${1:-1}"; }
