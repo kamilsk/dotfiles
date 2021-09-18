@@ -49,13 +49,14 @@ git config --global alias.flow "!git_flow"
 git config --global alias.attach "!branch=\$(git branch | cut -d ' ' -f2 | awk 'NF > 0'); attach() { git branch --set-upstream-to=\$1/\$branch \$branch; }; attach"
 git config --global alias.mirror "!git_mirror"
 
-git config --global alias.at "!git_commit at"
-git config --global alias.it "!git_commit it"
 git config --global alias.configure "!git_config"
 
+# working with commits
 git config --global alias.amend "!@ git-amend"
+git config --global alias.at "!git_commit at"
 git config --global alias.cmm "!@ git-commit"
 git config --global alias.contribute "!@ git-contribute"
+git config --global alias.it "!git_commit it"
 git config --global alias.undo "!git_commit undo"
 
 git config --global alias.refresh "!git_refresh"
