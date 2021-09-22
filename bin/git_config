@@ -51,14 +51,6 @@ git config --global alias.mirror "!git_mirror"
 
 git config --global alias.configure "!git_config"
 
-# working with commits
-git config --global alias.amend "!@ git-amend"
-git config --global alias.at "!@ git-at"
-git config --global alias.cmm "!@ git-commit"
-git config --global alias.contribute "!@ git-contribute"
-git config --global alias.it "!@ git-it"
-git config --global alias.undo "!@ git-undo"
-
 git config --global alias.refresh "!git_refresh"
 git config --global alias.shake "!git_shake"
 git config --global alias.untag "!git_untag"
@@ -67,8 +59,18 @@ git config --global alias.force "!git_force"
 git config --global alias.please "!git_please"
 git config --global alias.nah "!git reset --hard && git clean -df && git submodule deinit --all --force"
 
-git config --global alias.stsh 'stash --keep-index'
-git config --global alias.staash 'stash --include-untracked'
-git config --global alias.staaash 'stash --all'
-
 git config --global alias.delta "!GIT_PAGER='delta -s' git diff"
+
+
+# working with commits
+git config --global alias.amend '!@ git-amend'
+git config --global alias.at '!@ git-at'
+git config --global alias.cmm '!@ git-commit'
+git config --global alias.contribute '!@ git-contribute'
+git config --global alias.it '!@ git-it'
+git config --global alias.undo '!@ git-undo'
+
+# working with stage
+git config --global alias.stsh '!@ git-stsh'
+git config --global alias.staash '!@ git-staash'
+git config --global alias.staaash '!@ git-staaash'

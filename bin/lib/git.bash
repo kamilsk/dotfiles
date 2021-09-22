@@ -46,6 +46,14 @@ git-it() {
 git-undo() { git reset --soft HEAD~"${1:-1}"; }
 #end
 
+#include:bin/lib/git/stage.bash|uncomment
+git-stsh() { git stash --keep-index -m "${*}"; }
+
+git-staash() { git stash --include-untracked -m "${*}"; }
+
+git-staaash() { git stash --all -m "${*}"; }
+#end
+
 #include:bin/lib/git/sync.bash|uncomment
 git-pull() {
   if ! git diff-index --quiet HEAD; then
