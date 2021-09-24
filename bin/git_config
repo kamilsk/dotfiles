@@ -6,6 +6,7 @@ set -euo pipefail
 git config --global user.email 'kamil@samigullin.info'
 git config --global user.name 'Kamil Samigullin'
 git config --global core.excludesFile ~/.dotfiles/config/git/.gitignore
+git config --global --add --bool push.autoSetupRemote true
 
 # security
 key=rsa4096/35155645C6216420
@@ -18,7 +19,27 @@ else
   echo Please install GPG Suite and import personal GPG key $key.
 fi
 
+#
 # aliases
+#
+
+# working with commits
+git config --global alias.amend '!@ git-amend'
+git config --global alias.at '!@ git-at'
+git config --global alias.cmm '!@ git-commit'
+git config --global alias.contribute '!@ git-contribute'
+git config --global alias.it '!@ git-it'
+git config --global alias.undo '!@ git-undo'
+
+# working with stage
+git config --global alias.stsh '!@ git-stsh'
+git config --global alias.staash '!@ git-staash'
+git config --global alias.staaash '!@ git-staaash'
+
+#
+# TODO:refactoring
+#
+
 git config --global alias.aliases '!git config --get-regexp alias | git_aliases'
 
 git config --global alias.root 'rev-parse --show-toplevel'
@@ -44,7 +65,7 @@ git config --global alias.commits 'log --oneline --graph'
 git config --global alias.last "!last() { git log --pretty=oneline | head -\${1-1}; }; last"
 git config --global alias.grog 'log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)"'
 
-# процессы
+# workflow
 git config --global alias.flow "!git_flow"
 git config --global alias.attach "!branch=\$(git branch | cut -d ' ' -f2 | awk 'NF > 0'); attach() { git branch --set-upstream-to=\$1/\$branch \$branch; }; attach"
 git config --global alias.mirror "!git_mirror"
@@ -60,17 +81,3 @@ git config --global alias.please "!git_please"
 git config --global alias.nah "!git reset --hard && git clean -df && git submodule deinit --all --force"
 
 git config --global alias.delta "!GIT_PAGER='delta -s' git diff"
-
-
-# working with commits
-git config --global alias.amend '!@ git-amend'
-git config --global alias.at '!@ git-at'
-git config --global alias.cmm '!@ git-commit'
-git config --global alias.contribute '!@ git-contribute'
-git config --global alias.it '!@ git-it'
-git config --global alias.undo '!@ git-undo'
-
-# working with stage
-git config --global alias.stsh '!@ git-stsh'
-git config --global alias.staash '!@ git-staash'
-git config --global alias.staaash '!@ git-staaash'
