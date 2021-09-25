@@ -4,6 +4,7 @@ set -euo pipefail
 
 # common things
 git config --global core.excludesFile ~/.dotfiles/config/git/.gitignore
+git config --global init.defaultBranch main
 git config --global merge.conflictStyle zdiff3
 git config --global --add --bool push.autoSetupRemote true
 git config --global user.email kamil@samigullin.info
