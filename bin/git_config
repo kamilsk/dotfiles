@@ -3,10 +3,11 @@
 set -euo pipefail
 
 # common things
-git config --global user.email 'kamil@samigullin.info'
-git config --global user.name 'Kamil Samigullin'
 git config --global core.excludesFile ~/.dotfiles/config/git/.gitignore
+git config --global merge.conflictStyle zdiff3
 git config --global --add --bool push.autoSetupRemote true
+git config --global user.email kamil@samigullin.info
+git config --global user.name 'Kamil Samigullin'
 
 # security
 key=rsa4096/35155645C6216420
