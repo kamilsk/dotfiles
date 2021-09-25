@@ -61,9 +61,8 @@ git-pull() {
     trap '{ git stash pop; }' EXIT
   fi
 
-  git fetch --all --prune --prune-tags --tags
-  git pull --force --rebase
-  git submodule update --init --recursive --remote --rebase
+  git pull --force --prune --rebase --tags "${@:---all}"
+  git submodule update --init --rebase --recursive --remote
 }
 
 git-push() {
