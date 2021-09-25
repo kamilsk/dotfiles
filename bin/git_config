@@ -35,6 +35,7 @@ git config --global alias.it '!@ git-it'
 git config --global alias.undo '!@ git-undo'
 
 # working with stage
+git config --global alias.stst '!@ git-stst'
 git config --global alias.stsh '!@ git-stsh'
 git config --global alias.staash '!@ git-staash'
 git config --global alias.staaash '!@ git-staaash'

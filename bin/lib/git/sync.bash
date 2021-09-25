@@ -2,7 +2,7 @@
 
 git-pull() {
   if ! git diff-index --quiet HEAD; then
-    git stash
+    git stash -m 'stash before pull'
     trap '{ git stash pop; }' EXIT
   fi
 

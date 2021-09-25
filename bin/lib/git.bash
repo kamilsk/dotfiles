@@ -47,17 +47,19 @@ git-undo() { git reset --soft HEAD~"${1:-1}"; }
 #end
 
 #include:bin/lib/git/stage.bash|uncomment
-git-stsh() { git stash --keep-index -m "${*}"; }
+git-stst() { git stash push --staged -m "${*}"; }
 
-git-staash() { git stash --include-untracked -m "${*}"; }
+git-stsh() { git stash push --keep-index -m "${*}"; }
 
-git-staaash() { git stash --all -m "${*}"; }
+git-staash() { git stash push --include-untracked -m "${*}"; }
+
+git-staaash() { git stash push --all -m "${*}"; }
 #end
 
 #include:bin/lib/git/sync.bash|uncomment
 git-pull() {
   if ! git diff-index --quiet HEAD; then
-    git stash
+    git stash -m 'stash before pull'
     trap '{ git stash pop; }' EXIT
   fi
 
