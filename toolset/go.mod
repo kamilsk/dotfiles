@@ -11,7 +11,7 @@ require (
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.8
 	github.com/junegunn/fzf v0.0.0-20220729064244-18f7230662a5
-	github.com/mikefarah/yq/v4 v4.26.1
+	github.com/mikefarah/yq/v4 v4.27.1
 	github.com/mrnugget/fzz v1.1.0
 	github.com/multiprocessio/dsq v0.0.0-20220724143635-fa3183bea26f
 	golang.org/x/exp v0.0.0-20220722155223-a9213eeb770e
