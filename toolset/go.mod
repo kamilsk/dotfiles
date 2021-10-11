@@ -6,7 +6,7 @@ require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619
 	github.com/cube2222/octosql v0.9.2
 	github.com/ericchiang/pup v0.4.0
-	github.com/evanw/esbuild v0.14.51
+	github.com/evanw/esbuild v0.14.52
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.8
@@ -18,6 +18,9 @@ require (
 	mvdan.cc/gofumpt v0.3.1
 	npf.io/gorram v0.0.0-20171017135841-7fc9597cc7e0
 )
+
+// https://github.com/kamilsk/dotfiles/issues/312
+replace github.com/segmentio/parquet-go v0.0.0-20220421002521-93f8e5ed3407 => github.com/cube2222/parquet-go v0.0.0-20220512155810-0e06eee50261
 
 require (
 	cloud.google.com/go v0.103.0 // indirect
@@ -185,6 +188,3 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-
-// https://github.com/kamilsk/dotfiles/issues/312
-replace github.com/segmentio/parquet-go v0.0.0-20220421002521-93f8e5ed3407 => github.com/cube2222/parquet-go v0.0.0-20220512155810-0e06eee50261
