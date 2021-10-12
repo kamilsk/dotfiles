@@ -11,6 +11,7 @@ require (
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.8
 	github.com/junegunn/fzf v0.0.0-20220729064244-18f7230662a5
+	github.com/kyoh86/git-vertag v1.2.0
 	github.com/mikefarah/yq/v4 v4.27.2
 	github.com/mrnugget/fzz v1.1.0
 	github.com/multiprocessio/dsq v0.0.0-20220724143635-fa3183bea26f
@@ -32,7 +33,10 @@ require (
 	github.com/ClickHouse/clickhouse-go/v2 v2.2.0 // indirect
 	github.com/Masterminds/semver v1.5.0 // indirect
 	github.com/a8m/envsubst v1.3.0 // indirect
+	github.com/alecthomas/kingpin v2.2.6+incompatible // indirect
 	github.com/alecthomas/participle/v2 v2.0.0-beta.4 // indirect
+	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751 // indirect
+	github.com/alecthomas/units v0.0.0-20190924025748-f65c72e2690d // indirect
 	github.com/alexbrainman/odbc v0.0.0-20211220213544-9c9a2e61c5e2 // indirect
 	github.com/andybalholm/brotli v1.0.3 // indirect
 	github.com/apache/arrow/go/arrow v0.0.0-20211112161151-bc219186db40 // indirect
