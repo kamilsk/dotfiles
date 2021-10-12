@@ -10,14 +10,14 @@ require (
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.8
-	github.com/junegunn/fzf v0.0.0-20220729064244-18f7230662a5
+	github.com/junegunn/fzf v0.0.0-20220802125614-f7e725991039
 	github.com/kyoh86/git-vertag v1.2.0
 	github.com/marwan-at-work/mod v0.4.2
 	github.com/mikefarah/yq/v4 v4.27.2
 	github.com/mrnugget/fzz v1.1.0
 	github.com/multiprocessio/dsq v0.0.0-20220724143635-fa3183bea26f
 	golang.org/x/exp v0.0.0-20220722155223-a9213eeb770e
-	golang.org/x/tools v0.1.10
+	golang.org/x/tools v0.1.12
 	mvdan.cc/gofumpt v0.3.1
 	npf.io/gorram v0.0.0-20171017135841-7fc9597cc7e0
 )
@@ -180,10 +180,10 @@ require (
 	go.opentelemetry.io/otel v1.8.0 // indirect
 	go.opentelemetry.io/otel/trace v1.8.0 // indirect
 	golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa // indirect
-	golang.org/x/mod v0.6.0-dev.0.20220106191415-9b9b3d81d5e3 // indirect
+	golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4 // indirect
 	golang.org/x/net v0.0.0-20220722155237-a158d28d115b // indirect
 	golang.org/x/oauth2 v0.0.0-20220722155238-128564f6959c // indirect
-	golang.org/x/sync v0.0.0-20220601150217-0de741cfad7f // indirect
+	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4 // indirect
 	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
 	golang.org/x/text v0.3.7 // indirect
