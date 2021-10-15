@@ -1,25 +1,25 @@
 module github.com/kamilsk/dotfiles
 
-go 1.18
+go 1.19
 
 require (
-	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619
+	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619 // ?
 	github.com/cube2222/octosql v0.9.2
 	github.com/ericchiang/pup v0.4.0
 	github.com/evanw/esbuild v0.14.53
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.8
-	github.com/junegunn/fzf v0.0.0-20220802125614-f7e725991039
-	github.com/kyoh86/git-vertag v1.2.0
+	github.com/junegunn/fzf v0.0.0-20220802125614-f7e725991039 // https://github.com/junegunn/fzf/issues/2917
+	github.com/kyoh86/git-vertag v1.2.0 // https://github.com/kyoh86/git-vertag/releases/tag/v2.0.4
 	github.com/marwan-at-work/mod v0.4.2
 	github.com/mikefarah/yq/v4 v4.27.2
 	github.com/mrnugget/fzz v1.1.0
-	github.com/multiprocessio/dsq v0.0.0-20220724143635-fa3183bea26f
-	golang.org/x/exp v0.0.0-20220722155223-a9213eeb770e
-	golang.org/x/tools v0.1.12
+	github.com/multiprocessio/dsq v0.0.0-20220724143635-fa3183bea26f // https://github.com/multiprocessio/dsq/issues/83
+	golang.org/x/exp v0.0.0-20220722155223-a9213eeb770e // ?
+	golang.org/x/tools v0.1.12 // ?
 	mvdan.cc/gofumpt v0.3.1
-	npf.io/gorram v0.0.0-20171017135841-7fc9597cc7e0
+	npf.io/gorram v0.0.0-20171017135841-7fc9597cc7e0 // https://github.com/natefinch/gorram/releases/tag/v1.0
 )
 
 // https://github.com/kamilsk/dotfiles/issues/312
