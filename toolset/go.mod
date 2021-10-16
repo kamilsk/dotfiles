@@ -10,7 +10,7 @@ require (
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.8
-	github.com/junegunn/fzf v0.0.0-20220802125614-f7e725991039 // https://github.com/junegunn/fzf/issues/2917
+	github.com/junegunn/fzf v0.0.0-20220808145732-4993d19466d5 // https://github.com/junegunn/fzf/issues/2917
 	github.com/kyoh86/git-vertag v1.2.0 // https://github.com/kyoh86/git-vertag/releases/tag/v2.0.4
 	github.com/marwan-at-work/mod v0.4.2
 	github.com/mikefarah/yq/v4 v4.27.2

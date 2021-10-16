@@ -531,8 +531,8 @@ github.com/juju/utils v0.0.0-20160815113839-bdb77b07e7e3 h1:UmZwEQJiCr97I7qMfUB9
 github.com/juju/utils v0.0.0-20160815113839-bdb77b07e7e3/go.mod h1:6/KLg8Wz/y2KVGWEpkK9vMNGkOnu4k/cqs8Z1fKjTOk=
 github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7VTCxuUUipMqKk8s4w=
 github.com/julienschmidt/httprouter v1.3.0/go.mod h1:JR6WtHb+2LUe8TCKY3cZOxFyyO8IZAc4RVcycCCAKdM=
-github.com/junegunn/fzf v0.0.0-20220802125614-f7e725991039 h1:dXjKsDPEadUizik0af2Zcr4g1zi1gaHbxXFyxx7X9H4=
-github.com/junegunn/fzf v0.0.0-20220802125614-f7e725991039/go.mod h1:ULlcOfgZrrquadV8aTt+RuwQS8gOnlrWuJtD7neWAXs=
+github.com/junegunn/fzf v0.0.0-20220808145732-4993d19466d5 h1:LZT3PGY2LUSzbAoIzEV5Ms0pt0ivmZdVkSo4fLpjqYQ=
+github.com/junegunn/fzf v0.0.0-20220808145732-4993d19466d5/go.mod h1:ULlcOfgZrrquadV8aTt+RuwQS8gOnlrWuJtD7neWAXs=
 github.com/jung-kurt/gofpdf v1.0.0/go.mod h1:7Id9E/uU8ce6rXgefFLlgrJj/GYY22cpxn+r32jIOes=
 github.com/jung-kurt/gofpdf v1.0.3-0.20190309125859-24315acbbda5/go.mod h1:7Id9E/uU8ce6rXgefFLlgrJj/GYY22cpxn+r32jIOes=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
