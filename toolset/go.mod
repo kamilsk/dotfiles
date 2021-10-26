@@ -2,7 +2,6 @@ module github.com/kamilsk/dotfiles
 
 go 1.19
 
-// tmp: ` v\d+.\d+.\d+(\s|\n)` -> ` latest$1`
 require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619 // ?
 	github.com/cube2222/octosql v0.9.2
@@ -11,12 +10,12 @@ require (
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.8
-	github.com/kyoh86/git-vertag v1.2.1-0.20201114131231-e69f8de182bb // https://github.com/kyoh86/git-vertag/releases/tag/v2.0.4, require github.com/kyoh86/git-vertag: version "v2.0.4" invalid: should be v0 or v1, not v2
+	github.com/kyoh86/git-vertag v1.2.1-0.20201114131231-e69f8de182bb // https://github.com/kyoh86/git-vertag/issues/14
 	github.com/marwan-at-work/mod v0.4.2
 	github.com/mikefarah/yq/v4 v4.27.2
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20220722155223-a9213eeb770e // ?
-	golang.org/x/tools v0.1.12 // ?
+	golang.org/x/tools v0.1.12
 	mvdan.cc/gofumpt v0.3.1
 )
 
