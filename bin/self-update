@@ -44,10 +44,24 @@ function update_dotfiles() {
   )
 }
 
+function clean_tools() {
+  if command -v go >/dev/null; then
+    local bin
+    bin=$(go env GOBIN)
+    bin=${bin:-$(go env GOPATH)/bin}
+    if [ "${HOME}"/go/bin != "${bin}" ]; then
+      echo please take a look, go is not in the right place
+      return 1
+    fi
+    rm -rf "${HOME}"/go/bin/*
+  fi
+}
+
 function update_tools() {
   if command -v go >/dev/null; then
+    clean_tools
     (
-      cd "${root}"/toolset || exit 1
+      cd "${root}"/toolset || return 1
       go mod download && go generate tools.go
       echo tools were installed
     )
