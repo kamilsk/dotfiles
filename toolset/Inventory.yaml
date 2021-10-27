@@ -107,6 +107,8 @@
   BrewCask:
     - id: grammarly
       url: https://formulae.brew.sh/cask/grammarly
+    - id: grammarly-desktop
+      url: https://formulae.brew.sh/cask/grammarly-desktop
 
 - name: iTerm
   site: https://iterm2.com
