@@ -129,6 +129,12 @@
     git: https://github.com/lensapp/lens
     lang: TypeScript
 
+- name: Linear
+  site: https://linear.app
+  BrewCask:
+    id: linear-linear
+    url: https://formulae.brew.sh/cask/linear-linear
+
 - name: Loom
   site: https://www.loom.com
   BrewCask:
