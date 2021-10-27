@@ -102,6 +102,12 @@
     id: gpg-suite
     url: https://formulae.brew.sh/cask/gpg-suite
 
+- name: Grammarly
+  site: https://www.grammarly.com
+  BrewCask:
+    - id: grammarly
+      url: https://formulae.brew.sh/cask/grammarly
+
 - name: iTerm
   site: https://iterm2.com
   BrewCask:
