@@ -43,10 +43,8 @@ brew "wget"
 brew "zsh"
 brew "zsh-completions"
 
-tap "1password/1password-cli"
 cask "1password"
-cask "1password-cli"
-
+cask "1password/tap/1password-cli"
 cask "adobe-acrobat-reader"
 cask "airtable"
 cask "bartender"
