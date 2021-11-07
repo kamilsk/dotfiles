@@ -10,7 +10,6 @@ require (
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.8
-	github.com/kyoh86/git-vertag v1.2.1-0.20201114131231-e69f8de182bb // https://github.com/kyoh86/git-vertag/issues/14
 	github.com/marwan-at-work/mod v0.4.2
 	github.com/mikefarah/yq/v4 v4.27.3
 	github.com/mrnugget/fzz v1.1.0
@@ -28,14 +27,10 @@ require (
 	github.com/Masterminds/semver v1.5.0 // indirect
 	github.com/PuerkitoBio/goquery v1.5.1 // indirect
 	github.com/a8m/envsubst v1.3.0 // indirect
-	github.com/alecthomas/kingpin v2.2.6+incompatible // indirect
 	github.com/alecthomas/participle/v2 v2.0.0-beta.5 // indirect
-	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751 // indirect
-	github.com/alecthomas/units v0.0.0-20190924025748-f65c72e2690d // indirect
 	github.com/andybalholm/brotli v1.0.3 // indirect
 	github.com/andybalholm/cascadia v1.1.0 // indirect
 	github.com/awalterschulze/gographviz v2.0.3+incompatible // indirect
-	github.com/blang/semver v3.5.1+incompatible // indirect
 	github.com/cespare/xxhash v1.1.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
 	github.com/dgraph-io/ristretto v0.0.3 // indirect

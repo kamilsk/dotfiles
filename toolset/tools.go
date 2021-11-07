@@ -12,7 +12,6 @@ import (
 	_ "github.com/golang/mock/mockgen"
 	_ "github.com/isacikgoz/gia"
 	_ "github.com/itchyny/gojq/cmd/gojq"
-	_ "github.com/kyoh86/git-vertag"
 	_ "github.com/marwan-at-work/mod/cmd/mod"
 	_ "github.com/mikefarah/yq/v4"
 	_ "github.com/mrnugget/fzz"
@@ -30,7 +29,6 @@ import (
 //go:generate go install github.com/golang/mock/mockgen
 //go:generate go install github.com/isacikgoz/gia
 //go:generate go install github.com/itchyny/gojq/cmd/gojq
-//go:generate go install github.com/kyoh86/git-vertag
 //go:generate go install github.com/marwan-at-work/mod/cmd/mod
 //go:generate go install github.com/mikefarah/yq/v4
 //go:generate go install github.com/mrnugget/fzz
