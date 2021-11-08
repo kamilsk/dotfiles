@@ -149,6 +149,12 @@
     id: loom
     url: https://formulae.brew.sh/cask/loom
 
+- name: Marta
+  site: https://marta.sh
+  BrewCask:
+    id: marta
+    url: https://formulae.brew.sh/cask/marta
+
 - name: Miro
   site: https://miro.com
   BrewCask:
