@@ -11,7 +11,7 @@ require (
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.9
 	github.com/marwan-at-work/mod v0.4.2
-	github.com/mikefarah/yq/v4 v4.27.3
+	github.com/mikefarah/yq/v4 v4.27.5
 	github.com/mrnugget/fzz v1.1.0
 	github.com/multiprocessio/dsq v0.22.0
 	golang.org/x/exp v0.0.0-20220827204233-334a2380cb91 // ?
@@ -66,7 +66,7 @@ require (
 	github.com/denisenkom/go-mssqldb v0.12.2 // indirect
 	github.com/dgraph-io/ristretto v0.0.3 // indirect
 	github.com/dsnet/compress v0.0.1 // indirect
-	github.com/elliotchance/orderedmap v1.4.0 // indirect
+	github.com/elliotchance/orderedmap v1.5.0 // indirect
 	github.com/fatih/color v1.13.0 // indirect
 	github.com/flosch/pongo2 v0.0.0-20200913210552-0d938eb266f3 // indirect
 	github.com/form3tech-oss/jwt-go v3.2.5+incompatible // indirect
