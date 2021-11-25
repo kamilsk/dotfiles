@@ -229,8 +229,8 @@ github.com/cpuguy83/go-md2man/v2 v2.0.0-20190314233015-f79a8a8ca69d/go.mod h1:ma
 github.com/cpuguy83/go-md2man/v2 v2.0.2 h1:p1EgwI/C7NhT0JmVkwCD2ZBK8j4aeHQX2pMHHBfMQ6w=
 github.com/cpuguy83/go-md2man/v2 v2.0.2/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
-github.com/cube2222/octosql v0.9.4 h1:pm6s/SF49InhK09UYL7zWMufvGlfAcZ9n3taj0nBckY=
-github.com/cube2222/octosql v0.9.4/go.mod h1:iuDMQYas2QFnEmspVh2IURgL0V9T2Nh1j9nmWD8y2UM=
+github.com/cube2222/octosql v0.10.0 h1:7tsgGPz7XHyr8nseCG8BkuUPn0gFd8tuEImlmCYfB3U=
+github.com/cube2222/octosql v0.10.0/go.mod h1:iuDMQYas2QFnEmspVh2IURgL0V9T2Nh1j9nmWD8y2UM=
 github.com/cube2222/parquet-go v0.0.0-20220512155810-0e06eee50261 h1:spZr4fKCspC6e2RRa7Fn5kKrwjaYwDyltFf2uZquHVU=
 github.com/cube2222/parquet-go v0.0.0-20220512155810-0e06eee50261/go.mod h1:DMN6PChc8JaI7whze9XQn1aCv+8D7nhQKMfL8zXNjX4=
 github.com/cyberdelia/templates v0.0.0-20141128023046-ca7fffd4298c/go.mod h1:GyV+0YP4qX0UQ7r2MoYZ+AvYDp12OF5yg4q8rGnyNh4=
