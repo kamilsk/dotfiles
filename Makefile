@@ -8,7 +8,6 @@ SHELL := /usr/bin/env bash -euo pipefail -c
 
 install: install-git-blame
 install: install-go-tools
-install: install-ngrok
 install: install-spot
 .PHONY: install
 
@@ -25,18 +24,6 @@ install-git-blame:
 install-go-tools:
 	$(AT) cd toolset && go generate -mod=readonly -tags tools tools.go
 .PHONY: install-go-tools
-
-install-ngrok: HASH = c/bNyj1mQVY4c
-install-ngrok:
-	$(AT) if ! command -v ngrok >/dev/null; then \
-		curl -sSfL https://bin.equinox.io/$(HASH)/ngrok-stable-darwin-amd64.zip \
-		     -o ngrok.zip; \
-		unzip ngrok.zip; \
-		chmod +x ngrok; \
-		mv ngrok $$(go env GOPATH)/bin/; \
-		rm -f ngrok.zip; \
-	fi
-.PHONY: install-ngrok
 
 install-spot: LATEST = '"5a7c385c1fc7611ed3c7b8691438214c1956746c"'
 install-spot:
