@@ -29,7 +29,7 @@ function update_docker() {
       tail -n +2 |
       grep -v '<none>' |
       awk '{print $1":"$2}' |
-      xargs -n1 docker pull
+      xargs -n1 docker pull || true
     echo Docker images were updated
   fi
 }
