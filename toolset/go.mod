@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619 // ?
-	github.com/cube2222/octosql v0.10.0
+	github.com/cube2222/octosql v0.11.0
 	github.com/ericchiang/pup v0.4.0
 	github.com/evanw/esbuild v0.15.10
 	github.com/golang/mock v1.6.0
@@ -147,6 +147,7 @@ require (
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/scritchley/orc v0.0.0-20210513144143-06dddf1ad665 // indirect
 	github.com/segmentio/encoding v0.3.5 // indirect
+	github.com/segmentio/fasthash v1.0.3 // indirect
 	github.com/segmentio/parquet-go v0.0.0-20220421002521-93f8e5ed3407 // indirect
 	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/sijms/go-ora/v2 v2.4.28 // indirect
@@ -167,6 +168,7 @@ require (
 	github.com/xuri/efp v0.0.0-20220603152613-6918739fd470 // indirect
 	github.com/xuri/excelize/v2 v2.6.0 // indirect
 	github.com/xuri/nfp v0.0.0-20220409054826-5e722a1d9e22 // indirect
+	github.com/zyedidia/generic v1.1.0 // indirect
 	go.opencensus.io v0.23.0 // indirect
 	go.opentelemetry.io/otel v1.8.0 // indirect
 	go.opentelemetry.io/otel/trace v1.8.0 // indirect
