@@ -157,6 +157,7 @@
 
 - name: Miro
   site: https://miro.com
+  enabled: false # bad experience with support
   BrewCask:
     id: miro
     url: https://formulae.brew.sh/cask/miro
