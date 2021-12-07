@@ -4,7 +4,23 @@ updates:
     directory: /
     schedule:
       interval: daily
+    labels:
+      - 'type: improvement'
+      - 'scope: code'
+      - 'scope: deps'
+    commit-message:
+      prefix: 'deps'
+      prefix-development: 'deps(dev)'
+      include: 'scope'
+
   - package-ecosystem: gomod
     directory: /toolset/
     schedule:
       interval: daily
+    labels:
+      - 'type: improvement'
+      - 'scope: inventory'
+      - 'scope: deps'
+    commit-message:
+      prefix: 'tools: deps'
+      include: 'scope'
