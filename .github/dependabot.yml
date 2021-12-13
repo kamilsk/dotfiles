@@ -1,3 +1,7 @@
+# Dependabot. The application allows automating dependencies updates.
+# It provides information to Dependabot about used package ecosystems.
+#
+# Docs: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/about-dependabot-version-updates.
 version: 2
 updates:
   - package-ecosystem: gitsubmodule
@@ -9,8 +13,7 @@ updates:
       - 'scope: code'
       - 'scope: deps'
     commit-message:
-      prefix: 'deps'
-      prefix-development: 'deps(dev)'
+      prefix: 'feat'
       include: 'scope'
 
   - package-ecosystem: gomod
@@ -22,5 +25,5 @@ updates:
       - 'scope: inventory'
       - 'scope: deps'
     commit-message:
-      prefix: 'tools: deps'
+      prefix: 'tools'
       include: 'scope'
