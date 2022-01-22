@@ -9,7 +9,7 @@ require (
 	github.com/evanw/esbuild v0.16.10
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
-	github.com/itchyny/gojq v0.12.10
+	github.com/itchyny/gojq v0.12.11
 	github.com/marwan-at-work/mod v0.4.3
 	github.com/mikefarah/yq/v4 v4.30.6
 	github.com/mrnugget/fzz v1.1.0
