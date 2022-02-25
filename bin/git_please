@@ -9,8 +9,8 @@ all)
     (echo >&2 'nothing to do')
     exit 1
   fi
-  for remote in $(git remote | grep -v upstream); do
-    git push --force-with-lease "${remote}" "$(git current)"
+  for remote in $(git remote | grep -Ev '^(upstream|fork-.*)$'); do
+    git push --force-with-lease --tags "${remote}" "$(git current)"
   done
   ;;
 current)
@@ -19,7 +19,7 @@ current)
     (echo >&2 'nothing to do')
     exit 1
   fi
-  git push --force-with-lease "${remote}"
+  git push --force-with-lease --tags "${remote}"
   ;;
 *)
   (echo >&2 use all or current as an argument)
