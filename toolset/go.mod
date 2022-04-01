@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619 // ?
-	github.com/cube2222/octosql v0.12.0
+	github.com/cube2222/octosql v0.12.1
 	github.com/ericchiang/pup v0.4.0
 	github.com/evanw/esbuild v0.17.10
 	github.com/golang/mock v1.6.0
@@ -37,6 +37,7 @@ require (
 	github.com/Masterminds/semver v1.5.0 // indirect
 	github.com/PuerkitoBio/goquery v1.5.1 // indirect
 	github.com/a8m/envsubst v1.4.1 // indirect
+	github.com/adrg/xdg v0.4.0 // indirect
 	github.com/alecthomas/participle/v2 v2.0.0-beta.5 // indirect
 	github.com/alexbrainman/odbc v0.0.0-20211220213544-9c9a2e61c5e2 // indirect
 	github.com/andybalholm/brotli v1.0.4 // indirect

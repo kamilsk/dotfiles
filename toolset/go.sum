@@ -84,6 +84,8 @@ github.com/a8m/envsubst v1.4.1 h1:RShc2OKbQpIIp5qR2glVsBOJCImTVHFrDkJvmGh0Qi0=
 github.com/a8m/envsubst v1.4.1/go.mod h1:MVUTQNGQ3tsjOOtKCNd+fl8RzhsXcDvvAEzkhGtlsbY=
 github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619 h1:6LHx6f4mNeH5iIFvW99AxMaTorZKs3kRw8/2k2cuARE=
 github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619/go.mod h1:Ioneq8wUEClphykrpC5BRUTxkGBzqx+32HieW8mxf08=
+github.com/adrg/xdg v0.4.0 h1:RzRqFcjH4nE5C6oTAxhBtoE2IRyjBSa62SCbyPidvls=
+github.com/adrg/xdg v0.4.0/go.mod h1:N6ag73EX4wyxeaoeHctc1mas01KZgsj5tYiAIwqJE/E=
 github.com/ajstarks/svgo v0.0.0-20180226025133-644b8db467af/go.mod h1:K08gAheRH3/J6wwsYMMT4xOr94bZjxIelGM0+d/wbFw=
 github.com/alecthomas/assert/v2 v2.0.3 h1:WKqJODfOiQG0nEJKFKzDIG3E29CN2/4zR9XGJzKIkbg=
 github.com/alecthomas/participle/v2 v2.0.0-beta.5 h1:y6dsSYVb1G5eK6mgmy+BgI3Mw35a3WghArZ/Hbebrjo=
@@ -200,8 +202,8 @@ github.com/cpuguy83/go-md2man/v2 v2.0.0-20190314233015-f79a8a8ca69d/go.mod h1:ma
 github.com/cpuguy83/go-md2man/v2 v2.0.2 h1:p1EgwI/C7NhT0JmVkwCD2ZBK8j4aeHQX2pMHHBfMQ6w=
 github.com/cpuguy83/go-md2man/v2 v2.0.2/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
-github.com/cube2222/octosql v0.12.0 h1:+ItvENSRVaaw7XwrIevdkaZmIPh1O3uMHMcycSju/VI=
-github.com/cube2222/octosql v0.12.0/go.mod h1:PnI73slvx3D5Iw3qwp8Ec3h25reu4b5w4qGeZzJLrXo=
+github.com/cube2222/octosql v0.12.1 h1:10SYel2W62Z+VYgQbmharcqZIAytW+NORJEWwZIM8tg=
+github.com/cube2222/octosql v0.12.1/go.mod h1:vetMXxzr57oHSRvfnlP03rusdwuxYvw3WrUClTNgvWo=
 github.com/cube2222/parquet-go v0.0.0-20220512155810-0e06eee50261 h1:spZr4fKCspC6e2RRa7Fn5kKrwjaYwDyltFf2uZquHVU=
 github.com/cube2222/parquet-go v0.0.0-20220512155810-0e06eee50261/go.mod h1:DMN6PChc8JaI7whze9XQn1aCv+8D7nhQKMfL8zXNjX4=
 github.com/cyberdelia/templates v0.0.0-20141128023046-ca7fffd4298c/go.mod h1:GyV+0YP4qX0UQ7r2MoYZ+AvYDp12OF5yg4q8rGnyNh4=
@@ -977,6 +979,7 @@ golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c/go.mod h1:oPkhp1MJrh7nUepCBc
 golang.org/x/sys v0.0.0-20210806184541-e5e7981a1069/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20210927094055-39ccf1dd6fa6/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20211019181941-9d821ace8654/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
+golang.org/x/sys v0.0.0-20211025201205-69cdffdb9359/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20211103235746-7861aae1554b/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20211110154304-99a53858aa08/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20211124211545-fe61309f8881/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
