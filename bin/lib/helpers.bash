@@ -49,7 +49,7 @@ function datetime() {
 
   local jitter=0
   if [[ "${1:-}" =~ --jitter ]]; then
-    jitter=$((RANDOM % (3 * hour) + hour))
+    jitter=$((RANDOM % (2 * hour) + hour))
     shift
   fi
 
