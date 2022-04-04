@@ -13,8 +13,8 @@ require (
 	github.com/marwan-at-work/mod v0.4.3
 	github.com/mikefarah/yq/v4 v4.31.1
 	github.com/mrnugget/fzz v1.1.0
-	golang.org/x/exp v0.0.0-20220927162542-c76eaa363f9d // ?
-	golang.org/x/tools v0.1.12
+	golang.org/x/exp v0.0.0-20230224173230-c95f2b4c22f2 // ?
+	golang.org/x/tools v0.2.0
 	mvdan.cc/gofumpt v0.4.0
 )
 
@@ -182,8 +182,8 @@ require (
 	go.opencensus.io v0.23.0 // indirect
 	go.opentelemetry.io/otel v1.11.0 // indirect
 	go.opentelemetry.io/otel/trace v1.11.0 // indirect
-	golang.org/x/crypto v0.0.0-20221012134737-56aed061732a // indirect
-	golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4 // indirect
+	golang.org/x/crypto v0.1.0 // indirect
+	golang.org/x/mod v0.6.0 // indirect
 	golang.org/x/net v0.1.1-0.20221104162952-702349b0e862 // indirect
 	golang.org/x/oauth2 v0.0.0-20221014153046-6fdb5e3db783 // indirect
 	golang.org/x/sync v0.0.0-20220929204114-8fcdb60fdcc0 // indirect
