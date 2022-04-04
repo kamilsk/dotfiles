@@ -13,29 +13,78 @@ function activate() {
   return 1
 }
 
+function suggest() {
+  local iso="%Y-%m-%d 08:00:00 %z" # truncated ISO 8601-like format, see `git log`
+  local target=${1:-5}
+
+  local short
+  short=$(git --no-pager log --format=%cs -1)
+
+  # TODO:feat use stderr to output stats and stdout to output --short
+  #  it will be better and shows the stats instead two calls
+  local suggest1 suggest2
+  suggest1=$(maintainer github contribution suggest --short --target="${target}" "${short}"/0)
+  suggest1=$(date -jf %FT%T +"${iso}" "${suggest1}" 2>/dev/null)
+  suggest2=$(git --no-pager log --format=%ci -1)
+
+  local suggest
+  if [[ "${suggest1}" > "${suggest2}" ]]; then
+    short=$(date -jf %Y-%m-%d +%Y-%m-%d "${suggest1}" 2>/dev/null)
+    suggest=$(datetime --jitter "${suggest1}")
+  else
+    short=$(date -jf %Y-%m-%d +%Y-%m-%d "${suggest2}" 2>/dev/null)
+    suggest=$(datetime --jitter "${suggest2}")
+  fi
+  # TODO:bug it shows incomplete state, see date 2022-04-04/10
+  # maintainer github contribution suggest --delta --target="${target}" "${short}"/10 1>&2
+  maintainer github contribution lookup "${short}"/10 1>&2
+  echo "${suggest}"
+}
+
 function datetime() {
-  local iso="%Y-%m-%dT%H:%M:%S%Z"
+  local iso="%Y-%m-%d %H:%M:%S %z" # ISO 8601-like format, see `git log`
+  local minute=$((60))
+  local hour=$((60 * minute))
+  local day=$((24 * hour))
+
+  local jitter=0
+  if [[ "${1:-}" =~ --jitter ]]; then
+    jitter=$((RANDOM % (3 * hour) + hour))
+    shift
+  fi
 
   local mutator
-  mutator=$(echo "${1:-}" | sed 's:\([[:alpha:]]\):\1 :g')
+  mutator=$(echo "${@:-}" | sed 's:\([[:alpha:]]\):\1 :g')
   if [ -z "${mutator}" ]; then
-    date +${iso}
+    date +"${iso}"
     return
   fi
 
-  # $ datetime 2021-03-28
-  # -> -416d
-  if [[ "$mutator" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
-    local day=$((24*60*60))
-    local now req
-    now=$(date +%s)
-    req=$(date -jf %Y-%m-%d +%s "${mutator}")
-    echo $(((req - now) / day))d
+  # $ datetime $(git log --pretty=format:'%ci' | head -1)
+  # -> -416d12H17M
+  if [[ "$mutator" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2} ]]; then
+    local now req sign=+
+    now=$(($(date +%s) - jitter))
+    req=$(date -jf "${iso}" +%s "${mutator}")
+    [ "${now}" -gt "${req}" ] && sign=-
+
+    local days=$(((now - req) / day))
+    local hours=$(((now - req - days * day) / hour))
+    local minutes=$(((now - req - days * day - hours * hour) / minute))
+
+    local result="${sign}${days#-}d"
+    if [ $hours -ne 0 ]; then
+      result+="${hours#-}H"
+    fi
+    if [ $minutes -ne 0 ]; then
+      result+="${minutes#-}M"
+    fi
+    echo "${result}"
     return
   fi
 
-  # $ datetime -416d
-  # -> 2021-03-28
+  # $ datetime -416d12H17M
+  # -> 2022-01-09 08:35:31 +0300
   local sign=+
   if [[ "${mutator}" == -* ]]; then
     mutator="${mutator##-}"
@@ -46,7 +95,7 @@ function datetime() {
   for m in $(echo "${mutator}" | cat); do
     v+="-v${sign}${m} "
   done
-  eval "date -j ${v}+${iso}"
+  eval "date -j ${v}+'${iso}'"
 }
 
 function lookup() {
