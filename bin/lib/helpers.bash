@@ -141,14 +141,6 @@ function newdir() {
   cd "${_}" || return
 }
 
-function realpath() {
-  if [[ -z "${1:-}" ]]; then
-    echo 'Please provide a file/dir name'
-    return
-  fi
-  echo "$(cd "$(dirname "${1}")" && pwd)/${1}"
-}
-
 if command -v lsof >/dev/null; then
   function wholisten() {
     local port=${1:-}
