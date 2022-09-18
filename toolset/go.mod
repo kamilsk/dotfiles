@@ -11,7 +11,7 @@ require (
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.12
 	github.com/marwan-at-work/mod v0.5.0
-	github.com/mikefarah/yq/v4 v4.33.1
+	github.com/mikefarah/yq/v4 v4.33.2
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20230224173230-c95f2b4c22f2 // ?
 	golang.org/x/tools v0.6.0
@@ -38,7 +38,7 @@ require (
 	github.com/PuerkitoBio/goquery v1.5.1 // indirect
 	github.com/a8m/envsubst v1.4.2 // indirect
 	github.com/adrg/xdg v0.4.0 // indirect
-	github.com/alecthomas/participle/v2 v2.0.0-beta.5 // indirect
+	github.com/alecthomas/participle/v2 v2.0.0 // indirect
 	github.com/alexbrainman/odbc v0.0.0-20211220213544-9c9a2e61c5e2 // indirect
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/andybalholm/cascadia v1.1.0 // indirect
@@ -81,7 +81,7 @@ require (
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
-	github.com/goccy/go-yaml v1.10.0 // indirect
+	github.com/goccy/go-yaml v1.10.1 // indirect
 	github.com/gocql/gocql v1.2.1 // indirect
 	github.com/golang-sql/civil v0.0.0-20220223132316-b832511892a9 // indirect
 	github.com/golang-sql/sqlexp v0.1.0 // indirect
@@ -138,7 +138,7 @@ require (
 	github.com/oklog/ulid/v2 v2.0.2 // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/paulmach/orb v0.7.1 // indirect
-	github.com/pelletier/go-toml/v2 v2.0.6 // indirect
+	github.com/pelletier/go-toml/v2 v2.0.7 // indirect
 	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
 	github.com/pierrec/lz4/v4 v4.1.17 // indirect
 	github.com/pkg/browser v0.0.0-20210911075715-681adbf594b8 // indirect
@@ -183,7 +183,7 @@ require (
 	go.opencensus.io v0.23.0 // indirect
 	go.opentelemetry.io/otel v1.11.0 // indirect
 	go.opentelemetry.io/otel/trace v1.11.0 // indirect
-	golang.org/x/crypto v0.1.0 // indirect
+	golang.org/x/crypto v0.7.0 // indirect
 	golang.org/x/mod v0.8.0 // indirect
 	golang.org/x/net v0.8.0 // indirect
 	golang.org/x/oauth2 v0.0.0-20221014153046-6fdb5e3db783 // indirect
