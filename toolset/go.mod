@@ -6,7 +6,7 @@ require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619 // ?
 	github.com/cube2222/octosql v0.12.1
 	github.com/ericchiang/pup v0.4.0
-	github.com/evanw/esbuild v0.17.14
+	github.com/evanw/esbuild v0.17.15
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.12
