@@ -13,34 +13,6 @@ function activate() {
   return 1
 }
 
-function suggest() {
-  local iso="%Y-%m-%d 08:00:00 %z" # truncated ISO 8601-like format, see `git log`
-  local target=${1:-5}
-
-  local short
-  short=$(git --no-pager log --format=%cs -1)
-
-  # TODO:feat use stderr to output stats and stdout to output --short
-  #  it will be better and shows the stats instead two calls
-  local suggest1 suggest2
-  suggest1=$(maintainer github contribution suggest --short --target="${target}" "${short}"/0)
-  suggest1=$(date -jf %FT%T +"${iso}" "${suggest1}" 2>/dev/null)
-  suggest2=$(git --no-pager log --format=%ci -1)
-
-  local suggest
-  if [[ "${suggest1}" > "${suggest2}" ]]; then
-    short=$(date -jf %Y-%m-%d +%Y-%m-%d "${suggest1}" 2>/dev/null)
-    suggest=$(datetime --jitter "${suggest1}")
-  else
-    short=$(date -jf %Y-%m-%d +%Y-%m-%d "${suggest2}" 2>/dev/null)
-    suggest=$(datetime --jitter "${suggest2}")
-  fi
-  # TODO:bug it shows incomplete state, see date 2022-04-04/10
-  # maintainer github contribution suggest --delta --target="${target}" "${short}"/10 1>&2
-  maintainer github contribution lookup "${short}"/10 1>&2
-  echo "${suggest}"
-}
-
 function datetime() {
   local iso="%Y-%m-%d %H:%M:%S %z" # ISO 8601-like format, see `git log`
   local minute=$((60))

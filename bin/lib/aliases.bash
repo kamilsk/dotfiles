@@ -21,6 +21,8 @@ alias sha512='openssl sha512'
 
 alias run='./Taskfile'
 
+alias suggest='maintainer github contribution suggest --delta git/5'
+
 alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 
 alias g@='git config user.name "Kamil Samigullin" && git config user.email "kamil@samigullin.info"'
