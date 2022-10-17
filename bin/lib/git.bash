@@ -23,9 +23,9 @@ git-amend() {
 
 git-commit() { git commit -m "${*}"; }
 
-git-contribute() {
+git-contrib() {
   local _ts
-  _ts=$(maintainer github contribution suggest --short "$(git --no-pager log -1 --format="%as")")
+  _ts=$(maintainer github contribution suggest --short git/1)
 
   GIT_COMMITTER_DATE="${_ts}" git commit --date="${_ts}" -m "${*}"
 }
