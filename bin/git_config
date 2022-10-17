@@ -40,53 +40,13 @@ git config --global alias.stsh '!@ git-stsh'
 git config --global alias.staash '!@ git-staash'
 git config --global alias.staaash '!@ git-staaash'
 
-#
-# TODO:refactoring
-#
-
-# first wave
-
-git config --global alias.aliases '!git config --get-regexp alias | git_aliases'
-
-git config --global alias.root 'rev-parse --show-toplevel'
 git config --global alias.state "!echo Remotes && (git remote -v | grep 'fetch' | column -t) &&
                                  (echo; git status) && (echo; echo Stash content) &&
                                  (git stash list | grep . || echo -) &&
                                  (echo; printf 'Latest release: '; git release || true)"
-git config --global alias.url "!git_url"
-git config --global alias.whoami "!echo \$(git config user.name) \<\$(git config user.email)\>"
-
-git config --global alias.configure "!git_config"
-
-git config --global alias.refresh "!git_refresh"
-git config --global alias.shake "!git_shake"
-git config --global alias.untag "!git_untag"
 
 git config --global alias.force "!git_force"
 git config --global alias.please "!git_please"
 git config --global alias.nah "!git reset --hard && git clean -df && git submodule deinit --all --force"
 
-git config --global alias.delta "!GIT_PAGER='delta -s' git diff"
-
-# last wave
-
-git config --global alias.current "!git_current"
-git config --global alias.default "!git_default"
 git config --global alias.release "!git_current release"
-
-git config --global alias.stats "!git_stats"
-git config --global alias.day "!git log --oneline --no-merges --all --author=\$(git config user.email) --since=1.day | bat"
-git config --global alias.week "!git log --oneline --no-merges --all --author=\$(git config user.email) --since=1.week | bat"
-git config --global alias.month "!git log --oneline --no-merges --all --author=\$(git config user.email) --since=1.month | bat"
-
-git config --global alias.st 'status --short --branch'
-git config --global alias.branches 'for-each-ref --sort=committerdate refs/heads/ --format="%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))"'
-git config --global alias.commits 'log --oneline --graph'
-git config --global alias.last "!git --no-pager log --format='%h - %s - %ci'"
-git config --global alias.last-time '!git --no-pager log --format=%cI -1'
-git config --global alias.grog 'log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)"'
-
-# workflow
-git config --global alias.flow "!git_flow"
-git config --global alias.attach "!branch=\$(git branch | cut -d ' ' -f2 | awk 'NF > 0'); attach() { git branch --set-upstream-to=\$1/\$branch \$branch; }; attach"
-git config --global alias.mirror "!git_mirror"
