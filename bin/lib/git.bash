@@ -25,7 +25,7 @@ git-commit() { git commit -m "${*}"; }
 
 git-contrib() {
   local _ts
-  _ts=$(maintainer github contribution suggest --short git/1)
+  _ts=$(maintainer github contribution suggest git/3)
 
   GIT_COMMITTER_DATE="${_ts}" git commit --date="${_ts}" -m "${*}"
 }
