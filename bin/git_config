@@ -45,6 +45,9 @@ git config --global alias.state "!echo Remotes && (git remote -v | grep 'fetch' 
                                  (git stash list | grep . || echo -) &&
                                  (echo; printf 'Latest release: '; git release || true)"
 
+git config --global alias.current "!git_current"
+git config --global alias.default "!git_default"
+
 git config --global alias.force "!git_force"
 git config --global alias.please "!git_please"
 git config --global alias.nah "!git reset --hard && git clean -df && git submodule deinit --all --force"
