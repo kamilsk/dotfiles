@@ -13,7 +13,7 @@ require (
 	github.com/marwan-at-work/mod v0.5.0
 	github.com/mikefarah/yq/v4 v4.33.2
 	github.com/mrnugget/fzz v1.1.0
-	golang.org/x/exp v0.0.0-20230224173230-c95f2b4c22f2 // ?
+	golang.org/x/exp v0.0.0-20230321023759-10a507213a29 // ?
 	golang.org/x/tools v0.8.0
 	mvdan.cc/gofumpt v0.5.0
 )
