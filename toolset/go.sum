@@ -204,6 +204,8 @@ github.com/cpuguy83/go-md2man/v2 v2.0.2/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46t
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/cube2222/octosql v0.12.1 h1:10SYel2W62Z+VYgQbmharcqZIAytW+NORJEWwZIM8tg=
 github.com/cube2222/octosql v0.12.1/go.mod h1:vetMXxzr57oHSRvfnlP03rusdwuxYvw3WrUClTNgvWo=
+github.com/cube2222/parquet-go v0.0.0-20220512155810-0e06eee50261 h1:spZr4fKCspC6e2RRa7Fn5kKrwjaYwDyltFf2uZquHVU=
+github.com/cube2222/parquet-go v0.0.0-20220512155810-0e06eee50261/go.mod h1:DMN6PChc8JaI7whze9XQn1aCv+8D7nhQKMfL8zXNjX4=
 github.com/cyberdelia/templates v0.0.0-20141128023046-ca7fffd4298c/go.mod h1:GyV+0YP4qX0UQ7r2MoYZ+AvYDp12OF5yg4q8rGnyNh4=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
@@ -682,8 +684,6 @@ github.com/segmentio/encoding v0.3.5 h1:UZEiaZ55nlXGDL92scoVuw00RmiRCazIEmvPSbSv
 github.com/segmentio/encoding v0.3.5/go.mod h1:n0JeuIqEQrQoPDGsjo8UNd1iA0U8d8+oHAA4E3G3OxM=
 github.com/segmentio/fasthash v1.0.3 h1:EI9+KE1EwvMLBWwjpRDc+fEM+prwxDYbslddQGtrmhM=
 github.com/segmentio/fasthash v1.0.3/go.mod h1:waKX8l2N8yckOgmSsXJi7x1ZfdKZ4x7KRMzBtS3oedY=
-github.com/segmentio/parquet-go v0.0.0-20220421002521-93f8e5ed3407 h1:Pz9rS42lX6XZ+GBsV2SdGyNDalo5beooPXMO7dCe1G0=
-github.com/segmentio/parquet-go v0.0.0-20220421002521-93f8e5ed3407/go.mod h1:HBHoETTgIDcNyTWTVOvCelN6kbFozuTNZPLyRIBjW2E=
 github.com/shopspring/decimal v1.3.1 h1:2Usl1nmF/WZucqkFZhnfFYxxxu8LG21F6nPQBE5gKV8=
 github.com/shopspring/decimal v1.3.1/go.mod h1:DKyhrW/HYNuLGql+MJL6WCR6knT2jwCFRcu2hWCYk4o=
 github.com/shurcooL/sanitized_anchor_name v1.0.0/go.mod h1:1NzhyTcUVG4SuEtjjoZeVRXNmyL/1OwPU0+IJeTBvfc=

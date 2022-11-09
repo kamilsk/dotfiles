@@ -13,6 +13,7 @@ require (
 	github.com/marwan-at-work/mod v0.5.0
 	github.com/mikefarah/yq/v4 v4.33.3
 	github.com/mrnugget/fzz v1.1.0
+	github.com/multiprocessio/dsq v0.23.0
 	golang.org/x/exp v0.0.0-20230321023759-10a507213a29 // ?
 	golang.org/x/tools v0.8.0
 	mvdan.cc/gofumpt v0.5.0
@@ -20,7 +21,8 @@ require (
 
 replace golang.org/x/tools => github.com/kamilsk/go-tools v0.8.0
 
-require github.com/multiprocessio/dsq v0.23.0
+// transitive replacement for octosql
+replace github.com/segmentio/parquet-go v0.0.0-20220421002521-93f8e5ed3407 => github.com/cube2222/parquet-go v0.0.0-20220512155810-0e06eee50261
 
 require (
 	cloud.google.com/go v0.104.0 // indirect
