@@ -2,6 +2,7 @@
 
 _bins="${HOME}/.dotfiles/bin"
 _brew="/opt/homebrew/bin:/opt/homebrew/sbin"
+_dock="${HOME}/.docker/bin"
 _hack="${HOME}/go/bin"
 
 # How to control your PATH
@@ -23,7 +24,7 @@ _hack="${HOME}/go/bin"
 # Docs:
 # - https://www.softec.lu/site/DevelopersCorner/MasteringThePathHelper
 # - https://unix.stackexchange.com/questions/22979/path-helper-and-zsh
-[[ $SHLVL -eq 1 ]] && export PATH="${_hack}:${_bins}:${_brew}:${PATH}"
+[[ $SHLVL -eq 1 ]] && export PATH="${_hack}:${_bins}:${_brew}:${_dock}:${PATH}"
 
 path() {
   for arg in "${@}"; do
