@@ -11,9 +11,8 @@ require (
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.9
 	github.com/marwan-at-work/mod v0.4.3
-	github.com/mikefarah/yq/v4 v4.29.2
+	github.com/mikefarah/yq/v4 v4.30.1
 	github.com/mrnugget/fzz v1.1.0
-	github.com/multiprocessio/dsq v0.23.0
 	golang.org/x/exp v0.0.0-20220927162542-c76eaa363f9d // ?
 	golang.org/x/tools v0.1.12
 	mvdan.cc/gofumpt v0.4.0
@@ -23,6 +22,8 @@ replace golang.org/x/tools v0.1.12 => github.com/kamilsk/go-tools v0.1.12
 
 // https://github.com/kamilsk/dotfiles/issues/312
 replace github.com/segmentio/parquet-go v0.0.0-20220421002521-93f8e5ed3407 => github.com/cube2222/parquet-go v0.0.0-20220512155810-0e06eee50261
+
+require github.com/multiprocessio/dsq v0.23.0
 
 require (
 	cloud.google.com/go v0.104.0 // indirect
