@@ -1,6 +1,6 @@
-> # 🗂 dotfiles
->
-> My dotfiles for productive work.
+# 🗂 dotfiles
+
+My dotfiles for productive work.
 
 [![Mirror][mirror.icon]][mirror.page]
 
@@ -24,7 +24,7 @@ When you have it, just use `$ self-update` to sync it with the remote.
 - [vim](https://www.vim.org)
 - [zsh](https://www.zsh.org)
 
-<p align="right">made with ❤️ for everyone</p>
+<p align="right">made with ❤️ for everyone by OctoLab</p>
 
 [mirror.page]:      https://bitbucket.org/kamilsk/dotfiles
 [mirror.icon]:      https://img.shields.io/badge/mirror-bitbucket-blue
