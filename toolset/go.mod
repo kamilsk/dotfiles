@@ -11,7 +11,7 @@ require (
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.10
 	github.com/marwan-at-work/mod v0.4.3
-	github.com/mikefarah/yq/v4 v4.30.5
+	github.com/mikefarah/yq/v4 v4.30.6
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20220927162542-c76eaa363f9d // ?
 	golang.org/x/tools v0.1.12
@@ -79,8 +79,8 @@ require (
 	github.com/go-faster/errors v0.6.1 // indirect
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
-	github.com/goccy/go-json v0.9.11 // indirect
-	github.com/goccy/go-yaml v1.9.6 // indirect
+	github.com/goccy/go-json v0.10.0 // indirect
+	github.com/goccy/go-yaml v1.9.7 // indirect
 	github.com/gocql/gocql v1.2.1 // indirect
 	github.com/golang-sql/civil v0.0.0-20220223132316-b832511892a9 // indirect
 	github.com/golang-sql/sqlexp v0.1.0 // indirect
@@ -112,7 +112,7 @@ require (
 	github.com/kr/text v0.2.0 // indirect
 	github.com/lib/pq v1.10.7 // indirect
 	github.com/linkedin/goavro/v2 v2.12.0 // indirect
-	github.com/magiconair/properties v1.8.6 // indirect
+	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/matoous/go-nanoid/v2 v2.0.0 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-ieproxy v0.0.9 // indirect
