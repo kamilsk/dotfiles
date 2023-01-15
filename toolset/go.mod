@@ -11,7 +11,7 @@ require (
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.11
 	github.com/marwan-at-work/mod v0.4.3
-	github.com/mikefarah/yq/v4 v4.30.7
+	github.com/mikefarah/yq/v4 v4.30.8
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20220927162542-c76eaa363f9d // ?
 	golang.org/x/tools v0.1.12
