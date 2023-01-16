@@ -19,7 +19,7 @@ function update_brew() {
   brew bundle --file="${root}"/toolset/Brewfile cleanup -v
   brew upgrade
   brew cu --all --cleanup
-  brew doctor --verbose
+  brew doctor --verbose || true
   brew cleanup
 }
 
