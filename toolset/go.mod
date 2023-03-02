@@ -9,7 +9,7 @@ require (
 	github.com/evanw/esbuild v0.17.10
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
-	github.com/itchyny/gojq v0.12.11
+	github.com/itchyny/gojq v0.12.12
 	github.com/marwan-at-work/mod v0.4.3
 	github.com/mikefarah/yq/v4 v4.31.1
 	github.com/mrnugget/fzz v1.1.0
@@ -149,7 +149,7 @@ require (
 	github.com/prometheus/procfs v0.8.0 // indirect
 	github.com/richardlehane/mscfb v1.0.4 // indirect
 	github.com/richardlehane/msoleps v1.0.3 // indirect
-	github.com/rivo/uniseg v0.2.0 // indirect
+	github.com/rivo/uniseg v0.4.4 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/scritchley/orc v0.0.0-20210513144143-06dddf1ad665 // indirect
 	github.com/segmentio/asm v1.2.0 // indirect
