@@ -11,7 +11,7 @@ require (
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.11
 	github.com/marwan-at-work/mod v0.4.3
-	github.com/mikefarah/yq/v4 v4.31.1
+	github.com/mikefarah/yq/v4 v4.31.2
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20230224173230-c95f2b4c22f2 // ?
 	golang.org/x/tools v0.6.0
@@ -36,7 +36,7 @@ require (
 	github.com/ClickHouse/clickhouse-go/v2 v2.3.0 // indirect
 	github.com/Masterminds/semver v1.5.0 // indirect
 	github.com/PuerkitoBio/goquery v1.5.1 // indirect
-	github.com/a8m/envsubst v1.4.1 // indirect
+	github.com/a8m/envsubst v1.4.2 // indirect
 	github.com/adrg/xdg v0.4.0 // indirect
 	github.com/alecthomas/participle/v2 v2.0.0-beta.5 // indirect
 	github.com/alexbrainman/odbc v0.0.0-20211220213544-9c9a2e61c5e2 // indirect
@@ -184,7 +184,7 @@ require (
 	go.opentelemetry.io/otel/trace v1.11.0 // indirect
 	golang.org/x/crypto v0.1.0 // indirect
 	golang.org/x/mod v0.8.0 // indirect
-	golang.org/x/net v0.6.0 // indirect
+	golang.org/x/net v0.7.0 // indirect
 	golang.org/x/oauth2 v0.0.0-20221014153046-6fdb5e3db783 // indirect
 	golang.org/x/sync v0.1.0 // indirect
 	golang.org/x/sys v0.5.0 // indirect
