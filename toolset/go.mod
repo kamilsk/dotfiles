@@ -10,7 +10,7 @@ require (
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.12
-	github.com/marwan-at-work/mod v0.4.3
+	github.com/marwan-at-work/mod v0.5.0
 	github.com/mikefarah/yq/v4 v4.31.2
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20230224173230-c95f2b4c22f2 // ?
