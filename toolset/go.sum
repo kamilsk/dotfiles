@@ -552,8 +552,8 @@ github.com/matttproud/golang_protobuf_extensions v1.0.2 h1:hAHbPm5IJGijwng3PWk09
 github.com/matttproud/golang_protobuf_extensions v1.0.2/go.mod h1:BSXmuO+STAnVfrANrmjBb36TMTDstsz7MSK+HVaYKv4=
 github.com/mholt/archiver v3.1.1+incompatible h1:1dCVxuqs0dJseYEhi5pl7MYPH9zDa1wBi7mF09cbNkU=
 github.com/mholt/archiver v3.1.1+incompatible/go.mod h1:Dh2dOXnSdiLxRiPoVfIr/fI1TwETms9B8CTWfeh7ROU=
-github.com/mikefarah/yq/v4 v4.32.1 h1:0KbfZ7MZs/TSopiqt2D3sAhBkrO9wahRNCov5CquMro=
-github.com/mikefarah/yq/v4 v4.32.1/go.mod h1:UXE+lCNFcs+/6kTSgX7UMBkC7baZIOnZ0oeuKNejNFY=
+github.com/mikefarah/yq/v4 v4.32.2 h1:CthOOz09WscRPu7Nbfy9SC9zghnm7WaSwJgxYNh7oZM=
+github.com/mikefarah/yq/v4 v4.32.2/go.mod h1:UXE+lCNFcs+/6kTSgX7UMBkC7baZIOnZ0oeuKNejNFY=
 github.com/mitchellh/go-homedir v1.1.0 h1:lukF9ziXFxDFPkA1vsr5zpc1XuPDn/wFntq5mG+4E0Y=
 github.com/mitchellh/go-homedir v1.1.0/go.mod h1:SfyaCUpYCn1Vlf4IUYiD9fPX4A5wJrkLzIz1N1q0pr0=
 github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421/go.mod h1:6dJC0mAP4ikYIbvyc7fijjWJddQyLn8Ig3JB5CqoB9Q=
