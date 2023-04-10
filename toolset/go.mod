@@ -14,8 +14,8 @@ require (
 	github.com/mikefarah/yq/v4 v4.33.2
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20230224173230-c95f2b4c22f2 // ?
-	golang.org/x/tools v0.6.0
-	mvdan.cc/gofumpt v0.4.0
+	golang.org/x/tools v0.8.0
+	mvdan.cc/gofumpt v0.5.0
 )
 
 replace golang.org/x/tools => github.com/kamilsk/go-tools v0.6.0
@@ -184,11 +184,11 @@ require (
 	go.opentelemetry.io/otel v1.11.0 // indirect
 	go.opentelemetry.io/otel/trace v1.11.0 // indirect
 	golang.org/x/crypto v0.7.0 // indirect
-	golang.org/x/mod v0.8.0 // indirect
+	golang.org/x/mod v0.10.0 // indirect
 	golang.org/x/net v0.8.0 // indirect
 	golang.org/x/oauth2 v0.0.0-20221014153046-6fdb5e3db783 // indirect
 	golang.org/x/sync v0.1.0 // indirect
-	golang.org/x/sys v0.6.0 // indirect
+	golang.org/x/sys v0.7.0 // indirect
 	golang.org/x/text v0.8.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	gonum.org/v1/gonum v0.12.0 // indirect
