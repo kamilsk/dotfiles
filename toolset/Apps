@@ -4,7 +4,6 @@ set -euo pipefail
 
 function install() {
   local list=(
-    1333542190 # 1Password 7
     1569813296 # 1Password for Safari
     411643860  # DaisyDisk
     1277179284 # FSNotes
