@@ -19,8 +19,6 @@ require (
 	mvdan.cc/gofumpt v0.5.0
 )
 
-replace golang.org/x/tools => github.com/kamilsk/go-tools v0.8.0
-
 // transitive replacement for octosql
 replace github.com/segmentio/parquet-go v0.0.0-20220421002521-93f8e5ed3407 => github.com/cube2222/parquet-go v0.0.0-20220512155810-0e06eee50261
 
