@@ -76,3 +76,13 @@ git-push() {
   done
 }
 #end
+
+#todo:source
+carloson() {
+  git config user.name 'Kamil Samigullin'
+  git config user.email 'consulting+carloson.ru@octolab.net'
+  git config user.signingKey F243F63DC76D53B7
+  git config commit.gpgSign true
+  git config tag.gpgSign true
+}
+#end
