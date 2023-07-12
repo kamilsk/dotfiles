@@ -11,7 +11,7 @@ require (
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.13
 	github.com/marwan-at-work/mod v0.5.0
-	github.com/mikefarah/yq/v4 v4.34.1
+	github.com/mikefarah/yq/v4 v4.34.2
 	github.com/mrnugget/fzz v1.1.0
 	github.com/multiprocessio/dsq v0.23.0
 	golang.org/x/exp v0.0.0-20230321023759-10a507213a29 // ?
@@ -148,7 +148,7 @@ require (
 	github.com/oklog/ulid/v2 v2.0.2 // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/paulmach/orb v0.7.1 // indirect
-	github.com/pelletier/go-toml/v2 v2.0.7 // indirect
+	github.com/pelletier/go-toml/v2 v2.0.8 // indirect
 	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
 	github.com/pierrec/lz4/v4 v4.1.17 // indirect
 	github.com/pkg/browser v0.0.0-20210911075715-681adbf594b8 // indirect
