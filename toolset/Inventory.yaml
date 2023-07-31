@@ -671,9 +671,9 @@
 - name:
   site:
   Brew:
-    id: kamilsk/tap/godownloader
+    id: octolab/tap/godownloader
     url:
-    tap: https://github.com/kamilsk/homebrew-tap
+    tap: https://github.com/octolab/homebrew-tap
   Source:
     git: https://github.com/kamilsk/godownloader
     lang: Go
@@ -681,9 +681,9 @@
 - name:
   site:
   Brew:
-    id: kamilsk/tap/goimports
+    id: octolab/tap/goimports
     url:
-    tap: https://github.com/kamilsk/homebrew-tap
+    tap: https://github.com/octolab/homebrew-tap
   Source:
     git: https://github.com/kamilsk/go-tools
     lang: Go
@@ -691,9 +691,9 @@
 - name:
   site:
   Brew:
-    id: kamilsk/tap/golangci-lint
+    id: octolab/tap/golangci-lint
     url:
-    tap: https://github.com/kamilsk/homebrew-tap
+    tap: https://github.com/octolab/homebrew-tap
   Source:
     git: https://github.com/kamilsk/golangci-lint
     lang: Go
