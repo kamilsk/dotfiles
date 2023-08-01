@@ -7,7 +7,7 @@ My dotfiles for productive work.
 ## 🧩 Installation
 
 ```bash
-$ curl -fsSL https://raw.githubusercontent.com/kamilsk/dotfiles/master/install | bash
+$ curl -sSfL https://install.octolab.org/dotfiles | bash
 ```
 
 When you have it, just use `$ self-update` to sync it with the remote.
