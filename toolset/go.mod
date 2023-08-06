@@ -15,7 +15,7 @@ require (
 	github.com/mrnugget/fzz v1.1.0
 	github.com/multiprocessio/dsq v0.23.0
 	golang.org/x/exp v0.0.0-20230321023759-10a507213a29 // ?
-	golang.org/x/tools v0.11.1
+	golang.org/x/tools v0.12.0
 	mvdan.cc/gofumpt v0.5.0
 )
 
