@@ -24,7 +24,7 @@ When you have it, just use `$ self-update` to sync it with the remote.
 - [vim](https://www.vim.org)
 - [zsh](https://www.zsh.org)
 
-<p align="right">made with ❤️ for everyone by OctoLab</p>
+<p align="right">made with ❤️ for everyone by <a href="https://www.octolab.org/">OctoLab</a></p>
 
 [mirror.page]:      https://bitbucket.org/kamilsk/dotfiles
 [mirror.icon]:      https://img.shields.io/badge/mirror-bitbucket-blue
