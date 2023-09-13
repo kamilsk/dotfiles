@@ -1,6 +1,8 @@
 module github.com/kamilsk/dotfiles
 
-go 1.20
+go 1.21
+
+toolchain go1.21.0
 
 require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619 // ?
@@ -14,7 +16,7 @@ require (
 	github.com/mikefarah/yq/v4 v4.35.1
 	github.com/mrnugget/fzz v1.1.0
 	github.com/multiprocessio/dsq v0.23.0
-	golang.org/x/exp v0.0.0-20230321023759-10a507213a29 // ?
+	golang.org/x/exp v0.0.0-20230905200255-921286631fa9 // ?
 	golang.org/x/tools v0.13.0
 	mvdan.cc/gofumpt v0.5.0
 )
