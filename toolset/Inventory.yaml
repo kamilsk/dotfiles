@@ -71,19 +71,6 @@
     id: fellow
     url: https://formulae.brew.sh/cask/fellow
 
-- name: FSNotes
-  site: https://fsnot.es
-  AppStore:
-    id: 1277179284
-    url: https://apps.apple.com/app/fsnotes/id1277179284
-    title: FSNotes
-  BrewCask:
-    id: fsnotes
-    url: https://formulae.brew.sh/cask/fsnotes
-  Source:
-    git: https://github.com/glushchenko/fsnotes
-    lang: Swift
-
 - name: Google Chrome
   site: https://www.google.com/chrome/
   BrewCask:
