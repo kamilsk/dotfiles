@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+function flushdns() {
+  sudo dscacheutil -flushcache
+  sudo killall -HUP mDNSResponder
+}
+
 function fix_xcrun() {
   sudo xcode-select --reset
   sudo rm -rf /Library/Developer/CommandLineTools
