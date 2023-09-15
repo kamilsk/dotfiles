@@ -24,6 +24,9 @@ require (
 // transitive replacement for octosql
 replace github.com/segmentio/parquet-go v0.0.0-20220421002521-93f8e5ed3407 => github.com/cube2222/parquet-go v0.0.0-20220512155810-0e06eee50261
 
+// error: ../../go/pkg/mod/github.com/cube2222/octosql@v0.12.2/datasources/docs/helper.go:17:25
+replace golang.org/x/exp => golang.org/x/exp v0.0.0-20220827204233-334a2380cb91
+
 require (
 	cloud.google.com/go v0.110.0 // indirect
 	cloud.google.com/go/bigquery v1.48.0 // indirect
