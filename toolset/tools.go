@@ -24,7 +24,7 @@ import (
 )
 
 //go:generate go install github.com/adonovan/spaghetti
-//go:generate go install github.com/cube2222/octosql
+// go:generate go install github.com/cube2222/octosql
 //go:generate go install github.com/ericchiang/pup
 //go:generate go install github.com/evanw/esbuild/cmd/esbuild
 //go:generate go install github.com/golang/mock/mockgen
