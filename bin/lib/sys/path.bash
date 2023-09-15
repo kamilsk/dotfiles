@@ -9,6 +9,13 @@ books() {
   du -h -- * | sort -h
 }
 
+filetypes() {
+  find "${1}" -type f -not -path "*/.*" |
+    sed -n 's/.*\.\([^.]*\)$/\1/p' |
+    sort |
+    uniq
+}
+
 obsidian() { cd "${HOME}/Library/Mobile Documents/iCloud~md~obsidian/Documents" || return 1; }
 
-tap() { cd "$(brew --prefix)/Library/Taps/${1:-}" || return 1; }
+taps() { cd "$(brew --prefix)/Library/Taps/${1:-}" || return 1; }
