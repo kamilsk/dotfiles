@@ -6,7 +6,6 @@ function install() {
   local list=(
     1569813296 # 1Password for Safari
     411643860  # DaisyDisk
-    823766827  # OneDrive
     803453959  # Slack
     747648890  # Telegram
     966085870  # TickTick
