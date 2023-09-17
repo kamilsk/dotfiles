@@ -26,8 +26,18 @@ git-amend() {
 git-commit() { git commit -m "${*}"; }
 
 git-contrib() {
+  local arg target=5
+  for arg in "${@}"; do
+    case "${arg}" in
+    -t | --target)
+      target="${2}"
+      shift 2
+      ;;
+    esac
+  done
+
   local _ts
-  _ts=$(maintainer github contribution suggest git/3)
+  _ts=$(maintainer github contribution suggest --target "${target}" git/3)
 
   GIT_COMMITTER_DATE="${_ts}" git commit --date="${_ts}" -m "${*}"
 }
