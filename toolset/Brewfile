@@ -1,9 +1,9 @@
 # https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f
-tap "homebrew/core"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "buo/cask-upgrade"
+#tap "homebrew/core"
+#tap "homebrew/bundle"
+#tap "homebrew/cask"
+#tap "homebrew/cask-fonts"
+#tap "buo/cask-upgrade"
 
 brew "ansible"
 brew "bash"
