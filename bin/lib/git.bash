@@ -47,10 +47,10 @@ git-it() {
     local _ts
     _ts=$(datetime "${1:-}")
 
-    GIT_COMMITTER_DATE="${_ts}" git commit --allow-empty --date="${_ts}" --edit -m root
+    GIT_COMMITTER_DATE="${_ts}" git commit --allow-empty --date="${_ts}" --edit -m 'init the repository'
     return
   fi
-  git commit --allow-empty --edit -m root
+  git commit --allow-empty --edit -m 'init the repository'
 }
 
 git-undo() { git reset --soft HEAD~"${1:-1}"; }
