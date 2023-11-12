@@ -12,7 +12,7 @@ require (
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.13
-	github.com/marwan-at-work/mod v0.7.0
+	github.com/marwan-at-work/mod v0.7.1
 	github.com/mikefarah/yq/v4 v4.35.2
 	github.com/mrnugget/fzz v1.1.0
 	github.com/multiprocessio/dsq v0.23.0
