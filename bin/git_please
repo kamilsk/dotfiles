@@ -3,23 +3,20 @@
 set -o nounset
 set -o pipefail
 
-case "${1:-all}" in
+case "${1:-current}" in
 all)
   if [ "$(git remote | wc -l)" = 0 ]; then
     (echo >&2 'nothing to do')
     exit 1
   fi
   for remote in $(git remote | grep -Ev '^(upstream|fork-.*)$'); do
+    git push --force-with-lease "${remote}" "$(git current)"
     git push --force-with-lease --tags "${remote}" "$(git current)"
   done
   ;;
 current)
-  remote="$(git current remote)"
-  if [ -z "${remote}" ]; then
-    (echo >&2 'nothing to do')
-    exit 1
-  fi
-  git push --force-with-lease --tags "${remote}"
+  git push --force-with-lease
+  git push --force-with-lease --tags
   ;;
 *)
   (echo >&2 use all or current as an argument)

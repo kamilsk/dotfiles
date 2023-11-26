@@ -8,6 +8,7 @@ git config --global help.autoCorrect prompt
 git config --global init.defaultBranch main
 git config --global merge.conflictStyle zdiff3
 git config --global --bool push.autoSetupRemote true
+git config --global push.default upstream
 git config --global user.email kamil@samigullin.info
 git config --global user.name 'Kamil Samigullin'
 
