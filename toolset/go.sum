@@ -586,8 +586,8 @@ github.com/matttproud/golang_protobuf_extensions v1.0.2 h1:hAHbPm5IJGijwng3PWk09
 github.com/matttproud/golang_protobuf_extensions v1.0.2/go.mod h1:BSXmuO+STAnVfrANrmjBb36TMTDstsz7MSK+HVaYKv4=
 github.com/mholt/archiver v3.1.1+incompatible h1:1dCVxuqs0dJseYEhi5pl7MYPH9zDa1wBi7mF09cbNkU=
 github.com/mholt/archiver v3.1.1+incompatible/go.mod h1:Dh2dOXnSdiLxRiPoVfIr/fI1TwETms9B8CTWfeh7ROU=
-github.com/mikefarah/yq/v4 v4.40.3 h1:pSJua3IGua3O+HFXp5LkMheqEOHMRQAkkCcgVhqi4VY=
-github.com/mikefarah/yq/v4 v4.40.3/go.mod h1:TSqdLNAFlwmIGQBQYIzeOX+wDWkCTWfRGWDrxQwGCaQ=
+github.com/mikefarah/yq/v4 v4.40.4 h1:xLoMgs3ORN9Qqiq63q86lPZf6VXyPXTuXFhyWaKImFM=
+github.com/mikefarah/yq/v4 v4.40.4/go.mod h1:yCG9Y1pdzkpPqWWooozMTcbVb67rslEVaDnigLPhuqg=
 github.com/minio/asm2plan9s v0.0.0-20200509001527-cdd76441f9d8 h1:AMFGa4R4MiIpspGNG7Z948v4n35fFGB3RR3G/ry4FWs=
 github.com/minio/asm2plan9s v0.0.0-20200509001527-cdd76441f9d8/go.mod h1:mC1jAcsrzbxHt8iiaC+zU4b1ylILSosueou12R++wfY=
 github.com/minio/c2goasm v0.0.0-20190812172519-36a3d3bbc4f3 h1:+n/aFZefKZp7spd8DFdX7uMikMLXX4oubIzJF4kv/wI=
