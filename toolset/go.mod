@@ -18,7 +18,7 @@ require (
 	github.com/multiprocessio/dsq v0.23.0
 	golang.org/x/exp v0.0.0-20230905200255-921286631fa9 // ?
 	golang.org/x/tools v0.17.0
-	mvdan.cc/gofumpt v0.5.0
+	mvdan.cc/gofumpt v0.6.0
 )
 
 // transitive replacement for octosql
@@ -103,7 +103,7 @@ require (
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/btree v1.1.2 // indirect
 	github.com/google/flatbuffers v22.9.29+incompatible // indirect
-	github.com/google/go-cmp v0.5.9 // indirect
+	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/google/go-github/v52 v52.0.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/google/uuid v1.3.0 // indirect
