@@ -13,7 +13,7 @@ require (
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.14
 	github.com/marwan-at-work/mod v0.7.1
-	github.com/mikefarah/yq/v4 v4.41.1
+	github.com/mikefarah/yq/v4 v4.43.1
 	github.com/mrnugget/fzz v1.1.0
 	github.com/multiprocessio/dsq v0.23.0
 	golang.org/x/exp v0.0.0-20230905200255-921286631fa9 // ?
@@ -156,7 +156,7 @@ require (
 	github.com/oklog/ulid/v2 v2.0.2 // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/paulmach/orb v0.7.1 // indirect
-	github.com/pelletier/go-toml/v2 v2.1.1 // indirect
+	github.com/pelletier/go-toml/v2 v2.2.0 // indirect
 	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
 	github.com/pierrec/lz4/v4 v4.1.17 // indirect
 	github.com/pkg/browser v0.0.0-20210911075715-681adbf594b8 // indirect
@@ -204,13 +204,13 @@ require (
 	go.opencensus.io v0.24.0 // indirect
 	go.opentelemetry.io/otel v1.11.0 // indirect
 	go.opentelemetry.io/otel/trace v1.11.0 // indirect
-	golang.org/x/crypto v0.19.0 // indirect
+	golang.org/x/crypto v0.21.0 // indirect
 	golang.org/x/mod v0.15.0 // indirect
-	golang.org/x/net v0.21.0 // indirect
+	golang.org/x/net v0.22.0 // indirect
 	golang.org/x/oauth2 v0.7.0 // indirect
 	golang.org/x/sync v0.6.0 // indirect
-	golang.org/x/sys v0.17.0 // indirect
-	golang.org/x/term v0.17.0 // indirect
+	golang.org/x/sys v0.18.0 // indirect
+	golang.org/x/term v0.18.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	gonum.org/v1/gonum v0.12.0 // indirect
