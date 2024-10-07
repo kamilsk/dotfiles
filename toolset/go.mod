@@ -1,8 +1,7 @@
 module github.com/kamilsk/dotfiles
 
 go 1.21
-
-toolchain go1.21.0
+toolchain go1.22.5
 
 require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619 // ?
@@ -17,7 +16,7 @@ require (
 	github.com/mrnugget/fzz v1.1.0
 	github.com/multiprocessio/dsq v0.23.0
 	golang.org/x/exp v0.0.0-20230905200255-921286631fa9 // ?
-	golang.org/x/tools v0.20.0
+	golang.org/x/tools v0.26.0
 	mvdan.cc/gofumpt v0.6.0
 )
 
@@ -26,6 +25,8 @@ replace github.com/segmentio/parquet-go v0.0.0-20220421002521-93f8e5ed3407 => gi
 
 // error: ../../go/pkg/mod/github.com/cube2222/octosql@v0.12.2/datasources/docs/helper.go:17:25
 replace golang.org/x/exp => golang.org/x/exp v0.0.0-20220827204233-334a2380cb91
+
+require golang.org/x/tools/cmd/gorename v0.1.0-deprecated
 
 require (
 	cloud.google.com/go v0.110.0 // indirect
@@ -204,14 +205,14 @@ require (
 	go.opencensus.io v0.24.0 // indirect
 	go.opentelemetry.io/otel v1.11.0 // indirect
 	go.opentelemetry.io/otel/trace v1.11.0 // indirect
-	golang.org/x/crypto v0.22.0 // indirect
-	golang.org/x/mod v0.17.0 // indirect
-	golang.org/x/net v0.24.0 // indirect
+	golang.org/x/crypto v0.28.0 // indirect
+	golang.org/x/mod v0.21.0 // indirect
+	golang.org/x/net v0.30.0 // indirect
 	golang.org/x/oauth2 v0.7.0 // indirect
-	golang.org/x/sync v0.7.0 // indirect
-	golang.org/x/sys v0.19.0 // indirect
-	golang.org/x/term v0.19.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
+	golang.org/x/sync v0.8.0 // indirect
+	golang.org/x/sys v0.26.0 // indirect
+	golang.org/x/term v0.25.0 // indirect
+	golang.org/x/text v0.19.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	gonum.org/v1/gonum v0.12.0 // indirect
 	google.golang.org/api v0.114.0 // indirect
