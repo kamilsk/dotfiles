@@ -6,7 +6,7 @@ toolchain go1.21.0
 
 require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619 // ?
-	github.com/cube2222/octosql v0.12.2
+	github.com/cube2222/octosql v0.13.0
 	github.com/ericchiang/pup v0.4.0
 	github.com/evanw/esbuild v0.20.2
 	github.com/golang/mock v1.6.0
