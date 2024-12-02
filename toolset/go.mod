@@ -11,7 +11,7 @@ require (
 	github.com/evanw/esbuild v0.25.3
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
-	github.com/itchyny/gojq v0.12.15
+	github.com/itchyny/gojq v0.12.17
 	github.com/marwan-at-work/mod v0.7.1
 	github.com/mikefarah/yq/v4 v4.43.1
 	github.com/mrnugget/fzz v1.1.0
@@ -115,7 +115,7 @@ require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/influxdata/influxdb-client-go/v2 v2.11.0 // indirect
 	github.com/influxdata/line-protocol v0.0.0-20210922203350-b1ad95c89adf // indirect
-	github.com/itchyny/timefmt-go v0.1.5 // indirect
+	github.com/itchyny/timefmt-go v0.1.6 // indirect
 	github.com/jackc/pgx v3.6.2+incompatible // indirect
 	github.com/jinzhu/copier v0.4.0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
@@ -209,7 +209,7 @@ require (
 	golang.org/x/net v0.24.0 // indirect
 	golang.org/x/oauth2 v0.7.0 // indirect
 	golang.org/x/sync v0.7.0 // indirect
-	golang.org/x/sys v0.19.0 // indirect
+	golang.org/x/sys v0.20.0 // indirect
 	golang.org/x/term v0.19.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
