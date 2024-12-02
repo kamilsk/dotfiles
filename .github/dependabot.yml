@@ -31,3 +31,4 @@ updates:
     commit-message:
       prefix: 'tools'
       include: 'scope'
+    open-pull-requests-limit: 10
