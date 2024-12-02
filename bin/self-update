@@ -5,7 +5,7 @@ set -euo pipefail
 root=$(dirname "$(dirname "${0}")")
 
 function update_apps() {
-  "${root}"/toolset/Apps install
+#  "${root}"/toolset/Apps install
   mas upgrade
 }
 
