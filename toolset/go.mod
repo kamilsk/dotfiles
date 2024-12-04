@@ -15,7 +15,7 @@ require (
 	github.com/mikefarah/yq/v4 v4.45.2
 	github.com/mrnugget/fzz v1.1.0
 	github.com/multiprocessio/dsq v0.23.0
-	golang.org/x/exp v0.0.0-20230905200255-921286631fa9 // ?
+	golang.org/x/exp v0.0.0-20250506013437-ce4c2cf36ca6 // ?
 	golang.org/x/tools v0.33.0
 	mvdan.cc/gofumpt v0.8.0
 )
