@@ -15,7 +15,7 @@ import (
 	_ "github.com/marwan-at-work/mod/cmd/mod"
 	_ "github.com/mikefarah/yq/v4"
 	_ "github.com/mrnugget/fzz"
-	_ "github.com/multiprocessio/dsq"
+//	_ "github.com/multiprocessio/dsq"
 	_ "golang.org/x/exp/cmd/gorelease"
 	_ "golang.org/x/tools/cmd/benchcmp"
 	_ "golang.org/x/tools/cmd/gomvpkg"
@@ -33,7 +33,7 @@ import (
 //go:generate go install github.com/marwan-at-work/mod/cmd/mod
 //go:generate go install github.com/mikefarah/yq/v4
 //go:generate go install github.com/mrnugget/fzz
-//go:generate go install github.com/multiprocessio/dsq
+// go:generate go install github.com/multiprocessio/dsq
 //go:generate go install golang.org/x/exp/cmd/gorelease
 //go:generate go install golang.org/x/tools/cmd/benchcmp
 //go:generate go install golang.org/x/tools/cmd/gomvpkg
