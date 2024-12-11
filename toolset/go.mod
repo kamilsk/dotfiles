@@ -1,8 +1,7 @@
 module github.com/kamilsk/dotfiles
 
 go 1.21
-
-toolchain go1.21.0
+toolchain go1.22.5
 
 require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619 // ?
@@ -18,7 +17,7 @@ require (
 	github.com/multiprocessio/dsq v0.23.0
 	golang.org/x/exp v0.0.0-20230905200255-921286631fa9 // ?
 	golang.org/x/tools v0.20.0
-	mvdan.cc/gofumpt v0.6.0
+	mvdan.cc/gofumpt v0.7.0
 )
 
 // transitive replacement for octosql
