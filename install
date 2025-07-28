@@ -15,7 +15,7 @@ check() {
     return 1
   fi
 
-  retunr 0
+  return 0
 }
 
 install-apps() {
@@ -42,7 +42,7 @@ install-dotfiles() {
 
   echo Installing dotfiles...
   mkdir -p "${root}"
-  git clone git@github.com:kamilsk/dotfiles.git "${root}"
+  git clone --recurse-submodules git@github.com:kamilsk/dotfiles.git "${root}"
   return $?
 }
 
@@ -68,7 +68,6 @@ install-bundle() {
   echo Installing Homebrew bundle...
   brew update --force --quiet
   brew bundle --file="${root}"/toolset/Brewfile --no-upgrade -v
-  brew bundle --file="${root}"/toolset/Brewfile cleanup -v
   return $?
 }
 

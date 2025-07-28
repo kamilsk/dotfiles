@@ -13,15 +13,15 @@ git config --global user.email kamil@samigullin.info
 git config --global user.name 'Kamil Samigullin'
 
 # security
-key=rsa4096/35155645C6216420
-if command -v gpg >/dev/null && gpg --list-secret-keys --keyid-format=long | grep $key >/dev/null; then
-  git config --global user.signingKey 35155645C6216420
-  git config --global commit.gpgSign true
-  git config --global tag.gpgSign true
-else
-  echo WARNING
-  echo Please install GPG Suite and import personal GPG key $key.
-fi
+#key=rsa4096/35155645C6216420
+#if command -v gpg >/dev/null && gpg --list-secret-keys --keyid-format=long | grep $key >/dev/null; then
+#  git config --global user.signingKey 35155645C6216420
+#  git config --global commit.gpgSign true
+#  git config --global tag.gpgSign true
+#else
+#  echo WARNING
+#  echo Please install GPG Suite and import personal GPG key $key.
+#fi
 
 #
 # aliases
