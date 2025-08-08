@@ -4,6 +4,8 @@ set -euo pipefail
 
 # common things
 git config --global core.excludesFile ~/.dotfiles/config/git/.gitignore
+git config --global --bool core.ignorecase false
+git config --global --bool core.quotePath false
 git config --global help.autoCorrect prompt
 git config --global init.defaultBranch main
 git config --global merge.conflictStyle zdiff3
@@ -13,14 +15,20 @@ git config --global user.email kamil@samigullin.info
 git config --global user.name 'Kamil Samigullin'
 
 # security
-key=rsa4096/35155645C6216420
-if command -v gpg >/dev/null && gpg --list-secret-keys --keyid-format=long | grep $key >/dev/null; then
-  git config --global user.signingKey 35155645C6216420
-  git config --global commit.gpgSign true
-  git config --global tag.gpgSign true
+if command -v gpg >/dev/null && gpg --list-secret-keys --keyid-format=long |
+  grep "$(git config --global user.email)" >/dev/null;
+then
+  key=$(
+    gpg --list-secret-keys --keyid-format=long |
+    awk -v email="$(git config --global user.email)" '
+/sec/{key=$2} /<'"$(git config --global user.email)"'>/{print key}' | cut -d'/' -f2
+  )
+  git config --global --bool commit.gpgSign true
+  git config --global --bool tag.gpgSign true
+  git config --global user.signingKey "${key}"
 else
-  echo WARNING
-  echo Please install GPG Suite and import personal GPG key $key.
+  echo -e "\033[1;31mWARNING\033[0m"
+  echo -e "\033[1;33mPlease install GPG Suite and setup a personal GPG key.\033[0m"
 fi
 
 #
