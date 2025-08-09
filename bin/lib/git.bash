@@ -18,7 +18,7 @@ git-amend() {
   _ad=$(git --no-pager log -1 --format="%aI")
   _cd=$(git --no-pager log -1 --format="%cI")
 
-  GIT_COMMITTER_DATE="${_cd}" git commit --amend --date="${_ad}" --no-edit "${@}"
+  GIT_COMMITTER_DATE="${_cd}" git commit --amend --date="${_ad}" --no-edit ${1+"${@}"}
 }
 
 git-commit() { git commit -m "${*}"; }
@@ -84,15 +84,5 @@ git-push() {
   for remote in $(git remote | grep -Ev '^(upstream|fork-.*)$'); do
     git push --tags "${remote}" "${branch}"
   done
-}
-#end
-
-#todo:source
-carloson() {
-  git config user.name 'Kamil Samigullin'
-  git config user.email 'consulting+carloson.ru@octolab.net'
-  git config user.signingKey F243F63DC76D53B7
-  git config commit.gpgSign true
-  git config tag.gpgSign true
 }
 #end
