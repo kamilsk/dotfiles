@@ -6,9 +6,10 @@ OS    := $(shell uname -s | tr '[:upper:]' '[:lower:]')
 DATE  := $(shell date +%Y-%m-%dT%T%Z)
 SHELL := /usr/bin/env bash -euo pipefail -c
 
-install: install-git-blame
+# TODO: To get started with GitHub CLI, please run:  gh auth login
+#install: install-git-blame
 install: install-go-tools
-install: install-spot
+#install: install-spot
 .PHONY: install
 
 install-git-blame: LATEST = '"8d854c2d78cb98afdb9f5a73240e06393260b327"'
