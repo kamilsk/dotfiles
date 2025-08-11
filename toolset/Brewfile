@@ -42,7 +42,7 @@ brew "yaegi"
 brew "zsh"
 brew "zsh-completions"
 
-brew "buo/tap/cask-upgrade"
+tap "buo/cask-upgrade"
 brew "octolab/tap/godownloader"
 brew "octolab/tap/maintainer"
 brew "octolab/tap/sparkle"
