@@ -16,7 +16,7 @@ require (
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20250506013437-ce4c2cf36ca6 // ?
 	golang.org/x/tools v0.38.0
-	mvdan.cc/gofumpt v0.8.0
+	mvdan.cc/gofumpt v0.9.2
 )
 
 require golang.org/x/tools/cmd/gorename v0.1.0-deprecated
@@ -35,7 +35,7 @@ require (
 	github.com/go-ini/ini v1.67.0 // indirect
 	github.com/goccy/go-json v0.10.5 // indirect
 	github.com/goccy/go-yaml v1.18.0 // indirect
-	github.com/google/go-cmp v0.6.0 // indirect
+	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/go-github/v52 v52.0.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
