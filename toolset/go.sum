@@ -30,8 +30,8 @@ github.com/elliotchance/orderedmap v1.8.0 h1:TrOREecvh3JbS+NCgwposXG5ZTFHtEsQiCG
 github.com/elliotchance/orderedmap v1.8.0/go.mod h1:wsDwEaX5jEoyhbs7x93zk2H/qv0zwuhg4inXhDkYqys=
 github.com/ericchiang/pup v0.4.0 h1:h9ahJXbHA3V8MFfAmasxi8DCx0Gu+aLAAEtb8Q3KCOo=
 github.com/ericchiang/pup v0.4.0/go.mod h1:PpPzKkuAB7ypCQf9+wxC5MzaGaIDdgjtlpvc/0NaTJc=
-github.com/evanw/esbuild v0.25.11 h1:NGtezc+xk+Mti4fgWaoD3dncZNCzcTA+r0BxMV3Koyw=
-github.com/evanw/esbuild v0.25.11/go.mod h1:D2vIQZqV/vIf/VRHtViaUtViZmG7o+kKmlBfVQuRi48=
+github.com/evanw/esbuild v0.25.12 h1:7kIg7aG2++vhheW5YCzut1q1AjehYVQU752NcMuGVsw=
+github.com/evanw/esbuild v0.25.12/go.mod h1:D2vIQZqV/vIf/VRHtViaUtViZmG7o+kKmlBfVQuRi48=
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=
 github.com/fatih/color v1.18.0 h1:S8gINlzdQ840/4pfAwic/ZE0djQEH3wM94VfqLTZcOM=
 github.com/fatih/color v1.18.0/go.mod h1:4FelSpRwEGDpQ12mAdzqdOukCy4u8WUtOY6lkT/6HfU=
