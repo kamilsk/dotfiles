@@ -3,6 +3,7 @@
 set -euo pipefail
 
 root="${HOME}"/.dotfiles
+host="$(uname -n | sed 's/\.local$//')"
 
 check() {
   if ! command -v git >/dev/null; then
@@ -65,9 +66,13 @@ install-homebrew() {
 }
 
 install-bundle() {
+  local common="${root}/toolset/Brewfile"
+  local custom="${root}/toolset/custom/${host}.Brewfile"
+
   echo Installing Homebrew bundle...
   brew update --force --quiet
-  brew bundle --file="${root}"/toolset/Brewfile --no-upgrade -v
+  brew bundle --file="${common}" --no-upgrade -v
+  if [ -f "${custom}" ]; then brew bundle --file="${custom}" --no-upgrade -v; fi
   return $?
 }
 
@@ -98,7 +103,7 @@ integrate-cli() {
     fi
 
     if [ ! -d "${HOME}/.oh-my-zsh" ]; then
-      echo Installing Oh My Zsh...
+      echo Installing Oh My Zsh... # https://github.com/ohmyzsh/ohmyzsh?tab=readme-ov-file#basic-installation
       bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
       echo Installing fonts...
@@ -112,11 +117,18 @@ integrate-cli() {
   return 0
 }
 
-if ! check; then return 0; fi
+# baseline
 install-clt
+if ! check; then return 0; fi
+
+# core
 install-dotfiles
+
+# inventory
 install-homebrew
 install-bundle
-install-tools
+#install-tools
 install-apps
+
+# setup
 integrate-cli

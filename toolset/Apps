@@ -2,13 +2,16 @@
 
 set -euo pipefail
 
+# maybe in the future
+#    1569813296 # 1Password for Safari
+#    411643860  # DaisyDisk
+#    803453959  # Slack
+#    747648890  # Telegram
+#    966085870  # TickTick
+
 function install() {
   local list=(
-    1569813296 # 1Password for Safari
-    411643860  # DaisyDisk
-    803453959  # Slack
-    747648890  # Telegram
-    966085870  # TickTick
+    1356178125 # Outline-Secure internet access
   )
 
   for app in "${list[@]}"; do
