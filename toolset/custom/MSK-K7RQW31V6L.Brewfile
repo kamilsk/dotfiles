@@ -1,5 +1,5 @@
-# brew bundle --file=MSK-K7RQW31V6L.local.Brewfile
-# brew bundle cleanup --file=MSK-K7RQW31V6L.local.Brewfile --force
+# brew bundle --file=MSK-K7RQW31V6L.Brewfile
+# brew bundle cleanup --file=MSK-K7RQW31V6L.Brewfile --force
 
 brew "bash"
 brew "curl"
@@ -35,6 +35,7 @@ cask "1password"
 cask "1password-cli"
 cask "amneziavpn"
 cask "anythingllm"
+cask "anytype"
 cask "arc"
 cask "bartender"
 cask "chatbox"
@@ -49,7 +50,9 @@ cask "google-chrome"
 cask "gpg-suite"
 cask "jan"
 cask "jetbrains-toolbox"
+cask "jordanbaird-ice"
 cask "lm-studio"
+cask "logseq"
 cask "loom"
 cask "macwhisper"
 cask "marta"
