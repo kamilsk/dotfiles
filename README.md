@@ -7,6 +7,7 @@ My dotfiles for productive work.
 ## 🧩 Installation
 
 ```bash
+$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/kamilsk/dotfiles/HEAD/install)"
 $ curl -sSfL https://install.octolab.org/dotfiles | bash
 ```
 

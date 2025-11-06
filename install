@@ -72,6 +72,8 @@ install-bundle() {
   echo Installing Homebrew bundle...
   brew update --force --quiet
   brew bundle --file="${common}" --no-upgrade -v
+
+  install-vpn
   if [ -f "${custom}" ]; then brew bundle --file="${custom}" --no-upgrade -v; fi
   return $?
 }
@@ -82,6 +84,17 @@ install-tools() {
   make install
   popd
   return $?
+}
+
+install-vpn() {
+  if [[ ! "$(uname)" =~ Darwin ]]; then return 0; fi
+
+  local outline=1356178125 # Outline-Secure internet access
+  if ! mas list | awk '{print $1}' | grep "^${outline}$" >/dev/null; then
+    mas install "${outline}"
+  fi
+  read -r -p "Please configure VPN and press Enter to continue"
+  return 0
 }
 
 integrate-cli() {
@@ -128,7 +141,7 @@ install-dotfiles
 install-homebrew
 install-bundle
 #install-tools
-install-apps
+#install-apps
 
 # setup
 integrate-cli
