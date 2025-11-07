@@ -72,13 +72,13 @@ install-bundle() {
   echo Installing Homebrew bundle...
   brew update --force --quiet
   brew bundle --file="${common}" --no-upgrade -v
-
-  install-vpn
   if [ -f "${custom}" ]; then brew bundle --file="${custom}" --no-upgrade -v; fi
   return $?
 }
 
 install-tools() {
+  if ! command -v go >/dev/null; then return 0; fi
+
   pushd "${root}" || return 1
   echo Installing tools...
   make install
@@ -87,14 +87,9 @@ install-tools() {
 }
 
 install-vpn() {
-  if [[ ! "$(uname)" =~ Darwin ]]; then return 0; fi
-
-  local outline=1356178125 # Outline-Secure internet access
-  if ! mas list | awk '{print $1}' | grep "^${outline}$" >/dev/null; then
-    mas install "${outline}"
-  fi
-  read -r -p "Please configure VPN and press Enter to continue"
-  return 0
+  open "https://getoutline.org/get-started/#step-3"
+  read -r -p "Please install and configure VPN, and press Enter to continue"
+  return $?
 }
 
 integrate-cli() {
@@ -138,10 +133,12 @@ if ! check; then return 0; fi
 install-dotfiles
 
 # inventory
+install-vpn
 install-homebrew
 install-bundle
-#install-tools
-#install-apps
+install-tools
+install-apps
 
 # setup
 integrate-cli
+compaudit | xargs chmod g-w,o-w # todo: not tested in the whole installation process
