@@ -5,7 +5,7 @@ set -euo pipefail
 root=$(dirname "$(dirname "${0}")")
 
 function update_apps() {
-#  "${root}"/toolset/Apps install
+  "${root}"/toolset/Apps install
   mas upgrade
 }
 
@@ -13,10 +13,12 @@ function update_brew() {
   if ! command -v brew >/dev/null; then
     return
   fi
+  local common="${root}/toolset/Brewfile"
+  local custom="${root}/toolset/custom/${host}.Brewfile"
 
-  brew update
-  brew bundle --file="${root}"/toolset/Brewfile --no-upgrade -v
-  # brew bundle --file="${root}"/toolset/Brewfile cleanup -v
+  brew update --force --quiet
+  brew bundle --file="${common}" --no-upgrade -v
+  if [ -f "${custom}" ]; then brew bundle --file="${custom}" --no-upgrade -v; fi
   brew upgrade
   brew cu --all --cleanup
   brew doctor --verbose || true
