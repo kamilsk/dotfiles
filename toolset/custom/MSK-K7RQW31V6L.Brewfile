@@ -1,5 +1,5 @@
-# brew bundle --file=MSK-K7RQW31V6L.Brewfile
-# brew bundle cleanup --file=MSK-K7RQW31V6L.Brewfile --force
+# brew bundle --file=MSK-K7RQW31V6L.Brewfile -v
+# brew bundle cleanup --file=MSK-K7RQW31V6L.Brewfile --force -v
 
 brew "bash"
 brew "curl"

@@ -1,5 +1,5 @@
-# brew bundle --file=OctoMac-mini.Brewfile
-# brew bundle cleanup --file=OctoMac-mini.Brewfile --force
+# brew bundle --file=OctoMac-mini.Brewfile -v
+# brew bundle cleanup --file=OctoMac-mini.Brewfile --force -v
 
 brew "bash"
 brew "curl"
