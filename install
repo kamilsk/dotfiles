@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-root="${HOME}"/.dotfiles
+root="${HOME}/.dotfiles"
 host="$(uname -n | sed 's/\.local$//')"
 
 check() {
