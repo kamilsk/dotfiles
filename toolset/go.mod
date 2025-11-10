@@ -15,7 +15,7 @@ require (
 	github.com/mikefarah/yq/v4 v4.52.4
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20250506013437-ce4c2cf36ca6 // ?
-	golang.org/x/tools v0.41.0
+	golang.org/x/tools v0.42.0
 	mvdan.cc/gofumpt v0.9.2
 )
 

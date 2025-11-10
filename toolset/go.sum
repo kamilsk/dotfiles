@@ -230,8 +230,8 @@ golang.org/x/tools v0.1.1-0.20210319172145-bda8f5cee399/go.mod h1:9bzcO0MWcOuT0t
 golang.org/x/tools v0.1.1/go.mod h1:o0xws9oXOQQZyjljx8fwUC0k7L1pTE6eaCbjGeHmOkk=
 golang.org/x/tools v0.1.12/go.mod h1:hNGJHUnrk76NpqgfD5Aqm5Crs+Hm0VOH/i9J2+nxYbc=
 golang.org/x/tools v0.6.0/go.mod h1:Xwgl3UAJ/d3gWutnCtw505GrjyAbvKui8lOU390QaIU=
-golang.org/x/tools v0.41.0 h1:a9b8iMweWG+S0OBnlU36rzLp20z1Rp10w+IY2czHTQc=
-golang.org/x/tools v0.41.0/go.mod h1:XSY6eDqxVNiYgezAVqqCeihT4j1U2CCsqvH3WhQpnlg=
+golang.org/x/tools v0.42.0 h1:uNgphsn75Tdz5Ji2q36v/nsFSfR/9BRFvqhGBaJGd5k=
+golang.org/x/tools v0.42.0/go.mod h1:Ma6lCIwGZvHK6XtgbswSoWroEkhugApmsXyrUmBhfr0=
 golang.org/x/tools/cmd/gorename v0.1.0-deprecated h1:nSJL337GPGCu3aukQvXq5YyCZrYVi0uC9fm6rTAZ0FY=
 golang.org/x/tools/cmd/gorename v0.1.0-deprecated/go.mod h1:nPMFcVzZ+5F1yvWyPZQU8fNs2llBEWMgzaK9IkMBr5E=
 golang.org/x/tools/go/expect v0.1.0-deprecated h1:jY2C5HGYR5lqex3gEniOQL0r7Dq5+VGVgY1nudX5lXY=
