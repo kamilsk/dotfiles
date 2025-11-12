@@ -11,7 +11,7 @@ require (
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.18
-	github.com/marwan-at-work/mod v0.9.0
+	github.com/marwan-at-work/mod v0.10.0
 	github.com/mikefarah/yq/v4 v4.52.4
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20250506013437-ce4c2cf36ca6 // ?
