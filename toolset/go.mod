@@ -8,7 +8,7 @@ require (
 	github.com/evanw/esbuild v0.28.0
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
-	github.com/itchyny/gojq v0.12.18
+	github.com/itchyny/gojq v0.12.19
 	github.com/marwan-at-work/mod v0.10.0
 	github.com/mikefarah/yq/v4 v4.52.5
 	github.com/mrnugget/fzz v1.1.0
@@ -43,7 +43,7 @@ require (
 	github.com/hashicorp/hcl/v2 v2.24.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/itchyny/go-yaml v0.0.0-20251001235044-fca9a0999f15 // indirect
-	github.com/itchyny/timefmt-go v0.1.7 // indirect
+	github.com/itchyny/timefmt-go v0.1.8 // indirect
 	github.com/jinzhu/copier v0.4.0 // indirect
 	github.com/jroimartin/gocui v0.4.0 // indirect
 	github.com/magiconair/properties v1.8.10 // indirect
