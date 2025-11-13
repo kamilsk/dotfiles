@@ -1,5 +1,6 @@
 brew "bash"
 brew "curl"
+brew "ffmpeg"
 brew "git"
 brew "mas"
 brew "tree"
