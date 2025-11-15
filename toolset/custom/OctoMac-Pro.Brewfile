@@ -1,6 +1,7 @@
 # brew bundle --file=OctoMac-Pro.Brewfile -v
 # brew bundle cleanup --file=OctoMac-Pro.Brewfile --force -v
 
+brew "ansible"
 brew "bash"
 brew "curl"
 brew "docker"
