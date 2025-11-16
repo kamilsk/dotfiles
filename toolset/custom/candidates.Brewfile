@@ -54,6 +54,7 @@ brew "gitbatch"
 brew "glib"
 brew "gmp"
 brew "gnutls"
+brew "gh"
 brew "go"
 brew "godownloader"
 brew "goimports"
@@ -209,6 +210,9 @@ brew "zstd"
 
 # brew list --cask | cat | pbcopy
 # open https://formulae.brew.sh/cask/<id>
+tap "buo/cask-upgrade"
+brew "octolab/tap/maintainer"
+brew "octolab/tap/sparkle"
 
 cask "1password"
 cask "1password-cli"

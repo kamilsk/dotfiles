@@ -1,3 +1,5 @@
+# brew list --formula | cat | pbcopy
+# open https://formulae.brew.sh/formula/<id>
 # brew bundle --file=OctoMac-mini.Brewfile -v
 # brew bundle cleanup --file=OctoMac-mini.Brewfile --force -v
 
