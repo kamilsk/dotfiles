@@ -215,7 +215,8 @@ brew "zstd"
 # open https://formulae.brew.sh/cask/<id>
 tap "buo/cask-upgrade"
 brew "octolab/tap/maintainer"
-brew "octolab/tap/sparkle"
+brew "octolab/tap/sparkle
+brew "steipete/tap/codexbar"
 
 cask "1password"
 cask "1password-cli"
