@@ -40,6 +40,7 @@ brew "zsh-completions"
 tap "buo/cask-upgrade"
 brew "octolab/tap/maintainer"
 brew "octolab/tap/sparkle"
+brew "steipete/tap/codexbar"
 
 cask "1password"
 cask "1password-cli"
