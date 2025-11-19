@@ -79,7 +79,11 @@ git-pull() {
 
 git-push() {
   local branch
-  branch=$(git branch | cut -f2 -d' ' | awk 'NF > 0')
+  branch=$(git branch --show-current)
+  if [ -z "${branch}" ]; then
+    echo "git-push: detached HEAD" >&2
+    return 1
+  fi
 
   for remote in $(git remote | grep -Ev '^(upstream|fork-.*)$'); do
     git push --tags "${remote}" "${branch}"
