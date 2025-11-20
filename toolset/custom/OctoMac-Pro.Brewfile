@@ -51,7 +51,7 @@ cask "arc"
 cask "chatbox"
 cask "chatgpt"
 cask "claude"
-cask "claude-code"
+cask "claude-code@latest" # temporary until https://github.com/anthropics/claude-code/issues/63456
 cask "cleanmymac"
 cask "cleanshot"
 cask "codex"
