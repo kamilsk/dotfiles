@@ -38,7 +38,7 @@ brew "zsh"
 brew "zsh-completions"
 
 tap "buo/cask-upgrade"
-brew "octolab/tap/maintainer"
+# brew "octolab/tap/maintainer" # temporary disable for local dev
 brew "octolab/tap/sparkle"
 cask "steipete/tap/codexbar"
 
