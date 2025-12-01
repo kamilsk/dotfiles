@@ -1,0 +1,152 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+# notify — gate agent push notifications by intent/presence.
+#
+# A single mutually-exclusive mode is stored in an ephemeral per-user dir and
+# read by the agent hook (kitchen:agents/scripts/notify-watcher.sh):
+#
+#   notify                 show mode, TTL, idle and "would a push fire now?"
+#   notify always [DUR]    always push (force);  optional auto-expiry
+#   notify never  [DUR]    never push (silence); optional auto-expiry
+#   notify auto            default: push only when you're away (presence-based)
+#   notify run ...         reserved — see dotfiles#630 (not implemented yet)
+#
+# DUR: <n>s | <n>m | <n>h | <n>d   (e.g. 30s, 15m, 2h, 1d)
+# "away" threshold: NOTIFY_AWAY_AFTER seconds (default 180).
+
+away_after=${NOTIFY_AWAY_AFTER:-180}
+
+# state_dir resolves the SAME way as the agent hook, without depending on $TMPDIR
+# being exported into the hook's environment (getconf is env-independent on macOS).
+state_dir() {
+  local base=${XDG_RUNTIME_DIR:-}
+  [ -n "${base}" ] || base=$(getconf DARWIN_USER_TEMP_DIR 2>/dev/null) || true
+  [ -n "${base}" ] || base=${TMPDIR:-/tmp}
+  printf '%s/agent-notify' "${base%/}"
+}
+
+mode_file() { printf '%s/mode' "$(state_dir)"; }
+
+# parse_dur <spec> -> seconds on stdout; exit 1 on bad input
+parse_dur() {
+  local spec=$1 num unit
+  num=${spec%[smhd]}
+  unit=${spec#"${num}"}
+  case ${num} in '' | *[!0-9]*) return 1 ;; esac
+  case ${unit} in
+    s | '') printf '%s' "$(( num ))" ;;
+    m) printf '%s' "$(( num * 60 ))" ;;
+    h) printf '%s' "$(( num * 3600 ))" ;;
+    d) printf '%s' "$(( num * 86400 ))" ;;
+    *) return 1 ;;
+  esac
+}
+
+idle_seconds() {
+  local ns
+  ns=$(ioreg -c IOHIDSystem 2>/dev/null | awk '/HIDIdleTime/ {print $NF; exit}') || ns=0
+  printf '%s' "$(( ${ns:-0} / 1000000000 ))"
+}
+
+screensaver_on() { pgrep -x ScreenSaverEngine >/dev/null 2>&1; }
+
+# read_mode sets globals MODE (auto|always|never) and EXPIRES (epoch or empty),
+# pruning the state file when its TTL has passed.
+read_mode() {
+  MODE=auto
+  EXPIRES=''
+  local f m exp rest now
+  f=$(mode_file)
+  [ -f "${f}" ] || return 0
+  read -r m exp rest < "${f}" || true
+  case ${m:-} in always | never) ;; *) return 0 ;; esac
+  if [ -n "${exp:-}" ]; then
+    now=$(date +%s)
+    if [ "${now}" -ge "${exp}" ]; then
+      rm -f "${f}" 2>/dev/null || true
+      return 0
+    fi
+  fi
+  MODE=${m}
+  EXPIRES=${exp:-}
+}
+
+set_mode() {
+  local mode=$1 dur=${2:-} secs exp dir f
+  dir=$(state_dir)
+  mkdir -p "${dir}" 2>/dev/null || { echo >&2 "notify: cannot create ${dir}"; return 1; }
+  f=$(mode_file)
+  if [ -n "${dur}" ]; then
+    secs=$(parse_dur "${dur}") || { echo >&2 "notify: bad duration '${dur}' (use 30s|15m|2h|1d)"; return 1; }
+    exp=$(( $(date +%s) + secs ))
+    printf '%s %s\n' "${mode}" "${exp}" > "${f}"
+  else
+    printf '%s\n' "${mode}" > "${f}"
+  fi
+}
+
+fmt_remaining() {
+  local exp=$1 now left
+  now=$(date +%s)
+  left=$(( exp - now ))
+  [ "${left}" -lt 0 ] && left=0
+  if [ "${left}" -ge 86400 ]; then printf '%dd%dh' "$(( left / 86400 ))" "$(( (left % 86400) / 3600 ))"
+  elif [ "${left}" -ge 3600 ]; then printf '%dh%dm' "$(( left / 3600 ))" "$(( (left % 3600) / 60 ))"
+  elif [ "${left}" -ge 60 ]; then printf '%dm%ds' "$(( left / 60 ))" "$(( left % 60 ))"
+  else printf '%ds' "${left}"; fi
+}
+
+cmd_status() {
+  read_mode
+  local idle ss verdict ttl=''
+  idle=$(idle_seconds)
+  ss=no
+  screensaver_on && ss=yes
+  [ -n "${EXPIRES}" ] && ttl=" (expires in $(fmt_remaining "${EXPIRES}"))"
+  case ${MODE} in
+    never) verdict="no — silenced (never)" ;;
+    always) verdict="yes — forced (always)" ;;
+    auto)
+      if [ "${ss}" = yes ] || [ "${idle}" -ge "${away_after}" ]; then
+        verdict="yes — you're away (idle ${idle}s >= ${away_after}s; screensaver ${ss})"
+      else
+        verdict="no — you're at the keyboard (idle ${idle}s < ${away_after}s; screensaver ${ss})"
+      fi
+      ;;
+  esac
+  printf 'notify: mode %s%s\n' "${MODE}" "${ttl}"
+  printf '  would a push fire now? %s\n' "${verdict}"
+  printf '  state: %s\n' "$(mode_file)"
+}
+
+usage() {
+  cat << 'USAGE'
+notify — gate agent push notifications by intent/presence
+
+  notify                 show mode, TTL, idle and "would a push fire now?"
+  notify always [DUR]    always push (force);  optional auto-expiry
+  notify never  [DUR]    never push (silence); optional auto-expiry
+  notify auto            default: push only when you're away (presence-based)
+  notify run ...         reserved — see dotfiles#630 (not implemented yet)
+
+DUR: <n>s|<n>m|<n>h|<n>d (e.g. 30s, 15m, 2h, 1d)
+"away" threshold: NOTIFY_AWAY_AFTER seconds (default 180).
+USAGE
+}
+
+main() {
+  local cmd=${1:-status}
+  case ${cmd} in
+    '' | status) cmd_status ;;
+    always | never) shift; set_mode "${cmd}" "${1:-}" && cmd_status ;;
+    auto) rm -f "$(mode_file)" 2>/dev/null || true; cmd_status ;;
+    run) echo >&2 "notify: 'run' is not implemented yet — see dotfiles#630"; exit 2 ;;
+    -h | --help | help) usage ;;
+    *) echo >&2 "notify: unknown command '${cmd}'"; usage >&2; exit 2 ;;
+  esac
+}
+
+main "$@"
