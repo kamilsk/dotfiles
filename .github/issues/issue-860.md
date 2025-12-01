@@ -2,12 +2,12 @@
 id: 860
 database_id: 4758419694
 node_id: I_kwDOCTsueM8AAAABG5-47g
-status: open
+status: closed
 title: "git: alias: add lock/unlock to temporarily disable push"
 labels: [type: feature, scope: code, impact: low, effort: easy]
 url: https://github.com/kamilsk/dotfiles/issues/860
 created_at: 2026-06-27T13:06:56Z
-updated_at: 2026-06-27T13:16:17Z
+updated_at: 2026-06-27T17:29:23Z
 ---
 
 # git: alias: add lock/unlock to temporarily disable push

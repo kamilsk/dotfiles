@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+remote=${1:-origin}
+sentinel=no_push
+
+if ! git remote | grep -qx "${remote}"; then
+  (echo >&2 "remote '${remote}' not found")
+  exit 1
+fi
+
+if [ "$(git config --get "remote.${remote}.pushurl" || true)" = "${sentinel}" ]; then
+  echo "push to '${remote}' is already locked"
+  exit 0
+fi
+
+git remote set-url --push "${remote}" "${sentinel}"
+echo "push to '${remote}' is locked; fetch still works"

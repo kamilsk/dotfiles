@@ -61,4 +61,8 @@ git config --global alias.force "!git_force"
 git config --global alias.please "!git_please"
 git config --global alias.nah "!git reset --hard && git clean -df && git submodule deinit --all --force"
 
+# temporarily lock push (keep fetch), unlock to restore
+git config --global alias.lock "!git_lock"
+git config --global alias.unlock "!git_unlock"
+
 git config --global alias.release "!git_current release"
