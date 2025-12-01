@@ -1,0 +1,112 @@
+# Teable — local self-hosted deployment.
+#
+# Usage from the repo root:
+#   cp env/teable.env.example env/teable.env   # then edit secrets
+#   docker compose --env-file env/teable.env -f env/teable.yml pull
+#   docker compose --env-file env/teable.env -f env/teable.yml up -d
+#   docker compose --env-file env/teable.env -f env/teable.yml logs -f teable
+#   docker compose --env-file env/teable.env -f env/teable.yml down
+#
+# State persistence:
+#   All three stateful services use bind mounts, not Docker-managed volumes.
+#   The example env stores state under ${HOME}/.local/share/teable/*.
+#   If TEABLE_*_DATA is unset, Compose falls back to ./var/teable/* relative to this file.
+#   Bind mounts survive `docker volume prune` and `down -v`; delete the data directory only
+#   when you intentionally want to wipe state. Back it up with `tar`/`rsync` or `pg_dump`.
+#
+# Refs:
+#   - https://help.teable.ai/en/deploy/docker
+#   - https://github.com/teableio/docs/blob/main/en/deploy/docker.mdx
+#   - https://github.com/teableio/docs/blob/main/en/deploy/env.mdx
+#   - https://github.com/teableio/teable/tree/develop/dockers/examples/standalone
+#   - https://github.com/teableio/agent-skills/tree/main/skills/teable-assistant-ops
+
+name: teable
+
+x-restart: &restart unless-stopped
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+  teable:
+    image: ghcr.io/teableio/teable:${TEABLE_IMAGE_TAG:-latest}
+    restart: *restart
+    logging: *logging
+    ports:
+      - "${TEABLE_BIND_HOST:-127.0.0.1}:${TEABLE_PORT:-3000}:3000"
+    volumes:
+      - ${TEABLE_APP_DATA:-./var/teable/app}:/app/.assets:rw
+    env_file:
+      - teable.env
+    environment:
+      - TZ=${TIMEZONE:-UTC}
+      - NEXT_ENV_IMAGES_ALL_REMOTE=true
+    networks:
+      - teable
+    depends_on:
+      teable-db:
+        condition: service_healthy
+      teable-cache:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:3000/health"]
+      start_period: 30s
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  teable-db:
+    image: postgres:${POSTGRES_VERSION:-15.4}
+    restart: *restart
+    logging: *logging
+    # Expose db only on loopback so it is reachable by local tooling (psql, DBeaver)
+    # but not from the network. Comment out the `ports` block to keep it fully internal.
+    ports:
+      - "${POSTGRES_BIND_HOST:-127.0.0.1}:${POSTGRES_HOST_PORT:-42345}:5432"
+    volumes:
+      - ${TEABLE_DB_DATA:-./var/teable/db}:/var/lib/postgresql/data:rw
+    environment:
+      - TZ=${TIMEZONE:-UTC}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_INITDB_ARGS=--encoding=UTF8 --locale=C
+    networks:
+      - teable
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+
+  teable-cache:
+    image: redis:${REDIS_VERSION:-7.2.4}
+    restart: *restart
+    logging: *logging
+    expose:
+      - "6379"
+    volumes:
+      - ${TEABLE_CACHE_DATA:-./var/teable/cache}:/data:rw
+    command:
+      - redis-server
+      - --appendonly
+      - "yes"
+      - --requirepass
+      - ${REDIS_PASSWORD}
+    networks:
+      - teable
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "--no-auth-warning", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+
+networks:
+  teable:
+    name: teable-network
+    driver: bridge
