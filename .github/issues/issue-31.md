@@ -4,7 +4,7 @@ database_id: 450192010
 node_id: MDU6SXNzdWU0NTAxOTIwMTA=
 status: closed
 title: "images not work properly"
-labels: [type: bug]
+labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/31
 created_at: 2019-05-30T08:31:04Z
 updated_at: 2022-08-14T18:59:52Z

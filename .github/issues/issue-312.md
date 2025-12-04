@@ -4,7 +4,7 @@ database_id: 1260424273
 node_id: I_kwDOCTsueM5LIIxR
 status: closed
 title: "deps: tools: broken go tools"
-labels: [type: bug]
+labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/312
 created_at: 2022-06-03T21:57:34Z
 updated_at: 2022-08-14T18:59:36Z

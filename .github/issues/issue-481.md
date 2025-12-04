@@ -4,7 +4,7 @@ database_id: 1488399132
 node_id: I_kwDOCTsueM5Ytysc
 status: open
 title: "bash: alias: add maintain command"
-labels: [type: feature, scope: code, impact: medium, effort: easy]
+labels: ["type: feature","scope: code","impact: medium","effort: easy"]
 url: https://github.com/kamilsk/dotfiles/issues/481
 created_at: 2022-12-10T11:26:51Z
 updated_at: 2022-12-10T11:26:52Z

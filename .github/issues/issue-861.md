@@ -4,11 +4,13 @@ database_id: 4777553967
 node_id: I_kwDOCTsueM8AAAABHMOwLw
 status: open
 title: "bin: notify: gate agent push notifications by presence/intent"
-labels: [type: feature, scope: code, impact: medium, effort: medium]
+labels: ["type: feature","scope: code","impact: medium","effort: medium"]
 url: https://github.com/kamilsk/dotfiles/issues/861
 created_at: 2026-06-30T14:13:39Z
-updated_at: 2026-06-30T14:13:39Z
+updated_at: 2026-06-30T14:25:37Z
 ---
+
+# bin: notify: gate agent push notifications by presence/intent
 
 **Motivation:** The agent (Claude Code) sends Pushover pushes on its Notification/Stop hooks. I only want them when I'm actually away from the laptop — or when I explicitly asked for them — not while I'm sitting here pairing with the agent. The control state must not clutter `~/.claude` (the agent's dir) and should live in dotfiles as part of the system.
 
@@ -38,4 +40,3 @@ notify run ...         # reserved for #630 (command-timing notifier), not built 
 - Focus/DND integration;
 - non-macOS presence detection;
 - implementing `notify run` (tracked by #630).
-

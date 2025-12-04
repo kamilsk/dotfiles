@@ -4,7 +4,7 @@ database_id: 1830940450
 node_id: I_kwDOCTsueM5tIe8i
 status: open
 title: "tools: try warp and powerlevel10k"
-labels: [type: feature, scope: code, impact: high, effort: medium, scope: deps]
+labels: ["type: feature","scope: code","impact: high","effort: medium","scope: deps"]
 url: https://github.com/kamilsk/dotfiles/issues/600
 created_at: 2023-08-01T10:18:26Z
 updated_at: 2023-08-01T10:18:36Z

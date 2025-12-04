@@ -4,7 +4,7 @@ database_id: 1536152012
 node_id: I_kwDOCTsueM5bj9HM
 status: closed
 title: "git: push: avoid fork-*"
-labels: [help wanted, type: improvement, scope: code, impact: medium, effort: easy]
+labels: ["help wanted","type: improvement","scope: code","impact: medium","effort: easy"]
 url: https://github.com/kamilsk/dotfiles/issues/509
 created_at: 2023-01-17T10:36:12Z
 updated_at: 2023-01-23T17:21:06Z

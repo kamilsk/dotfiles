@@ -4,7 +4,7 @@ database_id: 1087138616
 node_id: I_kwDOCTsueM5AzGs4
 status: closed
 title: "git it problem"
-labels: [type: bug]
+labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/230
 created_at: 2021-12-22T19:42:06Z
 updated_at: 2022-08-14T18:59:33Z

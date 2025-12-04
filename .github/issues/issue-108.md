@@ -4,7 +4,7 @@ database_id: 790772234
 node_id: MDU6SXNzdWU3OTA3NzIyMzQ=
 status: closed
 title: "git undo has buggy behavior"
-labels: [help wanted, type: bug]
+labels: ["help wanted","type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/108
 created_at: 2021-01-21T07:22:05Z
 updated_at: 2022-08-14T18:59:29Z

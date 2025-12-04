@@ -4,7 +4,7 @@ database_id: 2010973265
 node_id: I_kwDOCTsueM533QRR
 status: closed
 title: "git: alias: please doesn't respect tracking state"
-labels: [type: bug, severity: critical, scope: code, impact: high, effort: easy]
+labels: ["type: bug","severity: critical","scope: code","impact: high","effort: easy"]
 url: https://github.com/kamilsk/dotfiles/issues/648
 created_at: 2023-11-26T09:46:35Z
 updated_at: 2023-11-26T09:55:15Z

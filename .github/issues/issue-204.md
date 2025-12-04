@@ -4,7 +4,7 @@ database_id: 1061659917
 node_id: I_kwDOCTsueM4_R6UN
 status: closed
 title: "duplication after multiple installations"
-labels: [type: bug]
+labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/204
 created_at: 2021-11-23T20:00:31Z
 updated_at: 2022-08-14T18:59:32Z

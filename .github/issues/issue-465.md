@@ -4,7 +4,7 @@ database_id: 1445157694
 node_id: I_kwDOCTsueM5WI1s-
 status: closed
 title: "ci/cd: dependabot: setup time and timezone"
-labels: [type: improvement, scope: inventory, impact: low, effort: easy]
+labels: ["type: improvement","scope: inventory","impact: low","effort: easy"]
 url: https://github.com/kamilsk/dotfiles/issues/465
 created_at: 2022-11-11T08:59:06Z
 updated_at: 2022-11-11T20:17:23Z

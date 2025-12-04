@@ -4,7 +4,7 @@ database_id: 906541082
 node_id: MDU6SXNzdWU5MDY1NDEwODI=
 status: closed
 title: "prefer version tag when multiple tags available"
-labels: [help wanted]
+labels: ["help wanted"]
 url: https://github.com/kamilsk/dotfiles/issues/169
 created_at: 2021-05-29T19:14:55Z
 updated_at: 2021-05-30T08:52:54Z

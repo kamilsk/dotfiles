@@ -4,7 +4,7 @@ database_id: 1144740121
 node_id: I_kwDOCTsueM5EO1kZ
 status: closed
 title: "problem with sbin"
-labels: [type: bug]
+labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/253
 created_at: 2022-02-19T14:57:42Z
 updated_at: 2022-08-14T18:59:34Z

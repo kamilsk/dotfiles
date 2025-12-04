@@ -4,7 +4,7 @@ database_id: 469156336
 node_id: MDU6SXNzdWU0NjkxNTYzMzY=
 status: closed
 title: "remove [no tests to run]"
-labels: [type: bug]
+labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/46
 created_at: 2019-07-17T12:10:30Z
 updated_at: 2022-08-14T18:59:54Z

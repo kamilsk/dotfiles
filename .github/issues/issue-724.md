@@ -4,7 +4,7 @@ database_id: 2471618299
 node_id: I_kwDOCTsueM6TUeb7
 status: closed
 title: "deps: reached limits"
-labels: [type: bug, severity: minor, scope: inventory, impact: low, effort: easy]
+labels: ["type: bug","severity: minor","scope: inventory","impact: low","effort: easy"]
 url: https://github.com/kamilsk/dotfiles/issues/724
 created_at: 2024-08-17T18:10:41Z
 updated_at: 2025-05-21T11:27:18Z

@@ -4,7 +4,7 @@ database_id: 1632695885
 node_id: I_kwDOCTsueM5hUPZN
 status: closed
 title: "git: suggest doesn't work properly"
-labels: [type: bug, severity: critical, scope: code, impact: high, effort: medium]
+labels: ["type: bug","severity: critical","scope: code","impact: high","effort: medium"]
 url: https://github.com/kamilsk/dotfiles/issues/543
 created_at: 2023-03-20T19:00:18Z
 updated_at: 2023-04-04T16:04:28Z

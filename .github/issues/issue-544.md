@@ -4,7 +4,7 @@ database_id: 1636350520
 node_id: I_kwDOCTsueM5hiLo4
 status: closed
 title: "self-update: broken result"
-labels: [type: bug, severity: critical, scope: code, impact: medium, effort: hard]
+labels: ["type: bug","severity: critical","scope: code","impact: medium","effort: hard"]
 url: https://github.com/kamilsk/dotfiles/issues/544
 created_at: 2023-03-22T19:06:43Z
 updated_at: 2023-05-18T05:39:14Z

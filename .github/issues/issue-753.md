@@ -4,7 +4,7 @@ database_id: 2923142422
 node_id: I_kwDOCTsueM6uO50W
 status: closed
 title: "tools: cleanup Brewfile"
-labels: [type: improvement, impact: low, effort: easy, scope: deps]
+labels: ["type: improvement","impact: low","effort: easy","scope: deps"]
 url: https://github.com/kamilsk/dotfiles/issues/753
 created_at: 2025-03-16T15:42:31Z
 updated_at: 2025-07-28T19:24:00Z

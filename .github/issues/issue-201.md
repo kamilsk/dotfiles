@@ -4,7 +4,7 @@ database_id: 1059299335
 node_id: I_kwDOCTsueM4_I6AH
 status: closed
 title: "installation problem"
-labels: [type: bug]
+labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/201
 created_at: 2021-11-21T05:54:03Z
 updated_at: 2022-08-14T18:59:31Z

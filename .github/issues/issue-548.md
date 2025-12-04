@@ -4,7 +4,7 @@ database_id: 1645136390
 node_id: I_kwDOCTsueM5iDsoG
 status: closed
 title: "env: refactor PATH"
-labels: [type: improvement, scope: code, impact: high, effort: easy]
+labels: ["type: improvement","scope: code","impact: high","effort: easy"]
 url: https://github.com/kamilsk/dotfiles/issues/548
 created_at: 2023-03-29T06:46:05Z
 updated_at: 2023-03-29T12:58:29Z

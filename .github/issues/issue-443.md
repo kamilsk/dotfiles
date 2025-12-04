@@ -4,7 +4,7 @@ database_id: 1402337594
 node_id: I_kwDOCTsueM5Tlfk6
 status: closed
 title: "ci/cd: dependabot: change commit message"
-labels: [type: improvement, scope: inventory, impact: medium, effort: easy]
+labels: ["type: improvement","scope: inventory","impact: medium","effort: easy"]
 url: https://github.com/kamilsk/dotfiles/issues/443
 created_at: 2022-10-09T17:12:11Z
 updated_at: 2022-10-12T10:25:14Z

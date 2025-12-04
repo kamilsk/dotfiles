@@ -4,7 +4,7 @@ database_id: 1389379146
 node_id: I_kwDOCTsueM5S0D5K
 status: open
 title: "git: alias: contribute: support multiple targets"
-labels: [type: improvement, scope: code, impact: medium, effort: medium]
+labels: ["type: improvement","scope: code","impact: medium","effort: medium"]
 url: https://github.com/kamilsk/dotfiles/issues/433
 created_at: 2022-09-28T13:37:10Z
 updated_at: 2022-09-28T13:37:10Z

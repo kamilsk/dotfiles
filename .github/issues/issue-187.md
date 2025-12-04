@@ -4,7 +4,7 @@ database_id: 982114097
 node_id: MDU6SXNzdWU5ODIxMTQwOTc=
 status: closed
 title: "explainshell.com now doesn't have www part"
-labels: [type: bug]
+labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/187
 created_at: 2021-08-29T14:29:36Z
 updated_at: 2022-08-14T18:59:30Z

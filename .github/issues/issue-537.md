@@ -4,7 +4,7 @@ database_id: 1621429642
 node_id: I_kwDOCTsueM5gpQ2K
 status: open
 title: "tools: github: support extension list"
-labels: [type: feature, scope: code, impact: medium, effort: medium, scope: deps]
+labels: ["type: feature","scope: code","impact: medium","effort: medium","scope: deps"]
 url: https://github.com/kamilsk/dotfiles/issues/537
 created_at: 2023-03-13T12:53:34Z
 updated_at: 2023-03-13T12:53:35Z

@@ -4,7 +4,7 @@ database_id: 1080624324
 node_id: I_kwDOCTsueM5AaQTE
 status: closed
 title: "git nah works incorrectly with git submodules"
-labels: [type: bug]
+labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/227
 created_at: 2021-12-15T06:27:54Z
 updated_at: 2022-08-14T18:59:33Z

@@ -4,7 +4,7 @@ database_id: 1910193032
 node_id: I_kwDOCTsueM5x2zuI
 status: open
 title: "alias: dirs by column and dynamic selection"
-labels: [type: feature, scope: code, impact: medium, effort: medium]
+labels: ["type: feature","scope: code","impact: medium","effort: medium"]
 url: https://github.com/kamilsk/dotfiles/issues/626
 created_at: 2023-09-24T10:58:39Z
 updated_at: 2023-09-24T10:58:40Z

@@ -4,7 +4,7 @@ database_id: 1375992740
 node_id: I_kwDOCTsueM5SA_uk
 status: open
 title: "git: alias: branches with specific remote"
-labels: [type: improvement, scope: code, impact: low, effort: easy]
+labels: ["type: improvement","scope: code","impact: low","effort: easy"]
 url: https://github.com/kamilsk/dotfiles/issues/421
 created_at: 2022-09-16T13:58:39Z
 updated_at: 2022-09-16T13:58:39Z

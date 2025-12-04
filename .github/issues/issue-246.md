@@ -4,7 +4,7 @@ database_id: 1124999359
 node_id: I_kwDOCTsueM5DDiC_
 status: closed
 title: "cwd doesn't work"
-labels: [type: bug]
+labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/246
 created_at: 2022-02-05T18:25:38Z
 updated_at: 2022-08-14T18:59:33Z

@@ -4,7 +4,7 @@ database_id: 1331106842
 node_id: I_kwDOCTsueM5PVxQa
 status: open
 title: "git: alias: contribute: bug with clean history"
-labels: [type: bug]
+labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/377
 created_at: 2022-08-07T19:49:06Z
 updated_at: 2022-09-28T13:35:30Z

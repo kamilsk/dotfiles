@@ -4,7 +4,7 @@ database_id: 1206151910
 node_id: I_kwDOCTsueM5H5Grm
 status: closed
 title: "self-update: pull docker images"
-labels: [type: bug]
+labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/285
 created_at: 2022-04-16T16:06:22Z
 updated_at: 2022-08-14T18:59:35Z

@@ -4,7 +4,7 @@ database_id: 1843920648
 node_id: I_kwDOCTsueM5t5_8I
 status: open
 title: "git: alias: improve message for it"
-labels: [type: improvement, scope: code, impact: medium, effort: easy]
+labels: ["type: improvement","scope: code","impact: medium","effort: easy"]
 url: https://github.com/kamilsk/dotfiles/issues/609
 created_at: 2023-08-09T19:59:15Z
 updated_at: 2023-10-31T08:18:55Z

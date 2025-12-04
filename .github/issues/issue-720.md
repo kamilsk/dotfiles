@@ -4,7 +4,7 @@ database_id: 2443215959
 node_id: I_kwDOCTsueM6RoIRX
 status: open
 title: "tools: add new items from review"
-labels: [type: feature, impact: low, effort: hard, scope: deps]
+labels: ["type: feature","impact: low","effort: hard","scope: deps"]
 url: https://github.com/kamilsk/dotfiles/issues/720
 created_at: 2024-08-01T19:12:40Z
 updated_at: 2024-08-24T13:02:51Z

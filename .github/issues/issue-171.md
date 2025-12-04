@@ -4,7 +4,7 @@ database_id: 906797078
 node_id: MDU6SXNzdWU5MDY3OTcwNzg=
 status: closed
 title: "remove looppointer"
-labels: [help wanted]
+labels: ["help wanted"]
 url: https://github.com/kamilsk/dotfiles/issues/171
 created_at: 2021-05-30T15:45:20Z
 updated_at: 2021-05-30T15:49:21Z

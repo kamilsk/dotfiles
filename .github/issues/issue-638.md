@@ -4,7 +4,7 @@ database_id: 1974028461
 node_id: I_kwDOCTsueM51qUit
 status: open
 title: "python: support venv also as virtenv"
-labels: [type: improvement, scope: code, impact: low, effort: easy]
+labels: ["type: improvement","scope: code","impact: low","effort: easy"]
 url: https://github.com/kamilsk/dotfiles/issues/638
 created_at: 2023-11-02T11:16:19Z
 updated_at: 2023-11-02T11:16:19Z

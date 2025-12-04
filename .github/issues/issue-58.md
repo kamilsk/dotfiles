@@ -4,7 +4,7 @@ database_id: 496633335
 node_id: MDU6SXNzdWU0OTY2MzMzMzU=
 status: closed
 title: "debug"
-labels: [help wanted]
+labels: ["help wanted"]
 url: https://github.com/kamilsk/dotfiles/issues/58
 created_at: 2019-09-21T08:59:46Z
 updated_at: 2019-11-21T05:21:47Z

@@ -4,7 +4,7 @@ database_id: 1046190216
 node_id: I_kwDOCTsueM4-W5iI
 status: closed
 title: "pull and git stash pop"
-labels: [type: bug]
+labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/198
 created_at: 2021-11-05T19:49:13Z
 updated_at: 2022-08-14T18:59:30Z
