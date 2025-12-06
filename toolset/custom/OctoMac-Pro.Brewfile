@@ -36,11 +36,6 @@ brew "yt-dlp"
 brew "zsh"
 brew "zsh-completions"
 
-tap "buo/cask-upgrade"
-# brew "octolab/tap/maintainer" # temporary disable for local dev
-brew "octolab/tap/sparkle"
-cask "steipete/tap/codexbar"
-
 cask "1password"
 cask "1password-cli"
 cask "amneziavpn"
@@ -83,3 +78,9 @@ cask "visual-studio-code"
 cask "warp"
 cask "yandex"
 cask "zed"
+
+tap "buo/cask-upgrade"
+cask "docker/tap/sbx"
+# brew "octolab/tap/maintainer" # temporary disable for local dev
+brew "octolab/tap/sparkle"
+cask "steipete/tap/codexbar"

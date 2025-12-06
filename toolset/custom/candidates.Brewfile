@@ -212,10 +212,6 @@ brew "zstd"
 
 # brew list --cask | cat | pbcopy
 # open https://formulae.brew.sh/cask/<id>
-tap "buo/cask-upgrade"
-brew "octolab/tap/maintainer"
-brew "octolab/tap/sparkle
-cask "steipete/tap/codexbar"
 
 cask "1password"
 cask "1password-cli"
@@ -286,3 +282,11 @@ cask "wireshark-app"
 cask "yandex"
 cask "zed"
 cask "zotero"
+
+# third-party
+
+tap "buo/cask-upgrade"
+cask "docker/tap/sbx"
+brew "octolab/tap/maintainer"
+brew "octolab/tap/sparkle
+cask "steipete/tap/codexbar"
