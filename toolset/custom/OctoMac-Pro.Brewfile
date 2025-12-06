@@ -55,7 +55,6 @@ cask "claude-code@latest" # temporary until https://github.com/anthropics/claude
 cask "cleanmymac"
 cask "cleanshot"
 cask "codex"
-cask "codex-app"
 cask "cursor"
 cask "devin-desktop"
 cask "docker-desktop"
