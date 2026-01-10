@@ -15,7 +15,7 @@ require (
 	github.com/mikefarah/yq/v4 v4.50.1
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20250506013437-ce4c2cf36ca6 // ?
-	golang.org/x/tools v0.39.0
+	golang.org/x/tools v0.40.0
 	mvdan.cc/gofumpt v0.9.2
 )
 
@@ -66,7 +66,7 @@ require (
 	github.com/zclconf/go-cty v1.17.0 // indirect
 	go.yaml.in/yaml/v4 v4.0.0-rc.3 // indirect
 	golang.org/x/crypto v0.46.0 // indirect
-	golang.org/x/mod v0.30.0 // indirect
+	golang.org/x/mod v0.31.0 // indirect
 	golang.org/x/net v0.48.0 // indirect
 	golang.org/x/oauth2 v0.27.0 // indirect
 	golang.org/x/sync v0.19.0 // indirect
