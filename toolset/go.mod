@@ -5,7 +5,7 @@ go 1.25.0
 require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619 // ?
 	github.com/ericchiang/pup v0.4.0
-	github.com/evanw/esbuild v0.27.4
+	github.com/evanw/esbuild v0.27.5
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
 	github.com/itchyny/gojq v0.12.18
