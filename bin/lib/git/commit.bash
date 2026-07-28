@@ -26,7 +26,7 @@ git-amend() {
 git-commit() { git commit -m "${*}"; }
 
 git-contrib() {
-  local arg target=5
+  local arg target=15
   for arg in "${@}"; do
     case "${arg}" in
     -t | --target)
