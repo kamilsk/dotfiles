@@ -79,8 +79,8 @@ cask "warp"
 cask "yandex"
 cask "zed"
 
-tap "buo/cask-upgrade"
-cask "docker/tap/sbx"
-# brew "octolab/tap/maintainer" # temporary disable for local dev
-brew "octolab/tap/sparkle"
-cask "steipete/tap/codexbar"
+tap "buo/cask-upgrade", trusted: true
+cask "docker/tap/sbx", trusted: true
+# brew "octolab/tap/maintainer", trusted: true # temporary disable for local dev
+brew "octolab/tap/sparkle", trusted: true
+cask "steipete/tap/codexbar", trusted: true

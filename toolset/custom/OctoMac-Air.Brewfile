@@ -52,8 +52,8 @@ cask "sublime-text"
 cask "warp"
 cask "zed"
 
-tap "buo/cask-upgrade"
-cask "docker/tap/sbx"
-brew "octolab/tap/maintainer"
-brew "octolab/tap/sparkle"
-cask "steipete/tap/codexbar"
+tap "buo/cask-upgrade", trusted: true
+cask "docker/tap/sbx", trusted: true
+brew "octolab/tap/maintainer", trusted: true
+brew "octolab/tap/sparkle", trusted: true
+cask "steipete/tap/codexbar", trusted: true
