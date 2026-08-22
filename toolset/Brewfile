@@ -8,7 +8,7 @@ brew "wget"
 brew "zsh"
 brew "zsh-completions"
 
-tap "buo/cask-upgrade"
-
 cask "amneziavpn"
 cask "gpg-suite"
+
+tap "buo/cask-upgrade"
