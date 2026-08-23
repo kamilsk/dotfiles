@@ -26,20 +26,43 @@ git-amend() {
 git-commit() { git commit -m "${*}"; }
 
 git-contrib() {
-  local arg target=25
-  for arg in "${@}"; do
-    case "${arg}" in
+  local target=25
+  while [[ ${#} -gt 0 ]]; do
+    case "${1}" in
     -t | --target)
+      if [[ -z "${2:-}" ]]; then
+        echo "git-contrib: ${1} requires a value" >&2
+        return 2
+      fi
       target="${2}"
       shift 2
       ;;
+    --)
+      shift
+      break
+      ;;
+    *) break ;;
     esac
   done
 
   local _ts
-  _ts=$(maintainer github contribution suggest --target "${target}" git/3)
+  if ! _ts=$(maintainer github contribution suggest --target "${target}" git/3) || [[ -z "${_ts}" ]]; then
+    echo "git-contrib: cannot suggest a timestamp for target ${target}" >&2
+    return 1
+  fi
 
-  GIT_COMMITTER_DATE="${_ts}" git commit --date="${_ts}" -m "${*}"
+  # Arguments keep the "${*}" semantics of git-commit, so `git contrib chore: msg`
+  # still works and a single quoted argument keeps its newlines. With no arguments
+  # the message is read from stdin (heredoc, pipe, file) or, on a terminal, from
+  # the editor -- that is the way to pass a body containing both quote characters.
+  local -a _msg=()
+  if [[ ${#} -gt 0 ]]; then
+    _msg=(-m "${*}")
+  elif [[ ! -t 0 ]]; then
+    _msg=(-F -)
+  fi
+
+  GIT_COMMITTER_DATE="${_ts}" git commit --date="${_ts}" ${_msg[0]+"${_msg[@]}"}
 }
 
 # TODO:deps(datetime) implicit dependency
