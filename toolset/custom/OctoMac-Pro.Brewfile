@@ -83,4 +83,4 @@ tap "buo/cask-upgrade", trusted: true
 cask "docker/tap/sbx", trusted: true
 # brew "octolab/tap/maintainer", trusted: true # temporary disable for local dev
 brew "octolab/tap/sparkle", trusted: true
-cask "steipete/tap/codexbar", trusted: true
+cask "steipete/tap/codexbar", trusted: true, args: { adopt: true }
