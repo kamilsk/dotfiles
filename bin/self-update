@@ -24,6 +24,7 @@ function update_brew() {
     brew bundle --file="${common}" --verbose --upgrade --force --force-cleanup;
     brew bundle cleanup --file="${common}" --verbose --brews --casks --taps;
   fi
+  brew upgrade --formula --yes
   brew cu --all --cleanup --no-brew-update --yes --verbose
   brew doctor --verbose || true
 }
