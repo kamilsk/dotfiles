@@ -41,6 +41,7 @@ git config --global alias.at '!@ git-at'
 git config --global alias.cmm '!@ git-commit'
 git config --global alias.contrib '!@ git-contrib'
 git config --global alias.it '!@ git-it'
+git config --global alias.rewrite '!@ git-rewrite'
 git config --global alias.undo '!@ git-undo'
 
 # working with stage

@@ -79,4 +79,27 @@ git-it() {
   git commit --allow-empty --edit -m 'init the repository'
 }
 
+# Rewrites the message of the last commit and keeps both dates untouched: the
+# author date is restored explicitly, the committer date via the environment.
+# `--only` with no paths amends the message alone, so anything already staged
+# stays in the index instead of sneaking into the commit.
+git-rewrite() {
+  local _ad _cd
+  _ad=$(git --no-pager log -1 --format="%aI")
+  _cd=$(git --no-pager log -1 --format="%cI")
+
+  # Arguments keep the "${*}" semantics of git-commit. With no arguments the
+  # message is read from stdin (heredoc, pipe, file) or, on a terminal, from
+  # the editor -- that is the way to pass a body containing both quote characters.
+  local -a _msg=()
+  if [[ ${#} -gt 0 ]]; then
+    _msg=(-m "${*}")
+  elif [[ ! -t 0 ]]; then
+    _msg=(-F -)
+  fi
+
+  # https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---only
+  GIT_COMMITTER_DATE="${_cd}" git commit --amend --only --date="${_ad}" ${_msg[0]+"${_msg[@]}"}
+}
+
 git-undo() { git reset --soft HEAD~"${1:-1}"; }

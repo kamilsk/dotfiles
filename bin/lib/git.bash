@@ -72,6 +72,21 @@ git-it() {
   git commit --allow-empty --edit -m 'init the repository'
 }
 
+git-rewrite() {
+  local _ad _cd
+  _ad=$(git --no-pager log -1 --format="%aI")
+  _cd=$(git --no-pager log -1 --format="%cI")
+
+  local -a _msg=()
+  if [[ ${#} -gt 0 ]]; then
+    _msg=(-m "${*}")
+  elif [[ ! -t 0 ]]; then
+    _msg=(-F -)
+  fi
+
+  GIT_COMMITTER_DATE="${_cd}" git commit --amend --only --date="${_ad}" ${_msg[0]+"${_msg[@]}"}
+}
+
 git-undo() { git reset --soft HEAD~"${1:-1}"; }
 #end
 
