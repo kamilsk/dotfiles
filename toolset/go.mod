@@ -1,6 +1,6 @@
 module github.com/kamilsk/dotfiles
 
-go 1.25.0
+go 1.26.0
 
 require (
 	github.com/adonovan/spaghetti v0.0.0-20210409171412-ba438b8fd619 // ?
@@ -14,7 +14,7 @@ require (
 	github.com/mrnugget/fzz v1.1.0
 	golang.org/x/exp v0.0.0-20250506013437-ce4c2cf36ca6 // ?
 	golang.org/x/tools v0.49.0
-	mvdan.cc/gofumpt v0.11.0
+	mvdan.cc/gofumpt v0.12.0
 )
 
 require golang.org/x/tools/cmd/gorename v0.1.0-deprecated
