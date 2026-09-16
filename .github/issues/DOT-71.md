@@ -8,7 +8,7 @@ title: "git release problem"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/72
 created_at: 2020-01-24T07:29:57Z
-updated_at: 2022-08-14T18:59:27Z
+updated_at: 2026-09-17T11:14:14Z
 ---
 
 # git release problem

@@ -8,7 +8,7 @@ title: "gopath alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/73
 created_at: 2020-01-28T20:26:44Z
-updated_at: 2020-01-29T20:32:03Z
+updated_at: 2026-09-17T11:14:26Z
 ---
 
 # gopath alias

@@ -8,7 +8,7 @@ title: "add volumes and containers aliases"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/13
 created_at: 2019-03-21T04:59:30Z
-updated_at: 2019-03-21T19:25:34Z
+updated_at: 2026-09-17T10:57:34Z
 ---
 
 # add volumes and containers aliases

@@ -8,7 +8,7 @@ title: "add completions"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/100
 created_at: 2021-01-17T09:40:58Z
-updated_at: 2021-01-20T13:04:44Z
+updated_at: 2026-09-17T10:56:20Z
 ---
 
 # add completions

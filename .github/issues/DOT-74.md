@@ -8,7 +8,7 @@ title: "add hugo"
 labels: ["help wanted"]
 url: https://github.com/kamilsk/dotfiles/issues/75
 created_at: 2020-05-06T14:33:14Z
-updated_at: 2020-05-24T06:37:45Z
+updated_at: 2026-09-17T11:14:31Z
 ---
 
 # add hugo

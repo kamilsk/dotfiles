@@ -8,7 +8,7 @@ title: "problem cases after refactoring"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/83
 created_at: 2020-08-26T05:28:06Z
-updated_at: 2022-08-14T18:59:28Z
+updated_at: 2026-09-17T11:15:10Z
 ---
 
 # problem cases after refactoring

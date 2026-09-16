@@ -8,7 +8,7 @@ title: "git refresh works not well"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/55
 created_at: 2019-08-31T17:06:44Z
-updated_at: 2022-08-14T18:59:55Z
+updated_at: 2026-09-17T11:12:23Z
 ---
 
 # git refresh works not well

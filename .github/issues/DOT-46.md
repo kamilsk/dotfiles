@@ -8,7 +8,7 @@ title: "extend coverall"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/47
 created_at: 2019-07-17T13:37:21Z
-updated_at: 2019-07-21T06:45:01Z
+updated_at: 2026-09-17T11:11:06Z
 ---
 
 # extend coverall

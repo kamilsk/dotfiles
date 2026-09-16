@@ -8,7 +8,7 @@ title: "activate alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/63
 created_at: 2019-10-29T05:41:35Z
-updated_at: 2019-11-19T20:58:13Z
+updated_at: 2026-09-17T11:13:31Z
 ---
 
 # activate alias

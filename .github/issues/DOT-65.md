@@ -8,7 +8,7 @@ title: "wholisten <port>"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/66
 created_at: 2019-11-16T13:12:18Z
-updated_at: 2019-11-17T11:28:42Z
+updated_at: 2026-09-17T11:13:47Z
 ---
 
 # wholisten <port>

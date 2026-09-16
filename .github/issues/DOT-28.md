@@ -8,7 +8,7 @@ title: "ask to open pull request for you"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/28
 created_at: 2019-05-24T16:00:14Z
-updated_at: 2019-06-18T20:26:30Z
+updated_at: 2026-09-17T11:04:08Z
 ---
 
 # ask to open pull request for you

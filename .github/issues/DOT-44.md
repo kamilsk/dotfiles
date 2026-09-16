@@ -8,7 +8,7 @@ title: "coverall"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/45
 created_at: 2019-07-09T05:07:42Z
-updated_at: 2019-07-09T07:46:42Z
+updated_at: 2026-09-17T11:10:44Z
 ---
 
 # coverall

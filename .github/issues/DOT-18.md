@@ -8,7 +8,7 @@ title: "bug with git sync"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/18
 created_at: 2019-05-09T09:17:07Z
-updated_at: 2022-08-14T18:59:51Z
+updated_at: 2026-09-17T10:59:45Z
 ---
 
 # bug with git sync

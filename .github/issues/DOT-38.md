@@ -8,7 +8,7 @@ title: "experiment with TMOUT environment"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/39
 created_at: 2019-06-23T11:43:22Z
-updated_at: 2019-06-24T06:50:03Z
+updated_at: 2026-09-17T11:08:57Z
 ---
 
 # experiment with TMOUT environment

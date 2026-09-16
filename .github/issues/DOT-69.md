@@ -8,7 +8,7 @@ title: "git release has a problem"
 labels: ["severity: critical"]
 url: https://github.com/kamilsk/dotfiles/issues/70
 created_at: 2019-12-26T14:17:56Z
-updated_at: 2022-08-14T19:01:49Z
+updated_at: 2026-09-17T11:14:06Z
 ---
 
 # git release has a problem

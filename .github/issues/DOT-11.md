@@ -8,7 +8,7 @@ title: "mac configuration to use touchid"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/11
 created_at: 2019-02-11T07:46:19Z
-updated_at: 2019-03-03T06:26:34Z
+updated_at: 2026-09-17T10:56:43Z
 ---
 
 # mac configuration to use touchid

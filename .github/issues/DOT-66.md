@@ -8,7 +8,7 @@ title: "oom alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/67
 created_at: 2019-11-24T15:18:38Z
-updated_at: 2019-11-24T20:03:36Z
+updated_at: 2026-09-17T11:13:57Z
 ---
 
 # oom alias

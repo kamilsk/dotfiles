@@ -8,7 +8,7 @@ title: "run git_config when self-update did"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/17
 created_at: 2019-05-08T10:37:42Z
-updated_at: 2019-05-09T12:05:52Z
+updated_at: 2026-09-17T10:59:18Z
 ---
 
 # run git_config when self-update did

@@ -8,7 +8,7 @@ title: "remove bash_completions"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/20
 created_at: 2019-05-09T10:45:15Z
-updated_at: 2019-05-09T11:59:24Z
+updated_at: 2026-09-17T11:00:39Z
 ---
 
 # remove bash_completions

@@ -8,7 +8,7 @@ title: "git open"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/56
 created_at: 2019-08-31T17:10:24Z
-updated_at: 2019-09-02T14:56:44Z
+updated_at: 2026-09-17T11:12:33Z
 ---
 
 # git open

@@ -8,7 +8,7 @@ title: "deliver go tools"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/68
 created_at: 2019-11-25T09:28:23Z
-updated_at: 2019-12-26T06:32:07Z
+updated_at: 2026-09-17T11:13:59Z
 ---
 
 # deliver go tools

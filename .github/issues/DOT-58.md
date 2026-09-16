@@ -8,7 +8,7 @@ title: "docker-compose alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/59
 created_at: 2019-09-29T08:33:26Z
-updated_at: 2019-11-19T16:03:25Z
+updated_at: 2026-09-17T11:12:47Z
 ---
 
 # docker-compose alias

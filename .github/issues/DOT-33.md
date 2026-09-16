@@ -8,7 +8,7 @@ title: "git shake problems"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/33
 created_at: 2019-06-04T10:47:46Z
-updated_at: 2022-08-14T18:59:53Z
+updated_at: 2026-09-17T11:06:21Z
 ---
 
 # git shake problems

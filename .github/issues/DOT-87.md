@@ -8,7 +8,7 @@ title: "git tableflip"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/88
 created_at: 2020-11-16T07:07:32Z
-updated_at: 2020-12-27T15:44:40Z
+updated_at: 2026-09-17T11:15:32Z
 ---
 
 # git tableflip

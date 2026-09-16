@@ -8,7 +8,7 @@ title: "add pull alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/92
 created_at: 2020-12-29T09:09:14Z
-updated_at: 2020-12-29T09:25:15Z
+updated_at: 2026-09-17T11:15:43Z
 ---
 
 # add pull alias

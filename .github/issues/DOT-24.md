@@ -8,7 +8,7 @@ title: "explain shell script"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/24
 created_at: 2019-05-11T09:45:23Z
-updated_at: 2019-06-21T05:32:40Z
+updated_at: 2026-09-17T11:02:23Z
 ---
 
 # explain shell script

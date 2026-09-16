@@ -8,7 +8,7 @@ title: "add alias git refresh"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/5
 created_at: 2018-12-24T17:30:12Z
-updated_at: 2018-12-28T20:57:12Z
+updated_at: 2026-09-17T11:11:31Z
 ---
 
 # add alias git refresh

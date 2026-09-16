@@ -8,7 +8,7 @@ title: "new aliases as touch alternatives"
 labels: ["help wanted"]
 url: https://github.com/kamilsk/dotfiles/issues/74
 created_at: 2020-04-06T06:18:13Z
-updated_at: 2020-04-06T13:17:15Z
+updated_at: 2026-09-17T11:14:29Z
 ---
 
 # new aliases as touch alternatives

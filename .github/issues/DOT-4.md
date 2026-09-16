@@ -8,7 +8,7 @@ title: "add installation entrypoint"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/4
 created_at: 2018-12-14T11:47:08Z
-updated_at: 2018-12-16T15:40:46Z
+updated_at: 2026-09-17T11:09:21Z
 ---
 
 # add installation entrypoint

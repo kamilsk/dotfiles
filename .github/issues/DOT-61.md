@@ -8,7 +8,7 @@ title: "timestamp alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/62
 created_at: 2019-10-28T08:22:14Z
-updated_at: 2019-10-28T19:32:41Z
+updated_at: 2026-09-17T11:13:19Z
 ---
 
 # timestamp alias

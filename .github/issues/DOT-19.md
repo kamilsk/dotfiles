@@ -8,7 +8,7 @@ title: "git aliases"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/19
 created_at: 2019-05-09T10:44:26Z
-updated_at: 2019-05-09T13:22:48Z
+updated_at: 2026-09-17T11:00:11Z
 ---
 
 # git aliases

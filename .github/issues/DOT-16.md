@@ -8,7 +8,7 @@ title: "extend git refresh"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/16
 created_at: 2019-05-07T05:01:36Z
-updated_at: 2019-05-07T09:25:18Z
+updated_at: 2026-09-17T10:58:52Z
 ---
 
 # extend git refresh

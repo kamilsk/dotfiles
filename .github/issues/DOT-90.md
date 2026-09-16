@@ -8,7 +8,7 @@ title: "combine git it and git at"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/91
 created_at: 2020-12-27T18:45:29Z
-updated_at: 2020-12-27T21:05:45Z
+updated_at: 2026-09-17T11:15:41Z
 ---
 
 # combine git it and git at

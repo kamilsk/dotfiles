@@ -8,7 +8,7 @@ title: "update go tools"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/71
 created_at: 2019-12-30T07:06:58Z
-updated_at: 2019-12-30T13:21:07Z
+updated_at: 2026-09-17T11:14:11Z
 ---
 
 # update go tools

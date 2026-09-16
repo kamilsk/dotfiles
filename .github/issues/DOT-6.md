@@ -8,7 +8,7 @@ title: "add space-gophers"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/6
 created_at: 2018-12-30T18:14:10Z
-updated_at: 2018-12-30T18:22:02Z
+updated_at: 2026-09-17T11:12:50Z
 ---
 
 # add space-gophers

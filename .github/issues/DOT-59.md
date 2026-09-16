@@ -8,7 +8,7 @@ title: "git release didn't show postfix (rc/alpha)"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/60
 created_at: 2019-10-25T11:53:09Z
-updated_at: 2022-08-14T18:59:55Z
+updated_at: 2026-09-17T11:12:52Z
 ---
 
 # git release didn't show postfix (rc/alpha)

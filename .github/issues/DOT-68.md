@@ -8,7 +8,7 @@ title: "change git release"
 labels: ["severity: critical"]
 url: https://github.com/kamilsk/dotfiles/issues/69
 created_at: 2019-12-10T07:07:36Z
-updated_at: 2022-08-14T19:01:49Z
+updated_at: 2026-09-17T11:14:02Z
 ---
 
 # change git release

@@ -8,7 +8,7 @@ title: "support php and python by coverall"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/54
 created_at: 2019-08-26T16:44:11Z
-updated_at: 2019-08-26T16:45:28Z
+updated_at: 2026-09-17T11:12:14Z
 ---
 
 # support php and python by coverall

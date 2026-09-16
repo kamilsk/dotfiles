@@ -8,7 +8,7 @@ title: "extend git stats"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/12
 created_at: 2019-03-15T11:16:05Z
-updated_at: 2019-03-21T19:49:10Z
+updated_at: 2026-09-17T10:57:09Z
 ---
 
 # extend git stats

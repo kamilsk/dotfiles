@@ -8,7 +8,7 @@ title: "add new interesting isacikgoz' projects"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/96
 created_at: 2021-01-06T12:55:06Z
-updated_at: 2021-01-06T13:02:55Z
+updated_at: 2026-09-17T11:15:53Z
 ---
 
 # add new interesting isacikgoz' projects

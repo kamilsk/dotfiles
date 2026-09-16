@@ -8,7 +8,7 @@ title: "fix self-update at linux"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/9
 created_at: 2019-01-09T05:13:15Z
-updated_at: 2022-08-14T18:59:50Z
+updated_at: 2026-09-17T11:15:36Z
 ---
 
 # fix self-update at linux

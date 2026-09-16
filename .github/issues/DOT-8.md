@@ -8,7 +8,7 @@ title: "add explainshell.com"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/8
 created_at: 2019-01-06T13:48:46Z
-updated_at: 2019-01-06T19:14:21Z
+updated_at: 2026-09-17T11:14:48Z
 ---
 
 # add explainshell.com

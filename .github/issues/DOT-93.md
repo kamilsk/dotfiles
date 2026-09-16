@@ -8,7 +8,7 @@ title: "add fzz and tmux"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/94
 created_at: 2021-01-06T09:36:03Z
-updated_at: 2021-01-06T09:46:55Z
+updated_at: 2026-09-17T11:15:48Z
 ---
 
 # add fzz and tmux

@@ -8,7 +8,7 @@ title: "add prepare alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/3
 created_at: 2018-12-06T12:47:03Z
-updated_at: 2018-12-15T08:43:40Z
+updated_at: 2026-09-17T11:05:00Z
 ---
 
 # add prepare alias

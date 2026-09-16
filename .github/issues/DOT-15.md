@@ -8,7 +8,7 @@ title: "problem with git refresh"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/15
 created_at: 2019-05-06T07:32:57Z
-updated_at: 2022-08-14T18:59:50Z
+updated_at: 2026-09-17T10:58:26Z
 ---
 
 # problem with git refresh

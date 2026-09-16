@@ -8,7 +8,7 @@ title: "git untag"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/34
 created_at: 2019-06-08T10:05:12Z
-updated_at: 2019-06-14T17:15:23Z
+updated_at: 2026-09-17T11:06:48Z
 ---
 
 # git untag

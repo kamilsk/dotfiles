@@ -8,7 +8,7 @@ title: "stash prototype"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/38
 created_at: 2019-06-19T11:55:06Z
-updated_at: 2019-06-19T11:56:02Z
+updated_at: 2026-09-17T11:08:30Z
 ---
 
 # stash prototype

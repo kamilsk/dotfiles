@@ -8,7 +8,7 @@ title: "realpath alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/64
 created_at: 2019-10-29T06:04:35Z
-updated_at: 2019-11-17T11:19:27Z
+updated_at: 2026-09-17T11:13:40Z
 ---
 
 # realpath alias

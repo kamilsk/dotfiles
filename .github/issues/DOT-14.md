@@ -8,7 +8,7 @@ title: "define git cmm like as git progress"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/14
 created_at: 2019-05-04T09:54:11Z
-updated_at: 2019-05-05T05:50:58Z
+updated_at: 2026-09-17T10:58:00Z
 ---
 
 # define git cmm like as git progress

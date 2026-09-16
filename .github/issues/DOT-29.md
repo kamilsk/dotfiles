@@ -8,7 +8,7 @@ title: "partial self-update"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/29
 created_at: 2019-05-24T16:01:31Z
-updated_at: 2019-06-18T05:08:21Z
+updated_at: 2026-09-17T11:04:34Z
 ---
 
 # partial self-update

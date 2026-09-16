@@ -8,7 +8,7 @@ title: "invalid behavior of git start and git refresh"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/25
 created_at: 2019-05-14T08:22:25Z
-updated_at: 2022-08-14T18:59:51Z
+updated_at: 2026-09-17T11:02:50Z
 ---
 
 # invalid behavior of git start and git refresh

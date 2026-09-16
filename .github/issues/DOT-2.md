@@ -8,7 +8,7 @@ title: "improve self-update"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/2
 created_at: 2018-12-06T12:45:51Z
-updated_at: 2018-12-16T13:58:38Z
+updated_at: 2026-09-17T11:00:37Z
 ---
 
 # improve self-update

@@ -8,7 +8,7 @@ title: "research benefits to combine all git_* scripts into one Go binary"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/99
 created_at: 2021-01-16T19:51:20Z
-updated_at: 2021-02-26T18:30:23Z
+updated_at: 2026-09-17T11:16:00Z
 ---
 
 # research benefits to combine all git_* scripts into one Go binary

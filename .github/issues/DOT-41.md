@@ -8,7 +8,7 @@ title: "stash which or where"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/42
 created_at: 2019-06-28T09:05:05Z
-updated_at: 2019-07-13T12:36:04Z
+updated_at: 2026-09-17T11:09:56Z
 ---
 
 # stash which or where

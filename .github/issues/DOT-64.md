@@ -8,7 +8,7 @@ title: "common Brewfile"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/65
 created_at: 2019-11-05T20:42:01Z
-updated_at: 2019-11-17T11:03:54Z
+updated_at: 2026-09-17T11:13:45Z
 ---
 
 # common Brewfile

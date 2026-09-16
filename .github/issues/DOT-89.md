@@ -8,7 +8,7 @@ title: "git whoami"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/90
 created_at: 2020-12-27T10:48:47Z
-updated_at: 2020-12-27T11:44:34Z
+updated_at: 2026-09-17T11:15:39Z
 ---
 
 # git whoami

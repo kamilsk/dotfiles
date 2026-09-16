@@ -8,7 +8,7 @@ title: "extend lookup command"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/89
 created_at: 2020-12-25T19:35:33Z
-updated_at: 2020-12-27T15:37:41Z
+updated_at: 2026-09-17T11:15:34Z
 ---
 
 # extend lookup command

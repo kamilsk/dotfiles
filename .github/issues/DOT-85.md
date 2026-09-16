@@ -8,7 +8,7 @@ title: "force date format"
 labels: ["help wanted","type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/86
 created_at: 2020-10-31T14:19:04Z
-updated_at: 2022-08-14T18:59:29Z
+updated_at: 2026-09-17T11:15:17Z
 ---
 
 # force date format

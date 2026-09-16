@@ -8,7 +8,7 @@ title: "add links to source code in Brewfile"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/95
 created_at: 2021-01-06T09:51:49Z
-updated_at: 2021-01-06T12:35:06Z
+updated_at: 2026-09-17T11:15:50Z
 ---
 
 # add links to source code in Brewfile

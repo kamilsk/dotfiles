@@ -8,7 +8,7 @@ title: "volumes not work properly"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/32
 created_at: 2019-05-30T08:33:09Z
-updated_at: 2022-08-14T18:59:53Z
+updated_at: 2026-09-17T11:05:54Z
 ---
 
 # volumes not work properly

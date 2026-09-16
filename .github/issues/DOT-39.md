@@ -8,7 +8,7 @@ title: "add lookup alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/40
 created_at: 2019-06-28T08:28:44Z
-updated_at: 2019-07-11T10:27:42Z
+updated_at: 2026-09-17T11:09:23Z
 ---
 
 # add lookup alias

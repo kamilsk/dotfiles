@@ -8,7 +8,7 @@ title: "truncate logs for docker"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/82
 created_at: 2020-08-01T21:17:50Z
-updated_at: 2020-08-25T06:40:03Z
+updated_at: 2026-09-17T11:14:57Z
 ---
 
 # truncate logs for docker

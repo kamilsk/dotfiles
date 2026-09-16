@@ -8,7 +8,7 @@ title: "remove [no tests to run]"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/46
 created_at: 2019-07-17T12:10:30Z
-updated_at: 2022-08-14T18:59:54Z
+updated_at: 2026-09-17T11:10:56Z
 ---
 
 # remove [no tests to run]

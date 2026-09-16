@@ -8,7 +8,7 @@ title: "debug"
 labels: ["help wanted"]
 url: https://github.com/kamilsk/dotfiles/issues/58
 created_at: 2019-09-21T08:59:46Z
-updated_at: 2019-11-21T05:21:47Z
+updated_at: 2026-09-17T11:12:43Z
 ---
 
 # debug

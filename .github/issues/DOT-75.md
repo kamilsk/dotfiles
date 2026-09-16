@@ -8,7 +8,7 @@ title: "download goreleaser tools not from go mod"
 labels: ["help wanted"]
 url: https://github.com/kamilsk/dotfiles/issues/76
 created_at: 2020-05-06T16:59:52Z
-updated_at: 2020-05-24T06:37:15Z
+updated_at: 2026-09-17T11:14:36Z
 ---
 
 # download goreleaser tools not from go mod

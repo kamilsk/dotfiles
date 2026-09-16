@@ -8,7 +8,7 @@ title: "new alias git issue"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/7
 created_at: 2018-12-31T13:12:00Z
-updated_at: 2018-12-31T13:13:40Z
+updated_at: 2026-09-17T11:14:04Z
 ---
 
 # new alias git issue

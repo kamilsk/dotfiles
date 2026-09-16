@@ -8,7 +8,7 @@ title: "review brew list"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/53
 created_at: 2019-08-23T07:58:54Z
-updated_at: 2019-09-13T20:17:10Z
+updated_at: 2026-09-17T11:12:02Z
 ---
 
 # review brew list

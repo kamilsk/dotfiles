@@ -8,7 +8,7 @@ title: "brew cask upgrade is deprecated"
 labels: ["help wanted"]
 url: https://github.com/kamilsk/dotfiles/issues/85
 created_at: 2020-10-31T14:10:53Z
-updated_at: 2020-10-31T14:44:06Z
+updated_at: 2026-09-17T11:15:15Z
 ---
 
 # brew cask upgrade is deprecated

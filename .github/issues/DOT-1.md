@@ -8,7 +8,7 @@ title: "review git_flow_jira"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/1
 created_at: 2018-11-14T09:53:04Z
-updated_at: 2018-12-16T16:49:53Z
+updated_at: 2026-09-17T10:55:57Z
 ---
 
 # review git_flow_jira

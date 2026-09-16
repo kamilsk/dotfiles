@@ -8,7 +8,7 @@ title: "fzqurl"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/49
 created_at: 2019-08-04T14:24:19Z
-updated_at: 2019-08-04T14:30:19Z
+updated_at: 2026-09-17T11:11:25Z
 ---
 
 # fzqurl

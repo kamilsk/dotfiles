@@ -8,7 +8,7 @@ title: "integrate spot"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/98
 created_at: 2021-01-16T19:31:51Z
-updated_at: 2021-01-18T20:58:08Z
+updated_at: 2026-09-17T11:15:58Z
 ---
 
 # integrate spot

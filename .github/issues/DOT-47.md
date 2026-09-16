@@ -8,7 +8,7 @@ title: "improve git_mirror"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/48
 created_at: 2019-07-21T07:44:58Z
-updated_at: 2019-07-21T11:54:23Z
+updated_at: 2026-09-17T11:11:13Z
 ---
 
 # improve git_mirror

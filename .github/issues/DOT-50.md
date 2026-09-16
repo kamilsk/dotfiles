@@ -8,7 +8,7 @@ title: "go checks"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/51
 created_at: 2019-08-16T07:49:32Z
-updated_at: 2019-09-14T07:08:11Z
+updated_at: 2026-09-17T11:11:45Z
 ---
 
 # go checks

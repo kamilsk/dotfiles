@@ -8,7 +8,7 @@ title: "add gorelease"
 labels: ["help wanted"]
 url: https://github.com/kamilsk/dotfiles/issues/77
 created_at: 2020-05-24T06:30:54Z
-updated_at: 2020-05-24T06:37:16Z
+updated_at: 2026-09-17T11:14:38Z
 ---
 
 # add gorelease

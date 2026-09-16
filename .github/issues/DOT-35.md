@@ -8,7 +8,7 @@ title: "git start problems at github"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/35
 created_at: 2019-06-10T14:37:04Z
-updated_at: 2022-08-14T18:59:53Z
+updated_at: 2026-09-17T11:07:14Z
 ---
 
 # git start problems at github

@@ -8,7 +8,7 @@ title: "stash cd ... don't work properly"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/41
 created_at: 2019-06-28T09:04:23Z
-updated_at: 2022-08-14T18:59:54Z
+updated_at: 2026-09-17T11:09:42Z
 ---
 
 # stash cd ... don't work properly

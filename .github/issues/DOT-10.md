@@ -8,7 +8,7 @@ title: "add aliases git patch, git minor, git major"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/10
 created_at: 2019-02-01T10:59:04Z
-updated_at: 2019-03-03T05:57:35Z
+updated_at: 2026-09-17T10:56:17Z
 ---
 
 # add aliases git patch, git minor, git major

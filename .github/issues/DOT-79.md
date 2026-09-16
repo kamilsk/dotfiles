@@ -8,7 +8,7 @@ title: "add yaegi to the toolset"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/80
 created_at: 2020-07-20T19:41:36Z
-updated_at: 2020-07-20T19:47:08Z
+updated_at: 2026-09-17T11:14:50Z
 ---
 
 # add yaegi to the toolset
