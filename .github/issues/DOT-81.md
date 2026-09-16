@@ -13,4 +13,8 @@ updated_at: 2020-08-25T06:40:03Z
 
 # truncate logs for docker
 
+Add a helper that empties the log file of a running container without restarting it:
+
 `truncate -s 0 $(docker inspect --format='{{.LogPath}}' gateway)`
+
+Docker's default `json-file` driver grows without bound unless `max-size` is configured; for a long-running local container (the example is `gateway`) truncating the file in place is the quickest way to reclaim disk space and to start a clean log before reproducing something.

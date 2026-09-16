@@ -13,4 +13,4 @@ updated_at: 2021-01-20T13:04:44Z
 
 # add completions
 
-https://docs.docker.com/compose/completion/
+Install shell completion for Docker Compose, per the [Compose completion docs](https://docs.docker.com/compose/completion/) of the time (a script to download into the completion directory for bash or zsh).

@@ -13,6 +13,4 @@ updated_at: 2021-02-26T18:30:23Z
 
 # research benefits to combine all git_* scripts into one Go binary
 
-- base https://github.com/libgit2/git2go
-- or https://github.com/go-git/go-git
-- example of usage https://github.com/derekparker/go-pear
+Evaluate rewriting the collection of `git_*` shell scripts ([git_current](../../bin/git_current), [git_refresh](../../bin/git_refresh), [git_shake](../../bin/git_shake), …) as a single Go program. Candidate libraries: [git2go](https://github.com/libgit2/git2go) (libgit2 bindings) or the pure-Go [go-git](https://github.com/go-git/go-git); [go-pear](https://github.com/derekparker/go-pear) as an example of a small git helper in Go. The expected gains are testability, portability off macOS/bash and no dependence on parsing porcelain output.

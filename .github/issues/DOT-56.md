@@ -13,5 +13,6 @@ updated_at: 2019-09-02T14:59:16Z
 
 # improve git_mirror
 
-- [ ] git mirror <- git_mirror
-- [ ] git mirror open, the same as git open but for mirror
+Two improvements for the mirror command: register `git mirror` as an alias of the `git_mirror` script, and add `git mirror open`, which opens the mirror's web page the way `git open` ([#56](DOT-55.md)) opens the origin's. The original list: "git mirror <- git_mirror; git mirror open, the same as git open but for mirror".
+
+Expected: `git mirror`, with and without a URL ([#36](DOT-36.md), [#48](DOT-47.md)), is available as a git subcommand; `git mirror open` translates the `mirror` remote's SSH URL to HTTPS and opens it; if there is no `mirror` remote, it says so.

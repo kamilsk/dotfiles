@@ -13,4 +13,4 @@ updated_at: 2020-07-24T19:41:36Z
 
 # /bin/bash: looppointer: command not found
 
-problem with modules
+Fix the Go toolset build failing on `looppointer`. The one-line diagnosis, "problem with modules", refers to `go generate tools.go` trying to run — or install — [kyoh86/looppointer](https://github.com/kyoh86/looppointer), a linter for loop-variable pointer bugs, and the binary not being found; typically the module path in `tools.go` did not match the package's `main` (the linter's command lives in a `cmd/` subdirectory), so `go install` built a library and produced no executable.

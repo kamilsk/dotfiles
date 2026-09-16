@@ -13,7 +13,11 @@ updated_at: 2019-07-11T10:27:42Z
 
 # add lookup alias
 
+Add a `lookup <name>` helper that shows what a command is: for a script on `PATH` print its source, otherwise report what kind of thing it is. The trigger was the `stash` prototype ([#38](DOT-37.md)) — reading it required `cat $(which stash)` every time:
+
 ```bash
 $ lookup stash
 -> cat `which stash` or check that is file
 ```
+
+The expected behaviour is a single command that resolves a name the way the shell would (`command -v`), and then does the useful thing per kind: shell scripts are printed, other text is paged, binaries are only identified, and things that are not files (aliases, functions, builtins) are described rather than reported as "not found".

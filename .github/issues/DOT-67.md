@@ -13,4 +13,4 @@ updated_at: 2019-12-26T06:32:07Z
 
 # deliver go tools
 
-- [x] build tools to gopath/bin
+Install the author's Go command-line tools reproducibly: build them into `$GOPATH/bin` from a pinned list rather than `go get`-ing each by hand. The single ticked box, "build tools to gopath/bin", is the requirement.

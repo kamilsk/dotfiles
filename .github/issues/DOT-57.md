@@ -13,8 +13,10 @@ updated_at: 2019-11-21T05:21:47Z
 
 # debug
 
-- `env -i bash -x -l -c 'echo 123' > login.log 2>&1`
-- `strace -f env -i bash -x -l -c 'echo 123' > login.log 2>&1`
-- `grep -Fz SUDO_USER /proc/10684/environ`
+Add a `debug` helper for tracing what a command, and the shell start-up around it, actually does. The three techniques the author collected, inspired by a [Badoo article on Habr](https://habr.com/ru/company/badoo/blog/465021/):
 
-inspiration https://habr.com/ru/company/badoo/blog/465021/
+- `env -i bash -x -l -c 'echo 123' > login.log 2>&1` — run a login shell with an empty environment and `xtrace` on, so the log shows every line of the profile files before the command;
+- `strace -f env -i bash -x -l -c 'echo 123' > login.log 2>&1` — the same under `strace` to see the system calls and child processes;
+- `grep -Fz SUDO_USER /proc/10684/environ` — read the environment of a running process.
+
+The intended use is diagnosing the dotfiles themselves: which rc file sets what, why a variable or alias is missing, what a script does when started from a clean environment. The last two are Linux tools; the issue was labelled "help wanted", presumably to find the macOS equivalents.

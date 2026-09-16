@@ -13,19 +13,16 @@ updated_at: 2019-06-18T20:26:30Z
 
 # ask to open pull request for you
 
+After a push, offer to open the pull request the hosting suggests. Bitbucket Server answers a push of a new branch with a "create pull request" link and a push to an existing one with a "view pull request" link; the idea is to catch that link in the push output and ask whether to open it in the browser, so that the trip from `git please` to the review page is one keystroke. The original evidence, two push transcripts:
+
 ```
-remote: Resolving deltas: 100% (745/745), done.
-remote: 
 remote: Create pull request for ...:
 remote:   http://.../compare/commits?sourceBranch=refs/heads/...
-remote: 
-To ssh://...
 ```
 
 ```
-remote: 
 remote: View pull request for ... => master:
 remote:   http://.../pull-requests/5
-remote: 
-To ssh://...
 ```
+
+Expected: the push commands of the flow (`git please`, `push`) detect a `remote:` line carrying a URL, print it and, on confirmation, `open` it; GitHub's equivalent hint ("Create a pull request … by visiting:") fits the same pattern. Nothing changes when the remote prints no hint, and the push exit status is preserved.

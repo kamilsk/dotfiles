@@ -13,4 +13,10 @@ updated_at: 2020-12-29T09:25:15Z
 
 # add pull alias
 
-as alternative for g+
+Add a shell alias `pull` as the readable name of `g+`, the dotfiles' "update the current branch" command. `g+` was the only spelling of the stash, fetch, rebase and update-submodules routine, and a word is easier to type in a loop or a script than a symbol pair.
+
+Expected: `pull` and `g+` are the same command and accept the same arguments; the `push` / `g^` pair mirrors it.
+
+<!-- 2026-09-16T05:49Z https://github.com/kamilsk/dotfiles/issues/92#issuecomment-5711717512
+See the note on #190: the `pull` alias's stash restore is deferred to shell exit under bash.
+-->

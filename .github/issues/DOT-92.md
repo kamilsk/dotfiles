@@ -13,8 +13,12 @@ updated_at: 2021-01-03T10:51:13Z
 
 # git state
 
+Add `git state`, a one-screen summary of where a repository stands:
+
 ```bash
 $ git state
 # git status
 # git stash list
 ```
+
+`git status` alone hides the stash; the author's `pull` stashes and pops automatically ([#190](DOT-189.md)), so forgotten stash entries are a real risk, and seeing them next to the status is the point. Later requests extended the same screen with the remotes ([#133](DOT-132.md)) and the latest release ([#127](DOT-126.md)).

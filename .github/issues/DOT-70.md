@@ -12,3 +12,5 @@ updated_at: 2019-12-30T13:21:07Z
 ---
 
 # update go tools
+
+Bump the pinned versions of the Go tools ([#68](DOT-67.md)) to their current releases. The title is the whole note; in December 2019 the pins lived in `toolset/go.mod` and moving them was a manual `go get`/`go mod tidy` pass followed by a rebuild.

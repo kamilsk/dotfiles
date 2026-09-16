@@ -13,6 +13,8 @@ updated_at: 2020-04-06T13:17:15Z
 
 # new aliases as touch alternatives
 
+Add `edit` and `append` as alternatives to `touch`: create or extend a small file by typing its content into a heredoc at the prompt, instead of `touch` plus an editor. The original sketch:
+
 ```bash
 $ edit some.txt
 # cat <<EOF > some.txt
@@ -20,3 +22,5 @@ $ edit some.txt
 $ append some.txt
 # cat <<EOF >> some.txt
 ```
+
+After the command the shell keeps reading lines until a line with `EOF`, then writes them to the file — `edit` overwrites, `append` adds to the end. The point is speed for the one-paragraph notes, `.gitignore` entries and config stubs that do not deserve opening an editor; the "help wanted" label presumably asked for ideas on the naming or the mechanism.

@@ -13,4 +13,4 @@ updated_at: 2020-10-31T14:44:06Z
 
 # brew cask upgrade is deprecated
 
-replace it by brew upgrade --cask
+Replace `brew cask upgrade` in `self-update` with `brew upgrade --cask`. Homebrew folded the `brew cask` subcommand into the main CLI in 2.5–2.6 (autumn 2020) and printed a deprecation warning on every run of the old form, which the update script hit on each `self-update brew`.

@@ -13,4 +13,4 @@ updated_at: 2021-01-18T20:58:08Z
 
 # integrate spot
 
-https://github.com/rauchg/spot
+Add [spot](https://github.com/rauchg/spot), Guillermo Rauch's tiny shell script for fast, interactive recursive text search in the terminal (a wrapper around `grep`/`find` with a prompt), to `bin/`.

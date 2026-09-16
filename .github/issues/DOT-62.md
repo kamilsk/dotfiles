@@ -13,9 +13,13 @@ updated_at: 2019-11-19T20:58:13Z
 
 # activate alias
 
+Add an `activate` helper that finds the virtual-environment activation script of the current project and sources it, so that entering a Python (or similar) project does not require remembering where its environment lives. The original sketch:
+
 ```bash
 $ activate
 # source bin/activate
 # source env/activate
 # find activate and use it
 ```
+
+The expected behaviour is to try the known locations in order and source the first one found; with nothing found, say so and fail rather than silently do nothing. It has to be a function, not a script, because `source` must affect the caller's shell.

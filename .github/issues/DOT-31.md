@@ -13,9 +13,11 @@ updated_at: 2022-08-14T18:59:52Z
 
 # images not work properly
 
+Make the `images` helper work on Linux. On Ubuntu it failed at once:
+
 ```
 # images all
 tail: cannot open '+2' for reading: No such file or directory
 ```
 
-at ubuntu
+The helper stripped the header line of `docker images` with `tail +2`. BSD `tail` on macOS accepts that legacy spelling; GNU `tail` treats `+2` as a file name. The portable form is `tail -n +2`.

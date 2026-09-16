@@ -13,6 +13,8 @@ updated_at: 2022-08-14T18:59:53Z
 
 # volumes not work properly
 
+Make the `volumes` helper work in an interactive bash on Ubuntu, where it produced:
+
 ```
 # volumes
 No command '-bash' found, did you mean:
@@ -20,3 +22,5 @@ No command '-bash' found, did you mean:
  Command 'rbash' from package 'bash' (main)
 -bash: command not found
 ```
+
+The helper re-invoked itself through `$0` to reuse its own `all` branch. Inside a function sourced into a login shell, `$0` is the shell's name — `-bash` — not a script path, so the recursion tried to execute a program called `-bash`. The idiom works only in a standalone script.

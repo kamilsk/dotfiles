@@ -13,5 +13,4 @@ updated_at: 2022-08-14T19:02:10Z
 
 # update readme
 
-- [x] remove author/sponsor
-- [x] add emoji
+Refresh the [README](../../README.md): remove the author and sponsor blocks that the project template had put there, and add emoji to the section titles in the style of the author's other repositories. Both boxes in the note are ticked, so this records a done change rather than a plan.

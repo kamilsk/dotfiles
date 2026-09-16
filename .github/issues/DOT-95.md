@@ -13,6 +13,4 @@ updated_at: 2021-01-06T13:02:55Z
 
 # add new interesting isacikgoz' projects
 
-- https://github.com/isacikgoz/tldr
-- https://github.com/isacikgoz/gitbatch
-- https://github.com/isacikgoz/gia
+Add three terminal tools by [isacikgoz](https://github.com/isacikgoz): [tldr](https://github.com/isacikgoz/tldr), a Go client for the community man-page summaries; [gitbatch](https://github.com/isacikgoz/gitbatch), a TUI for pulling and inspecting many repositories at once; and [gia](https://github.com/isacikgoz/gia), an interactive `git add -p` in the style of `tig`.

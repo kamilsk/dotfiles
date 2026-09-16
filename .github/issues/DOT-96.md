@@ -13,4 +13,4 @@ updated_at: 2021-01-16T15:34:57Z
 
 # add octosql
 
-https://github.com/cube2222/octosql
+Add [OctoSQL](https://github.com/cube2222/octosql), a CLI that runs SQL across CSV, JSON, Parquet and live databases, to the Go toolset — part of the author's "SQL for everything" experiments (later also `dsq`, [#316](DOT-315.md), and `mergestat`/`askgit`, [#179](DOT-178.md)).

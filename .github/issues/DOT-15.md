@@ -13,8 +13,12 @@ updated_at: 2022-08-14T18:59:50Z
 
 # problem with git refresh
 
+Fix `git refresh` failing at the fetch step. The original error (the Russian git message means "fetch --all does not take a repository argument"):
+
 ```bash
 $ git refresh
 fatal: fetch --all не принимает имя репозитория как аргумент
 done
 ```
+
+Git rejects `git fetch --all <remote>`: `--all` and an explicit remote are mutually exclusive. The likely reading is that the early script passed the remote it had just resolved to a fetch that already carried `--all`, so every run died before the rebase, and the trailing `done` was printed regardless. Expected: `git refresh` fetches (all remotes, or the chosen one, not both) and then rebases; a failed fetch stops the command instead of reporting `done`.

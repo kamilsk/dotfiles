@@ -13,4 +13,8 @@ updated_at: 2019-11-19T16:03:25Z
 
 # docker-compose alias
 
-dc
+Add `dc` as a short alias for `docker-compose`, the way `g+`/`g^` shorten the git routine. The whole note is the two letters.
+
+<!-- 2019-11-19T16:03Z https://github.com/kamilsk/dotfiles/issues/59#issuecomment-555576008
+won't do
+-->

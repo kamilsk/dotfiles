@@ -13,6 +13,8 @@ updated_at: 2019-03-21T19:49:10Z
 
 # extend git stats
 
+Turn a pair of one-liners into a `git stats` command that reports, per author, how many lines were added, removed and remain in the current directory of the repository. The original scripts:
+
 ```
 git shortlog -s -- $(pwd) | cut -c8- | while read i
 do
@@ -29,7 +31,8 @@ do
 done
 ```
 
-Customize:
-- path
-- period
-- by author / sum
+The customisation the author wanted: the path (current directory versus the whole repository), the period (`--since=…`) and the grouping (per author or a single sum).
+
+<!-- 2026-09-16T05:49Z https://github.com/kamilsk/dotfiles/issues/12#issuecomment-5711680044
+Note: `alias.stats` (and `day`/`week`/`month`) are legacy-only, see the note on #359; the script works as `git_stats`.
+-->

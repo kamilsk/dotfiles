@@ -13,4 +13,4 @@ updated_at: 2018-12-30T18:22:02Z
 
 # add space-gophers
 
-https://github.com/apiarian/space-gophers
+Add [apiarian/space-gophers](https://github.com/apiarian/space-gophers), a small Go program that animates gophers in the terminal, to the set of tools installed by the dotfiles. The note is the link alone; the context is the period (late 2018) when the repository was collecting Go-written command-line toys and utilities as `go get` targets.

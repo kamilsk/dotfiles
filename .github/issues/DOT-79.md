@@ -13,4 +13,4 @@ updated_at: 2020-07-20T19:47:08Z
 
 # add yaegi to the toolset
 
-related to https://github.com/containous/yaegi/issues/785
+Add [Yaegi](https://github.com/traefik/yaegi), Traefik's Go interpreter, to the toolset for running Go snippets and scripts without a build step. The note links [yaegi#785](https://github.com/containous/yaegi/issues/785), the upstream issue that was relevant at the time (July 2020, when the project still lived under `containous`).

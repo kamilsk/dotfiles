@@ -13,4 +13,6 @@ updated_at: 2019-07-21T11:54:23Z
 
 # improve git_mirror
 
-just replace git@github.com by git@bitbucket.org if a first argument is omitted.
+Let `git mirror` guess the Bitbucket URL when no argument is given: "just replace git@github.com by git@bitbucket.org if a first argument is omitted." The author's mirrors lived under the same owner and name on both hostings, so the SSH URL of `origin` with the host swapped is the mirror's URL, and the command should not need it typed.
+
+Expected: `git mirror` with no argument reads the `origin` fetch URL, rewrites the host, and adds or updates the `mirror` remote; when `origin` is not a `git@github.com` URL the command says it cannot define the mirror instead of registering a wrong one; `git mirror <url>` keeps working.

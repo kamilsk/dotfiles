@@ -13,4 +13,4 @@ updated_at: 2019-06-24T06:50:03Z
 
 # experiment with TMOUT environment
 
-put TMOUT=300 into .bash_profile
+Try the shell's idle timeout: put `TMOUT=300` into `.bash_profile` so that an interactive shell left alone for five minutes exits by itself. `TMOUT` is the bash/zsh variable that makes `read` and the interactive prompt time out; the experiment was about whether auto-closing forgotten terminals (and the sessions, sudo tickets and SSH connections inside them) is a habit worth adopting.

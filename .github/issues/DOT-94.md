@@ -12,3 +12,9 @@ updated_at: 2021-01-06T12:35:06Z
 ---
 
 # add links to source code in Brewfile
+
+Annotate every entry of the Brewfile with where the software comes from — its repository or site — so that a bare formula name (`jid`, `gia`, `plumber`, `mergestat`) can be recognised months later and reviewed for removal.
+
+<!-- 2026-09-16T05:49Z https://github.com/kamilsk/dotfiles/issues/95#issuecomment-5711717973
+Code vs intent: `toolset/Inventory.yaml` has not been updated since 2023 and disagrees with the Brewfiles (lists Bartender, Lens, Miro, old taps; lacks Warp, Zed, Cursor, the AI clients, Ice, Raycast). It is documentation drift rather than a source of truth; #375 wanted to build on it.
+-->

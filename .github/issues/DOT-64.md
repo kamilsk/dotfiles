@@ -13,4 +13,4 @@ updated_at: 2019-11-17T11:03:54Z
 
 # common Brewfile
 
-and add brew install from it
+Move the Homebrew package list out of the installer into a Brewfile and install from it with `brew bundle`. In 2019 the formulae were an inline list in `install.sh` ([#53](DOT-52.md)); a Brewfile is declarative, diffable, understood by `brew bundle` for both installation and cleanup, and can be reused by `self-update`.

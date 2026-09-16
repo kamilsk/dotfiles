@@ -13,83 +13,14 @@ updated_at: 2019-09-13T20:17:10Z
 
 # review brew list
 
-https://github.com/kamilsk/dotfiles/blob/master/install.sh#L38-L54
+Reconcile the installed Homebrew formulae with the list the installer maintains. The note points at the package list then embedded in `install.sh` (lines 38–54) and pastes `brew list | cat` — about eighty names, most of them transitive dependencies (`apr`, `brotli`, `gdbm`, `icu4c`, `jansson`, `libev`, …) next to the tools actually wanted (`ansible`, `bat`, `composer`, `git`, `go`, `httpie`, `jq`, `kubernetes-cli`, `node`, `php`, `python`, `zsh`, …).
 
-```
-brew list | cat
-ansible
-apr
-apr-util
-argon2
-asciinema
-aspell
-autoconf
-bat
-brotli
-c-ares
-composer
-curl
-curl-openssl
-dep
-dive
-fontconfig
-freetds
-freetype
-fzf
-gd
-gdbm
-gettext
-git
-git-lfs
-glib
-gmp
-go
-graphviz
-httpie
-icu4c
-jansson
-jemalloc
-jpeg
-jq
-kubernetes-cli
-kubernetes-helm
-libev
-libevent
-libffi
-libiconv
-libidn
-libmetalink
-libpng
-libpq
-libsodium
-libssh2
-libtiff
-libtool
-libyaml
-libzip
-mysql-client
-ncurses
-nghttp2
-node
-oniguruma
-openldap
-openssl
-pcre
-pcre2
-php
-protobuf
-python
-python@2
-qcachegrind
-qt
-readline
-rtmpdump
-sqlite
-tidy-html5
-tree
-unixodbc
-webp
-xz
-zsh
-zsh-completions
-```
+The intent is to decide, per formula, whether it is a deliberate dependency of the setup or an accident of `brew install`, keep only the former in the declared list, and let Homebrew manage the rest.
+
+<!-- 2019-08-23T08:02Z https://github.com/kamilsk/dotfiles/issues/53#issuecomment-524216065
+`brew install protobuf` is important
+-->
+
+<!-- 2019-09-13T15:05Z https://github.com/kamilsk/dotfiles/issues/53#issuecomment-531274511
+`https://formulae.brew.sh/formula/%s` to print all list and open it in a browser
+-->

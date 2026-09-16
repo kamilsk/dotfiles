@@ -13,4 +13,4 @@ updated_at: 2020-12-27T21:05:45Z
 
 # combine git it and git at
 
-if git is empty, then `git at -3d` runs as `git it`
+Let `git at` behave as `git it` on an empty repository: "if git is empty, then `git at -3d` runs as `git it`". Both aliases make a dated commit; `it` initialises the repository and creates the empty root commit ([#30](DOT-30.md)), `at` commits staged changes with a shifted date ([#78](DOT-77.md)). When the repository has no commits yet, `at` should do the initialisation instead of failing, so that one command works in both situations.

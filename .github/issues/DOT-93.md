@@ -13,5 +13,4 @@ updated_at: 2021-01-06T09:46:55Z
 
 # add fzz and tmux
 
-- https://github.com/mrnugget/fzz
-- https://github.com/tmux/tmux
+Add two terminal tools: [fzz](https://github.com/mrnugget/fzz), a small Go program that runs a command interactively as you type its argument (an "fzf for arbitrary commands", e.g. live `grep` or `find`), and [tmux](https://github.com/tmux/tmux), the terminal multiplexer.

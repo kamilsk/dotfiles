@@ -13,6 +13,8 @@ updated_at: 2022-08-14T18:59:53Z
 
 # git shake problems
 
+Make `git shake` work in a clone whose remote has no `HEAD` symbolic ref. The original output (the Russian git lines mean "Fetching from origin", "Already on master", "Your branch is up to date with origin/master"):
+
 ```
 git shake
 fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
@@ -29,4 +31,6 @@ done
 Ваша ветка обновлена в соответствии с «origin/master».
 ```
 
-- [x] check on private/workshops
+**Cause:** `git default` resolved the trunk from `refs/remotes/origin/HEAD`, which exists only when the clone was made by `git clone` or `git remote set-head` was run; in a repository whose remote was added by hand it is absent, the result is empty, and every consumer went on with an empty branch name: `git checkout ""`, `git rebase origin/`. The ticked item "check on private/workshops" names the repository where the fix was verified.
+
+Expected: when the remote HEAD is unknown, the default branch is resolved by asking the remote instead of assumed empty, and a failure to resolve stops the sweep before any checkout or deletion.

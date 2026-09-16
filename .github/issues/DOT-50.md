@@ -13,75 +13,15 @@ updated_at: 2019-09-14T07:08:11Z
 
 # go checks
 
-- check-go-mod.sh
-```
-!/bin/bash
- set -e
- ERR=$( go mod tidy -v 2>&1 )
- if [[ "$ERR" =~ "unused" ]]; then
-     echo $ERR
-     exit 1
- fi
- exit 0
-```
-- check_go_fmt.sh
-```
-#!/bin/bash
-# This script is used by the CI to check if the code is gofmt formatted.
+Collect the small CI check scripts used by Go projects so that they are available from the dotfiles rather than copied into every repository. The four scripts in the issue are taken from the [golang/mock `ci` directory](https://github.com/golang/mock/tree/master/ci) and the author's own variant of the first one:
 
-set -euo pipefail
+- `check-go-mod.sh` — run `go mod tidy -v` and fail when its output mentions `unused` requirements;
+- `check_go_fmt.sh` — fail with a diff when any `.go` file is not `gofmt`-formatted;
+- `check_go_generate.sh` — copy the tree, run `go generate ./...` and fail when `diff -r` shows that generated files were stale (with the note that locally it updates the files as a side effect, which suits a fresh CI checkout better than development);
+- `check_go_mod.sh` — run `go mod tidy` and fail when `git status --porcelain` shows a modified `go.mod`.
 
-GOFMT_DIFF=$(IFS=$'\n'; gofmt -d $( find . -type f -name '*.go' ) )
-if [[ -n "${GOFMT_DIFF}" ]]; then
-    echo "${GOFMT_DIFF}"
-    echo
-    echo "The go source files aren't gofmt formatted."
-    exit 1
-fi
-```
-- check_go_generate.sh
-```bash
-#!/bin/bash
-# This script is used by the CI to check if 'go generate ./...' is up to date.
-#
-# Note: If the generated files aren't up to date then this script updates
-# them despite printing an error message so running it the second time
-# might not print any errors. This isn't very useful locally during development
-# but it works well with the CI that downloads a fresh version of the repo
-# each time before executing this script.
+The useful outcome for this setup is a single place (a script or a set of functions on `PATH`) that runs these checks in any Go project, with the same exit-code semantics as in CI, so that a push does not fail on formatting, a stale `go.mod` or forgotten `go generate`.
 
-set -euo pipefail
-
-TEMP_DIR=$( mktemp -d )
-function cleanup() {
-    rm -rf "${TEMP_DIR}"
-}
-trap cleanup EXIT
-
-cp -r . "${TEMP_DIR}/"
-go generate ./...
-if ! diff -r . "${TEMP_DIR}"; then
-    echo
-    echo "The generated files aren't up to date."
-    echo "Update them with the 'go generate ./...' command."
-    exit 1
-fi
-```
-- check_go_mod.sh
-```
-#!/bin/bash
-# This script is used to ensure that the go.mod file is up to date.
-
-set -euo pipefail
-
-go mod tidy
-
-if [ ! -z "$(git status --porcelain)" ]; then
-    git status
-    echo
-    echo "The go.mod is not up to date."
-    exit 1
-fi
-```
-
-https://github.com/golang/mock/tree/master/ci
+<!-- 2019-09-14T07:08Z https://github.com/kamilsk/dotfiles/issues/51#issuecomment-531456424
+won't do
+-->

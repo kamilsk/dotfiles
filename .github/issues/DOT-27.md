@@ -13,9 +13,13 @@ updated_at: 2022-08-14T18:59:52Z
 
 # git refresh not work on master branch
 
+Make `git refresh <remote>` actually update the default branch when it is the one checked out. The original transcript:
+
 ```bash
 $ master> git refresh upstream
 Current branch master is up to date.
 $ master> git diff upstream/master..
 ...has changes
 ```
+
+`git diff upstream/master..` shows what the local branch has that `upstream/master` lacks, so the transcript is consistent with `master` being ahead of upstream (then the rebase is right to say "up to date") as much as with a fetch that did not refresh `upstream/master`; the author read it as a bug, presumably expecting the local trunk to end up equal to upstream's. Expected: on the default branch, `git refresh upstream` results in a branch that contains `upstream/master`, and the message reflects what actually happened.

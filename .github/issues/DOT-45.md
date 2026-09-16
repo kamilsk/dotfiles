@@ -13,6 +13,8 @@ updated_at: 2022-08-14T18:59:54Z
 
 # remove [no tests to run]
 
+Stop the `[no tests to run]` marker from breaking the `coverall` table ([#45](DOT-44.md)). The original output:
+
 ```
 $ coverall
 ok  github.com/kamilsk/lift/internal/shell    0.0%   [no  tests  to  run]
@@ -23,3 +25,5 @@ ok  github.com/kamilsk/lift                   0.0%   [no  tests  to  run]
 ?   github.com/kamilsk/lift/internal          0.0%
 total: 24.5%
 ```
+
+The table is aligned with `column -t`, which treats every space as a separator, so the four words of the marker were spread across four columns. The marker carries no information beyond the `0.0%` already shown (a package with a test file but no matching tests), so it should simply be removed before alignment; the row itself stays.

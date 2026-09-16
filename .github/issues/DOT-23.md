@@ -13,4 +13,4 @@ updated_at: 2022-08-14T19:02:10Z
 
 # add slay and more
 
-https://slay.sh
+Note [slay.sh](https://slay.sh) — a one-command macOS setup tool built on Homebrew, `mas` and a declarative list of apps and defaults — as a reference for the dotfiles, and collect similar projects next to it. The label is `scope: docs`: the ask is to keep a curated list of comparable bootstrap tools in the README's articles section, both as inspiration for the [install](../../install) script and as candidates to adopt instead of it.

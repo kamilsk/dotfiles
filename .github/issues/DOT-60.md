@@ -13,4 +13,10 @@ updated_at: 2019-11-19T16:03:03Z
 
 # git continue alias
 
-context-based alias to replace two subcommands: `git merge --continue`, `git rebase --continue`
+Add a context-aware `git continue` that runs whichever of `git merge --continue` or `git rebase --continue` applies to the repository's current state (a paused merge or a paused rebase), so that the author does not have to remember which operation is in progress before finishing it.
+
+The detection is straightforward from `.git`: `MERGE_HEAD` marks a merge, `rebase-merge/` or `rebase-apply/` a rebase; `cherry-pick` and `revert` have their own sequencer state and `--continue` flags too.
+
+<!-- 2019-11-19T16:03Z https://github.com/kamilsk/dotfiles/issues/61#issuecomment-555575845
+won't do
+-->
