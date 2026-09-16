@@ -10,11 +10,9 @@ DISABLE_UNTRACKED_FILES_DIRTY=true
 # la $ZSH/plugins/
 plugins=(
   common-aliases
-  docker
   docker-compose
   git
   golang
-  kubectl
 )
 
 # https://github.com/zsh-users/zsh-completions#oh-my-zsh
