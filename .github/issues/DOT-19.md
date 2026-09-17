@@ -4,6 +4,8 @@ id: 19
 database_id: 442171850
 node_id: MDU6SXNzdWU0NDIxNzE4NTA=
 status: closed
+state_reason: completed
+milestone:
 title: "git aliases"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/19

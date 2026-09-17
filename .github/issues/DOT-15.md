@@ -4,6 +4,8 @@ id: 15
 database_id: 440575008
 node_id: MDU6SXNzdWU0NDA1NzUwMDg=
 status: closed
+state_reason: completed
+milestone:
 title: "problem with git refresh"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/15

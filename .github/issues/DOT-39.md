@@ -4,6 +4,8 @@ id: 40
 database_id: 461919736
 node_id: MDU6SXNzdWU0NjE5MTk3MzY=
 status: closed
+state_reason: completed
+milestone:
 title: "add lookup alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/40
@@ -13,7 +15,7 @@ updated_at: 2026-09-17T11:09:23Z
 
 # add lookup alias
 
-Add a `lookup <name>` helper that shows what a command is: for a script on `PATH` print its source, otherwise report what kind of thing it is. The trigger was the `stash` prototype ([#38](DOT-37.md)) — reading it required `cat $(which stash)` every time:
+Add a `lookup <name>` helper that shows what a command is: for a script on `PATH` print its source, otherwise report what kind of thing it is. The trigger was the `stash` prototype ([[DOT-37]]) — reading it required `cat $(which stash)` every time:
 
 ```bash
 $ lookup stash

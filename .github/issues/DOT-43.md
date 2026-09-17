@@ -4,6 +4,8 @@ id: 44
 database_id: 462424647
 node_id: MDU6SXNzdWU0NjI0MjQ2NDc=
 status: closed
+state_reason: completed
+milestone:
 title: "self-update and unbound variable"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/44
@@ -21,7 +23,7 @@ unknown type sll
 /Users/.../.dotfiles/bin/self-update: line 65: UPDATE[@]: unbound variable
 ```
 
-The script runs with `set -u`, collects the requested `update_*` functions in the `UPDATE` array and iterates over `"${UPDATE[@]}"`. When every argument is unknown the array stays empty, and in bash before 4.4 (macOS ships 3.2) expanding an empty array under `nounset` is an error. The same class of failure as [#9](DOT-9.md).
+The script runs with `set -u`, collects the requested `update_*` functions in the `UPDATE` array and iterates over `"${UPDATE[@]}"`. When every argument is unknown the array stays empty, and in bash before 4.4 (macOS ships 3.2) expanding an empty array under `nounset` is an error. The same class of failure as [[DOT-9]].
 
 Expected: `self-update <typo>` prints the unknown type and exits without a shell error; a mix of valid and invalid types runs the valid ones.
 

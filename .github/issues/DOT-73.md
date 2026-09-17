@@ -4,6 +4,8 @@ id: 74
 database_id: 594833886
 node_id: MDU6SXNzdWU1OTQ4MzM4ODY=
 status: closed
+state_reason: completed
+milestone:
 title: "new aliases as touch alternatives"
 labels: ["help wanted"]
 url: https://github.com/kamilsk/dotfiles/issues/74

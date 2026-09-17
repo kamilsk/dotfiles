@@ -4,6 +4,8 @@ id: 48
 database_id: 470753414
 node_id: MDU6SXNzdWU0NzA3NTM0MTQ=
 status: closed
+state_reason: completed
+milestone:
 title: "improve git_mirror"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/48

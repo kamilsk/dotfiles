@@ -4,6 +4,8 @@ id: 11
 database_id: 408665463
 node_id: MDU6SXNzdWU0MDg2NjU0NjM=
 status: closed
+state_reason: completed
+milestone:
 title: "mac configuration to use touchid"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/11

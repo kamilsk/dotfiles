@@ -4,6 +4,8 @@ id: 63
 database_id: 513705090
 node_id: MDU6SXNzdWU1MTM3MDUwOTA=
 status: closed
+state_reason: completed
+milestone:
 title: "activate alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/63

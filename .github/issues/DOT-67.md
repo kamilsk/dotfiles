@@ -4,6 +4,8 @@ id: 68
 database_id: 527956665
 node_id: MDU6SXNzdWU1Mjc5NTY2NjU=
 status: closed
+state_reason: completed
+milestone:
 title: "deliver go tools"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/68

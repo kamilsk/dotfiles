@@ -4,6 +4,8 @@ id: 59
 database_id: 499879794
 node_id: MDU6SXNzdWU0OTk4Nzk3OTQ=
 status: closed
+state_reason: completed
+milestone:
 title: "docker-compose alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/59

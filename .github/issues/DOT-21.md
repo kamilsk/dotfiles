@@ -4,6 +4,8 @@ id: 21
 database_id: 442172560
 node_id: MDU6SXNzdWU0NDIxNzI1NjA=
 status: closed
+state_reason: completed
+milestone:
 title: "update readme"
 labels: ["scope: docs"]
 url: https://github.com/kamilsk/dotfiles/issues/21

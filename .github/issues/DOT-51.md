@@ -4,6 +4,8 @@ id: 52
 database_id: 481890802
 node_id: MDU6SXNzdWU0ODE4OTA4MDI=
 status: closed
+state_reason: completed
+milestone:
 title: "bundles"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/52

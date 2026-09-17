@@ -4,6 +4,8 @@ id: 39
 database_id: 459566455
 node_id: MDU6SXNzdWU0NTk1NjY0NTU=
 status: closed
+state_reason: completed
+milestone:
 title: "experiment with TMOUT environment"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/39

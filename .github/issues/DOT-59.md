@@ -4,6 +4,8 @@ id: 60
 database_id: 512473444
 node_id: MDU6SXNzdWU1MTI0NzM0NDQ=
 status: closed
+state_reason: completed
+milestone:
 title: "git release didn't show postfix (rc/alpha)"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/60

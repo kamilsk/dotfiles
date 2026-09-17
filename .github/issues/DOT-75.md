@@ -4,6 +4,8 @@ id: 76
 database_id: 613471075
 node_id: MDU6SXNzdWU2MTM0NzEwNzU=
 status: closed
+state_reason: completed
+milestone:
 title: "download goreleaser tools not from go mod"
 labels: ["help wanted"]
 url: https://github.com/kamilsk/dotfiles/issues/76
@@ -22,4 +24,4 @@ Stop building heavyweight Go programs through the `toolset` module and install t
 - egg
 ```
 
-Each of these drags a large dependency graph into `toolset/go.mod`; a single incompatible transitive module breaks `go generate tools.go` for every tool at once — the `nfpm`/`rpmpack` failure in [#84](DOT-83.md) is the concrete case. They also ship signed release binaries, so building them locally buys nothing. `egg` is the author's own generator ([kamilsk/egg](https://github.com/kamilsk/egg)), which is what produces [tools.go](../../toolset/tools.go).
+Each of these drags a large dependency graph into `toolset/go.mod`; a single incompatible transitive module breaks `go generate tools.go` for every tool at once — the `nfpm`/`rpmpack` failure in [[DOT-83]] is the concrete case. They also ship signed release binaries, so building them locally buys nothing. `egg` is the author's own generator ([kamilsk/egg](https://github.com/kamilsk/egg)), which is what produces [tools.go](../../toolset/tools.go).

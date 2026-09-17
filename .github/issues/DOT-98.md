@@ -4,6 +4,8 @@ id: 99
 database_id: 787540100
 node_id: MDU6SXNzdWU3ODc1NDAxMDA=
 status: closed
+state_reason: completed
+milestone:
 title: "research benefits to combine all git_* scripts into one Go binary"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/99

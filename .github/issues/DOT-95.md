@@ -4,6 +4,8 @@ id: 96
 database_id: 780532829
 node_id: MDU6SXNzdWU3ODA1MzI4Mjk=
 status: closed
+state_reason: completed
+milestone:
 title: "add new interesting isacikgoz' projects"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/96

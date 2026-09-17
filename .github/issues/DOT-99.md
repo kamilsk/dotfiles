@@ -4,6 +4,8 @@ id: 100
 database_id: 787668605
 node_id: MDU6SXNzdWU3ODc2Njg2MDU=
 status: closed
+state_reason: completed
+milestone:
 title: "add completions"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/100

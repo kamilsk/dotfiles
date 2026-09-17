@@ -4,6 +4,8 @@ id: 88
 database_id: 743565902
 node_id: MDU6SXNzdWU3NDM1NjU5MDI=
 status: closed
+state_reason: completed
+milestone:
 title: "git tableflip"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/88

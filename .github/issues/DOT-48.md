@@ -4,6 +4,8 @@ id: 49
 database_id: 476558945
 node_id: MDU6SXNzdWU0NzY1NTg5NDU=
 status: closed
+state_reason: completed
+milestone:
 title: "fzqurl"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/49

@@ -4,6 +4,8 @@ id: 53
 database_id: 484385670
 node_id: MDU6SXNzdWU0ODQzODU2NzA=
 status: closed
+state_reason: completed
+milestone:
 title: "review brew list"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/53

@@ -4,6 +4,8 @@ id: 38
 database_id: 457969304
 node_id: MDU6SXNzdWU0NTc5NjkzMDQ=
 status: closed
+state_reason: completed
+milestone:
 title: "stash prototype"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/38

@@ -4,6 +4,8 @@ id: 26
 database_id: 444798512
 node_id: MDU6SXNzdWU0NDQ3OTg1MTI=
 status: closed
+state_reason: completed
+milestone:
 title: "add git detach alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/26

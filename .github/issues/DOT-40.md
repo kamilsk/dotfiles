@@ -4,6 +4,8 @@ id: 41
 database_id: 461934050
 node_id: MDU6SXNzdWU0NjE5MzQwNTA=
 status: closed
+state_reason: completed
+milestone:
 title: "stash cd ... don't work properly"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/41
@@ -13,7 +15,7 @@ updated_at: 2026-09-17T11:09:42Z
 
 # stash cd ... don't work properly
 
-Make `cd` recordable by the `stash` command recorder ([#38](DOT-37.md)) without breaking the interactive session. The original report is only the failing pair:
+Make `cd` recordable by the `stash` command recorder ([[DOT-37]]) without breaking the interactive session. The original report is only the failing pair:
 
 ```bash
 $ stash cd some-path

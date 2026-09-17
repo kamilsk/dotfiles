@@ -4,6 +4,8 @@ id: 77
 database_id: 623805408
 node_id: MDU6SXNzdWU2MjM4MDU0MDg=
 status: closed
+state_reason: completed
+milestone:
 title: "add gorelease"
 labels: ["help wanted"]
 url: https://github.com/kamilsk/dotfiles/issues/77

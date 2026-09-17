@@ -4,6 +4,8 @@ id: 24
 database_id: 442975113
 node_id: MDU6SXNzdWU0NDI5NzUxMTM=
 status: closed
+state_reason: completed
+milestone:
 title: "explain shell script"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/24

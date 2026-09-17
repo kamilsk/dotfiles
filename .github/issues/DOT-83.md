@@ -4,6 +4,8 @@ id: 84
 database_id: 709666169
 node_id: MDU6SXNzdWU3MDk2NjYxNjk=
 status: closed
+state_reason: completed
+milestone:
 title: "tools problem"
 labels: ["help wanted","type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/84

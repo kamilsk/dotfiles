@@ -4,6 +4,8 @@ id: 14
 database_id: 440306054
 node_id: MDU6SXNzdWU0NDAzMDYwNTQ=
 status: closed
+state_reason: completed
+milestone:
 title: "define git cmm like as git progress"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/14

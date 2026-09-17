@@ -4,6 +4,8 @@ id: 78
 database_id: 651830906
 node_id: MDU6SXNzdWU2NTE4MzA5MDY=
 status: closed
+state_reason: completed
+milestone:
 title: "add git at alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/78

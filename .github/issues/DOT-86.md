@@ -4,6 +4,8 @@ id: 87
 database_id: 741049760
 node_id: MDU6SXNzdWU3NDEwNDk3NjA=
 status: closed
+state_reason: completed
+milestone:
 title: "investigate some dotfiles"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/87

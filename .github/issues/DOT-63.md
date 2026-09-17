@@ -4,6 +4,8 @@ id: 64
 database_id: 513711726
 node_id: MDU6SXNzdWU1MTM3MTE3MjY=
 status: closed
+state_reason: completed
+milestone:
 title: "realpath alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/64

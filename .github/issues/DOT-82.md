@@ -4,6 +4,8 @@ id: 83
 database_id: 686017772
 node_id: MDU6SXNzdWU2ODYwMTc3NzI=
 status: closed
+state_reason: completed
+milestone:
 title: "problem cases after refactoring"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/83

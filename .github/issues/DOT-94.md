@@ -4,6 +4,8 @@ id: 95
 database_id: 780394236
 node_id: MDU6SXNzdWU3ODAzOTQyMzY=
 status: closed
+state_reason: completed
+milestone:
 title: "add links to source code in Brewfile"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/95

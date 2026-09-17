@@ -4,6 +4,8 @@ id: 3
 database_id: 388198702
 node_id: MDU6SXNzdWUzODgxOTg3MDI=
 status: closed
+state_reason: completed
+milestone:
 title: "add prepare alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/3

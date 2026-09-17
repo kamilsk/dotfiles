@@ -4,6 +4,8 @@ id: 62
 database_id: 513159240
 node_id: MDU6SXNzdWU1MTMxNTkyNDA=
 status: closed
+state_reason: completed
+milestone:
 title: "timestamp alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/62

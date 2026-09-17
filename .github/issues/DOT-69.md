@@ -4,6 +4,8 @@ id: 70
 database_id: 542567764
 node_id: MDU6SXNzdWU1NDI1Njc3NjQ=
 status: closed
+state_reason: completed
+milestone:
 title: "git release has a problem"
 labels: ["severity: critical"]
 url: https://github.com/kamilsk/dotfiles/issues/70
@@ -19,4 +21,4 @@ Fix a crash in `git release` when `HEAD` sits exactly on the tag:
 .dotfiles/bin/git_current: line 38: ahead: unbound variable
 ```
 
-After [#69](DOT-68.md) the script assigned `ahead` only inside the branch that recognises the `-N-gHASH` describe suffix, then read it unconditionally to append the "ahead" marker. With `set -o nounset` the read of the never-assigned variable aborted the command on every release that was checked out precisely — the common case. Labelled critical for that reason.
+After [[DOT-68]] the script assigned `ahead` only inside the branch that recognises the `-N-gHASH` describe suffix, then read it unconditionally to append the "ahead" marker. With `set -o nounset` the read of the never-assigned variable aborted the command on every release that was checked out precisely — the common case. Labelled critical for that reason.

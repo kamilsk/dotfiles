@@ -4,6 +4,8 @@ id: 51
 database_id: 481488221
 node_id: MDU6SXNzdWU0ODE0ODgyMjE=
 status: closed
+state_reason: completed
+milestone:
 title: "go checks"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/51

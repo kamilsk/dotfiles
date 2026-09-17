@@ -4,6 +4,8 @@ id: 67
 database_id: 527712966
 node_id: MDU6SXNzdWU1Mjc3MTI5NjY=
 status: closed
+state_reason: completed
+milestone:
 title: "oom alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/67

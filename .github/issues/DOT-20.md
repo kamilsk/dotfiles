@@ -4,6 +4,8 @@ id: 20
 database_id: 442172184
 node_id: MDU6SXNzdWU0NDIxNzIxODQ=
 status: closed
+state_reason: completed
+milestone:
 title: "remove bash_completions"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/20

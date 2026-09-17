@@ -4,6 +4,8 @@ id: 98
 database_id: 787536836
 node_id: MDU6SXNzdWU3ODc1MzY4MzY=
 status: closed
+state_reason: completed
+milestone:
 title: "integrate spot"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/98

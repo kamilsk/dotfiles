@@ -4,6 +4,8 @@ id: 17
 database_id: 441667149
 node_id: MDU6SXNzdWU0NDE2NjcxNDk=
 status: closed
+state_reason: completed
+milestone:
 title: "run git_config when self-update did"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/17

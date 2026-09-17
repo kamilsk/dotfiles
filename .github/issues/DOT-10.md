@@ -4,6 +4,8 @@ id: 10
 database_id: 405652181
 node_id: MDU6SXNzdWU0MDU2NTIxODE=
 status: closed
+state_reason: completed
+milestone:
 title: "add aliases git patch, git minor, git major"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/10

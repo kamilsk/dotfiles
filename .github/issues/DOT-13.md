@@ -4,6 +4,8 @@ id: 13
 database_id: 423572971
 node_id: MDU6SXNzdWU0MjM1NzI5NzE=
 status: closed
+state_reason: completed
+milestone:
 title: "add volumes and containers aliases"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/13

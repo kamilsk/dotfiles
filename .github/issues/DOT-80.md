@@ -4,6 +4,8 @@ id: 81
 database_id: 665375446
 node_id: MDU6SXNzdWU2NjUzNzU0NDY=
 status: closed
+state_reason: completed
+milestone:
 title: "/bin/bash: looppointer: command not found"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/81

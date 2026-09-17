@@ -4,6 +4,8 @@ id: 86
 database_id: 733730676
 node_id: MDU6SXNzdWU3MzM3MzA2NzY=
 status: closed
+state_reason: completed
+milestone:
 title: "force date format"
 labels: ["help wanted","type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/86

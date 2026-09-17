@@ -4,6 +4,8 @@ id: 58
 database_id: 496633335
 node_id: MDU6SXNzdWU0OTY2MzMzMzU=
 status: closed
+state_reason: completed
+milestone:
 title: "debug"
 labels: ["help wanted"]
 url: https://github.com/kamilsk/dotfiles/issues/58

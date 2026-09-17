@@ -4,6 +4,8 @@ id: 80
 database_id: 662190647
 node_id: MDU6SXNzdWU2NjIxOTA2NDc=
 status: closed
+state_reason: completed
+milestone:
 title: "add yaegi to the toolset"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/80

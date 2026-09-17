@@ -4,6 +4,8 @@ id: 1
 database_id: 380617341
 node_id: MDU6SXNzdWUzODA2MTczNDE=
 status: closed
+state_reason: completed
+milestone:
 title: "review git_flow_jira"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/1

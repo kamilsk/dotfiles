@@ -4,6 +4,8 @@ id: 23
 database_id: 442634996
 node_id: MDU6SXNzdWU0NDI2MzQ5OTY=
 status: closed
+state_reason: completed
+milestone:
 title: "add slay and more"
 labels: ["scope: docs"]
 url: https://github.com/kamilsk/dotfiles/issues/23

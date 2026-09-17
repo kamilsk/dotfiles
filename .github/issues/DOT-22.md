@@ -4,6 +4,8 @@ id: 22
 database_id: 442565833
 node_id: MDU6SXNzdWU0NDI1NjU4MzM=
 status: closed
+state_reason: completed
+milestone:
 title: "review git issue alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/22

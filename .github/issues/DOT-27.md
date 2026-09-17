@@ -4,6 +4,8 @@ id: 27
 database_id: 445389500
 node_id: MDU6SXNzdWU0NDUzODk1MDA=
 status: closed
+state_reason: completed
+milestone:
 title: "git refresh not work on master branch"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/27

@@ -4,6 +4,8 @@ id: 93
 database_id: 777612169
 node_id: MDU6SXNzdWU3Nzc2MTIxNjk=
 status: closed
+state_reason: completed
+milestone:
 title: "git state"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/93
@@ -21,4 +23,4 @@ $ git state
 # git stash list
 ```
 
-`git status` alone hides the stash; the author's `pull` stashes and pops automatically ([#190](DOT-189.md)), so forgotten stash entries are a real risk, and seeing them next to the status is the point. Later requests extended the same screen with the remotes ([#133](DOT-132.md)) and the latest release ([#127](DOT-126.md)).
+`git status` alone hides the stash; the author's `pull` stashes and pops automatically ([[DOT-189]]), so forgotten stash entries are a real risk, and seeing them next to the status is the point. Later requests extended the same screen with the remotes ([[DOT-132]]) and the latest release ([[DOT-126]]).

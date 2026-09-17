@@ -4,6 +4,8 @@ id: 82
 database_id: 671206772
 node_id: MDU6SXNzdWU2NzEyMDY3NzI=
 status: closed
+state_reason: completed
+milestone:
 title: "truncate logs for docker"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/82

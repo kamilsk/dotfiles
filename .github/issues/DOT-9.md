@@ -4,6 +4,8 @@ id: 9
 database_id: 397214832
 node_id: MDU6SXNzdWUzOTcyMTQ4MzI=
 status: closed
+state_reason: completed
+milestone:
 title: "fix self-update at linux"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/9

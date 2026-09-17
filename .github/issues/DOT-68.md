@@ -4,6 +4,8 @@ id: 69
 database_id: 535538364
 node_id: MDU6SXNzdWU1MzU1MzgzNjQ=
 status: closed
+state_reason: completed
+milestone:
 title: "change git release"
 labels: ["severity: critical"]
 url: https://github.com/kamilsk/dotfiles/issues/69

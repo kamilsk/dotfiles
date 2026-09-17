@@ -4,6 +4,8 @@ id: 50
 database_id: 477224982
 node_id: MDU6SXNzdWU0NzcyMjQ5ODI=
 status: closed
+state_reason: completed
+milestone:
 title: "improve git issue alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/50
@@ -23,7 +25,7 @@ $ git issue | xargs open
 $ git issue open
 ```
 
-"So, the rule is `git issue [action]`, where the action is `echo` by default." This restates [#22](DOT-22.md) (print / open / copy) as a general rule instead of a fixed list: the action is a command that receives the URL, which makes `git issue pbcopy` work for free.
+"So, the rule is `git issue [action]`, where the action is `echo` by default." This restates [[DOT-22]] (print / open / copy) as a general rule instead of a fixed list: the action is a command that receives the URL, which makes `git issue pbcopy` work for free.
 
 Expected: `git issue` prints the URL; `git issue <cmd>` runs `<cmd> <url>`; the URL is derived from the branch name exactly as before, for both the GitHub and the Jira flavour.
 

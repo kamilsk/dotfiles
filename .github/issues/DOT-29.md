@@ -4,6 +4,8 @@ id: 29
 database_id: 448244571
 node_id: MDU6SXNzdWU0NDgyNDQ1NzE=
 status: closed
+state_reason: completed
+milestone:
 title: "partial self-update"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/29
@@ -13,7 +15,7 @@ updated_at: 2026-09-17T11:04:34Z
 
 # partial self-update
 
-Let `self-update` update a chosen subset instead of everything. By then the script pulled the dotfiles and refreshed Oh My Zsh, Homebrew and Docker images in one go ([#2](DOT-2.md)), which is slow when only the dotfiles are wanted. The sketched interface:
+Let `self-update` update a chosen subset instead of everything. By then the script pulled the dotfiles and refreshed Oh My Zsh, Homebrew and Docker images in one go ([[DOT-2]]), which is slow when only the dotfiles are wanted. The sketched interface:
 
 ```
 $ self-update

@@ -4,6 +4,8 @@ id: 79
 database_id: 656837587
 node_id: MDU6SXNzdWU2NTY4Mzc1ODc=
 status: closed
+state_reason: completed
+milestone:
 title: "bug with git cmm"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/79
@@ -21,4 +23,4 @@ error: pathspec 'golangci-lint' did not match any file(s) known to git
 error: pathspec 'config' did not match any file(s) known to git
 ```
 
-`cmm` is meant to join every argument into the commit message ([#14](DOT-14.md)). Here only the first word went into `-m` and the rest reached `git commit` as file arguments, so any multi-word message without quotes failed (or, worse, committed only the named paths if they existed).
+`cmm` is meant to join every argument into the commit message ([[DOT-14]]). Here only the first word went into `-m` and the rest reached `git commit` as file arguments, so any multi-word message without quotes failed (or, worse, committed only the named paths if they existed).

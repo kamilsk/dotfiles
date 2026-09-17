@@ -4,6 +4,8 @@ id: 31
 database_id: 450192010
 node_id: MDU6SXNzdWU0NTAxOTIwMTA=
 status: closed
+state_reason: completed
+milestone:
 title: "images not work properly"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/31

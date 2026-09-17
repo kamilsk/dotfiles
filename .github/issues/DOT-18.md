@@ -4,6 +4,8 @@ id: 18
 database_id: 442134132
 node_id: MDU6SXNzdWU0NDIxMzQxMzI=
 status: closed
+state_reason: completed
+milestone:
 title: "bug with git sync"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/18

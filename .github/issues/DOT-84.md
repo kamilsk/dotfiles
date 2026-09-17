@@ -4,6 +4,8 @@ id: 85
 database_id: 733729090
 node_id: MDU6SXNzdWU3MzM3MjkwOTA=
 status: closed
+state_reason: completed
+milestone:
 title: "brew cask upgrade is deprecated"
 labels: ["help wanted"]
 url: https://github.com/kamilsk/dotfiles/issues/85

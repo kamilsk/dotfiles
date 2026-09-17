@@ -4,6 +4,8 @@ id: 28
 database_id: 448244018
 node_id: MDU6SXNzdWU0NDgyNDQwMTg=
 status: closed
+state_reason: completed
+milestone:
 title: "ask to open pull request for you"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/28

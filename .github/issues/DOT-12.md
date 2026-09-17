@@ -4,6 +4,8 @@ id: 12
 database_id: 421469514
 node_id: MDU6SXNzdWU0MjE0Njk1MTQ=
 status: closed
+state_reason: completed
+milestone:
 title: "extend git stats"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/12

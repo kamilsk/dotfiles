@@ -4,6 +4,8 @@ id: 16
 database_id: 441028343
 node_id: MDU6SXNzdWU0NDEwMjgzNDM=
 status: closed
+state_reason: completed
+milestone:
 title: "extend git refresh"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/16
@@ -23,4 +25,4 @@ $ git refresh upstream
 # -> git rebase upstream/default
 ```
 
-Expected: `git refresh upstream` fetches, resolves the default branch of `upstream` and rebases the current branch onto it; an unknown remote name is refused; with no argument the behaviour of [#5](DOT-5.md) stays.
+Expected: `git refresh upstream` fetches, resolves the default branch of `upstream` and rebases the current branch onto it; an unknown remote name is refused; with no argument the behaviour of [[DOT-5]] stays.

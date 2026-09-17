@@ -4,6 +4,8 @@ id: 6
 database_id: 394891013
 node_id: MDU6SXNzdWUzOTQ4OTEwMTM=
 status: closed
+state_reason: completed
+milestone:
 title: "add space-gophers"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/6

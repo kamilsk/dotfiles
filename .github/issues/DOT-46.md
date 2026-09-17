@@ -4,6 +4,8 @@ id: 47
 database_id: 469198653
 node_id: MDU6SXNzdWU0NjkxOTg2NTM=
 status: closed
+state_reason: completed
+milestone:
 title: "extend coverall"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/47
@@ -13,7 +15,7 @@ updated_at: 2026-09-17T11:11:06Z
 
 # extend coverall
 
-Extend `coverall` ([#45](DOT-44.md)) with a per-function coverage report. The per-package percentages hide which functions are untested; `go tool cover -func` over a coverage profile lists every function with its coverage. The original sketch, a function the author had elsewhere:
+Extend `coverall` ([[DOT-44]]) with a per-function coverage report. The per-package percentages hide which functions are untested; `go tool cover -func` over a coverage profile lists every function with its coverage. The original sketch, a function the author had elsewhere:
 
 ```
 cover () {

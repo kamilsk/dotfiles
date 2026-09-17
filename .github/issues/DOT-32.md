@@ -4,6 +4,8 @@ id: 32
 database_id: 450192739
 node_id: MDU6SXNzdWU0NTAxOTI3Mzk=
 status: closed
+state_reason: completed
+milestone:
 title: "volumes not work properly"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/32

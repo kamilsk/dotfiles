@@ -4,6 +4,8 @@ id: 45
 database_id: 465571654
 node_id: MDU6SXNzdWU0NjU1NzE2NTQ=
 status: closed
+state_reason: completed
+milestone:
 title: "coverall"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/45

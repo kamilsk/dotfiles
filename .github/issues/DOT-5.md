@@ -4,6 +4,8 @@ id: 5
 database_id: 393913739
 node_id: MDU6SXNzdWUzOTM5MTM3Mzk=
 status: closed
+state_reason: completed
+milestone:
 title: "add alias git refresh"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/5

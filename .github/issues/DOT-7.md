@@ -4,6 +4,8 @@ id: 7
 database_id: 394978629
 node_id: MDU6SXNzdWUzOTQ5Nzg2Mjk=
 status: closed
+state_reason: completed
+milestone:
 title: "new alias git issue"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/7

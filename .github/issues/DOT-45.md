@@ -4,6 +4,8 @@ id: 46
 database_id: 469156336
 node_id: MDU6SXNzdWU0NjkxNTYzMzY=
 status: closed
+state_reason: completed
+milestone:
 title: "remove [no tests to run]"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/46
@@ -13,7 +15,7 @@ updated_at: 2026-09-17T11:10:56Z
 
 # remove [no tests to run]
 
-Stop the `[no tests to run]` marker from breaking the `coverall` table ([#45](DOT-44.md)). The original output:
+Stop the `[no tests to run]` marker from breaking the `coverall` table ([[DOT-44]]). The original output:
 
 ```
 $ coverall

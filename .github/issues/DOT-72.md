@@ -4,6 +4,8 @@ id: 73
 database_id: 556448999
 node_id: MDU6SXNzdWU1NTY0NDg5OTk=
 status: closed
+state_reason: completed
+milestone:
 title: "gopath alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/73

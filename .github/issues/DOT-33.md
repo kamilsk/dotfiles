@@ -4,6 +4,8 @@ id: 33
 database_id: 451926177
 node_id: MDU6SXNzdWU0NTE5MjYxNzc=
 status: closed
+state_reason: completed
+milestone:
 title: "git shake problems"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/33

@@ -4,6 +4,8 @@ id: 89
 database_id: 774776710
 node_id: MDU6SXNzdWU3NzQ3NzY3MTA=
 status: closed
+state_reason: completed
+milestone:
 title: "extend lookup command"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/89
@@ -22,7 +24,7 @@ $ lookup git at
 # lookup git_commit
 ```
 
-That is: print the alias as `git config` returns it, and when the body starts with `!git_…` recurse into `lookup` for that script, which prints its source ([#40](DOT-39.md)). Aliases whose body is plain git (`stash --keep-index`) or an inline shell snippet are shown as they are.
+That is: print the alias as `git config` returns it, and when the body starts with `!git_…` recurse into `lookup` for that script, which prints its source ([[DOT-39]]). Aliases whose body is plain git (`stash --keep-index`) or an inline shell snippet are shown as they are.
 
 <!-- 2026-09-16T05:49Z https://github.com/kamilsk/dotfiles/issues/89#issuecomment-5711716025
 Code vs intent: `lookup git <alias>` recursion is keyed on `!git_` and therefore stops at `!@ git-at` for every alias defined since 2021 (`at`, `cmm`, `amend`, `it`, `undo`, `contrib`, `rewrite`, stash family). Extending the match to `!@ ` and resolving the function in the sourced libraries would restore the feature.

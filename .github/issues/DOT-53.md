@@ -4,6 +4,8 @@ id: 54
 database_id: 485330695
 node_id: MDU6SXNzdWU0ODUzMzA2OTU=
 status: closed
+state_reason: completed
+milestone:
 title: "support php and python by coverall"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/54
@@ -13,6 +15,6 @@ updated_at: 2026-09-17T11:12:14Z
 
 # support php and python by coverall
 
-Make `coverall` ([#45](DOT-44.md)) useful outside Go: detect a PHP or Python project and run its coverage tool with the same interface, instead of hard-coding `go test`. The one-line body, "pass `$@` to `go test -cover`", records the other half of the change: the extra arguments the user gives should reach the underlying test command in every language branch.
+Make `coverall` ([[DOT-44]]) useful outside Go: detect a PHP or Python project and run its coverage tool with the same interface, instead of hard-coding `go test`. The one-line body, "pass `$@` to `go test -cover`", records the other half of the change: the extra arguments the user gives should reach the underlying test command in every language branch.
 
 The expected behaviour is that in a directory with `go.mod`, `composer.json` or `requirements.txt` the same `coverall [flags]` prints a coverage summary produced by the matching tool, and the flags are forwarded as separate words.

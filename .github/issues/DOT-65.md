@@ -4,6 +4,8 @@ id: 66
 database_id: 523843622
 node_id: MDU6SXNzdWU1MjM4NDM2MjI=
 status: closed
+state_reason: completed
+milestone:
 title: "wholisten <port>"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/66

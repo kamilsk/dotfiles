@@ -4,6 +4,8 @@ id: 25
 database_id: 443775161
 node_id: MDU6SXNzdWU0NDM3NzUxNjE=
 status: closed
+state_reason: completed
+milestone:
 title: "invalid behavior of git start and git refresh"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/25
@@ -32,6 +34,6 @@ Current branch master is up to date.
 # but git log shows that it is not true
 ```
 
-First, `git start <id>` without a description died on an empty pathspec — the likely reading is that the empty "brief" was handed unguarded to `git checkout` or to a `grep` — while `git start <id> words…` worked. Second, `git refresh upstream` reported `master` up to date although the log disagreed; from the transcript alone it cannot be decided whether the fetch failed to update `upstream/master` or whether the local branch was simply ahead of it (a rebase then legitimately says "up to date"); the same symptom is [#27](DOT-27.md).
+First, `git start <id>` without a description died on an empty pathspec — the likely reading is that the empty "brief" was handed unguarded to `git checkout` or to a `grep` — while `git start <id> words…` worked. Second, `git refresh upstream` reported `master` up to date although the log disagreed; from the transcript alone it cannot be decided whether the fetch failed to update `upstream/master` or whether the local branch was simply ahead of it (a rebase then legitimately says "up to date"); the same symptom is [[DOT-27]].
 
 Expected: `git start 34` creates or switches to `issue-34` (with or without a suffix) and never touches pathspecs; `git refresh upstream` leaves the branch equal to or ahead of `upstream/master`, and its "up to date" message is true; neither prints `done` after a failure.

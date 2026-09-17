@@ -4,6 +4,8 @@ id: 35
 database_id: 454203328
 node_id: MDU6SXNzdWU0NTQyMDMzMjg=
 status: closed
+state_reason: completed
+milestone:
 title: "git start problems at github"
 labels: ["type: bug"]
 url: https://github.com/kamilsk/dotfiles/issues/35

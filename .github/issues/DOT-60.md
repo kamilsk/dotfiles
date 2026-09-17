@@ -4,6 +4,8 @@ id: 61
 database_id: 512865957
 node_id: MDU6SXNzdWU1MTI4NjU5NTc=
 status: closed
+state_reason: completed
+milestone:
 title: "git continue alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/61

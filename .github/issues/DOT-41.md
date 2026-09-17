@@ -4,6 +4,8 @@ id: 42
 database_id: 461934331
 node_id: MDU6SXNzdWU0NjE5MzQzMzE=
 status: closed
+state_reason: completed
+milestone:
 title: "stash which or where"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/42
@@ -13,7 +15,7 @@ updated_at: 2026-09-17T11:09:56Z
 
 # stash which or where
 
-Add a `which` (or `where`) subcommand to the `stash` command recorder ([#38](DOT-37.md)) that prints the path of the file where the commands are being recorded:
+Add a `which` (or `where`) subcommand to the `stash` command recorder ([[DOT-37]]) that prints the path of the file where the commands are being recorded:
 
 ```bash
 $ stash which|where

@@ -4,6 +4,8 @@ id: 92
 database_id: 775785367
 node_id: MDU6SXNzdWU3NzU3ODUzNjc=
 status: closed
+state_reason: completed
+milestone:
 title: "add pull alias"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/92

@@ -4,6 +4,8 @@ id: 94
 database_id: 780375727
 node_id: MDU6SXNzdWU3ODAzNzU3Mjc=
 status: closed
+state_reason: completed
+milestone:
 title: "add fzz and tmux"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/94

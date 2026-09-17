@@ -4,6 +4,8 @@ id: 2
 database_id: 388198340
 node_id: MDU6SXNzdWUzODgxOTgzNDA=
 status: closed
+state_reason: completed
+milestone:
 title: "improve self-update"
 labels: []
 url: https://github.com/kamilsk/dotfiles/issues/2
