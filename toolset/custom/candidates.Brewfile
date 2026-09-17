@@ -288,5 +288,5 @@ cask "zotero"
 tap "buo/cask-upgrade"
 cask "docker/tap/sbx"
 brew "octolab/tap/maintainer"
-brew "octolab/tap/sparkle
+brew "octolab/tap/sparkle"
 cask "steipete/tap/codexbar", args: { adopt: true }
