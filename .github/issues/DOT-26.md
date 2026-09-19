@@ -1,16 +1,18 @@
 ---
 code: DOT-26
-id: 26
-database_id: 444798512
-node_id: MDU6SXNzdWU0NDQ3OTg1MTI=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NDQ3OTg1MTI=
+databaseId: 444798512
+number: 26
+url: https://github.com/kamilsk/dotfiles/issues/26
 title: "add git detach alias"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/26
-created_at: 2019-05-16T07:34:25Z
-updated_at: 2026-09-17T11:03:16Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-16T07:34:25Z
+updatedAt: 2026-09-17T11:03:16Z
+lastEditedAt: 2026-09-17T11:03:16Z
+closedAt: 2019-06-18T19:31:39Z
 ---
 
 # add git detach alias

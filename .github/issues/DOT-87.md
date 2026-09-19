@@ -1,16 +1,18 @@
 ---
 code: DOT-87
-id: 88
-database_id: 743565902
-node_id: MDU6SXNzdWU3NDM1NjU5MDI=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU3NDM1NjU5MDI=
+databaseId: 743565902
+number: 88
+url: https://github.com/kamilsk/dotfiles/issues/88
 title: "git tableflip"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/88
-created_at: 2020-11-16T07:07:32Z
-updated_at: 2026-09-17T11:15:32Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2020-11-16T07:07:32Z
+updatedAt: 2026-09-17T11:15:32Z
+lastEditedAt: 2026-09-17T11:15:32Z
+closedAt: 2020-12-27T15:44:40Z
 ---
 
 # git tableflip

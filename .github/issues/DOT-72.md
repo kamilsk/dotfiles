@@ -1,16 +1,18 @@
 ---
 code: DOT-72
-id: 73
-database_id: 556448999
-node_id: MDU6SXNzdWU1NTY0NDg5OTk=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU1NTY0NDg5OTk=
+databaseId: 556448999
+number: 73
+url: https://github.com/kamilsk/dotfiles/issues/73
 title: "gopath alias"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/73
-created_at: 2020-01-28T20:26:44Z
-updated_at: 2026-09-17T11:14:26Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2020-01-28T20:26:44Z
+updatedAt: 2026-09-17T11:14:26Z
+lastEditedAt: 2026-09-17T11:14:26Z
+closedAt: 2020-01-29T20:32:03Z
 ---
 
 # gopath alias

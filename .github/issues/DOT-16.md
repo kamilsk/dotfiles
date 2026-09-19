@@ -1,16 +1,18 @@
 ---
 code: DOT-16
-id: 16
-database_id: 441028343
-node_id: MDU6SXNzdWU0NDEwMjgzNDM=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NDEwMjgzNDM=
+databaseId: 441028343
+number: 16
+url: https://github.com/kamilsk/dotfiles/issues/16
 title: "extend git refresh"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/16
-created_at: 2019-05-07T05:01:36Z
-updated_at: 2026-09-17T10:58:52Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-07T05:01:36Z
+updatedAt: 2026-09-17T10:58:52Z
+lastEditedAt: 2026-09-17T10:58:52Z
+closedAt: 2019-05-07T09:25:18Z
 ---
 
 # extend git refresh

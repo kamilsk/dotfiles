@@ -1,16 +1,18 @@
 ---
 code: DOT-5
-id: 5
-database_id: 393913739
-node_id: MDU6SXNzdWUzOTM5MTM3Mzk=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWUzOTM5MTM3Mzk=
+databaseId: 393913739
+number: 5
+url: https://github.com/kamilsk/dotfiles/issues/5
 title: "add alias git refresh"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/5
-created_at: 2018-12-24T17:30:12Z
-updated_at: 2026-09-17T11:11:31Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2018-12-24T17:30:12Z
+updatedAt: 2026-09-17T11:11:31Z
+lastEditedAt: 2026-09-17T11:11:31Z
+closedAt: 2018-12-28T20:57:12Z
 ---
 
 # add alias git refresh

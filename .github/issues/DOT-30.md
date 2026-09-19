@@ -1,16 +1,19 @@
 ---
 code: DOT-30
-id: 30
-database_id: 448421533
-node_id: MDU6SXNzdWU0NDg0MjE1MzM=
-status: closed
-state_reason: completed
-milestone:
-title: "git it not work properly"
-labels: ["type: bug"]
+id: MDU6SXNzdWU0NDg0MjE1MzM=
+databaseId: 448421533
+number: 30
 url: https://github.com/kamilsk/dotfiles/issues/30
-created_at: 2019-05-25T05:26:14Z
-updated_at: 2026-09-17T11:05:02Z
+title: "git it not work properly"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-25T05:26:14Z
+updatedAt: 2026-09-17T11:05:02Z
+lastEditedAt: 2026-09-17T11:05:02Z
+closedAt: 2019-06-17T19:58:52Z
 ---
 
 # git it not work properly

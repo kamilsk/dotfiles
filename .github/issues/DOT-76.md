@@ -1,16 +1,19 @@
 ---
 code: DOT-76
-id: 77
-database_id: 623805408
-node_id: MDU6SXNzdWU2MjM4MDU0MDg=
-status: closed
-state_reason: completed
-milestone:
-title: "add gorelease"
-labels: ["help wanted"]
+id: MDU6SXNzdWU2MjM4MDU0MDg=
+databaseId: 623805408
+number: 77
 url: https://github.com/kamilsk/dotfiles/issues/77
-created_at: 2020-05-24T06:30:54Z
-updated_at: 2026-09-17T11:14:38Z
+title: "add gorelease"
+labels:
+  - "help wanted"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2020-05-24T06:30:54Z
+updatedAt: 2026-09-17T11:14:38Z
+lastEditedAt: 2026-09-17T11:14:38Z
+closedAt: 2020-05-24T06:37:16Z
 ---
 
 # add gorelease

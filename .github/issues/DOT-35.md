@@ -1,16 +1,19 @@
 ---
 code: DOT-35
-id: 35
-database_id: 454203328
-node_id: MDU6SXNzdWU0NTQyMDMzMjg=
-status: closed
-state_reason: completed
-milestone:
-title: "git start problems at github"
-labels: ["type: bug"]
+id: MDU6SXNzdWU0NTQyMDMzMjg=
+databaseId: 454203328
+number: 35
 url: https://github.com/kamilsk/dotfiles/issues/35
-created_at: 2019-06-10T14:37:04Z
-updated_at: 2026-09-17T11:07:14Z
+title: "git start problems at github"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-06-10T14:37:04Z
+updatedAt: 2026-09-17T11:07:14Z
+lastEditedAt: 2026-09-17T11:07:14Z
+closedAt: 2019-06-17T19:50:33Z
 ---
 
 # git start problems at github

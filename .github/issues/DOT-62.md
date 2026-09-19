@@ -1,16 +1,18 @@
 ---
 code: DOT-62
-id: 63
-database_id: 513705090
-node_id: MDU6SXNzdWU1MTM3MDUwOTA=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU1MTM3MDUwOTA=
+databaseId: 513705090
+number: 63
+url: https://github.com/kamilsk/dotfiles/issues/63
 title: "activate alias"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/63
-created_at: 2019-10-29T05:41:35Z
-updated_at: 2026-09-17T11:13:31Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-10-29T05:41:35Z
+updatedAt: 2026-09-17T11:13:31Z
+lastEditedAt: 2026-09-17T11:13:31Z
+closedAt: 2019-11-19T20:58:13Z
 ---
 
 # activate alias

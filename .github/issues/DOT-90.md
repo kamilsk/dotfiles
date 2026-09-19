@@ -1,16 +1,18 @@
 ---
 code: DOT-90
-id: 91
-database_id: 775088936
-node_id: MDU6SXNzdWU3NzUwODg5MzY=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU3NzUwODg5MzY=
+databaseId: 775088936
+number: 91
+url: https://github.com/kamilsk/dotfiles/issues/91
 title: "combine git it and git at"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/91
-created_at: 2020-12-27T18:45:29Z
-updated_at: 2026-09-17T11:15:41Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2020-12-27T18:45:29Z
+updatedAt: 2026-09-17T11:15:41Z
+lastEditedAt: 2026-09-17T11:15:41Z
+closedAt: 2020-12-27T21:05:45Z
 ---
 
 # combine git it and git at

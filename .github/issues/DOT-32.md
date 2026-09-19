@@ -1,16 +1,19 @@
 ---
 code: DOT-32
-id: 32
-database_id: 450192739
-node_id: MDU6SXNzdWU0NTAxOTI3Mzk=
-status: closed
-state_reason: completed
-milestone:
-title: "volumes not work properly"
-labels: ["type: bug"]
+id: MDU6SXNzdWU0NTAxOTI3Mzk=
+databaseId: 450192739
+number: 32
 url: https://github.com/kamilsk/dotfiles/issues/32
-created_at: 2019-05-30T08:33:09Z
-updated_at: 2026-09-17T11:05:54Z
+title: "volumes not work properly"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-30T08:33:09Z
+updatedAt: 2026-09-17T11:05:54Z
+lastEditedAt: 2026-09-17T11:05:54Z
+closedAt: 2019-06-17T20:08:53Z
 ---
 
 # volumes not work properly

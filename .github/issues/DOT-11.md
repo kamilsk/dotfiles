@@ -1,16 +1,18 @@
 ---
 code: DOT-11
-id: 11
-database_id: 408665463
-node_id: MDU6SXNzdWU0MDg2NjU0NjM=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0MDg2NjU0NjM=
+databaseId: 408665463
+number: 11
+url: https://github.com/kamilsk/dotfiles/issues/11
 title: "mac configuration to use touchid"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/11
-created_at: 2019-02-11T07:46:19Z
-updated_at: 2026-09-17T10:56:43Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-02-11T07:46:19Z
+updatedAt: 2026-09-17T10:56:43Z
+lastEditedAt: 2026-09-17T10:56:43Z
+closedAt: 2019-03-03T06:26:34Z
 ---
 
 # mac configuration to use touchid

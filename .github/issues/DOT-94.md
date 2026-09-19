@@ -1,16 +1,18 @@
 ---
 code: DOT-94
-id: 95
-database_id: 780394236
-node_id: MDU6SXNzdWU3ODAzOTQyMzY=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU3ODAzOTQyMzY=
+databaseId: 780394236
+number: 95
+url: https://github.com/kamilsk/dotfiles/issues/95
 title: "add links to source code in Brewfile"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/95
-created_at: 2021-01-06T09:51:49Z
-updated_at: 2026-09-17T11:15:50Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2021-01-06T09:51:49Z
+updatedAt: 2026-09-17T11:15:50Z
+lastEditedAt: 2026-09-17T11:15:50Z
+closedAt: 2021-01-06T12:35:06Z
 ---
 
 # add links to source code in Brewfile

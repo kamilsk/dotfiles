@@ -1,16 +1,18 @@
 ---
 code: DOT-66
-id: 67
-database_id: 527712966
-node_id: MDU6SXNzdWU1Mjc3MTI5NjY=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU1Mjc3MTI5NjY=
+databaseId: 527712966
+number: 67
+url: https://github.com/kamilsk/dotfiles/issues/67
 title: "oom alias"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/67
-created_at: 2019-11-24T15:18:38Z
-updated_at: 2026-09-17T11:13:57Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-11-24T15:18:38Z
+updatedAt: 2026-09-17T11:13:57Z
+lastEditedAt: 2026-09-17T11:13:57Z
+closedAt: 2019-11-24T20:03:36Z
 ---
 
 # oom alias

@@ -1,16 +1,19 @@
 ---
 code: DOT-57
-id: 58
-database_id: 496633335
-node_id: MDU6SXNzdWU0OTY2MzMzMzU=
-status: closed
-state_reason: completed
-milestone:
-title: "debug"
-labels: ["help wanted"]
+id: MDU6SXNzdWU0OTY2MzMzMzU=
+databaseId: 496633335
+number: 58
 url: https://github.com/kamilsk/dotfiles/issues/58
-created_at: 2019-09-21T08:59:46Z
-updated_at: 2026-09-17T11:12:43Z
+title: "debug"
+labels:
+  - "help wanted"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-09-21T08:59:46Z
+updatedAt: 2026-09-17T11:12:43Z
+lastEditedAt: 2026-09-17T11:12:43Z
+closedAt: 2019-11-21T05:21:47Z
 ---
 
 # debug

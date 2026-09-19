@@ -1,16 +1,18 @@
 ---
 code: DOT-7
-id: 7
-database_id: 394978629
-node_id: MDU6SXNzdWUzOTQ5Nzg2Mjk=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWUzOTQ5Nzg2Mjk=
+databaseId: 394978629
+number: 7
+url: https://github.com/kamilsk/dotfiles/issues/7
 title: "new alias git issue"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/7
-created_at: 2018-12-31T13:12:00Z
-updated_at: 2026-09-17T11:14:04Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2018-12-31T13:12:00Z
+updatedAt: 2026-09-17T11:14:04Z
+lastEditedAt: 2026-09-17T11:14:04Z
+closedAt: 2018-12-31T13:13:40Z
 ---
 
 # new alias git issue

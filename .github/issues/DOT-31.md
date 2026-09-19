@@ -1,16 +1,19 @@
 ---
 code: DOT-31
-id: 31
-database_id: 450192010
-node_id: MDU6SXNzdWU0NTAxOTIwMTA=
-status: closed
-state_reason: completed
-milestone:
-title: "images not work properly"
-labels: ["type: bug"]
+id: MDU6SXNzdWU0NTAxOTIwMTA=
+databaseId: 450192010
+number: 31
 url: https://github.com/kamilsk/dotfiles/issues/31
-created_at: 2019-05-30T08:31:04Z
-updated_at: 2026-09-17T11:05:28Z
+title: "images not work properly"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-30T08:31:04Z
+updatedAt: 2026-09-17T11:05:28Z
+lastEditedAt: 2026-09-17T11:05:28Z
+closedAt: 2019-06-17T20:04:01Z
 ---
 
 # images not work properly

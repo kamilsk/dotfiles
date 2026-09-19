@@ -1,16 +1,18 @@
 ---
 code: DOT-34
-id: 34
-database_id: 453778157
-node_id: MDU6SXNzdWU0NTM3NzgxNTc=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NTM3NzgxNTc=
+databaseId: 453778157
+number: 34
+url: https://github.com/kamilsk/dotfiles/issues/34
 title: "git untag"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/34
-created_at: 2019-06-08T10:05:12Z
-updated_at: 2026-09-17T11:06:48Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-06-08T10:05:12Z
+updatedAt: 2026-09-17T11:06:48Z
+lastEditedAt: 2026-09-17T11:06:48Z
+closedAt: 2019-06-14T17:15:23Z
 ---
 
 # git untag

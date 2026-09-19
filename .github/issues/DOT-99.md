@@ -1,16 +1,18 @@
 ---
 code: DOT-99
-id: 100
-database_id: 787668605
-node_id: MDU6SXNzdWU3ODc2Njg2MDU=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU3ODc2Njg2MDU=
+databaseId: 787668605
+number: 100
+url: https://github.com/kamilsk/dotfiles/issues/100
 title: "add completions"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/100
-created_at: 2021-01-17T09:40:58Z
-updated_at: 2026-09-17T10:56:20Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2021-01-17T09:40:58Z
+updatedAt: 2026-09-17T10:56:20Z
+lastEditedAt: 2026-09-17T10:56:20Z
+closedAt: 2021-01-20T13:04:44Z
 ---
 
 # add completions

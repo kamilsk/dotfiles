@@ -1,16 +1,18 @@
 ---
 code: DOT-44
-id: 45
-database_id: 465571654
-node_id: MDU6SXNzdWU0NjU1NzE2NTQ=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NjU1NzE2NTQ=
+databaseId: 465571654
+number: 45
+url: https://github.com/kamilsk/dotfiles/issues/45
 title: "coverall"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/45
-created_at: 2019-07-09T05:07:42Z
-updated_at: 2026-09-17T11:10:44Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-07-09T05:07:42Z
+updatedAt: 2026-09-17T11:10:44Z
+lastEditedAt: 2026-09-17T11:10:44Z
+closedAt: 2019-07-09T07:46:42Z
 ---
 
 # coverall

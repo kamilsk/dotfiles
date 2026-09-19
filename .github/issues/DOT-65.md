@@ -1,16 +1,18 @@
 ---
 code: DOT-65
-id: 66
-database_id: 523843622
-node_id: MDU6SXNzdWU1MjM4NDM2MjI=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU1MjM4NDM2MjI=
+databaseId: 523843622
+number: 66
+url: https://github.com/kamilsk/dotfiles/issues/66
 title: "wholisten <port>"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/66
-created_at: 2019-11-16T13:12:18Z
-updated_at: 2026-09-17T11:13:47Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-11-16T13:12:18Z
+updatedAt: 2026-09-17T11:13:47Z
+lastEditedAt: 2026-09-17T11:13:47Z
+closedAt: 2019-11-17T11:28:42Z
 ---
 
 # wholisten <port>

@@ -1,16 +1,20 @@
 ---
 code: DOT-83
-id: 84
-database_id: 709666169
-node_id: MDU6SXNzdWU3MDk2NjYxNjk=
-status: closed
-state_reason: completed
-milestone:
-title: "tools problem"
-labels: ["help wanted","type: bug"]
+id: MDU6SXNzdWU3MDk2NjYxNjk=
+databaseId: 709666169
+number: 84
 url: https://github.com/kamilsk/dotfiles/issues/84
-created_at: 2020-09-27T04:43:22Z
-updated_at: 2026-09-17T11:15:12Z
+title: "tools problem"
+labels:
+  - "help wanted"
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2020-09-27T04:43:22Z
+updatedAt: 2026-09-17T11:15:12Z
+lastEditedAt: 2026-09-17T11:15:12Z
+closedAt: 2020-10-25T19:54:38Z
 ---
 
 # tools problem

@@ -1,16 +1,18 @@
 ---
 code: DOT-95
-id: 96
-database_id: 780532829
-node_id: MDU6SXNzdWU3ODA1MzI4Mjk=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU3ODA1MzI4Mjk=
+databaseId: 780532829
+number: 96
+url: https://github.com/kamilsk/dotfiles/issues/96
 title: "add new interesting isacikgoz' projects"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/96
-created_at: 2021-01-06T12:55:06Z
-updated_at: 2026-09-17T11:15:53Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2021-01-06T12:55:06Z
+updatedAt: 2026-09-17T11:15:53Z
+lastEditedAt: 2026-09-17T11:15:53Z
+closedAt: 2021-01-06T13:02:55Z
 ---
 
 # add new interesting isacikgoz' projects

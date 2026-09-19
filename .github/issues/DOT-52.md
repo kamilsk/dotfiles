@@ -1,16 +1,18 @@
 ---
 code: DOT-52
-id: 53
-database_id: 484385670
-node_id: MDU6SXNzdWU0ODQzODU2NzA=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0ODQzODU2NzA=
+databaseId: 484385670
+number: 53
+url: https://github.com/kamilsk/dotfiles/issues/53
 title: "review brew list"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/53
-created_at: 2019-08-23T07:58:54Z
-updated_at: 2026-09-17T11:12:02Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-08-23T07:58:54Z
+updatedAt: 2026-09-17T11:12:02Z
+lastEditedAt: 2026-09-17T11:12:02Z
+closedAt: 2019-09-13T20:17:10Z
 ---
 
 # review brew list

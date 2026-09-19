@@ -1,16 +1,18 @@
 ---
 code: DOT-37
-id: 38
-database_id: 457969304
-node_id: MDU6SXNzdWU0NTc5NjkzMDQ=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NTc5NjkzMDQ=
+databaseId: 457969304
+number: 38
+url: https://github.com/kamilsk/dotfiles/issues/38
 title: "stash prototype"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/38
-created_at: 2019-06-19T11:55:06Z
-updated_at: 2026-09-17T11:08:30Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-06-19T11:55:06Z
+updatedAt: 2026-09-17T11:08:30Z
+lastEditedAt: 2026-09-17T11:08:30Z
+closedAt: 2019-06-19T11:56:02Z
 ---
 
 # stash prototype

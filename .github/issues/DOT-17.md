@@ -1,16 +1,18 @@
 ---
 code: DOT-17
-id: 17
-database_id: 441667149
-node_id: MDU6SXNzdWU0NDE2NjcxNDk=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NDE2NjcxNDk=
+databaseId: 441667149
+number: 17
+url: https://github.com/kamilsk/dotfiles/issues/17
 title: "run git_config when self-update did"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/17
-created_at: 2019-05-08T10:37:42Z
-updated_at: 2026-09-17T10:59:18Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-08T10:37:42Z
+updatedAt: 2026-09-17T10:59:18Z
+lastEditedAt: 2026-09-17T10:59:18Z
+closedAt: 2019-05-09T12:05:52Z
 ---
 
 # run git_config when self-update did

@@ -1,16 +1,18 @@
 ---
 code: DOT-19
-id: 19
-database_id: 442171850
-node_id: MDU6SXNzdWU0NDIxNzE4NTA=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NDIxNzE4NTA=
+databaseId: 442171850
+number: 19
+url: https://github.com/kamilsk/dotfiles/issues/19
 title: "git aliases"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/19
-created_at: 2019-05-09T10:44:26Z
-updated_at: 2026-09-17T11:00:11Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-09T10:44:26Z
+updatedAt: 2026-09-17T11:00:11Z
+lastEditedAt: 2026-09-17T11:00:11Z
+closedAt: 2019-05-09T13:22:48Z
 ---
 
 # git aliases

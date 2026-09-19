@@ -1,16 +1,19 @@
 ---
 code: DOT-21
-id: 21
-database_id: 442172560
-node_id: MDU6SXNzdWU0NDIxNzI1NjA=
-status: closed
-state_reason: completed
-milestone:
-title: "update readme"
-labels: ["scope: docs"]
+id: MDU6SXNzdWU0NDIxNzI1NjA=
+databaseId: 442172560
+number: 21
 url: https://github.com/kamilsk/dotfiles/issues/21
-created_at: 2019-05-09T10:46:11Z
-updated_at: 2026-09-17T11:01:05Z
+title: "update readme"
+labels:
+  - "scope: docs"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-09T10:46:11Z
+updatedAt: 2026-09-17T11:01:05Z
+lastEditedAt: 2026-09-17T11:01:05Z
+closedAt: 2019-05-09T12:10:10Z
 ---
 
 # update readme

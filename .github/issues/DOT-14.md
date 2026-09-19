@@ -1,16 +1,18 @@
 ---
 code: DOT-14
-id: 14
-database_id: 440306054
-node_id: MDU6SXNzdWU0NDAzMDYwNTQ=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NDAzMDYwNTQ=
+databaseId: 440306054
+number: 14
+url: https://github.com/kamilsk/dotfiles/issues/14
 title: "define git cmm like as git progress"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/14
-created_at: 2019-05-04T09:54:11Z
-updated_at: 2026-09-17T10:58:00Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-04T09:54:11Z
+updatedAt: 2026-09-17T10:58:00Z
+lastEditedAt: 2026-09-17T10:58:00Z
+closedAt: 2019-05-05T05:50:58Z
 ---
 
 # define git cmm like as git progress

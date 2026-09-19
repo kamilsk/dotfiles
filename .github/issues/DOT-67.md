@@ -1,16 +1,18 @@
 ---
 code: DOT-67
-id: 68
-database_id: 527956665
-node_id: MDU6SXNzdWU1Mjc5NTY2NjU=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU1Mjc5NTY2NjU=
+databaseId: 527956665
+number: 68
+url: https://github.com/kamilsk/dotfiles/issues/68
 title: "deliver go tools"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/68
-created_at: 2019-11-25T09:28:23Z
-updated_at: 2026-09-17T11:13:59Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-11-25T09:28:23Z
+updatedAt: 2026-09-17T11:13:59Z
+lastEditedAt: 2026-09-17T11:13:59Z
+closedAt: 2019-12-26T06:32:07Z
 ---
 
 # deliver go tools

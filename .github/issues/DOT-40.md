@@ -1,16 +1,19 @@
 ---
 code: DOT-40
-id: 41
-database_id: 461934050
-node_id: MDU6SXNzdWU0NjE5MzQwNTA=
-status: closed
-state_reason: completed
-milestone:
-title: "stash cd ... don't work properly"
-labels: ["type: bug"]
+id: MDU6SXNzdWU0NjE5MzQwNTA=
+databaseId: 461934050
+number: 41
 url: https://github.com/kamilsk/dotfiles/issues/41
-created_at: 2019-06-28T09:04:23Z
-updated_at: 2026-09-17T11:09:42Z
+title: "stash cd ... don't work properly"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-06-28T09:04:23Z
+updatedAt: 2026-09-17T11:09:42Z
+lastEditedAt: 2026-09-17T11:09:42Z
+closedAt: 2019-07-11T08:55:52Z
 ---
 
 # stash cd ... don't work properly

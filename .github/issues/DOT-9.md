@@ -1,16 +1,19 @@
 ---
 code: DOT-9
-id: 9
-database_id: 397214832
-node_id: MDU6SXNzdWUzOTcyMTQ4MzI=
-status: closed
-state_reason: completed
-milestone:
-title: "fix self-update at linux"
-labels: ["type: bug"]
+id: MDU6SXNzdWUzOTcyMTQ4MzI=
+databaseId: 397214832
+number: 9
 url: https://github.com/kamilsk/dotfiles/issues/9
-created_at: 2019-01-09T05:13:15Z
-updated_at: 2026-09-17T11:15:36Z
+title: "fix self-update at linux"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-01-09T05:13:15Z
+updatedAt: 2026-09-17T11:15:36Z
+lastEditedAt: 2026-09-17T11:15:36Z
+closedAt: 2019-01-10T05:12:37Z
 ---
 
 # fix self-update at linux

@@ -1,16 +1,18 @@
 ---
 code: DOT-10
-id: 10
-database_id: 405652181
-node_id: MDU6SXNzdWU0MDU2NTIxODE=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0MDU2NTIxODE=
+databaseId: 405652181
+number: 10
+url: https://github.com/kamilsk/dotfiles/issues/10
 title: "add aliases git patch, git minor, git major"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/10
-created_at: 2019-02-01T10:59:04Z
-updated_at: 2026-09-17T10:56:17Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-02-01T10:59:04Z
+updatedAt: 2026-09-17T10:56:17Z
+lastEditedAt: 2026-09-17T10:56:17Z
+closedAt: 2019-03-03T05:57:35Z
 ---
 
 # add aliases git patch, git minor, git major

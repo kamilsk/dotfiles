@@ -1,16 +1,19 @@
 ---
 code: DOT-78
-id: 79
-database_id: 656837587
-node_id: MDU6SXNzdWU2NTY4Mzc1ODc=
-status: closed
-state_reason: completed
-milestone:
-title: "bug with git cmm"
-labels: ["type: bug"]
+id: MDU6SXNzdWU2NTY4Mzc1ODc=
+databaseId: 656837587
+number: 79
 url: https://github.com/kamilsk/dotfiles/issues/79
-created_at: 2020-07-14T19:12:44Z
-updated_at: 2026-09-17T11:14:46Z
+title: "bug with git cmm"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2020-07-14T19:12:44Z
+updatedAt: 2026-09-17T11:14:46Z
+lastEditedAt: 2026-09-17T11:14:46Z
+closedAt: 2020-07-14T19:23:57Z
 ---
 
 # bug with git cmm

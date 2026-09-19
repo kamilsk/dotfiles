@@ -1,16 +1,18 @@
 ---
 code: DOT-58
-id: 59
-database_id: 499879794
-node_id: MDU6SXNzdWU0OTk4Nzk3OTQ=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0OTk4Nzk3OTQ=
+databaseId: 499879794
+number: 59
+url: https://github.com/kamilsk/dotfiles/issues/59
 title: "docker-compose alias"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/59
-created_at: 2019-09-29T08:33:26Z
-updated_at: 2026-09-17T11:12:47Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-09-29T08:33:26Z
+updatedAt: 2026-09-17T11:12:47Z
+lastEditedAt: 2026-09-17T11:12:47Z
+closedAt: 2019-11-19T16:03:25Z
 ---
 
 # docker-compose alias

@@ -1,16 +1,19 @@
 ---
 code: DOT-45
-id: 46
-database_id: 469156336
-node_id: MDU6SXNzdWU0NjkxNTYzMzY=
-status: closed
-state_reason: completed
-milestone:
-title: "remove [no tests to run]"
-labels: ["type: bug"]
+id: MDU6SXNzdWU0NjkxNTYzMzY=
+databaseId: 469156336
+number: 46
 url: https://github.com/kamilsk/dotfiles/issues/46
-created_at: 2019-07-17T12:10:30Z
-updated_at: 2026-09-17T11:10:56Z
+title: "remove [no tests to run]"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-07-17T12:10:30Z
+updatedAt: 2026-09-17T11:10:56Z
+lastEditedAt: 2026-09-17T11:10:56Z
+closedAt: 2019-07-17T12:23:27Z
 ---
 
 # remove [no tests to run]

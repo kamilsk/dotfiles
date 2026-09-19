@@ -1,16 +1,18 @@
 ---
 code: DOT-51
-id: 52
-database_id: 481890802
-node_id: MDU6SXNzdWU0ODE4OTA4MDI=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0ODE4OTA4MDI=
+databaseId: 481890802
+number: 52
+url: https://github.com/kamilsk/dotfiles/issues/52
 title: "bundles"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/52
-created_at: 2019-08-17T14:16:35Z
-updated_at: 2026-09-17T11:11:57Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-08-17T14:16:35Z
+updatedAt: 2026-09-17T11:11:57Z
+lastEditedAt: 2026-09-17T11:11:57Z
+closedAt: 2019-09-13T15:04:29Z
 ---
 
 # bundles

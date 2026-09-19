@@ -1,16 +1,18 @@
 ---
 code: DOT-22
-id: 22
-database_id: 442565833
-node_id: MDU6SXNzdWU0NDI1NjU4MzM=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NDI1NjU4MzM=
+databaseId: 442565833
+number: 22
+url: https://github.com/kamilsk/dotfiles/issues/22
 title: "review git issue alias"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/22
-created_at: 2019-05-10T06:54:22Z
-updated_at: 2026-09-17T11:01:30Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-10T06:54:22Z
+updatedAt: 2026-09-17T11:01:30Z
+lastEditedAt: 2026-09-17T11:01:30Z
+closedAt: 2019-05-11T09:15:20Z
 ---
 
 # review git issue alias

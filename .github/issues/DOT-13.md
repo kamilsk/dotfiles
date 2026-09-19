@@ -1,16 +1,18 @@
 ---
 code: DOT-13
-id: 13
-database_id: 423572971
-node_id: MDU6SXNzdWU0MjM1NzI5NzE=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0MjM1NzI5NzE=
+databaseId: 423572971
+number: 13
+url: https://github.com/kamilsk/dotfiles/issues/13
 title: "add volumes and containers aliases"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/13
-created_at: 2019-03-21T04:59:30Z
-updated_at: 2026-09-17T10:57:34Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-03-21T04:59:30Z
+updatedAt: 2026-09-17T10:57:34Z
+lastEditedAt: 2026-09-17T10:57:34Z
+closedAt: 2019-03-21T19:25:34Z
 ---
 
 # add volumes and containers aliases

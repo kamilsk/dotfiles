@@ -1,16 +1,19 @@
 ---
 code: DOT-15
-id: 15
-database_id: 440575008
-node_id: MDU6SXNzdWU0NDA1NzUwMDg=
-status: closed
-state_reason: completed
-milestone:
-title: "problem with git refresh"
-labels: ["type: bug"]
+id: MDU6SXNzdWU0NDA1NzUwMDg=
+databaseId: 440575008
+number: 15
 url: https://github.com/kamilsk/dotfiles/issues/15
-created_at: 2019-05-06T07:32:57Z
-updated_at: 2026-09-17T10:58:26Z
+title: "problem with git refresh"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-06T07:32:57Z
+updatedAt: 2026-09-17T10:58:26Z
+lastEditedAt: 2026-09-17T10:58:26Z
+closedAt: 2019-05-06T07:37:38Z
 ---
 
 # problem with git refresh

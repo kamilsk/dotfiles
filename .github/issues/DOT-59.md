@@ -1,16 +1,19 @@
 ---
 code: DOT-59
-id: 60
-database_id: 512473444
-node_id: MDU6SXNzdWU1MTI0NzM0NDQ=
-status: closed
-state_reason: completed
-milestone:
-title: "git release didn't show postfix (rc/alpha)"
-labels: ["type: bug"]
+id: MDU6SXNzdWU1MTI0NzM0NDQ=
+databaseId: 512473444
+number: 60
 url: https://github.com/kamilsk/dotfiles/issues/60
-created_at: 2019-10-25T11:53:09Z
-updated_at: 2026-09-17T11:12:52Z
+title: "git release didn't show postfix (rc/alpha)"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-10-25T11:53:09Z
+updatedAt: 2026-09-17T11:12:52Z
+lastEditedAt: 2026-09-17T11:12:52Z
+closedAt: 2019-11-19T20:30:41Z
 ---
 
 # git release didn't show postfix (rc/alpha)

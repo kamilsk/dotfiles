@@ -1,16 +1,18 @@
 ---
 code: DOT-2
-id: 2
-database_id: 388198340
-node_id: MDU6SXNzdWUzODgxOTgzNDA=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWUzODgxOTgzNDA=
+databaseId: 388198340
+number: 2
+url: https://github.com/kamilsk/dotfiles/issues/2
 title: "improve self-update"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/2
-created_at: 2018-12-06T12:45:51Z
-updated_at: 2026-09-17T11:00:37Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2018-12-06T12:45:51Z
+updatedAt: 2026-09-17T11:00:37Z
+lastEditedAt: 2026-09-17T11:00:37Z
+closedAt: 2018-12-16T13:58:38Z
 ---
 
 # improve self-update

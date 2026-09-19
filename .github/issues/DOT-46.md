@@ -1,16 +1,18 @@
 ---
 code: DOT-46
-id: 47
-database_id: 469198653
-node_id: MDU6SXNzdWU0NjkxOTg2NTM=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NjkxOTg2NTM=
+databaseId: 469198653
+number: 47
+url: https://github.com/kamilsk/dotfiles/issues/47
 title: "extend coverall"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/47
-created_at: 2019-07-17T13:37:21Z
-updated_at: 2026-09-17T11:11:06Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-07-17T13:37:21Z
+updatedAt: 2026-09-17T11:11:06Z
+lastEditedAt: 2026-09-17T11:11:06Z
+closedAt: 2019-07-21T06:45:01Z
 ---
 
 # extend coverall

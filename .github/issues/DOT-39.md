@@ -1,16 +1,18 @@
 ---
 code: DOT-39
-id: 40
-database_id: 461919736
-node_id: MDU6SXNzdWU0NjE5MTk3MzY=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NjE5MTk3MzY=
+databaseId: 461919736
+number: 40
+url: https://github.com/kamilsk/dotfiles/issues/40
 title: "add lookup alias"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/40
-created_at: 2019-06-28T08:28:44Z
-updated_at: 2026-09-17T11:09:23Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-06-28T08:28:44Z
+updatedAt: 2026-09-17T11:09:23Z
+lastEditedAt: 2026-09-17T11:09:23Z
+closedAt: 2019-07-11T10:27:42Z
 ---
 
 # add lookup alias

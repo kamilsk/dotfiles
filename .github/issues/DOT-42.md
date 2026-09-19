@@ -1,16 +1,18 @@
 ---
 code: DOT-42
-id: 43
-database_id: 461949965
-node_id: MDU6SXNzdWU0NjE5NDk5NjU=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NjE5NDk5NjU=
+databaseId: 461949965
+number: 43
+url: https://github.com/kamilsk/dotfiles/issues/43
 title: "stash undo|rollback"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/43
-created_at: 2019-06-28T09:42:31Z
-updated_at: 2026-09-17T11:10:10Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-06-28T09:42:31Z
+updatedAt: 2026-09-17T11:10:10Z
+lastEditedAt: 2026-09-17T11:10:10Z
+closedAt: 2019-07-13T12:38:20Z
 ---
 
 # stash undo|rollback

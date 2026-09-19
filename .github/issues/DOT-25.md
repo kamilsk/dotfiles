@@ -1,16 +1,19 @@
 ---
 code: DOT-25
-id: 25
-database_id: 443775161
-node_id: MDU6SXNzdWU0NDM3NzUxNjE=
-status: closed
-state_reason: completed
-milestone:
-title: "invalid behavior of git start and git refresh"
-labels: ["type: bug"]
+id: MDU6SXNzdWU0NDM3NzUxNjE=
+databaseId: 443775161
+number: 25
 url: https://github.com/kamilsk/dotfiles/issues/25
-created_at: 2019-05-14T08:22:25Z
-updated_at: 2026-09-17T11:02:50Z
+title: "invalid behavior of git start and git refresh"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-14T08:22:25Z
+updatedAt: 2026-09-17T11:02:50Z
+lastEditedAt: 2026-09-17T11:02:50Z
+closedAt: 2019-05-15T13:38:05Z
 ---
 
 # invalid behavior of git start and git refresh

@@ -1,16 +1,19 @@
 ---
 code: DOT-68
-id: 69
-database_id: 535538364
-node_id: MDU6SXNzdWU1MzU1MzgzNjQ=
-status: closed
-state_reason: completed
-milestone:
-title: "change git release"
-labels: ["severity: critical"]
+id: MDU6SXNzdWU1MzU1MzgzNjQ=
+databaseId: 535538364
+number: 69
 url: https://github.com/kamilsk/dotfiles/issues/69
-created_at: 2019-12-10T07:07:36Z
-updated_at: 2026-09-17T11:14:02Z
+title: "change git release"
+labels:
+  - "severity: critical"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-12-10T07:07:36Z
+updatedAt: 2026-09-17T11:14:02Z
+lastEditedAt: 2026-09-17T11:14:01Z
+closedAt: 2019-12-26T05:49:53Z
 ---
 
 # change git release

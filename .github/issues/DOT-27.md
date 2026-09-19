@@ -1,16 +1,19 @@
 ---
 code: DOT-27
-id: 27
-database_id: 445389500
-node_id: MDU6SXNzdWU0NDUzODk1MDA=
-status: closed
-state_reason: completed
-milestone:
-title: "git refresh not work on master branch"
-labels: ["type: bug"]
+id: MDU6SXNzdWU0NDUzODk1MDA=
+databaseId: 445389500
+number: 27
 url: https://github.com/kamilsk/dotfiles/issues/27
-created_at: 2019-05-17T11:08:15Z
-updated_at: 2026-09-17T11:03:42Z
+title: "git refresh not work on master branch"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-17T11:08:15Z
+updatedAt: 2026-09-17T11:03:42Z
+lastEditedAt: 2026-09-17T11:03:42Z
+closedAt: 2019-06-17T20:22:27Z
 ---
 
 # git refresh not work on master branch

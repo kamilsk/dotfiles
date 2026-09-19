@@ -1,16 +1,19 @@
 ---
 code: DOT-33
-id: 33
-database_id: 451926177
-node_id: MDU6SXNzdWU0NTE5MjYxNzc=
-status: closed
-state_reason: completed
-milestone:
-title: "git shake problems"
-labels: ["type: bug"]
+id: MDU6SXNzdWU0NTE5MjYxNzc=
+databaseId: 451926177
+number: 33
 url: https://github.com/kamilsk/dotfiles/issues/33
-created_at: 2019-06-04T10:47:46Z
-updated_at: 2026-09-17T11:06:21Z
+title: "git shake problems"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-06-04T10:47:46Z
+updatedAt: 2026-09-17T11:06:21Z
+lastEditedAt: 2026-09-17T11:06:21Z
+closedAt: 2019-06-18T19:30:41Z
 ---
 
 # git shake problems

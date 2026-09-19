@@ -1,16 +1,18 @@
 ---
 code: DOT-1
-id: 1
-database_id: 380617341
-node_id: MDU6SXNzdWUzODA2MTczNDE=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWUzODA2MTczNDE=
+databaseId: 380617341
+number: 1
+url: https://github.com/kamilsk/dotfiles/issues/1
 title: "review git_flow_jira"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/1
-created_at: 2018-11-14T09:53:04Z
-updated_at: 2026-09-17T10:55:57Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2018-11-14T09:53:04Z
+updatedAt: 2026-09-17T10:55:57Z
+lastEditedAt: 2026-09-17T10:55:57Z
+closedAt: 2018-12-16T16:49:53Z
 ---
 
 # review git_flow_jira

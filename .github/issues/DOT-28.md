@@ -1,16 +1,18 @@
 ---
 code: DOT-28
-id: 28
-database_id: 448244018
-node_id: MDU6SXNzdWU0NDgyNDQwMTg=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NDgyNDQwMTg=
+databaseId: 448244018
+number: 28
+url: https://github.com/kamilsk/dotfiles/issues/28
 title: "ask to open pull request for you"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/28
-created_at: 2019-05-24T16:00:14Z
-updated_at: 2026-09-17T11:04:08Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-24T16:00:14Z
+updatedAt: 2026-09-17T11:04:08Z
+lastEditedAt: 2026-09-17T11:04:08Z
+closedAt: 2019-06-18T20:26:30Z
 ---
 
 # ask to open pull request for you

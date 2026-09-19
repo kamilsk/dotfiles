@@ -1,16 +1,18 @@
 ---
 code: DOT-4
-id: 4
-database_id: 391079378
-node_id: MDU6SXNzdWUzOTEwNzkzNzg=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWUzOTEwNzkzNzg=
+databaseId: 391079378
+number: 4
+url: https://github.com/kamilsk/dotfiles/issues/4
 title: "add installation entrypoint"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/4
-created_at: 2018-12-14T11:47:08Z
-updated_at: 2026-09-17T11:09:21Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2018-12-14T11:47:08Z
+updatedAt: 2026-09-17T11:09:21Z
+lastEditedAt: 2026-09-17T11:09:21Z
+closedAt: 2018-12-16T15:40:46Z
 ---
 
 # add installation entrypoint

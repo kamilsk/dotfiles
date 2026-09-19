@@ -1,16 +1,18 @@
 ---
 code: DOT-53
-id: 54
-database_id: 485330695
-node_id: MDU6SXNzdWU0ODUzMzA2OTU=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0ODUzMzA2OTU=
+databaseId: 485330695
+number: 54
+url: https://github.com/kamilsk/dotfiles/issues/54
 title: "support php and python by coverall"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/54
-created_at: 2019-08-26T16:44:11Z
-updated_at: 2026-09-17T11:12:14Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-08-26T16:44:11Z
+updatedAt: 2026-09-17T11:12:14Z
+lastEditedAt: 2026-09-17T11:12:14Z
+closedAt: 2019-08-26T16:45:28Z
 ---
 
 # support php and python by coverall

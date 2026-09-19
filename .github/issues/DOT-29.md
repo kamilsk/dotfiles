@@ -1,16 +1,18 @@
 ---
 code: DOT-29
-id: 29
-database_id: 448244571
-node_id: MDU6SXNzdWU0NDgyNDQ1NzE=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NDgyNDQ1NzE=
+databaseId: 448244571
+number: 29
+url: https://github.com/kamilsk/dotfiles/issues/29
 title: "partial self-update"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/29
-created_at: 2019-05-24T16:01:31Z
-updated_at: 2026-09-17T11:04:34Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-24T16:01:31Z
+updatedAt: 2026-09-17T11:04:34Z
+lastEditedAt: 2026-09-17T11:04:34Z
+closedAt: 2019-06-18T05:08:21Z
 ---
 
 # partial self-update

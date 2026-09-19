@@ -1,16 +1,18 @@
 ---
 code: DOT-12
-id: 12
-database_id: 421469514
-node_id: MDU6SXNzdWU0MjE0Njk1MTQ=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0MjE0Njk1MTQ=
+databaseId: 421469514
+number: 12
+url: https://github.com/kamilsk/dotfiles/issues/12
 title: "extend git stats"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/12
-created_at: 2019-03-15T11:16:05Z
-updated_at: 2026-09-17T10:57:09Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-03-15T11:16:05Z
+updatedAt: 2026-09-17T10:57:09Z
+lastEditedAt: 2026-09-17T10:57:09Z
+closedAt: 2019-03-21T19:49:10Z
 ---
 
 # extend git stats

@@ -1,16 +1,19 @@
 ---
 code: DOT-82
-id: 83
-database_id: 686017772
-node_id: MDU6SXNzdWU2ODYwMTc3NzI=
-status: closed
-state_reason: completed
-milestone:
-title: "problem cases after refactoring"
-labels: ["type: bug"]
+id: MDU6SXNzdWU2ODYwMTc3NzI=
+databaseId: 686017772
+number: 83
 url: https://github.com/kamilsk/dotfiles/issues/83
-created_at: 2020-08-26T05:28:06Z
-updated_at: 2026-09-17T11:15:10Z
+title: "problem cases after refactoring"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2020-08-26T05:28:06Z
+updatedAt: 2026-09-17T11:15:10Z
+lastEditedAt: 2026-09-17T11:15:10Z
+closedAt: 2020-09-15T19:15:33Z
 ---
 
 # problem cases after refactoring

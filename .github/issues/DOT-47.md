@@ -1,16 +1,18 @@
 ---
 code: DOT-47
-id: 48
-database_id: 470753414
-node_id: MDU6SXNzdWU0NzA3NTM0MTQ=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NzA3NTM0MTQ=
+databaseId: 470753414
+number: 48
+url: https://github.com/kamilsk/dotfiles/issues/48
 title: "improve git_mirror"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/48
-created_at: 2019-07-21T07:44:58Z
-updated_at: 2026-09-17T11:11:13Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-07-21T07:44:58Z
+updatedAt: 2026-09-17T11:11:13Z
+lastEditedAt: 2026-09-17T11:11:13Z
+closedAt: 2019-07-21T11:54:23Z
 ---
 
 # improve git_mirror

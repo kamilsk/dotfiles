@@ -1,16 +1,18 @@
 ---
 code: DOT-3
-id: 3
-database_id: 388198702
-node_id: MDU6SXNzdWUzODgxOTg3MDI=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWUzODgxOTg3MDI=
+databaseId: 388198702
+number: 3
+url: https://github.com/kamilsk/dotfiles/issues/3
 title: "add prepare alias"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/3
-created_at: 2018-12-06T12:47:03Z
-updated_at: 2026-09-17T11:05:00Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2018-12-06T12:47:03Z
+updatedAt: 2026-09-17T11:05:00Z
+lastEditedAt: 2026-09-17T11:05:00Z
+closedAt: 2018-12-15T08:43:40Z
 ---
 
 # add prepare alias

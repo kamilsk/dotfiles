@@ -1,16 +1,19 @@
 ---
 code: DOT-23
-id: 23
-database_id: 442634996
-node_id: MDU6SXNzdWU0NDI2MzQ5OTY=
-status: closed
-state_reason: completed
-milestone:
-title: "add slay and more"
-labels: ["scope: docs"]
+id: MDU6SXNzdWU0NDI2MzQ5OTY=
+databaseId: 442634996
+number: 23
 url: https://github.com/kamilsk/dotfiles/issues/23
-created_at: 2019-05-10T09:52:17Z
-updated_at: 2026-09-17T11:01:56Z
+title: "add slay and more"
+labels:
+  - "scope: docs"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-10T09:52:17Z
+updatedAt: 2026-09-17T11:01:56Z
+lastEditedAt: 2026-09-17T11:01:56Z
+closedAt: 2019-05-11T09:47:15Z
 ---
 
 # add slay and more

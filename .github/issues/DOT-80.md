@@ -1,16 +1,18 @@
 ---
 code: DOT-80
-id: 81
-database_id: 665375446
-node_id: MDU6SXNzdWU2NjUzNzU0NDY=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU2NjUzNzU0NDY=
+databaseId: 665375446
+number: 81
+url: https://github.com/kamilsk/dotfiles/issues/81
 title: "/bin/bash: looppointer: command not found"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/81
-created_at: 2020-07-24T19:38:55Z
-updated_at: 2026-09-17T11:14:53Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2020-07-24T19:38:55Z
+updatedAt: 2026-09-17T11:14:53Z
+lastEditedAt: 2026-09-17T11:14:53Z
+closedAt: 2020-07-24T19:41:36Z
 ---
 
 # /bin/bash: looppointer: command not found

@@ -1,16 +1,18 @@
 ---
 code: DOT-48
-id: 49
-database_id: 476558945
-node_id: MDU6SXNzdWU0NzY1NTg5NDU=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NzY1NTg5NDU=
+databaseId: 476558945
+number: 49
+url: https://github.com/kamilsk/dotfiles/issues/49
 title: "fzqurl"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/49
-created_at: 2019-08-04T14:24:19Z
-updated_at: 2026-09-17T11:11:25Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-08-04T14:24:19Z
+updatedAt: 2026-09-17T11:11:25Z
+lastEditedAt: 2026-09-17T11:11:25Z
+closedAt: 2019-08-04T14:30:19Z
 ---
 
 # fzqurl

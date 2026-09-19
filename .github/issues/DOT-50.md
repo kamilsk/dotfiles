@@ -1,16 +1,18 @@
 ---
 code: DOT-50
-id: 51
-database_id: 481488221
-node_id: MDU6SXNzdWU0ODE0ODgyMjE=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0ODE0ODgyMjE=
+databaseId: 481488221
+number: 51
+url: https://github.com/kamilsk/dotfiles/issues/51
 title: "go checks"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/51
-created_at: 2019-08-16T07:49:32Z
-updated_at: 2026-09-17T11:11:45Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-08-16T07:49:32Z
+updatedAt: 2026-09-17T11:11:45Z
+lastEditedAt: 2026-09-17T11:11:45Z
+closedAt: 2019-09-14T07:08:10Z
 ---
 
 # go checks

@@ -1,16 +1,18 @@
 ---
 code: DOT-70
-id: 71
-database_id: 543772321
-node_id: MDU6SXNzdWU1NDM3NzIzMjE=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU1NDM3NzIzMjE=
+databaseId: 543772321
+number: 71
+url: https://github.com/kamilsk/dotfiles/issues/71
 title: "update go tools"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/71
-created_at: 2019-12-30T07:06:58Z
-updated_at: 2026-09-17T11:14:11Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-12-30T07:06:58Z
+updatedAt: 2026-09-17T11:14:11Z
+lastEditedAt: 2026-09-17T11:14:11Z
+closedAt: 2019-12-30T13:21:07Z
 ---
 
 # update go tools

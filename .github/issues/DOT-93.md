@@ -1,16 +1,18 @@
 ---
 code: DOT-93
-id: 94
-database_id: 780375727
-node_id: MDU6SXNzdWU3ODAzNzU3Mjc=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU3ODAzNzU3Mjc=
+databaseId: 780375727
+number: 94
+url: https://github.com/kamilsk/dotfiles/issues/94
 title: "add fzz and tmux"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/94
-created_at: 2021-01-06T09:36:03Z
-updated_at: 2026-09-17T11:15:48Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2021-01-06T09:36:03Z
+updatedAt: 2026-09-17T11:15:48Z
+lastEditedAt: 2026-09-17T11:15:48Z
+closedAt: 2021-01-06T09:46:55Z
 ---
 
 # add fzz and tmux

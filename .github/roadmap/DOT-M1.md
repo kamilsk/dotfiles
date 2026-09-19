@@ -1,16 +1,17 @@
 ---
 code: DOT-M1
-id: 1
-database_id: 8158879
-node_id: MI_kwDOCTsueM4AfH6f
-status: open
-title: "Git flow"
+id: MI_kwDOCTsueM4AfH6f
+databaseId: 8158879
+number: 1
 url: https://github.com/kamilsk/dotfiles/milestone/1
-open_issues: 27
-closed_issues: 14
-due_on:
-created_at: 2022-07-04T10:36:52Z
-updated_at: 2025-07-30T12:05:14Z
+title: "Git flow"
+state: OPEN
+openIssueCount: 27
+closedIssueCount: 14
+dueOn:
+createdAt: 2022-07-04T10:36:52Z
+updatedAt: 2025-07-30T12:05:14Z
+closedAt:
 ---
 
 # milestone: Git flow

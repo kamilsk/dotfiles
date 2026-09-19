@@ -1,16 +1,18 @@
 ---
 code: DOT-49
-id: 50
-database_id: 477224982
-node_id: MDU6SXNzdWU0NzcyMjQ5ODI=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NzcyMjQ5ODI=
+databaseId: 477224982
+number: 50
+url: https://github.com/kamilsk/dotfiles/issues/50
 title: "improve git issue alias"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/50
-created_at: 2019-08-06T07:52:50Z
-updated_at: 2026-09-17T11:11:34Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-08-06T07:52:50Z
+updatedAt: 2026-09-17T11:11:34Z
+lastEditedAt: 2026-09-17T11:11:34Z
+closedAt: 2019-08-13T07:55:25Z
 ---
 
 # improve git issue alias

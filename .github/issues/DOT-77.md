@@ -1,16 +1,18 @@
 ---
 code: DOT-77
-id: 78
-database_id: 651830906
-node_id: MDU6SXNzdWU2NTE4MzA5MDY=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU2NTE4MzA5MDY=
+databaseId: 651830906
+number: 78
+url: https://github.com/kamilsk/dotfiles/issues/78
 title: "add git at alias"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/78
-created_at: 2020-07-06T21:29:42Z
-updated_at: 2026-09-17T11:14:41Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2020-07-06T21:29:42Z
+updatedAt: 2026-09-17T11:14:41Z
+lastEditedAt: 2026-09-17T11:14:41Z
+closedAt: 2020-07-08T19:00:25Z
 ---
 
 # add git at alias

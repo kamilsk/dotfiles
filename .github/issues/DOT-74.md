@@ -1,16 +1,19 @@
 ---
 code: DOT-74
-id: 75
-database_id: 613368468
-node_id: MDU6SXNzdWU2MTMzNjg0Njg=
-status: closed
-state_reason: completed
-milestone:
-title: "add hugo"
-labels: ["help wanted"]
+id: MDU6SXNzdWU2MTMzNjg0Njg=
+databaseId: 613368468
+number: 75
 url: https://github.com/kamilsk/dotfiles/issues/75
-created_at: 2020-05-06T14:33:14Z
-updated_at: 2026-09-17T11:14:31Z
+title: "add hugo"
+labels:
+  - "help wanted"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2020-05-06T14:33:14Z
+updatedAt: 2026-09-17T11:14:31Z
+lastEditedAt: 2026-09-17T11:14:31Z
+closedAt: 2020-05-24T06:37:15Z
 ---
 
 # add hugo

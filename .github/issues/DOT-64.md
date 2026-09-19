@@ -1,16 +1,18 @@
 ---
 code: DOT-64
-id: 65
-database_id: 518016889
-node_id: MDU6SXNzdWU1MTgwMTY4ODk=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU1MTgwMTY4ODk=
+databaseId: 518016889
+number: 65
+url: https://github.com/kamilsk/dotfiles/issues/65
 title: "common Brewfile"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/65
-created_at: 2019-11-05T20:42:01Z
-updated_at: 2026-09-17T11:13:45Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-11-05T20:42:01Z
+updatedAt: 2026-09-17T11:13:45Z
+lastEditedAt: 2026-09-17T11:13:45Z
+closedAt: 2019-11-17T11:03:54Z
 ---
 
 # common Brewfile

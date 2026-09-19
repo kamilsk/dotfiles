@@ -1,16 +1,20 @@
 ---
 code: DOT-85
-id: 86
-database_id: 733730676
-node_id: MDU6SXNzdWU3MzM3MzA2NzY=
-status: closed
-state_reason: completed
-milestone:
-title: "force date format"
-labels: ["help wanted","type: bug"]
+id: MDU6SXNzdWU3MzM3MzA2NzY=
+databaseId: 733730676
+number: 86
 url: https://github.com/kamilsk/dotfiles/issues/86
-created_at: 2020-10-31T14:19:04Z
-updated_at: 2026-09-17T11:15:17Z
+title: "force date format"
+labels:
+  - "help wanted"
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2020-10-31T14:19:04Z
+updatedAt: 2026-09-17T11:15:17Z
+lastEditedAt: 2026-09-17T11:15:17Z
+closedAt: 2020-10-31T14:44:06Z
 ---
 
 # force date format

@@ -1,16 +1,19 @@
 ---
 code: DOT-43
-id: 44
-database_id: 462424647
-node_id: MDU6SXNzdWU0NjI0MjQ2NDc=
-status: closed
-state_reason: completed
-milestone:
-title: "self-update and unbound variable"
-labels: ["type: bug"]
+id: MDU6SXNzdWU0NjI0MjQ2NDc=
+databaseId: 462424647
+number: 44
 url: https://github.com/kamilsk/dotfiles/issues/44
-created_at: 2019-06-30T16:51:43Z
-updated_at: 2026-09-17T11:10:30Z
+title: "self-update and unbound variable"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-06-30T16:51:43Z
+updatedAt: 2026-09-17T11:10:30Z
+lastEditedAt: 2026-09-17T11:10:30Z
+closedAt: 2019-07-11T07:42:03Z
 ---
 
 # self-update and unbound variable

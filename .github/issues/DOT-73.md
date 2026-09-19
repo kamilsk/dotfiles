@@ -1,16 +1,19 @@
 ---
 code: DOT-73
-id: 74
-database_id: 594833886
-node_id: MDU6SXNzdWU1OTQ4MzM4ODY=
-status: closed
-state_reason: completed
-milestone:
-title: "new aliases as touch alternatives"
-labels: ["help wanted"]
+id: MDU6SXNzdWU1OTQ4MzM4ODY=
+databaseId: 594833886
+number: 74
 url: https://github.com/kamilsk/dotfiles/issues/74
-created_at: 2020-04-06T06:18:13Z
-updated_at: 2026-09-17T11:14:29Z
+title: "new aliases as touch alternatives"
+labels:
+  - "help wanted"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2020-04-06T06:18:13Z
+updatedAt: 2026-09-17T11:14:29Z
+lastEditedAt: 2026-09-17T11:14:29Z
+closedAt: 2020-04-06T13:17:15Z
 ---
 
 # new aliases as touch alternatives

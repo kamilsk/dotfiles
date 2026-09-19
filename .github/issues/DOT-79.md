@@ -1,16 +1,18 @@
 ---
 code: DOT-79
-id: 80
-database_id: 662190647
-node_id: MDU6SXNzdWU2NjIxOTA2NDc=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU2NjIxOTA2NDc=
+databaseId: 662190647
+number: 80
+url: https://github.com/kamilsk/dotfiles/issues/80
 title: "add yaegi to the toolset"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/80
-created_at: 2020-07-20T19:41:36Z
-updated_at: 2026-09-17T11:14:50Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2020-07-20T19:41:36Z
+updatedAt: 2026-09-17T11:14:50Z
+lastEditedAt: 2026-09-17T11:14:50Z
+closedAt: 2020-07-20T19:47:08Z
 ---
 
 # add yaegi to the toolset

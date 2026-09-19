@@ -1,16 +1,18 @@
 ---
 code: DOT-38
-id: 39
-database_id: 459566455
-node_id: MDU6SXNzdWU0NTk1NjY0NTU=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NTk1NjY0NTU=
+databaseId: 459566455
+number: 39
+url: https://github.com/kamilsk/dotfiles/issues/39
 title: "experiment with TMOUT environment"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/39
-created_at: 2019-06-23T11:43:22Z
-updated_at: 2026-09-17T11:08:57Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-06-23T11:43:22Z
+updatedAt: 2026-09-17T11:08:57Z
+lastEditedAt: 2026-09-17T11:08:57Z
+closedAt: 2019-06-24T06:50:03Z
 ---
 
 # experiment with TMOUT environment

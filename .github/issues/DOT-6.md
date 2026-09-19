@@ -1,16 +1,18 @@
 ---
 code: DOT-6
-id: 6
-database_id: 394891013
-node_id: MDU6SXNzdWUzOTQ4OTEwMTM=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWUzOTQ4OTEwMTM=
+databaseId: 394891013
+number: 6
+url: https://github.com/kamilsk/dotfiles/issues/6
 title: "add space-gophers"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/6
-created_at: 2018-12-30T18:14:10Z
-updated_at: 2026-09-17T11:12:50Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2018-12-30T18:14:10Z
+updatedAt: 2026-09-17T11:12:50Z
+lastEditedAt: 2026-09-17T11:12:50Z
+closedAt: 2018-12-30T18:22:02Z
 ---
 
 # add space-gophers

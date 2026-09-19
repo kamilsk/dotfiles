@@ -1,16 +1,18 @@
 ---
 code: DOT-81
-id: 82
-database_id: 671206772
-node_id: MDU6SXNzdWU2NzEyMDY3NzI=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU2NzEyMDY3NzI=
+databaseId: 671206772
+number: 82
+url: https://github.com/kamilsk/dotfiles/issues/82
 title: "truncate logs for docker"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/82
-created_at: 2020-08-01T21:17:50Z
-updated_at: 2026-09-17T11:14:57Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2020-08-01T21:17:50Z
+updatedAt: 2026-09-17T11:14:57Z
+lastEditedAt: 2026-09-17T11:14:57Z
+closedAt: 2020-08-25T06:40:03Z
 ---
 
 # truncate logs for docker

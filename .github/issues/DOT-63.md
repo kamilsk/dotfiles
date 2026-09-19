@@ -1,16 +1,18 @@
 ---
 code: DOT-63
-id: 64
-database_id: 513711726
-node_id: MDU6SXNzdWU1MTM3MTE3MjY=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU1MTM3MTE3MjY=
+databaseId: 513711726
+number: 64
+url: https://github.com/kamilsk/dotfiles/issues/64
 title: "realpath alias"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/64
-created_at: 2019-10-29T06:04:35Z
-updated_at: 2026-09-17T11:13:40Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-10-29T06:04:35Z
+updatedAt: 2026-09-17T11:13:40Z
+lastEditedAt: 2026-09-17T11:13:40Z
+closedAt: 2019-11-17T11:19:27Z
 ---
 
 # realpath alias

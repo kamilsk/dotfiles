@@ -1,16 +1,19 @@
 ---
 code: DOT-54
-id: 55
-database_id: 487790629
-node_id: MDU6SXNzdWU0ODc3OTA2Mjk=
-status: closed
-state_reason: completed
-milestone:
-title: "git refresh works not well"
-labels: ["type: bug"]
+id: MDU6SXNzdWU0ODc3OTA2Mjk=
+databaseId: 487790629
+number: 55
 url: https://github.com/kamilsk/dotfiles/issues/55
-created_at: 2019-08-31T17:06:44Z
-updated_at: 2026-09-17T11:12:23Z
+title: "git refresh works not well"
+labels:
+  - "type: bug"
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-08-31T17:06:44Z
+updatedAt: 2026-09-17T11:12:23Z
+lastEditedAt: 2026-09-17T11:12:23Z
+closedAt: 2019-09-01T18:05:28Z
 ---
 
 # git refresh works not well

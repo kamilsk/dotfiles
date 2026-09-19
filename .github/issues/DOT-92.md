@@ -1,16 +1,18 @@
 ---
 code: DOT-92
-id: 93
-database_id: 777612169
-node_id: MDU6SXNzdWU3Nzc2MTIxNjk=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU3Nzc2MTIxNjk=
+databaseId: 777612169
+number: 93
+url: https://github.com/kamilsk/dotfiles/issues/93
 title: "git state"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/93
-created_at: 2021-01-03T10:34:43Z
-updated_at: 2026-09-17T11:15:46Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2021-01-03T10:34:43Z
+updatedAt: 2026-09-17T11:15:46Z
+lastEditedAt: 2026-09-17T11:15:46Z
+closedAt: 2021-01-03T10:51:13Z
 ---
 
 # git state

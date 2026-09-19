@@ -1,16 +1,18 @@
 ---
 code: DOT-98
-id: 99
-database_id: 787540100
-node_id: MDU6SXNzdWU3ODc1NDAxMDA=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU3ODc1NDAxMDA=
+databaseId: 787540100
+number: 99
+url: https://github.com/kamilsk/dotfiles/issues/99
 title: "research benefits to combine all git_* scripts into one Go binary"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/99
-created_at: 2021-01-16T19:51:20Z
-updated_at: 2026-09-17T11:16:00Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2021-01-16T19:51:20Z
+updatedAt: 2026-09-17T11:16:00Z
+lastEditedAt: 2026-09-17T11:16:00Z
+closedAt: 2021-02-26T18:30:23Z
 ---
 
 # research benefits to combine all git_* scripts into one Go binary

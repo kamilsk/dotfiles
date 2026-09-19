@@ -1,16 +1,18 @@
 ---
 code: DOT-96
-id: 97
-database_id: 787488799
-node_id: MDU6SXNzdWU3ODc0ODg3OTk=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU3ODc0ODg3OTk=
+databaseId: 787488799
+number: 97
+url: https://github.com/kamilsk/dotfiles/issues/97
 title: "add octosql"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/97
-created_at: 2021-01-16T15:26:48Z
-updated_at: 2026-09-17T11:15:55Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2021-01-16T15:26:48Z
+updatedAt: 2026-09-17T11:15:55Z
+lastEditedAt: 2026-09-17T11:15:55Z
+closedAt: 2021-01-16T15:34:57Z
 ---
 
 # add octosql

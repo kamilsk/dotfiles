@@ -1,16 +1,18 @@
 ---
 code: DOT-24
-id: 24
-database_id: 442975113
-node_id: MDU6SXNzdWU0NDI5NzUxMTM=
-status: closed
-state_reason: completed
-milestone:
+id: MDU6SXNzdWU0NDI5NzUxMTM=
+databaseId: 442975113
+number: 24
+url: https://github.com/kamilsk/dotfiles/issues/24
 title: "explain shell script"
 labels: []
-url: https://github.com/kamilsk/dotfiles/issues/24
-created_at: 2019-05-11T09:45:23Z
-updated_at: 2026-09-17T11:02:23Z
+milestone:
+state: CLOSED
+stateReason: COMPLETED
+createdAt: 2019-05-11T09:45:23Z
+updatedAt: 2026-09-17T11:02:23Z
+lastEditedAt: 2026-09-17T11:02:23Z
+closedAt: 2019-06-21T05:32:40Z
 ---
 
 # explain shell script
