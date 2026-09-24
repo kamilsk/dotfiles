@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# unquarantine — drop com.apple.quarantine from apps installed by Homebrew casks,
+# so Gatekeeper stops blocking them after `brew install/upgrade`
+# (Homebrew no longer supports --no-quarantine).
+#
+#   unquarantine           all installed casks
+#   unquarantine CASK...   only the given casks
+#
+# Every run re-checks all given casks, not only the just upgraded ones.
+
+if [[ ! "$(uname)" =~ Darwin ]]; then exit 0; fi
+if ! command -v brew >/dev/null; then exit 0; fi
+
+caskroom="$(brew --caskroom)"
+if [ $# -eq 0 ]; then set -- "${caskroom}"/*/; else set -- "${@/#/${caskroom}/}"; fi
+
+status=0
+while IFS= read -r app; do
+  [ -d "${app}" ] || continue
+  xattr -r -l "${app}" 2>/dev/null | grep -q com.apple.quarantine || continue
+  if xattr -r -d com.apple.quarantine "${app}" 2>/dev/null ||
+    ! xattr -r -l "${app}" 2>/dev/null | grep -q com.apple.quarantine; then
+    echo "unquarantined: ${app}"
+  else
+    echo "unquarantine: failed for ${app}" >&2
+    status=1
+  fi
+done < <(
+  # Caskroom keeps <token>/<version>/<Name>.app -> <installed path> for every app artifact,
+  # so custom --appdir and renamed targets resolve without loading casks
+  for cask in "$@"; do
+    if [ ! -d "${cask}" ]; then
+      echo "unquarantine: unknown cask ${cask##*/}" >&2
+      continue
+    fi
+    find "${cask%/}" -mindepth 2 -maxdepth 2 -name '*.app' -type l -exec readlink {} \;
+  done | sort -u
+)
+exit "${status}"

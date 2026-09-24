@@ -37,6 +37,7 @@ function update_brew() {
   fi
   brew upgrade --formula --yes
   brew cu --all --cleanup --no-brew-update --yes --verbose
+  "${root}"/bin/unquarantine || echo "unquarantine: some apps are still quarantined" >&2
   brew doctor --verbose || true
 }
 

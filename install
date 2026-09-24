@@ -73,6 +73,7 @@ install-bundle() {
   brew update --force --quiet
   brew bundle --file="${common}" --no-upgrade -v
   if [ -f "${custom}" ]; then brew bundle --file="${custom}" --no-upgrade -v; fi
+  "${root}"/bin/unquarantine || echo "unquarantine: some apps are still quarantined" >&2
   return $?
 }
 
