@@ -10,7 +10,7 @@ milestone:
 state: CLOSED
 stateReason: COMPLETED
 createdAt: 2019-02-01T10:59:04Z
-updatedAt: 2026-09-17T10:56:17Z
+updatedAt: 2026-09-23T14:19:16Z
 lastEditedAt: 2026-09-17T10:56:17Z
 closedAt: 2019-03-03T05:57:35Z
 ---
@@ -23,4 +23,8 @@ The natural counterpart is `git release` ([git_current](../../bin/git_current) `
 
 <!-- 2019-03-03T05:57Z https://github.com/kamilsk/dotfiles/issues/10#issuecomment-468991998
 wont'd
+-->
+
+<!-- 2026-09-23T14:19Z https://github.com/kamilsk/dotfiles/issues/10#issuecomment-5796527907
+Superseded by #885: `git release --major|--minor|--patch [--rc]` bumps the latest reachable version under one command instead of three aliases.
 -->
