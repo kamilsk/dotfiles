@@ -54,6 +54,8 @@ cask "zed"
 
 tap "buo/cask-upgrade", trusted: true
 cask "docker/tap/sbx", trusted: true
-brew "octolab/tap/maintainer", trusted: true
-brew "octolab/tap/sparkle", trusted: true
-cask "steipete/tap/codexbar", trusted: true, args: { adopt: true }
+tap "octolab/tap", trusted: true
+cask "octolab/tap/indexit"
+cask "octolab/tap/maintainer"
+brew "octolab/tap/sparkle"
+cask "steipete/tap/codexbar", trusted: true

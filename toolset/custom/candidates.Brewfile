@@ -288,9 +288,10 @@ cask "zotero"
 
 # third-party
 
-tap "buo/cask-upgrade"
-cask "docker/tap/sbx"
-cask "octolab/tap/indexit", trusted: true
-brew "octolab/tap/maintainer"
+tap "buo/cask-upgrade", trusted: true
+cask "docker/tap/sbx", trusted: true
+tap "octolab/tap", trusted: true
+cask "octolab/tap/indexit"
+cask "octolab/tap/maintainer"
 brew "octolab/tap/sparkle"
-cask "steipete/tap/codexbar", args: { adopt: true }
+cask "steipete/tap/codexbar", trusted: true
