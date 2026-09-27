@@ -25,11 +25,14 @@ function images() {
     docker images --all | tail -n +2
     ;;
   clean)
-    docker rmi "$(docker images -q -f dangling=true)" 2>/dev/null
+    docker images -q -f dangling=true | xargs -r docker rmi 2>/dev/null
     docker system prune -f
     ;;
   pull)
-    images "$@" | awk '{print $1":"$2}' | xargs -n1 docker pull
+    docker images --filter dangling=false --format '{{.Repository}}:{{.Tag}}' |
+      grep -v '<none>' |
+      sort -u |
+      xargs -r -n1 docker pull
     ;;
   *)
     docker images | grep -v '<none>' | tail -n +2
@@ -51,10 +54,9 @@ function volumes() {
     docker volume ls | tail -n +2
     ;;
   clean)
-    volumes all |
-      awk '{print $2}' |
-      grep -E '[[:alnum:]]{64}' |
-      xargs docker volume rm
+    docker volume ls --format '{{.Name}}' |
+      grep -E '^[[:alnum:]]{64}$' |
+      xargs -r docker volume rm
     ;;
   *)
     volumes all | grep -E -v '[[:alnum:]]{64}' || true

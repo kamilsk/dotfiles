@@ -43,11 +43,10 @@ function update_brew() {
 
 function update_docker() {
   if command -v docker >/dev/null; then
-    docker images --all |
-      tail -n +2 |
+    docker images --filter dangling=false --format '{{.Repository}}:{{.Tag}}' |
       grep -v '<none>' |
-      awk '{print $1":"$2}' |
-      xargs -n1 docker pull || true
+      sort -u |
+      xargs -r -n1 docker pull || true
     echo Docker images were updated
   fi
 }
