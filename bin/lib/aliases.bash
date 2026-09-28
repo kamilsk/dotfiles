@@ -4,6 +4,13 @@ alias ..='cd ../'
 alias ...='cd ../../'
 alias dotfiles='cd ~/.dotfiles'
 
+# Source at the caller's scope: a function would make `typeset -U path` local.
+if [ -n "${ZSH_VERSION:-}" ]; then
+  alias reload='{ [ ! -r "${ZDOTDIR:-$HOME}/.zprofile" ] || source "${ZDOTDIR:-$HOME}/.zprofile"; } && source "${ZDOTDIR:-$HOME}/.zshrc" && rehash'
+elif [ -n "${BASH_VERSION:-}" ]; then
+  alias reload='source "$HOME/.bash_profile" && hash -r'
+fi
+
 alias cwd='pwd | tr -d "\n" | pbcopy'
 alias dots='ls .*'
 
