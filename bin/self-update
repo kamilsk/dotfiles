@@ -6,6 +6,18 @@ root="${HOME}/.dotfiles"
 host="$(uname -n | sed 's/\.local$//')"
 keep_going=false
 failures=()
+outcome=failed # becomes success or partial only on the way out
+
+# any exit not marked as success or partial is a hard error (1), whatever its status,
+# so 2 always means a partial success; bash 3.2 may even report 0 after a set -u abort
+function normalize_exit() {
+  case "${outcome}" in
+  success) exit 0 ;;
+  partial) exit 2 ;;
+  *) exit 1 ;;
+  esac
+}
+trap normalize_exit EXIT
 
 # tolerate runs a step that may fail for reasons outside the dotfiles,
 # e.g. an upstream cask pointing at a pulled download; with --keep-going
@@ -30,8 +42,8 @@ function ensure_clean() {
 }
 
 function update_apps() {
-  "${root}"/toolset/Apps install
-  mas upgrade
+  tolerate "${root}"/toolset/Apps install
+  tolerate mas upgrade
 }
 
 function update_brew() {
@@ -90,11 +102,9 @@ function clean_tools() {
 function update_tools() {
   if command -v go >/dev/null; then
     clean_tools
-    (
-      cd "${root}"/toolset || return 1
-      go mod download && go generate tools.go
-      echo tools were installed
-    )
+    local before=${#failures[@]}
+    tolerate make -C "${root}" install
+    if [ ${#failures[@]} -eq "${before}" ]; then echo tools were installed; fi
   fi
 }
 
@@ -173,4 +183,8 @@ zsh)
   ;;
 esac
 
-[ ${#failures[@]} -eq 0 ]
+if [ ${#failures[@]} -gt 0 ]; then
+  outcome=partial
+  exit 2
+fi
+outcome=success
