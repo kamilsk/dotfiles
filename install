@@ -4,15 +4,37 @@ set -euo pipefail
 
 root="${HOME}/.dotfiles"
 host="$(uname -n | sed 's/\.local$//')"
+failures=()
+outcome=failed # becomes success or partial only on the way out
+
+# any exit not marked as success or partial is a hard error (1), whatever its status,
+# so 2 always means a partial success; bash 3.2 may even report 0 after a set -u abort
+# shellcheck disable=SC2329 # invoked by the EXIT trap
+normalize_exit() {
+  case "${outcome}" in
+  success) exit 0 ;;
+  partial) exit 2 ;;
+  *) exit 1 ;;
+  esac
+}
+trap normalize_exit EXIT
+
+# tolerate runs a step that may fail for reasons outside the dotfiles,
+# e.g. an upstream cask pointing at a pulled download; the failure is recorded
+# and reported at the end, so one package does not stop the bootstrap
+# (the same as `self-update --keep-going`)
+tolerate() {
+  "$@" || failures+=("$*")
+}
 
 check() {
   if ! command -v git >/dev/null; then
-    echo Git not found, please install it first
+    echo Git not found, please install it first >&2
     return 1
   fi
 
   if ! command -v curl >/dev/null; then
-    echo cURL not found, please install it first
+    echo cURL not found, please install it first >&2
     return 1
   fi
 
@@ -22,20 +44,29 @@ check() {
 install-apps() {
   if [[ ! "$(uname)" =~ Darwin ]]; then return 0; fi
 
-  pushd "${root}" || return 1
   echo Installing apps...
-  toolset/Apps install
-  popd
-  return $?
+  # mas needs the App Store sign-in and may be missing if the bundle failed
+  tolerate "${root}"/toolset/Apps install
+  return 0
 }
 
 install-clt() {
   if [[ ! "$(uname)" =~ Darwin ]]; then return 0; fi
-  if command -v xcode-select >/dev/null; then return 0; fi
+  if xcode-select -p >/dev/null 2>&1; then return 0; fi
 
   echo Installing Command Line Tools for Xcode...
-  xcode-select --install
-  return $?
+  xcode-select --install || true # fails when a request is already pending
+  echo Waiting for the installation to finish...
+  local waited=0
+  until xcode-select -p >/dev/null 2>&1; do
+    if [ "${waited}" -ge 1800 ]; then
+      echo Command Line Tools are still not installed, please install them and run again >&2
+      return 1
+    fi
+    sleep 10
+    waited=$((waited + 10))
+  done
+  return 0
 }
 
 install-dotfiles() {
@@ -43,7 +74,10 @@ install-dotfiles() {
 
   echo Installing dotfiles...
   mkdir -p "${root}"
-  git clone --recurse-submodules git@github.com:kamilsk/dotfiles.git "${root}"
+  # a fresh machine has no SSH key yet: fetch over HTTPS, push over SSH
+  git -c url.https://github.com/.insteadOf=git@github.com: \
+    clone --recurse-submodules https://github.com/kamilsk/dotfiles.git "${root}"
+  git -C "${root}" remote set-url --push origin git@github.com:kamilsk/dotfiles.git
   return $?
 }
 
@@ -52,12 +86,12 @@ install-homebrew() {
 
   echo Installing Homebrew... # https://docs.brew.sh/Installation
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  local bin
+  local bin=''
   if [ -x '/usr/local/bin/brew' ]; then bin='/usr/local/bin/brew'; fi
   if [ -x '/opt/homebrew/bin/brew' ]; then bin='/opt/homebrew/bin/brew'; fi
   if [ -x '/home/linuxbrew/.linuxbrew/bin/brew' ]; then bin='/home/linuxbrew/.linuxbrew/bin/brew'; fi
   if [ -z "${bin}" ]; then
-    echo Homebrew not found after installation
+    echo Homebrew not found after installation >&2
     return 1
   fi
   eval "$(${bin} shellenv)"
@@ -71,26 +105,35 @@ install-bundle() {
 
   echo Installing Homebrew bundle...
   brew update --force --quiet
-  brew bundle --file="${common}" --no-upgrade -v
-  if [ -f "${custom}" ]; then brew bundle --file="${custom}" --no-upgrade -v; fi
+  # the same choice as in self-update: a host Brewfile is a complete list
+  if [ -f "${custom}" ]; then
+    tolerate brew bundle --file="${custom}" --no-upgrade -v
+  else
+    tolerate brew bundle --file="${common}" --no-upgrade -v
+  fi
   "${root}"/bin/unquarantine || echo "unquarantine: some apps are still quarantined" >&2
-  return $?
+  return 0
 }
 
 install-tools() {
   if ! command -v go >/dev/null; then return 0; fi
 
-  pushd "${root}" || return 1
   echo Installing tools...
-  make install
-  popd
-  return $?
+  tolerate make -C "${root}" install
+  return 0
 }
 
 install-vpn() {
-  open "https://getoutline.org/get-started/#step-3"
-  read -r -p "Please install and configure VPN, and press Enter to continue"
-  return $?
+  local url="https://getoutline.org/get-started/#step-3"
+
+  if [[ ! "$(uname)" =~ Darwin ]]; then
+    echo "Please install and configure VPN if needed: ${url}"
+    return 0
+  fi
+  open "${url}"
+  # without a terminal there is nobody to wait for
+  read -r -p "Please install and configure VPN, and press Enter to continue" || true
+  return 0
 }
 
 integrate-cli() {
@@ -113,7 +156,8 @@ integrate-cli() {
 
     if [ ! -d "${HOME}/.oh-my-zsh" ]; then
       echo Installing Oh My Zsh... # https://github.com/ohmyzsh/ohmyzsh?tab=readme-ov-file#basic-installation
-      bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      # keep the integrated .zshrc and come back here instead of starting zsh
+      RUNZSH=no KEEP_ZSHRC=yes bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
       echo Installing fonts...
       pushd "${root}/fonts" || return 1
@@ -126,20 +170,51 @@ integrate-cli() {
   return 0
 }
 
-# baseline
-install-clt
-if ! check; then return 0; fi
+secure-completions() {
+  if ! command -v zsh >/dev/null; then return 0; fi
 
-# core
-install-dotfiles
+  # compaudit is a zsh function: ask an interactive zsh, which loads the integrated config
+  # it reports directories and files; ownership cannot be fixed here, so recheck
+  local paths path
+  paths=$(zsh -ic compaudit 2>/dev/null) || true
+  while IFS= read -r path; do
+    if [ -e "${path}" ]; then tolerate chmod g-w,o-w "${path}"; fi
+  done <<<"${paths}"
+  if ! zsh -ic compaudit >/dev/null 2>&1; then failures+=("compaudit: insecure completion paths remain"); fi
+  return 0
+}
 
-# inventory
-install-vpn
-install-homebrew
-install-bundle
-install-tools
-install-apps
+main() {
+  # in `curl … | bash` the script itself is stdin: let the steps read the terminal,
+  # or nothing at all, but never the rest of the script
+  if { : </dev/tty; } 2>/dev/null; then exec </dev/tty; else exec </dev/null; fi
 
-# setup
-integrate-cli
-compaudit | xargs chmod g-w,o-w # todo: not tested in the whole installation process
+  # baseline
+  install-clt
+  if ! check; then exit 1; fi
+
+  # core
+  install-dotfiles
+
+  # inventory
+  install-vpn
+  install-homebrew
+  install-bundle
+  install-tools
+  install-apps
+
+  # setup
+  integrate-cli
+  secure-completions
+
+  if [ ${#failures[@]} -gt 0 ]; then
+    echo "install: finished with failures:" >&2
+    printf '  %s\n' "${failures[@]}" >&2
+    outcome=partial
+    exit 2
+  fi
+  outcome=success
+}
+
+# one line: bash reads the whole of it before main switches stdin, and exits before reading more
+main "$@"; exit $?
