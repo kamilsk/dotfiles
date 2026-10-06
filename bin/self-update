@@ -4,6 +4,19 @@ set -euo pipefail
 
 root="${HOME}/.dotfiles"
 host="$(uname -n | sed 's/\.local$//')"
+keep_going=false
+failures=()
+
+# tolerate runs a step that may fail for reasons outside the dotfiles,
+# e.g. an upstream cask pointing at a pulled download; with --keep-going
+# the failure is recorded and reported at the end instead of aborting the run
+function tolerate() {
+  if "${keep_going}"; then
+    "$@" || failures+=("$*")
+  else
+    "$@"
+  fi
+}
 
 function ensure_clean() {
   local dirty
@@ -30,13 +43,13 @@ function update_brew() {
 
   brew update --force --quiet
   if [ -f "${custom}" ]; then
-    brew bundle --file="${custom}" --verbose --upgrade --force --force-cleanup;
+    tolerate brew bundle --file="${custom}" --verbose --upgrade --force --force-cleanup
   else
-    brew bundle --file="${common}" --verbose --upgrade --force --force-cleanup;
+    tolerate brew bundle --file="${common}" --verbose --upgrade --force --force-cleanup
     brew bundle cleanup --file="${common}" --verbose --brews --casks --taps;
   fi
   brew upgrade --formula --yes
-  brew cu --all --cleanup --no-brew-update --yes --verbose
+  tolerate brew cu --all --cleanup --no-brew-update --yes --verbose
   "${root}"/bin/unquarantine || echo "unquarantine: some apps are still quarantined" >&2
   brew doctor --verbose || true
 }
@@ -97,6 +110,13 @@ ensure_clean
 
 UPDATE=()
 
+case "${1:-}" in
+-k | --keep-going)
+  keep_going=true
+  shift
+  ;;
+esac
+
 if [ $# -eq 0 ]; then
   UPDATE+=(update_dotfiles)
 elif [ "${1:-}" = "all" ]; then
@@ -135,6 +155,11 @@ done
 
 (cd "${root}" && git reset --hard) # clean up
 
+if [ ${#failures[@]} -gt 0 ]; then
+  echo "self-update: finished with failures:" >&2
+  printf '  %s\n' "${failures[@]}" >&2
+fi
+
 case $(basename "${SHELL}") in
 bash)
   echo source "${HOME}"/.bash_profile
@@ -147,3 +172,5 @@ zsh)
   exit 1
   ;;
 esac
+
+[ ${#failures[@]} -eq 0 ]
