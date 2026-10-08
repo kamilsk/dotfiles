@@ -6,6 +6,7 @@
 brew "actionlint"
 brew "ansible"
 brew "bash"
+brew "cloudflared"
 brew "cue"
 brew "curl"
 brew "docker"
