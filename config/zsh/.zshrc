@@ -9,7 +9,6 @@ DISABLE_UNTRACKED_FILES_DIRTY=true
 
 # la $ZSH/plugins/
 plugins=(
-  common-aliases
   docker-compose
   git
   golang
