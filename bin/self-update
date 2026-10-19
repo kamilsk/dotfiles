@@ -66,6 +66,53 @@ function update_brew() {
   brew doctor --verbose || true
 }
 
+function sync_codex_daemon() {
+  local versions action
+  versions=$(codex app-server daemon version) || return
+  action=$(jq -er '
+    def version: type == "string" and length > 0;
+    if (.cliVersion | version) and
+       has("managedCodexVersion") and has("appServerVersion") and
+       (.managedCodexVersion | . == null or version) and
+       (.appServerVersion | . == null or version)
+    then
+      if .managedCodexVersion == null and .appServerVersion == null then "absent"
+      elif .managedCodexVersion == .cliVersion and
+           (.appServerVersion == null or .appServerVersion == .cliVersion)
+      then "current"
+      else "update"
+      end
+    else error("invalid Codex daemon version response")
+    end
+  ' <<<"${versions}") || return
+
+  case "${action}" in
+  absent)
+    echo "Codex daemon is not installed; skipping"
+    ;;
+  current)
+    echo "Codex daemon matches the installed CLI; up to date"
+    ;;
+  update)
+    echo "Syncing Codex daemon with the installed CLI; active sessions may be interrupted"
+    codex app-server daemon update --from-cli --yes
+    ;;
+  esac
+}
+
+function update_codex() {
+  if command -v codex >/dev/null; then
+    tolerate sync_codex_daemon
+  fi
+}
+
+function update_plannotator() {
+  if command -v plannotator >/dev/null; then
+    # The native updater checks for a newer release and reuses the install flags.
+    tolerate plannotator update
+  fi
+}
+
 function update_docker() {
   if command -v docker >/dev/null; then
     docker images --filter dangling=false --format '{{.Repository}}:{{.Tag}}' |
@@ -130,7 +177,8 @@ esac
 if [ $# -eq 0 ]; then
   UPDATE+=(update_dotfiles)
 elif [ "${1:-}" = "all" ]; then
-  UPDATE=(update_apps update_dotfiles update_brew update_docker update_tools update_zsh)
+  # Sync the daemon after Homebrew updates the CLI, last because it may restart sessions.
+  UPDATE=(update_apps update_dotfiles update_brew update_docker update_tools update_zsh update_plannotator update_codex)
 else
   for type in "$@"; do
     case "${type}" in
@@ -140,11 +188,17 @@ else
     brew)
       UPDATE+=(update_brew)
       ;;
+    codex)
+      UPDATE+=(update_codex)
+      ;;
     docker)
       UPDATE+=(update_docker)
       ;;
     dots)
       UPDATE+=(update_dotfiles)
+      ;;
+    plannotator)
+      UPDATE+=(update_plannotator)
       ;;
     tools)
       UPDATE+=(update_tools)
