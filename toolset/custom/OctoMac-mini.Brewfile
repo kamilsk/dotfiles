@@ -57,7 +57,7 @@ cask "zed"
 tap "buo/cask-upgrade", trusted: true
 cask "docker/tap/sbx", trusted: true
 tap "octolab/tap", trusted: true
-cask "octolab/tap/indexit"
+brew "octolab/tap/indexit"
 cask "octolab/tap/maintainer"
 brew "octolab/tap/sparkle"
 cask "steipete/tap/codexbar", trusted: true
