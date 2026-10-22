@@ -5,10 +5,16 @@ databaseId: 457126131
 number: 36
 url: https://github.com/kamilsk/dotfiles/issues/36
 title: "add mirror"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-06-17T20:10:02Z
 updatedAt: 2026-09-17T11:07:40Z
 lastEditedAt: 2026-09-17T11:07:40Z

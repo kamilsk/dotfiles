@@ -5,10 +5,16 @@ databaseId: 391079378
 number: 4
 url: https://github.com/kamilsk/dotfiles/issues/4
 title: "add installation entrypoint"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2018-12-14T11:47:08Z
 updatedAt: 2026-09-17T11:09:21Z
 lastEditedAt: 2026-09-17T11:09:21Z

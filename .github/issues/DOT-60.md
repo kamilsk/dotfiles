@@ -5,10 +5,16 @@ databaseId: 512865957
 number: 61
 url: https://github.com/kamilsk/dotfiles/issues/61
 title: "git continue alias"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-10-26T17:58:05Z
 updatedAt: 2026-09-17T11:13:07Z
 lastEditedAt: 2026-09-17T11:13:07Z

@@ -5,11 +5,17 @@ databaseId: 656837587
 number: 79
 url: https://github.com/kamilsk/dotfiles/issues/79
 title: "bug with git cmm"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-07-14T19:12:44Z
 updatedAt: 2026-09-17T11:14:46Z
 lastEditedAt: 2026-09-17T11:14:46Z

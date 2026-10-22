@@ -5,11 +5,17 @@ databaseId: 451926177
 number: 33
 url: https://github.com/kamilsk/dotfiles/issues/33
 title: "git shake problems"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-06-04T10:47:46Z
 updatedAt: 2026-09-17T11:06:21Z
 lastEditedAt: 2026-09-17T11:06:21Z

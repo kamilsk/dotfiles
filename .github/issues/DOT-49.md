@@ -5,10 +5,16 @@ databaseId: 477224982
 number: 50
 url: https://github.com/kamilsk/dotfiles/issues/50
 title: "improve git issue alias"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-08-06T07:52:50Z
 updatedAt: 2026-09-17T11:11:34Z
 lastEditedAt: 2026-09-17T11:11:34Z

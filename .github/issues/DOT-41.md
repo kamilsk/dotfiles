@@ -5,10 +5,16 @@ databaseId: 461934331
 number: 42
 url: https://github.com/kamilsk/dotfiles/issues/42
 title: "stash which or where"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-06-28T09:05:05Z
 updatedAt: 2026-09-17T11:09:56Z
 lastEditedAt: 2026-09-17T11:09:56Z

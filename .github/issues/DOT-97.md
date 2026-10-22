@@ -5,10 +5,16 @@ databaseId: 787536836
 number: 98
 url: https://github.com/kamilsk/dotfiles/issues/98
 title: "integrate spot"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2021-01-16T19:31:51Z
 updatedAt: 2026-09-17T11:15:58Z
 lastEditedAt: 2026-09-17T11:15:58Z

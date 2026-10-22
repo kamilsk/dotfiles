@@ -5,10 +5,16 @@ databaseId: 556448999
 number: 73
 url: https://github.com/kamilsk/dotfiles/issues/73
 title: "gopath alias"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-01-28T20:26:44Z
 updatedAt: 2026-09-17T11:14:26Z
 lastEditedAt: 2026-09-17T11:14:26Z

@@ -5,10 +5,16 @@ databaseId: 775015761
 number: 90
 url: https://github.com/kamilsk/dotfiles/issues/90
 title: "git whoami"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-12-27T10:48:47Z
 updatedAt: 2026-09-17T11:15:39Z
 lastEditedAt: 2026-09-17T11:15:39Z

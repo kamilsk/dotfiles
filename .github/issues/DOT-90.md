@@ -5,10 +5,16 @@ databaseId: 775088936
 number: 91
 url: https://github.com/kamilsk/dotfiles/issues/91
 title: "combine git it and git at"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-12-27T18:45:29Z
 updatedAt: 2026-09-17T11:15:41Z
 lastEditedAt: 2026-09-17T11:15:41Z

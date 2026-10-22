@@ -5,10 +5,16 @@ databaseId: 470753414
 number: 48
 url: https://github.com/kamilsk/dotfiles/issues/48
 title: "improve git_mirror"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-07-21T07:44:58Z
 updatedAt: 2026-09-17T11:11:13Z
 lastEditedAt: 2026-09-17T11:11:13Z

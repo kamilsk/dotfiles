@@ -5,11 +5,17 @@ databaseId: 440575008
 number: 15
 url: https://github.com/kamilsk/dotfiles/issues/15
 title: "problem with git refresh"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-06T07:32:57Z
 updatedAt: 2026-09-17T10:58:26Z
 lastEditedAt: 2026-09-17T10:58:26Z

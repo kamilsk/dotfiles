@@ -5,11 +5,17 @@ databaseId: 535538364
 number: 69
 url: https://github.com/kamilsk/dotfiles/issues/69
 title: "change git release"
+issueType: null
 labels:
   - "severity: critical"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-12-10T07:07:36Z
 updatedAt: 2026-09-17T11:14:02Z
 lastEditedAt: 2026-09-17T11:14:01Z

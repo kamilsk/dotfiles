@@ -5,10 +5,16 @@ databaseId: 453778157
 number: 34
 url: https://github.com/kamilsk/dotfiles/issues/34
 title: "git untag"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-06-08T10:05:12Z
 updatedAt: 2026-09-17T11:06:48Z
 lastEditedAt: 2026-09-17T11:06:48Z

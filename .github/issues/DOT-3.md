@@ -5,10 +5,16 @@ databaseId: 388198702
 number: 3
 url: https://github.com/kamilsk/dotfiles/issues/3
 title: "add prepare alias"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2018-12-06T12:47:03Z
 updatedAt: 2026-09-17T11:05:00Z
 lastEditedAt: 2026-09-17T11:05:00Z

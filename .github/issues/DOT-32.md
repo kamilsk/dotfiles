@@ -5,11 +5,17 @@ databaseId: 450192739
 number: 32
 url: https://github.com/kamilsk/dotfiles/issues/32
 title: "volumes not work properly"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-30T08:33:09Z
 updatedAt: 2026-09-17T11:05:54Z
 lastEditedAt: 2026-09-17T11:05:54Z

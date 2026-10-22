@@ -5,10 +5,16 @@ databaseId: 459566455
 number: 39
 url: https://github.com/kamilsk/dotfiles/issues/39
 title: "experiment with TMOUT environment"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-06-23T11:43:22Z
 updatedAt: 2026-09-17T11:08:57Z
 lastEditedAt: 2026-09-17T11:08:57Z

@@ -5,11 +5,17 @@ databaseId: 445389500
 number: 27
 url: https://github.com/kamilsk/dotfiles/issues/27
 title: "git refresh not work on master branch"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-17T11:08:15Z
 updatedAt: 2026-09-17T11:03:42Z
 lastEditedAt: 2026-09-17T11:03:42Z

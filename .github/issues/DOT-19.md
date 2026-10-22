@@ -5,10 +5,16 @@ databaseId: 442171850
 number: 19
 url: https://github.com/kamilsk/dotfiles/issues/19
 title: "git aliases"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-09T10:44:26Z
 updatedAt: 2026-09-17T11:00:11Z
 lastEditedAt: 2026-09-17T11:00:11Z

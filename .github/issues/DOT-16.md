@@ -5,10 +5,16 @@ databaseId: 441028343
 number: 16
 url: https://github.com/kamilsk/dotfiles/issues/16
 title: "extend git refresh"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-07T05:01:36Z
 updatedAt: 2026-09-17T10:58:52Z
 lastEditedAt: 2026-09-17T10:58:52Z

@@ -5,10 +5,16 @@ databaseId: 421469514
 number: 12
 url: https://github.com/kamilsk/dotfiles/issues/12
 title: "extend git stats"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-03-15T11:16:05Z
 updatedAt: 2026-09-17T10:57:09Z
 lastEditedAt: 2026-09-17T10:57:09Z

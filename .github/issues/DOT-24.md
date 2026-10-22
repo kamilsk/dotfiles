@@ -5,10 +5,16 @@ databaseId: 442975113
 number: 24
 url: https://github.com/kamilsk/dotfiles/issues/24
 title: "explain shell script"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-11T09:45:23Z
 updatedAt: 2026-09-17T11:02:23Z
 lastEditedAt: 2026-09-17T11:02:23Z

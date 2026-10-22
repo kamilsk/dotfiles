@@ -5,11 +5,17 @@ databaseId: 487790629
 number: 55
 url: https://github.com/kamilsk/dotfiles/issues/55
 title: "git refresh works not well"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-08-31T17:06:44Z
 updatedAt: 2026-09-17T11:12:23Z
 lastEditedAt: 2026-09-17T11:12:23Z

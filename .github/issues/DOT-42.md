@@ -5,10 +5,16 @@ databaseId: 461949965
 number: 43
 url: https://github.com/kamilsk/dotfiles/issues/43
 title: "stash undo|rollback"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-06-28T09:42:31Z
 updatedAt: 2026-09-17T11:10:10Z
 lastEditedAt: 2026-09-17T11:10:10Z

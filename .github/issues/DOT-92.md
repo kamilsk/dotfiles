@@ -5,10 +5,16 @@ databaseId: 777612169
 number: 93
 url: https://github.com/kamilsk/dotfiles/issues/93
 title: "git state"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2021-01-03T10:34:43Z
 updatedAt: 2026-09-17T11:15:46Z
 lastEditedAt: 2026-09-17T11:15:46Z

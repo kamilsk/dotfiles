@@ -5,11 +5,17 @@ databaseId: 442634996
 number: 23
 url: https://github.com/kamilsk/dotfiles/issues/23
 title: "add slay and more"
+issueType: null
 labels:
   - "scope: docs"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-10T09:52:17Z
 updatedAt: 2026-09-17T11:01:56Z
 lastEditedAt: 2026-09-17T11:01:56Z

@@ -5,11 +5,17 @@ databaseId: 542567764
 number: 70
 url: https://github.com/kamilsk/dotfiles/issues/70
 title: "git release has a problem"
+issueType: null
 labels:
   - "severity: critical"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-12-26T14:17:56Z
 updatedAt: 2026-09-17T11:14:06Z
 lastEditedAt: 2026-09-17T11:14:06Z

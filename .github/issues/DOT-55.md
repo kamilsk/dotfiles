@@ -5,10 +5,16 @@ databaseId: 487790988
 number: 56
 url: https://github.com/kamilsk/dotfiles/issues/56
 title: "git open"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-08-31T17:10:24Z
 updatedAt: 2026-09-17T11:12:33Z
 lastEditedAt: 2026-09-17T11:12:33Z

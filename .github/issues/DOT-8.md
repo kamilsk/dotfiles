@@ -5,10 +5,16 @@ databaseId: 396259794
 number: 8
 url: https://github.com/kamilsk/dotfiles/issues/8
 title: "add explainshell.com"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-01-06T13:48:46Z
 updatedAt: 2026-09-17T11:14:48Z
 lastEditedAt: 2026-09-17T11:14:48Z

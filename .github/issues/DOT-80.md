@@ -5,10 +5,16 @@ databaseId: 665375446
 number: 81
 url: https://github.com/kamilsk/dotfiles/issues/81
 title: "/bin/bash: looppointer: command not found"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-07-24T19:38:55Z
 updatedAt: 2026-09-17T11:14:53Z
 lastEditedAt: 2026-09-17T11:14:53Z

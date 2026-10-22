@@ -5,11 +5,17 @@ databaseId: 613471075
 number: 76
 url: https://github.com/kamilsk/dotfiles/issues/76
 title: "download goreleaser tools not from go mod"
+issueType: null
 labels:
   - "help wanted"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-05-06T16:59:52Z
 updatedAt: 2026-09-17T11:14:36Z
 lastEditedAt: 2026-09-17T11:14:36Z

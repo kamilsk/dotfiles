@@ -5,10 +5,16 @@ databaseId: 499879794
 number: 59
 url: https://github.com/kamilsk/dotfiles/issues/59
 title: "docker-compose alias"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-09-29T08:33:26Z
 updatedAt: 2026-09-17T11:12:47Z
 lastEditedAt: 2026-09-17T11:12:47Z

@@ -5,10 +5,16 @@ databaseId: 380617341
 number: 1
 url: https://github.com/kamilsk/dotfiles/issues/1
 title: "review git_flow_jira"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2018-11-14T09:53:04Z
 updatedAt: 2026-09-17T10:55:57Z
 lastEditedAt: 2026-09-17T10:55:57Z

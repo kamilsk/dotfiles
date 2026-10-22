@@ -5,11 +5,17 @@ databaseId: 442134132
 number: 18
 url: https://github.com/kamilsk/dotfiles/issues/18
 title: "bug with git sync"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-09T09:17:07Z
 updatedAt: 2026-09-17T10:59:45Z
 lastEditedAt: 2026-09-17T10:59:45Z

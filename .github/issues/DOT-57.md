@@ -5,11 +5,17 @@ databaseId: 496633335
 number: 58
 url: https://github.com/kamilsk/dotfiles/issues/58
 title: "debug"
+issueType: null
 labels:
   - "help wanted"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-09-21T08:59:46Z
 updatedAt: 2026-09-17T11:12:43Z
 lastEditedAt: 2026-09-17T11:12:43Z

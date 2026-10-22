@@ -5,10 +5,16 @@ databaseId: 388198340
 number: 2
 url: https://github.com/kamilsk/dotfiles/issues/2
 title: "improve self-update"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2018-12-06T12:45:51Z
 updatedAt: 2026-09-17T11:00:37Z
 lastEditedAt: 2026-09-17T11:00:37Z

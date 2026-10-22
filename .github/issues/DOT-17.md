@@ -5,10 +5,16 @@ databaseId: 441667149
 number: 17
 url: https://github.com/kamilsk/dotfiles/issues/17
 title: "run git_config when self-update did"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-08T10:37:42Z
 updatedAt: 2026-09-17T10:59:18Z
 lastEditedAt: 2026-09-17T10:59:18Z

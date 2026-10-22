@@ -5,10 +5,16 @@ databaseId: 787668605
 number: 100
 url: https://github.com/kamilsk/dotfiles/issues/100
 title: "add completions"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2021-01-17T09:40:58Z
 updatedAt: 2026-09-17T10:56:20Z
 lastEditedAt: 2026-09-17T10:56:20Z

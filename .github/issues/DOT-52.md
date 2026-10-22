@@ -5,10 +5,16 @@ databaseId: 484385670
 number: 53
 url: https://github.com/kamilsk/dotfiles/issues/53
 title: "review brew list"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-08-23T07:58:54Z
 updatedAt: 2026-09-17T11:12:02Z
 lastEditedAt: 2026-09-17T11:12:02Z

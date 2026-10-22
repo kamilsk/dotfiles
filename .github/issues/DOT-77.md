@@ -5,10 +5,16 @@ databaseId: 651830906
 number: 78
 url: https://github.com/kamilsk/dotfiles/issues/78
 title: "add git at alias"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-07-06T21:29:42Z
 updatedAt: 2026-09-17T11:14:41Z
 lastEditedAt: 2026-09-17T11:14:41Z

@@ -5,10 +5,16 @@ databaseId: 787488799
 number: 97
 url: https://github.com/kamilsk/dotfiles/issues/97
 title: "add octosql"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2021-01-16T15:26:48Z
 updatedAt: 2026-09-17T11:15:55Z
 lastEditedAt: 2026-09-17T11:15:55Z

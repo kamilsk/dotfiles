@@ -5,10 +5,16 @@ databaseId: 408665463
 number: 11
 url: https://github.com/kamilsk/dotfiles/issues/11
 title: "mac configuration to use touchid"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-02-11T07:46:19Z
 updatedAt: 2026-09-17T10:56:43Z
 lastEditedAt: 2026-09-17T10:56:43Z

@@ -5,11 +5,17 @@ databaseId: 462424647
 number: 44
 url: https://github.com/kamilsk/dotfiles/issues/44
 title: "self-update and unbound variable"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-06-30T16:51:43Z
 updatedAt: 2026-09-17T11:10:30Z
 lastEditedAt: 2026-09-17T11:10:30Z

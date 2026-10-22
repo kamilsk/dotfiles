@@ -5,10 +5,16 @@ databaseId: 527956665
 number: 68
 url: https://github.com/kamilsk/dotfiles/issues/68
 title: "deliver go tools"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-11-25T09:28:23Z
 updatedAt: 2026-09-17T11:13:59Z
 lastEditedAt: 2026-09-17T11:13:59Z

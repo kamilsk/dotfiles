@@ -5,11 +5,17 @@ databaseId: 594833886
 number: 74
 url: https://github.com/kamilsk/dotfiles/issues/74
 title: "new aliases as touch alternatives"
+issueType: null
 labels:
   - "help wanted"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-04-06T06:18:13Z
 updatedAt: 2026-09-17T11:14:29Z
 lastEditedAt: 2026-09-17T11:14:29Z

@@ -5,10 +5,16 @@ databaseId: 481890802
 number: 52
 url: https://github.com/kamilsk/dotfiles/issues/52
 title: "bundles"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-08-17T14:16:35Z
 updatedAt: 2026-09-17T11:11:57Z
 lastEditedAt: 2026-09-17T11:11:57Z

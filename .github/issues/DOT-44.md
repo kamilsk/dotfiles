@@ -5,10 +5,16 @@ databaseId: 465571654
 number: 45
 url: https://github.com/kamilsk/dotfiles/issues/45
 title: "coverall"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-07-09T05:07:42Z
 updatedAt: 2026-09-17T11:10:44Z
 lastEditedAt: 2026-09-17T11:10:44Z

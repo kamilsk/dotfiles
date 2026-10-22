@@ -5,10 +5,16 @@ databaseId: 513711726
 number: 64
 url: https://github.com/kamilsk/dotfiles/issues/64
 title: "realpath alias"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-10-29T06:04:35Z
 updatedAt: 2026-09-17T11:13:40Z
 lastEditedAt: 2026-09-17T11:13:40Z

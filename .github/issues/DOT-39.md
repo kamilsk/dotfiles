@@ -5,10 +5,16 @@ databaseId: 461919736
 number: 40
 url: https://github.com/kamilsk/dotfiles/issues/40
 title: "add lookup alias"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-06-28T08:28:44Z
 updatedAt: 2026-09-17T11:09:23Z
 lastEditedAt: 2026-09-17T11:09:23Z

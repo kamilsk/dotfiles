@@ -5,10 +5,16 @@ databaseId: 481488221
 number: 51
 url: https://github.com/kamilsk/dotfiles/issues/51
 title: "go checks"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-08-16T07:49:32Z
 updatedAt: 2026-09-17T11:11:45Z
 lastEditedAt: 2026-09-17T11:11:45Z

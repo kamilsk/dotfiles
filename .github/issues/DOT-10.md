@@ -5,10 +5,16 @@ databaseId: 405652181
 number: 10
 url: https://github.com/kamilsk/dotfiles/issues/10
 title: "add aliases git patch, git minor, git major"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-02-01T10:59:04Z
 updatedAt: 2026-09-23T14:19:16Z
 lastEditedAt: 2026-09-17T10:56:17Z

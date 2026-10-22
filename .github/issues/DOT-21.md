@@ -5,11 +5,17 @@ databaseId: 442172560
 number: 21
 url: https://github.com/kamilsk/dotfiles/issues/21
 title: "update readme"
+issueType: null
 labels:
   - "scope: docs"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-09T10:46:11Z
 updatedAt: 2026-09-17T11:01:05Z
 lastEditedAt: 2026-09-17T11:01:05Z

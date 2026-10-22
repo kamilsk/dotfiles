@@ -5,10 +5,16 @@ databaseId: 448244571
 number: 29
 url: https://github.com/kamilsk/dotfiles/issues/29
 title: "partial self-update"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-24T16:01:31Z
 updatedAt: 2026-09-17T11:04:34Z
 lastEditedAt: 2026-09-17T11:04:34Z

@@ -5,11 +5,17 @@ databaseId: 613368468
 number: 75
 url: https://github.com/kamilsk/dotfiles/issues/75
 title: "add hugo"
+issueType: null
 labels:
   - "help wanted"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-05-06T14:33:14Z
 updatedAt: 2026-09-17T11:14:31Z
 lastEditedAt: 2026-09-17T11:14:31Z

@@ -5,10 +5,16 @@ databaseId: 485330695
 number: 54
 url: https://github.com/kamilsk/dotfiles/issues/54
 title: "support php and python by coverall"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-08-26T16:44:11Z
 updatedAt: 2026-09-17T11:12:14Z
 lastEditedAt: 2026-09-17T11:12:14Z

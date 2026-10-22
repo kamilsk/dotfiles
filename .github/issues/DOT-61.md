@@ -5,10 +5,16 @@ databaseId: 513159240
 number: 62
 url: https://github.com/kamilsk/dotfiles/issues/62
 title: "timestamp alias"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-10-28T08:22:14Z
 updatedAt: 2026-09-17T11:13:19Z
 lastEditedAt: 2026-09-17T11:13:19Z

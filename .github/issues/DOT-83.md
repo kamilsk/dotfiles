@@ -5,12 +5,18 @@ databaseId: 709666169
 number: 84
 url: https://github.com/kamilsk/dotfiles/issues/84
 title: "tools problem"
+issueType: null
 labels:
   - "help wanted"
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-09-27T04:43:22Z
 updatedAt: 2026-09-17T11:15:12Z
 lastEditedAt: 2026-09-17T11:15:12Z

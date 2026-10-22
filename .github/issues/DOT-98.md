@@ -5,10 +5,16 @@ databaseId: 787540100
 number: 99
 url: https://github.com/kamilsk/dotfiles/issues/99
 title: "research benefits to combine all git_* scripts into one Go binary"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2021-01-16T19:51:20Z
 updatedAt: 2026-09-17T11:16:00Z
 lastEditedAt: 2026-09-17T11:16:00Z

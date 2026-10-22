@@ -5,10 +5,16 @@ databaseId: 671206772
 number: 82
 url: https://github.com/kamilsk/dotfiles/issues/82
 title: "truncate logs for docker"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-08-01T21:17:50Z
 updatedAt: 2026-09-17T11:14:57Z
 lastEditedAt: 2026-09-17T11:14:57Z

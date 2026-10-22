@@ -5,11 +5,17 @@ databaseId: 554584772
 number: 72
 url: https://github.com/kamilsk/dotfiles/issues/72
 title: "git release problem"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-01-24T07:29:57Z
 updatedAt: 2026-09-17T11:14:14Z
 lastEditedAt: 2026-09-17T11:14:14Z

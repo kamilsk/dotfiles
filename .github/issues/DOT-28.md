@@ -5,10 +5,16 @@ databaseId: 448244018
 number: 28
 url: https://github.com/kamilsk/dotfiles/issues/28
 title: "ask to open pull request for you"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-24T16:00:14Z
 updatedAt: 2026-09-17T11:04:08Z
 lastEditedAt: 2026-09-17T11:04:08Z

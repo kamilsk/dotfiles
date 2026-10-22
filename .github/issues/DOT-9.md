@@ -5,11 +5,17 @@ databaseId: 397214832
 number: 9
 url: https://github.com/kamilsk/dotfiles/issues/9
 title: "fix self-update at linux"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-01-09T05:13:15Z
 updatedAt: 2026-09-17T11:15:36Z
 lastEditedAt: 2026-09-17T11:15:36Z

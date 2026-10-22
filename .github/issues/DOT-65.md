@@ -5,10 +5,16 @@ databaseId: 523843622
 number: 66
 url: https://github.com/kamilsk/dotfiles/issues/66
 title: "wholisten <port>"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-11-16T13:12:18Z
 updatedAt: 2026-09-17T11:13:47Z
 lastEditedAt: 2026-09-17T11:13:47Z

@@ -5,10 +5,16 @@ databaseId: 423572971
 number: 13
 url: https://github.com/kamilsk/dotfiles/issues/13
 title: "add volumes and containers aliases"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-03-21T04:59:30Z
 updatedAt: 2026-09-17T10:57:34Z
 lastEditedAt: 2026-09-17T10:57:34Z

@@ -5,11 +5,17 @@ databaseId: 623805408
 number: 77
 url: https://github.com/kamilsk/dotfiles/issues/77
 title: "add gorelease"
+issueType: null
 labels:
   - "help wanted"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-05-24T06:30:54Z
 updatedAt: 2026-09-17T11:14:38Z
 lastEditedAt: 2026-09-17T11:14:38Z

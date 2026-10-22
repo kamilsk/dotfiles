@@ -5,10 +5,16 @@ databaseId: 662190647
 number: 80
 url: https://github.com/kamilsk/dotfiles/issues/80
 title: "add yaegi to the toolset"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-07-20T19:41:36Z
 updatedAt: 2026-09-17T11:14:50Z
 lastEditedAt: 2026-09-17T11:14:50Z

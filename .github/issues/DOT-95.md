@@ -5,10 +5,16 @@ databaseId: 780532829
 number: 96
 url: https://github.com/kamilsk/dotfiles/issues/96
 title: "add new interesting isacikgoz' projects"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2021-01-06T12:55:06Z
 updatedAt: 2026-09-17T11:15:53Z
 lastEditedAt: 2026-09-17T11:15:53Z

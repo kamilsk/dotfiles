@@ -5,10 +5,16 @@ databaseId: 543772321
 number: 71
 url: https://github.com/kamilsk/dotfiles/issues/71
 title: "update go tools"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-12-30T07:06:58Z
 updatedAt: 2026-09-17T11:14:11Z
 lastEditedAt: 2026-09-17T11:14:11Z

@@ -5,10 +5,16 @@ databaseId: 469198653
 number: 47
 url: https://github.com/kamilsk/dotfiles/issues/47
 title: "extend coverall"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-07-17T13:37:21Z
 updatedAt: 2026-09-29T04:35:50Z
 lastEditedAt: 2026-09-17T11:11:06Z

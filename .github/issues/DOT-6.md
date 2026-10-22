@@ -5,10 +5,16 @@ databaseId: 394891013
 number: 6
 url: https://github.com/kamilsk/dotfiles/issues/6
 title: "add space-gophers"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2018-12-30T18:14:10Z
 updatedAt: 2026-09-17T11:12:50Z
 lastEditedAt: 2026-09-17T11:12:50Z

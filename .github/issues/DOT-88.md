@@ -5,10 +5,16 @@ databaseId: 774776710
 number: 89
 url: https://github.com/kamilsk/dotfiles/issues/89
 title: "extend lookup command"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-12-25T19:35:33Z
 updatedAt: 2026-09-17T11:15:34Z
 lastEditedAt: 2026-09-17T11:15:34Z

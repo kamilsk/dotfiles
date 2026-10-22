@@ -5,10 +5,16 @@ databaseId: 476558945
 number: 49
 url: https://github.com/kamilsk/dotfiles/issues/49
 title: "fzqurl"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-08-04T14:24:19Z
 updatedAt: 2026-09-17T11:11:25Z
 lastEditedAt: 2026-09-17T11:11:25Z

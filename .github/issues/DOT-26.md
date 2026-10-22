@@ -5,10 +5,16 @@ databaseId: 444798512
 number: 26
 url: https://github.com/kamilsk/dotfiles/issues/26
 title: "add git detach alias"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-16T07:34:25Z
 updatedAt: 2026-09-17T11:03:16Z
 lastEditedAt: 2026-09-17T11:03:16Z

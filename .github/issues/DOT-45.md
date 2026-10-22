@@ -5,11 +5,17 @@ databaseId: 469156336
 number: 46
 url: https://github.com/kamilsk/dotfiles/issues/46
 title: "remove [no tests to run]"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-07-17T12:10:30Z
 updatedAt: 2026-09-29T04:35:48Z
 lastEditedAt: 2026-09-17T11:10:56Z

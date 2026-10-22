@@ -5,11 +5,17 @@ databaseId: 448421533
 number: 30
 url: https://github.com/kamilsk/dotfiles/issues/30
 title: "git it not work properly"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-25T05:26:14Z
 updatedAt: 2026-09-17T11:05:02Z
 lastEditedAt: 2026-09-17T11:05:02Z

@@ -5,11 +5,17 @@ databaseId: 512473444
 number: 60
 url: https://github.com/kamilsk/dotfiles/issues/60
 title: "git release didn't show postfix (rc/alpha)"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-10-25T11:53:09Z
 updatedAt: 2026-09-17T11:12:52Z
 lastEditedAt: 2026-09-17T11:12:52Z

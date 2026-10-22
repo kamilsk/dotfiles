@@ -5,11 +5,17 @@ databaseId: 454203328
 number: 35
 url: https://github.com/kamilsk/dotfiles/issues/35
 title: "git start problems at github"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-06-10T14:37:04Z
 updatedAt: 2026-09-17T11:07:14Z
 lastEditedAt: 2026-09-17T11:07:14Z

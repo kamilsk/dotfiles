@@ -5,10 +5,16 @@ databaseId: 394978629
 number: 7
 url: https://github.com/kamilsk/dotfiles/issues/7
 title: "new alias git issue"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2018-12-31T13:12:00Z
 updatedAt: 2026-09-17T11:14:04Z
 lastEditedAt: 2026-09-17T11:14:04Z

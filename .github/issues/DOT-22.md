@@ -5,10 +5,16 @@ databaseId: 442565833
 number: 22
 url: https://github.com/kamilsk/dotfiles/issues/22
 title: "review git issue alias"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-10T06:54:22Z
 updatedAt: 2026-09-17T11:01:30Z
 lastEditedAt: 2026-09-17T11:01:30Z

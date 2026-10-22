@@ -5,10 +5,16 @@ databaseId: 440306054
 number: 14
 url: https://github.com/kamilsk/dotfiles/issues/14
 title: "define git cmm like as git progress"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-04T09:54:11Z
 updatedAt: 2026-09-17T10:58:00Z
 lastEditedAt: 2026-09-17T10:58:00Z

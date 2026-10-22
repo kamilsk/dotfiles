@@ -5,11 +5,17 @@ databaseId: 443775161
 number: 25
 url: https://github.com/kamilsk/dotfiles/issues/25
 title: "invalid behavior of git start and git refresh"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-14T08:22:25Z
 updatedAt: 2026-09-17T11:02:50Z
 lastEditedAt: 2026-09-17T11:02:50Z

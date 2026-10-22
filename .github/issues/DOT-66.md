@@ -5,10 +5,16 @@ databaseId: 527712966
 number: 67
 url: https://github.com/kamilsk/dotfiles/issues/67
 title: "oom alias"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-11-24T15:18:38Z
 updatedAt: 2026-09-17T11:13:57Z
 lastEditedAt: 2026-09-17T11:13:57Z

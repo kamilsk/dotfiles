@@ -5,10 +5,16 @@ databaseId: 442172184
 number: 20
 url: https://github.com/kamilsk/dotfiles/issues/20
 title: "remove bash_completions"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-05-09T10:45:15Z
 updatedAt: 2026-09-17T11:00:39Z
 lastEditedAt: 2026-09-17T11:00:39Z

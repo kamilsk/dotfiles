@@ -5,10 +5,16 @@ databaseId: 741049760
 number: 87
 url: https://github.com/kamilsk/dotfiles/issues/87
 title: "investigate some dotfiles"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-11-11T20:30:07Z
 updatedAt: 2026-09-17T11:15:24Z
 lastEditedAt: 2026-09-17T11:15:24Z

@@ -5,11 +5,17 @@ databaseId: 686017772
 number: 83
 url: https://github.com/kamilsk/dotfiles/issues/83
 title: "problem cases after refactoring"
+issueType: null
 labels:
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-08-26T05:28:06Z
 updatedAt: 2026-09-17T11:15:10Z
 lastEditedAt: 2026-09-17T11:15:10Z

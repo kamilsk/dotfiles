@@ -5,10 +5,16 @@ databaseId: 780394236
 number: 95
 url: https://github.com/kamilsk/dotfiles/issues/95
 title: "add links to source code in Brewfile"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2021-01-06T09:51:49Z
 updatedAt: 2026-09-17T11:15:50Z
 lastEditedAt: 2026-09-17T11:15:50Z

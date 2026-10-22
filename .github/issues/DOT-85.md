@@ -5,12 +5,18 @@ databaseId: 733730676
 number: 86
 url: https://github.com/kamilsk/dotfiles/issues/86
 title: "force date format"
+issueType: null
 labels:
   - "help wanted"
   - "type: bug"
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-10-31T14:19:04Z
 updatedAt: 2026-09-17T11:15:17Z
 lastEditedAt: 2026-09-17T11:15:17Z

@@ -5,10 +5,16 @@ databaseId: 393913739
 number: 5
 url: https://github.com/kamilsk/dotfiles/issues/5
 title: "add alias git refresh"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2018-12-24T17:30:12Z
 updatedAt: 2026-09-17T11:11:31Z
 lastEditedAt: 2026-09-17T11:11:31Z

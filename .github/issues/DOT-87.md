@@ -5,10 +5,16 @@ databaseId: 743565902
 number: 88
 url: https://github.com/kamilsk/dotfiles/issues/88
 title: "git tableflip"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2020-11-16T07:07:32Z
 updatedAt: 2026-09-17T11:15:32Z
 lastEditedAt: 2026-09-17T11:15:32Z

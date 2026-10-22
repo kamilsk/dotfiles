@@ -5,10 +5,16 @@ databaseId: 513705090
 number: 63
 url: https://github.com/kamilsk/dotfiles/issues/63
 title: "activate alias"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2019-10-29T05:41:35Z
 updatedAt: 2026-09-17T11:13:31Z
 lastEditedAt: 2026-09-17T11:13:31Z

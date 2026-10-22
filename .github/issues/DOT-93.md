@@ -5,10 +5,16 @@ databaseId: 780375727
 number: 94
 url: https://github.com/kamilsk/dotfiles/issues/94
 title: "add fzz and tmux"
+issueType: null
 labels: []
-milestone:
+assignees:
+  - kamilsk
+milestone: null
+parent: null
+issueFields: {}
 state: CLOSED
 stateReason: COMPLETED
+duplicateOf: null
 createdAt: 2021-01-06T09:36:03Z
 updatedAt: 2026-09-17T11:15:48Z
 lastEditedAt: 2026-09-17T11:15:48Z
