@@ -40,6 +40,14 @@ case "${name} $*" in
     ;;
   'codex app-server daemon update --from-cli --yes') exit "${CODEX_UPDATE_EXIT}" ;;
   'plannotator update') exit "${PLANNOTATOR_UPDATE_EXIT}" ;;
+  'git -C '*' status --porcelain')
+    # the tree turns dirty from the GIT_DIRTY_FROM-th check on: 1 is the start, 2 the end
+    checks=$(($(cat "${UPDATE_CALLS}.status" 2>/dev/null || echo 0) + 1))
+    echo "${checks}" >"${UPDATE_CALLS}.status"
+    if [ "${checks}" -ge "${GIT_DIRTY_FROM:-0}" ] && [ "${GIT_DIRTY_FROM:-0}" -gt 0 ]; then
+      echo ' M bin/self-update'
+    fi
+    ;;
   'docker images '*) echo 'example/image:latest' ;;
 esac
 SH
@@ -74,7 +82,8 @@ run_update() {
   codex_line=$(grep -n '^codex app-server daemon version$' "${UPDATE_CALLS}" | cut -d: -f1)
   [ "${brew_line}" -lt "${plannotator_line}" ]
   [ "${plannotator_line}" -lt "${codex_line}" ]
-  [ "$(tail -n 2 "${UPDATE_CALLS}" | head -n 1)" = 'codex app-server daemon update --from-cli --yes' ]
+  # the last step; only the end-of-run git check and reset come after it
+  [ "$(grep -v '^git ' "${UPDATE_CALLS}" | tail -n 1)" = 'codex app-server daemon update --from-cli --yes' ]
 }
 
 @test "matching Codex versions do not restart or pin the daemon" {
@@ -154,6 +163,30 @@ run_update() {
     grep -q '^brew cu .* --verbose$' "${UPDATE_CALLS}"
     grep -q '^brew doctor --verbose$' "${UPDATE_CALLS}"
   done
+}
+
+@test "a clean run resets the tree at the end" {
+  run_update docker
+  [ "${status}" -eq 0 ]
+  [ "$(tail -n 1 "${UPDATE_CALLS}")" = 'git reset --hard' ]
+}
+
+@test "local changes stop the run before any step" {
+  export GIT_DIRTY_FROM=1
+  run_update docker
+  [ "${status}" -eq 1 ]
+  [[ "${output}" == *'commit or stash them first'* ]]
+  run ! grep -Eq '^(docker|git reset)' "${UPDATE_CALLS}"
+}
+
+@test "changes made during the run fail it instead of being reset" {
+  export GIT_DIRTY_FROM=2 PLANNOTATOR_UPDATE_EXIT=1
+  run_update --keep-going docker plannotator
+  [ "${status}" -eq 1 ]
+  grep -q '^docker pull' "${UPDATE_CALLS}"
+  [[ "${output}" == *'finished with failures:'*'plannotator update'*'M bin/self-update'*'appeared during the run, so nothing was reset'* ]]
+  [[ "${output}" != *'source '* ]]
+  run ! grep -q '^git reset' "${UPDATE_CALLS}"
 }
 
 @test "missing optional executables are skipped" {

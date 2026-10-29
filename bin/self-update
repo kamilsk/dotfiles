@@ -32,12 +32,12 @@ function tolerate() {
 }
 
 function ensure_clean() {
-  local dirty
+  local hint=$1 dirty
   dirty=$(git -C "${root}" status --porcelain)
   if [ -n "${dirty}" ]; then
     echo "self-update: uncommitted changes in ${root}:" >&2
     echo "${dirty}" >&2
-    echo "commit or stash them first" >&2
+    echo "${hint}" >&2
     exit 1
   fi
 }
@@ -177,7 +177,7 @@ function update_zsh() {
 }
 
 # the run ends with `git reset --hard`, so nothing local may be at risk
-ensure_clean
+ensure_clean "commit or stash them first"
 
 UPDATE=()
 
@@ -240,12 +240,15 @@ for update in "${UPDATE[@]}"; do
   eval "${update}"
 done
 
-(cd "${root}" && git reset --hard) # clean up
-
 if [ ${#failures[@]} -gt 0 ]; then
   echo "self-update: finished with failures:" >&2
   printf '  %s\n' "${failures[@]}" >&2
 fi
+
+# the tree may change while the run goes (another session, an editor, a step of the run);
+# such changes are not the run's to discard, so the run fails the way it would at the start
+ensure_clean "they appeared during the run, so nothing was reset; commit or stash them and run again"
+(cd "${root}" && git reset --hard) # clean up
 
 case $(basename "${SHELL}") in
 bash)
