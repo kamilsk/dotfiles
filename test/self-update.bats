@@ -11,6 +11,14 @@ setup() {
   export CODEX_QUERY_EXIT=0 CODEX_UPDATE_EXIT=0 PLANNOTATOR_UPDATE_EXIT=0
   export SHELL=/bin/bash
   unset ZSH
+  # A live daemon socket, linked from CODEX_HOME into a short directory the way Codex does it:
+  # BATS_TEST_TMPDIR is too long for a Unix socket path on macOS (104 bytes).
+  export CODEX_HOME="${BATS_TEST_TMPDIR}/codex"
+  CODEX_SOCKET_DIR=$(mktemp -d /tmp/codex-test.XXXXXX)
+  mkdir -p "${CODEX_HOME}/app-server-control"
+  perl -MIO::Socket::UNIX -e 'IO::Socket::UNIX->new(Local => $ARGV[0], Listen => 1) or die "$!\n"' \
+    "${CODEX_SOCKET_DIR}/sock"
+  ln -s "${CODEX_SOCKET_DIR}/sock" "${CODEX_HOME}/app-server-control/app-server-control.sock"
   local commands="${BATS_TEST_TMPDIR}/commands"
   mkdir -p "${commands}" "${SELF_UPDATE_TEST_ROOT}/bin" "${SELF_UPDATE_TEST_ROOT}/toolset"
   touch "${UPDATE_CALLS}"
@@ -44,6 +52,10 @@ SH
   ln -s "${commands}/stub" "${SELF_UPDATE_TEST_ROOT}/bin/unquarantine"
   # Exclude real package managers and optional tools (especially Go's cleanup).
   export PATH="${commands}:/usr/bin:/bin"
+}
+
+teardown() {
+  rm -rf "${CODEX_SOCKET_DIR}"
 }
 
 run_update() {
@@ -87,21 +99,34 @@ run_update() {
   grep -q '^codex app-server daemon update --from-cli --yes$' "${UPDATE_CALLS}"
 }
 
-@test "a stopped current daemon is left stopped" {
+@test "a stopped daemon is skipped without asking it, even in strict mode" {
+  # a reboot empties /tmp and leaves the link dangling; a daemon never installed has no link
+  rm -rf "${CODEX_SOCKET_DIR}"
+  run_update all
+  [ "${status}" -eq 0 ]
+  [[ "${output}" == *'Codex daemon is not running; skipping'* ]]
+  run ! grep -q '^codex ' "${UPDATE_CALLS}"
+  rm "${CODEX_HOME}/app-server-control/app-server-control.sock"
+  run_update codex
+  [ "${status}" -eq 0 ]
+  run ! grep -q '^codex ' "${UPDATE_CALLS}"
+}
+
+@test "a null app-server version in the response is left alone" {
   export CODEX_VERSION_JSON='{"cliVersion":"0.163.0","managedCodexVersion":"0.163.0","appServerVersion":null}'
   run_update codex
   [ "${status}" -eq 0 ]
   run ! grep -q '^codex app-server daemon update' "${UPDATE_CALLS}"
 }
 
-@test "a stopped outdated daemon package is updated" {
+@test "an old package with a null app-server version is updated" {
   export CODEX_VERSION_JSON='{"cliVersion":"0.163.0","managedCodexVersion":"0.162.1","appServerVersion":null}'
   run_update codex
   [ "${status}" -eq 0 ]
   grep -q '^codex app-server daemon update --from-cli --yes$' "${UPDATE_CALLS}"
 }
 
-@test "an absent daemon is not installed" {
+@test "a response without a package is not installed" {
   export CODEX_VERSION_JSON='{"cliVersion":"0.163.0","managedCodexVersion":null,"appServerVersion":null}'
   run_update codex
   [ "${status}" -eq 0 ]

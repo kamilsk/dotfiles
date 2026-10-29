@@ -66,8 +66,20 @@ function update_brew() {
   brew doctor --verbose || true
 }
 
+# `daemon version` asks the running daemon over this socket and fails without one,
+# whether the daemon is stopped, not started since boot or never installed;
+# the socket is a symlink into /tmp, so a reboot leaves it dangling and -S false
+function codex_daemon_running() {
+  [ -S "${CODEX_HOME:-${HOME}/.codex}/app-server-control/app-server-control.sock" ]
+}
+
 function sync_codex_daemon() {
   local versions action
+  # nothing to sync: Codex installs the daemon package from the CLI on its next start
+  if ! codex_daemon_running; then
+    echo "Codex daemon is not running; skipping"
+    return
+  fi
   versions=$(codex app-server daemon version) || return
   action=$(jq -er '
     def version: type == "string" and length > 0;
