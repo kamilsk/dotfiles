@@ -286,6 +286,7 @@ cask "warp"
 cask "wireshark-app"
 cask "yandex"
 cask "zed"
+cask "zoom"
 cask "zotero"
 
 # third-party

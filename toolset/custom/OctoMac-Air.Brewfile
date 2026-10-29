@@ -52,6 +52,7 @@ cask "sublime-text"
 cask "thebrowsercompany-dia"
 cask "warp"
 cask "zed"
+cask "zoom"
 
 tap "buo/cask-upgrade", trusted: true
 cask "docker/tap/sbx", trusted: true

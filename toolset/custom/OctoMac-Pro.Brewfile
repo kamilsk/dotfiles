@@ -69,6 +69,7 @@ cask "tolaria"
 cask "warp"
 cask "yandex"
 cask "zed"
+cask "zoom"
 
 tap "buo/cask-upgrade", trusted: true
 cask "docker/tap/sbx", trusted: true
