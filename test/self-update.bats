@@ -151,11 +151,12 @@ run_update() {
   run ! grep -q '^codex app-server daemon update' "${UPDATE_CALLS}"
 }
 
-@test "brew steps are quiet by default" {
+@test "brew steps are quiet by default, except the live output of brew bundle" {
   run_update brew
   [ "${status}" -eq 0 ]
+  grep -q '^brew bundle --file=.* --verbose --upgrade' "${UPDATE_CALLS}"
   grep -q '^brew doctor$' "${UPDATE_CALLS}"
-  run ! grep -q -- '--verbose' "${UPDATE_CALLS}"
+  run ! grep -q -- '--verbose' <(grep -v '^brew bundle ' "${UPDATE_CALLS}")
 }
 
 @test "--verbose reaches every brew step and combines with --keep-going" {
@@ -177,7 +178,7 @@ run_update() {
   echo 'brew "git"' >"${SELF_UPDATE_TEST_ROOT}/toolset/custom/test-host.Brewfile"
   run_update brew
   [ "${status}" -eq 0 ]
-  grep -q '^brew bundle --file=.*/custom/test-host.Brewfile --upgrade --force --force-cleanup$' "${UPDATE_CALLS}"
+  grep -q '^brew bundle --file=.*/custom/test-host.Brewfile --verbose --upgrade --force --force-cleanup$' "${UPDATE_CALLS}"
 }
 
 @test "without scutil the host comes from uname" {
@@ -197,7 +198,7 @@ run_update() {
   run_update brew
   [ "${status}" -eq 0 ]
   [[ "${output}" == *"no Brewfile for host 'test-host'"* ]]
-  grep -q '^brew bundle --file=.*/toolset/Brewfile --upgrade --force$' "${UPDATE_CALLS}"
+  grep -q '^brew bundle --file=.*/toolset/Brewfile --verbose --upgrade --force$' "${UPDATE_CALLS}"
   run ! grep -q -- '^brew bundle.*cleanup' "${UPDATE_CALLS}"
   # the environment reaches other steps but not the common bundle
   grep -A1 '^brew bundle' "${UPDATE_CALLS}" >"${BATS_TEST_TMPDIR}/bundle"

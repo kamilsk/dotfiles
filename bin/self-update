@@ -59,16 +59,19 @@ function update_brew() {
   local custom="${root}/toolset/custom/${host}.Brewfile"
 
   brew update --force --quiet
+  # brew bundle stays verbose: without it the install output is captured, so a long
+  # download or a prompt looks like a hang; -v makes only the other steps verbose
+
   # an empty host file would clean up everything, so it counts as missing
   if [ -s "${custom}" ]; then
-    tolerate brew bundle --file="${custom}" ${verbose_flag:+"${verbose_flag}"} --upgrade --force --force-cleanup
+    tolerate brew bundle --file="${custom}" --verbose --upgrade --force --force-cleanup
   else
     # without the host's own list the common one is only a minimum: cleaning up to it
     # would uninstall everything else, so it only installs and upgrades
     echo "self-update: no Brewfile for host '${host}' in ${root}/toolset/custom; installing the common one without cleanup" >&2
     # the environment can request cleanup too, so it is cleared for this call
     tolerate env -u HOMEBREW_BUNDLE_INSTALL_CLEANUP -u HOMEBREW_BUNDLE_FORCE_INSTALL_CLEANUP \
-      brew bundle --file="${common}" ${verbose_flag:+"${verbose_flag}"} --upgrade --force
+      brew bundle --file="${common}" --verbose --upgrade --force
   fi
   brew upgrade --formula --yes
   tolerate brew cu --all --cleanup --no-brew-update --yes ${verbose_flag:+"${verbose_flag}"}
