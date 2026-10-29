@@ -9,7 +9,7 @@ setup() {
   export UPDATE_CALLS="${BATS_TEST_TMPDIR}/calls"
   export CODEX_VERSION_JSON='{"cliVersion":"0.163.0","managedCodexVersion":"0.163.0","appServerVersion":"0.163.0"}'
   export CODEX_QUERY_EXIT=0 CODEX_UPDATE_EXIT=0 PLANNOTATOR_UPDATE_EXIT=0
-  export SHELL=/bin/bash
+  export SHELL=/bin/bash SCUTIL_HOST=test-host UNAME_HOST=Mac
   unset ZSH
   # A live daemon socket, linked from CODEX_HOME into a short directory the way Codex does it:
   # BATS_TEST_TMPDIR is too long for a Unix socket path on macOS (104 bytes).
@@ -33,6 +33,9 @@ setup() {
 #!/bin/bash
 name=${0##*/}
 echo "${name} $*" >>"${UPDATE_CALLS}"
+if [ -n "${HOMEBREW_BUNDLE_INSTALL_CLEANUP-}${HOMEBREW_BUNDLE_FORCE_INSTALL_CLEANUP-}" ]; then
+  echo "${name}: cleanup requested by the environment" >>"${UPDATE_CALLS}"
+fi
 case "${name} $*" in
   'codex app-server daemon version')
     echo "${CODEX_VERSION_JSON}"
@@ -49,11 +52,16 @@ case "${name} $*" in
     fi
     ;;
   'docker images '*) echo 'example/image:latest' ;;
+  'scutil --get LocalHostName')
+    [ -n "${SCUTIL_HOST}" ] || exit 1
+    echo "${SCUTIL_HOST}"
+    ;;
+  'uname -n') echo "${UNAME_HOST}" ;;
 esac
 SH
   chmod +x "${commands}/stub"
   local command
-  for command in git git_config brew mas docker plannotator codex; do
+  for command in git git_config brew mas docker plannotator codex scutil uname; do
     ln -s stub "${commands}/${command}"
   done
   ln -s "${commands}/stub" "${SELF_UPDATE_TEST_ROOT}/toolset/Apps"
@@ -159,10 +167,41 @@ run_update() {
     [ "${status}" -eq 0 ]
     [[ "${output}" != *'unknown type'* ]]
     grep -q '^brew bundle --file=.* --verbose --upgrade' "${UPDATE_CALLS}"
-    grep -q '^brew bundle cleanup --file=.* --verbose' "${UPDATE_CALLS}"
     grep -q '^brew cu .* --verbose$' "${UPDATE_CALLS}"
     grep -q '^brew doctor --verbose$' "${UPDATE_CALLS}"
   done
+}
+
+@test "the LocalHostName Brewfile is installed with cleanup, whatever uname says" {
+  mkdir -p "${SELF_UPDATE_TEST_ROOT}/toolset/custom"
+  echo 'brew "git"' >"${SELF_UPDATE_TEST_ROOT}/toolset/custom/test-host.Brewfile"
+  run_update brew
+  [ "${status}" -eq 0 ]
+  grep -q '^brew bundle --file=.*/custom/test-host.Brewfile --upgrade --force --force-cleanup$' "${UPDATE_CALLS}"
+}
+
+@test "without scutil the host comes from uname" {
+  mkdir -p "${SELF_UPDATE_TEST_ROOT}/toolset/custom"
+  echo 'brew "git"' >"${SELF_UPDATE_TEST_ROOT}/toolset/custom/linux-box.Brewfile"
+  export SCUTIL_HOST='' UNAME_HOST=linux-box.local
+  run_update brew
+  [ "${status}" -eq 0 ]
+  grep -q '^brew bundle --file=.*/custom/linux-box.Brewfile .*--force-cleanup$' "${UPDATE_CALLS}"
+}
+
+@test "without a host Brewfile nothing is cleaned up" {
+  # the common Brewfile is a minimum: cleaning up to it once uninstalled every app
+  mkdir -p "${SELF_UPDATE_TEST_ROOT}/toolset/custom"
+  touch "${SELF_UPDATE_TEST_ROOT}/toolset/custom/test-host.Brewfile" # empty counts as missing
+  export HOMEBREW_BUNDLE_INSTALL_CLEANUP=1 HOMEBREW_BUNDLE_FORCE_INSTALL_CLEANUP=1
+  run_update brew
+  [ "${status}" -eq 0 ]
+  [[ "${output}" == *"no Brewfile for host 'test-host'"* ]]
+  grep -q '^brew bundle --file=.*/toolset/Brewfile --upgrade --force$' "${UPDATE_CALLS}"
+  run ! grep -q -- '^brew bundle.*cleanup' "${UPDATE_CALLS}"
+  # the environment reaches other steps but not the common bundle
+  grep -A1 '^brew bundle' "${UPDATE_CALLS}" >"${BATS_TEST_TMPDIR}/bundle"
+  run ! grep -q 'cleanup requested' "${BATS_TEST_TMPDIR}/bundle"
 }
 
 @test "a clean run resets the tree at the end" {
