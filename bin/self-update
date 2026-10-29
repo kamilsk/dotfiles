@@ -132,11 +132,135 @@ function update_codex() {
   fi
 }
 
+# `plannotator update` installs a release through the upstream install.sh, whose
+# `curl -fsSL` fetches a binary of ~170 MB without a word: on a slow route to GitHub
+# the step looks hung for half an hour. self-update runs that script the way the native
+# updater does, with a progress bar on this one line, and leaves the update to the
+# native updater whenever the script or the setup is not what this relies on
+# shellcheck disable=SC2016 # lines of install.sh, expanded there
+plannotator_silent='curl -fsSL -o "$tmp_file" --speed-limit 1 --speed-time 60 "$binary_url"'
+# shellcheck disable=SC2016
+plannotator_loud='curl -fSL --progress-bar -o "$tmp_file" --speed-limit 1 --speed-time 60 "$binary_url"'
+plannotator_fallback=75 # install_plannotator could not start; nothing was installed
+
 function update_plannotator() {
   if command -v plannotator >/dev/null; then
-    # The native updater checks for a newer release and reuses the install flags.
-    tolerate plannotator update
+    tolerate plannotator_update
   fi
+}
+
+function plannotator_update() {
+  local check latest status=0
+  check=$(plannotator update --check) || return
+  latest=$(sed -n 's/^Plannotator \([0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\) is available (you have .*)\.$/\1/p' <<<"${check}")
+  if [ -z "${latest}" ]; then
+    if [[ "${check}" == *'Up to date'* ]]; then
+      echo "${check}"
+      return
+    fi
+    echo "self-update: plannotator: unknown answer of 'plannotator update --check'; using the native updater" >&2
+    plannotator update
+    return
+  fi
+  echo "${check%%$'\n'*}"
+  install_plannotator "${latest}" || status=$?
+  case "${status}" in
+  "${plannotator_fallback}") plannotator update ;;
+  # Ctrl-C stops the whole run, as it would anywhere else, not only this step
+  130)
+    echo "self-update: plannotator: interrupted" >&2
+    exit 130
+    ;;
+  *) return "${status}" ;;
+  esac
+}
+
+function plannotator_cannot() {
+  echo "self-update: plannotator: $*; using the native updater" >&2
+  return "${plannotator_fallback}"
+}
+
+# runs install.sh the way the native updater does: staged by `plannotator update-prepare`
+# (the script and the pinned checksums, fetched through Plannotator's own TLS roots),
+# with the same arguments and environment, under the same lock; returns plannotator_fallback
+# while nothing has been installed yet, and install.sh's status once it has started
+function install_plannotator() {
+  local version=$1 data flags=0
+  # only the copy install.sh manages can be replaced by it
+  if ! [ "$(command -v plannotator)" -ef "${HOME}/.local/bin/plannotator" ]; then
+    plannotator_cannot "$(command -v plannotator) is not the copy install.sh manages"
+    return
+  fi
+  data=$(plannotator data-dir) && [ -d "${data}" ] || {
+    plannotator_cannot "no data folder"
+    return
+  }
+  # without the file the native updater installs with the defaults, and so does this;
+  # flags would have to be translated into options of install.sh
+  if [ -f "${data}/install-flags.json" ]; then
+    flags=$(jq -r 'if .v == 1 then .flags | length else "unknown" end' "${data}/install-flags.json" 2>/dev/null) ||
+      flags=unknown
+  fi
+  if [ "${flags}" != 0 ]; then
+    plannotator_cannot "the last install had options in ${data}/install-flags.json"
+    return
+  fi
+  (
+    lock="${data}/update.lock" holder='' dir='' status=0
+    # nothing to clean up until it is set: the lock only while it is still this run's
+    trap '[ -z "${dir}" ] || rm -rf "${dir}"
+      [ -z "${holder}" ] || [ "$(cat "${lock}" 2>/dev/null)" != "${holder}" ] || rm -f "${lock}"' EXIT
+    trap 'exit 130' INT TERM HUP
+    # the form Plannotator can judge: a holder that is gone frees the lock at once, not in an hour
+    candidate="pid=$$ group=$(ps -o pgid= -p $$ | tr -d ' ') host=$(uname -n) boot= pidns="
+    # an update in progress, or a lock it left behind, is the native updater's to judge
+    if ! (set -o noclobber && echo "${candidate}" >"${lock}") 2>/dev/null; then
+      plannotator_cannot "${lock} is taken"
+      exit
+    fi
+    holder=${candidate}
+    staged=$(plannotator update-prepare "v${version}" </dev/null) || staged=''
+    case "${staged}" in
+    *$'\n'* | */) ;;
+    /*/plannotator-update-?*) dir=${staged} ;;
+    esac
+    if [ -z "${dir}" ] || [ ! -f "${dir}/install.sh" ]; then
+      plannotator_cannot "plannotator update-prepare did not stage the update"
+      exit
+    fi
+    script="${dir}/install.sh"
+    # the assert: the upstream script still has exactly the one silent download to adapt
+    if ! grep -qF 'REPO="backnotprop/plannotator"' "${script}" ||
+      [ "$(grep -cxF -- "${plannotator_silent}" "${script}")" -ne 1 ]; then
+      plannotator_cannot "install.sh changed upstream, the download line was not found; adapt self-update"
+      exit
+    fi
+    awk -v silent="${plannotator_silent}" -v loud="${plannotator_loud}" \
+      '$0 == silent { print loud; next } { print }' "${script}" >"${script}.loud" &&
+      [ "$(grep -cxF -- "${plannotator_loud}" "${script}.loud")" -eq 1 ] || {
+      plannotator_cannot "install.sh could not be adapted"
+      exit
+    }
+    if [ -f "${dir}/curl-ca-bundle.pem" ]; then
+      export CURL_CA_BUNDLE="${dir}/curl-ca-bundle.pem"
+    fi
+    echo "Installing v${version}; the download shows its progress"
+    # PLANNOTATOR_UPDATE_VERSION tells install.sh this is an update, not a pin, so it updates
+    # the Claude Code plugin too; the git limits keep that fetch from hanging on a slow route
+    PLANNOTATOR_UPDATE_VERSION="v${version}" \
+      PLANNOTATOR_EXPECTED_SHA256="$(cat "${dir}/expected-sha256" 2>/dev/null)" \
+      PLANNOTATOR_UPDATE_MISMATCH_FILE="${dir}/checksum-mismatch" \
+      GIT_HTTP_LOW_SPEED_LIMIT="${GIT_HTTP_LOW_SPEED_LIMIT:-1}" \
+      GIT_HTTP_LOW_SPEED_TIME="${GIT_HTTP_LOW_SPEED_TIME:-60}" \
+      bash "${script}.loud" --version "v${version}" --non-interactive </dev/null || status=$?
+    if [ -f "${dir}/checksum-mismatch" ]; then
+      echo "self-update: plannotator: the download did not match the pinned checksum; nothing was changed" >&2
+      status=1
+    fi
+    # the status of a started install is install.sh's, never a reason to start over
+    [ "${status}" -ne "${plannotator_fallback}" ] || status=1
+    exit "${status}"
+  )
 }
 
 function update_docker() {
