@@ -8,7 +8,7 @@ setup() {
   export SELF_UPDATE_TEST_ROOT="${BATS_TEST_TMPDIR}/dotfiles"
   export UPDATE_CALLS="${BATS_TEST_TMPDIR}/calls"
   export CODEX_VERSION_JSON='{"cliVersion":"0.163.0","managedCodexVersion":"0.163.0","appServerVersion":"0.163.0"}'
-  export CODEX_QUERY_EXIT=0 CODEX_UPDATE_EXIT=0 PLANNOTATOR_UPDATE_EXIT=0
+  export CODEX_QUERY_EXIT=0 CODEX_UPDATE_EXIT=0 PLANNOTATOR_UPDATE_EXIT=0 DOCKER_INFO_EXIT=0
   export SHELL=/bin/bash SCUTIL_HOST=test-host UNAME_HOST=Mac
   unset ZSH
   # A live daemon socket, linked from CODEX_HOME into a short directory the way Codex does it:
@@ -52,6 +52,7 @@ case "${name} $*" in
     fi
     ;;
   'docker images '*) echo 'example/image:latest' ;;
+  'docker info') exit "${DOCKER_INFO_EXIT}" ;;
   'scutil --get LocalHostName')
     [ -n "${SCUTIL_HOST}" ] || exit 1
     echo "${SCUTIL_HOST}"
@@ -297,4 +298,20 @@ run_update() {
   run_update --keep-going codex plannotator
   [ "${status}" -eq 2 ]
   grep -q '^plannotator update$' "${UPDATE_CALLS}"
+}
+
+@test "Docker images are pulled when the daemon answers" {
+  run_update docker
+  [ "${status}" -eq 0 ]
+  grep -q '^docker pull example/image:latest$' "${UPDATE_CALLS}"
+  [[ "${output}" == *'Docker images were updated'* ]]
+}
+
+@test "a stopped Docker daemon is skipped and not reported as updated" {
+  export DOCKER_INFO_EXIT=1
+  run_update docker
+  [ "${status}" -eq 0 ]
+  [[ "${output}" == *'Docker daemon is not running; images were not updated'* ]]
+  [[ "${output}" != *'Docker images were updated'* ]]
+  run ! grep -Eq '^docker (images|pull)' "${UPDATE_CALLS}"
 }

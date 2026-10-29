@@ -141,6 +141,11 @@ function update_plannotator() {
 
 function update_docker() {
   if command -v docker >/dev/null; then
+    # the CLI comes from Homebrew, the daemon from Docker Desktop, which may simply be closed
+    if ! docker info >/dev/null 2>&1; then
+      echo "Docker daemon is not running; images were not updated"
+      return
+    fi
     docker images --filter dangling=false --format '{{.Repository}}:{{.Tag}}' |
       grep -v '<none>' |
       sort -u |
