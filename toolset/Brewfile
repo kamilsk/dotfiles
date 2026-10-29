@@ -11,4 +11,4 @@ brew "zsh-completions"
 cask "amneziavpn"
 cask "gpg-suite"
 
-tap "buo/cask-upgrade"
+tap "buo/cask-upgrade", trusted: true
