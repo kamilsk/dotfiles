@@ -134,6 +134,28 @@ run_update() {
   run ! grep -q '^codex app-server daemon update' "${UPDATE_CALLS}"
 }
 
+@test "brew steps are quiet by default" {
+  run_update brew
+  [ "${status}" -eq 0 ]
+  grep -q '^brew doctor$' "${UPDATE_CALLS}"
+  run ! grep -q -- '--verbose' "${UPDATE_CALLS}"
+}
+
+@test "--verbose reaches every brew step and combines with --keep-going" {
+  local flags
+  for flags in '-v' '--verbose' '-k -v' '-v -k'; do
+    : >"${UPDATE_CALLS}"
+    # shellcheck disable=SC2086 # the flags are split on purpose
+    run_update ${flags} brew
+    [ "${status}" -eq 0 ]
+    [[ "${output}" != *'unknown type'* ]]
+    grep -q '^brew bundle --file=.* --verbose --upgrade' "${UPDATE_CALLS}"
+    grep -q '^brew bundle cleanup --file=.* --verbose' "${UPDATE_CALLS}"
+    grep -q '^brew cu .* --verbose$' "${UPDATE_CALLS}"
+    grep -q '^brew doctor --verbose$' "${UPDATE_CALLS}"
+  done
+}
+
 @test "missing optional executables are skipped" {
   rm "${BATS_TEST_TMPDIR}/commands/codex" "${BATS_TEST_TMPDIR}/commands/plannotator"
   run_update plannotator codex

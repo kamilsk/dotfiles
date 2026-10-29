@@ -5,6 +5,7 @@ set -euo pipefail
 root="${HOME}/.dotfiles"
 host="$(uname -n | sed 's/\.local$//')"
 keep_going=false
+verbose_flag= # becomes --verbose with -v, for the steps that can explain themselves
 failures=()
 outcome=failed # becomes success or partial only on the way out
 
@@ -55,15 +56,16 @@ function update_brew() {
 
   brew update --force --quiet
   if [ -f "${custom}" ]; then
-    tolerate brew bundle --file="${custom}" --verbose --upgrade --force --force-cleanup
+    tolerate brew bundle --file="${custom}" ${verbose_flag:+"${verbose_flag}"} --upgrade --force --force-cleanup
   else
-    tolerate brew bundle --file="${common}" --verbose --upgrade --force --force-cleanup
-    brew bundle cleanup --file="${common}" --verbose --brews --casks --taps;
+    tolerate brew bundle --file="${common}" ${verbose_flag:+"${verbose_flag}"} --upgrade --force --force-cleanup
+    brew bundle cleanup --file="${common}" ${verbose_flag:+"${verbose_flag}"} --brews --casks --taps;
   fi
   brew upgrade --formula --yes
-  tolerate brew cu --all --cleanup --no-brew-update --yes --verbose
+  tolerate brew cu --all --cleanup --no-brew-update --yes ${verbose_flag:+"${verbose_flag}"}
   "${root}"/bin/unquarantine || echo "unquarantine: some apps are still quarantined" >&2
-  brew doctor --verbose || true
+  # warnings are printed either way; --verbose adds the environment dump for bug reports
+  brew doctor ${verbose_flag:+"${verbose_flag}"} || true
 }
 
 # `daemon version` asks the running daemon over this socket and fails without one,
@@ -162,7 +164,7 @@ function update_tools() {
   if command -v go >/dev/null; then
     clean_tools
     local before=${#failures[@]}
-    tolerate make -C "${root}" install
+    tolerate make -C "${root}" ${verbose_flag:+verbose} install
     if [ ${#failures[@]} -eq "${before}" ]; then echo tools were installed; fi
   fi
 }
@@ -179,12 +181,21 @@ ensure_clean
 
 UPDATE=()
 
-case "${1:-}" in
--k | --keep-going)
-  keep_going=true
-  shift
-  ;;
-esac
+while [ $# -gt 0 ]; do
+  case "${1}" in
+  -k | --keep-going)
+    keep_going=true
+    shift
+    ;;
+  -v | --verbose)
+    verbose_flag=--verbose
+    shift
+    ;;
+  *)
+    break
+    ;;
+  esac
+done
 
 if [ $# -eq 0 ]; then
   UPDATE+=(update_dotfiles)
