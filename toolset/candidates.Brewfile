@@ -296,6 +296,7 @@ cask "docker/tap/sbx", trusted: true
 tap "octolab/tap", trusted: true
 brew "octolab/tap/indexit"
 brew "octolab/tap/maintainer"
+brew "octolab/tap/pulse"
 brew "octolab/tap/sparkle"
 cask "octolab/tap/sushi"
 cask "steipete/tap/codexbar", trusted: true
