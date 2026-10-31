@@ -4,7 +4,8 @@ set -euo pipefail
 
 function install() {
   local list=(
-    1356178125 # Outline-Secure internet access
+#    1356178125 # Outline-Secure internet access: disabled, 1.23.0 ships with
+#                # CFBundleName "App" and lands as /Applications/App.app next to Outline.app
 #    1569813296 # 1Password for Safari
 #    411643860  # DaisyDisk
 #    803453959  # Slack
@@ -12,7 +13,7 @@ function install() {
 #    966085870  # TickTick
   )
 
-  for app in "${list[@]}"; do
+  for app in ${list[@]+"${list[@]}"}; do
     if ! mas list | awk '{print $1}' | grep "^${app}$" >/dev/null; then
       mas install "${app}"
     fi
