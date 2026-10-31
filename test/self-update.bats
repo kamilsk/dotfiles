@@ -228,26 +228,26 @@ run_update() {
 }
 
 @test "the LocalHostName Brewfile is installed with cleanup, whatever uname says" {
-  mkdir -p "${SELF_UPDATE_TEST_ROOT}/toolset/custom"
-  echo 'brew "git"' >"${SELF_UPDATE_TEST_ROOT}/toolset/custom/test-host.Brewfile"
+  mkdir -p "${SELF_UPDATE_TEST_ROOT}/toolset"
+  echo 'brew "git"' >"${SELF_UPDATE_TEST_ROOT}/toolset/test-host.Brewfile"
   run_update brew
   [ "${status}" -eq 0 ]
-  grep -q '^brew bundle --file=.*/custom/test-host.Brewfile --verbose --upgrade --force --force-cleanup$' "${UPDATE_CALLS}"
+  grep -q '^brew bundle --file=.*/toolset/test-host.Brewfile --verbose --upgrade --force --force-cleanup$' "${UPDATE_CALLS}"
 }
 
 @test "without scutil the host comes from uname" {
-  mkdir -p "${SELF_UPDATE_TEST_ROOT}/toolset/custom"
-  echo 'brew "git"' >"${SELF_UPDATE_TEST_ROOT}/toolset/custom/linux-box.Brewfile"
+  mkdir -p "${SELF_UPDATE_TEST_ROOT}/toolset"
+  echo 'brew "git"' >"${SELF_UPDATE_TEST_ROOT}/toolset/linux-box.Brewfile"
   export SCUTIL_HOST='' UNAME_HOST=linux-box.local
   run_update brew
   [ "${status}" -eq 0 ]
-  grep -q '^brew bundle --file=.*/custom/linux-box.Brewfile .*--force-cleanup$' "${UPDATE_CALLS}"
+  grep -q '^brew bundle --file=.*/toolset/linux-box.Brewfile .*--force-cleanup$' "${UPDATE_CALLS}"
 }
 
 @test "without a host Brewfile nothing is cleaned up" {
   # the common Brewfile is a minimum: cleaning up to it once uninstalled every app
-  mkdir -p "${SELF_UPDATE_TEST_ROOT}/toolset/custom"
-  touch "${SELF_UPDATE_TEST_ROOT}/toolset/custom/test-host.Brewfile" # empty counts as missing
+  mkdir -p "${SELF_UPDATE_TEST_ROOT}/toolset"
+  touch "${SELF_UPDATE_TEST_ROOT}/toolset/test-host.Brewfile" # empty counts as missing
   export HOMEBREW_BUNDLE_INSTALL_CLEANUP=1 HOMEBREW_BUNDLE_FORCE_INSTALL_CLEANUP=1
   run_update brew
   [ "${status}" -eq 0 ]

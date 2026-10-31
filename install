@@ -101,13 +101,13 @@ install-homebrew() {
 
 install-bundle() {
   local common="${root}/toolset/Brewfile"
-  local custom="${root}/toolset/custom/${host}.Brewfile"
+  local own="${root}/toolset/${host}.Brewfile"
 
   echo Installing Homebrew bundle...
   brew update --force --quiet
   # the same choice as in self-update: a host Brewfile is a complete list
-  if [ -f "${custom}" ]; then
-    tolerate brew bundle --file="${custom}" --no-upgrade -v
+  if [ -f "${own}" ]; then
+    tolerate brew bundle --file="${own}" --no-upgrade -v
   else
     tolerate brew bundle --file="${common}" --no-upgrade -v
   fi
