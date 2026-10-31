@@ -42,6 +42,7 @@ cask "1password"
 cask "1password-cli"
 cask "amneziavpn"
 cask "arc" # disabled on 2026-12-22, keep until the data has moved to Dia, see #904
+cask "cap"
 cask "chatbox"
 cask "chatgpt"
 cask "claude"
