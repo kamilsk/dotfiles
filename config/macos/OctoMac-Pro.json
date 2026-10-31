@@ -1,0 +1,324 @@
+{
+  "kind": "macos-preferences-snapshot",
+  "schemaVersion": 1,
+  "settings": {
+    "accessibility": {
+      "reduceMotion": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.universalaccess",
+          "key": "reduceMotion",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "reduceTransparency": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.universalaccess",
+          "key": "reduceTransparency",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      }
+    },
+    "appearance": {
+      "accentColor": {
+        "source": {
+          "backend": "defaults",
+          "domain": "NSGlobalDomain",
+          "key": "AppleAccentColor",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "automaticSwitching": {
+        "source": {
+          "backend": "defaults",
+          "domain": "NSGlobalDomain",
+          "key": "AppleInterfaceStyleSwitchesAutomatically",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "highlightColor": {
+        "source": {
+          "backend": "defaults",
+          "domain": "NSGlobalDomain",
+          "key": "AppleHighlightColor",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "interfaceStyle": {
+        "source": {
+          "backend": "defaults",
+          "domain": "NSGlobalDomain",
+          "key": "AppleInterfaceStyle",
+          "scope": "current-user-any-host"
+        },
+        "state": "set",
+        "value": "Dark"
+      },
+      "scrollBars": {
+        "source": {
+          "backend": "defaults",
+          "domain": "NSGlobalDomain",
+          "key": "AppleShowScrollBars",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      }
+    },
+    "dock": {
+      "autoHide": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.dock",
+          "key": "autohide",
+          "scope": "current-user-any-host"
+        },
+        "state": "set",
+        "value": true
+      },
+      "iconSize": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.dock",
+          "key": "tilesize",
+          "scope": "current-user-any-host"
+        },
+        "state": "set",
+        "value": 64.0
+      },
+      "magnification": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.dock",
+          "key": "magnification",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "magnifiedIconSize": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.dock",
+          "key": "largesize",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "minimizeEffect": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.dock",
+          "key": "mineffect",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "minimizeToApplication": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.dock",
+          "key": "minimize-to-application",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "position": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.dock",
+          "key": "orientation",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "showRecentApps": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.dock",
+          "key": "show-recents",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      }
+    },
+    "keyboard": {
+      "automaticCapitalization": {
+        "source": {
+          "backend": "defaults",
+          "domain": "NSGlobalDomain",
+          "key": "NSAutomaticCapitalizationEnabled",
+          "scope": "current-user-any-host"
+        },
+        "state": "set",
+        "value": false
+      },
+      "automaticPeriod": {
+        "source": {
+          "backend": "defaults",
+          "domain": "NSGlobalDomain",
+          "key": "NSAutomaticPeriodSubstitutionEnabled",
+          "scope": "current-user-any-host"
+        },
+        "state": "set",
+        "value": false
+      },
+      "automaticSpellingCorrection": {
+        "source": {
+          "backend": "defaults",
+          "domain": "NSGlobalDomain",
+          "key": "NSAutomaticSpellingCorrectionEnabled",
+          "scope": "current-user-any-host"
+        },
+        "state": "set",
+        "value": false
+      },
+      "repeatDelay": {
+        "source": {
+          "backend": "defaults",
+          "domain": "NSGlobalDomain",
+          "key": "InitialKeyRepeat",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "repeatInterval": {
+        "source": {
+          "backend": "defaults",
+          "domain": "NSGlobalDomain",
+          "key": "KeyRepeat",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "smartDashes": {
+        "source": {
+          "backend": "defaults",
+          "domain": "NSGlobalDomain",
+          "key": "NSAutomaticDashSubstitutionEnabled",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "smartQuotes": {
+        "source": {
+          "backend": "defaults",
+          "domain": "NSGlobalDomain",
+          "key": "NSAutomaticQuoteSubstitutionEnabled",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "standardFunctionKeys": {
+        "source": {
+          "backend": "defaults",
+          "domain": "NSGlobalDomain",
+          "key": "com.apple.keyboard.fnState",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      }
+    },
+    "missionControl": {
+      "groupWindowsByApplication": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.dock",
+          "key": "expose-group-apps",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "rearrangeSpaces": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.dock",
+          "key": "mru-spaces",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      }
+    },
+    "screenshots": {
+      "disableShadow": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.screencapture",
+          "key": "disable-shadow",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "format": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.screencapture",
+          "key": "type",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      },
+      "showThumbnail": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.screencapture",
+          "key": "show-thumbnail",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      }
+    },
+    "scrolling": {
+      "naturalDirection": {
+        "source": {
+          "backend": "defaults",
+          "domain": "NSGlobalDomain",
+          "key": "com.apple.swipescrolldirection",
+          "scope": "current-user-any-host"
+        },
+        "state": "unset"
+      }
+    },
+    "trackpad": {
+      "secondaryClick": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.AppleMultitouchTrackpad",
+          "key": "TrackpadRightClick",
+          "scope": "current-user-any-host"
+        },
+        "state": "set",
+        "value": false
+      },
+      "tapToClick": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.AppleMultitouchTrackpad",
+          "key": "Clicking",
+          "scope": "current-user-any-host"
+        },
+        "state": "set",
+        "value": true
+      },
+      "threeFingerDrag": {
+        "source": {
+          "backend": "defaults",
+          "domain": "com.apple.AppleMultitouchTrackpad",
+          "key": "TrackpadThreeFingerDrag",
+          "scope": "current-user-any-host"
+        },
+        "state": "set",
+        "value": false
+      }
+    }
+  },
+  "system": {
+    "build": "26B123",
+    "os": "macOS",
+    "version": "27.2"
+  }
+}

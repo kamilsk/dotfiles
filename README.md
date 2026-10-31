@@ -25,6 +25,13 @@ When you have it, just use `$ self-update` to sync it with the remote.
 - [vim](https://www.vim.org)
 - [zsh](https://www.zsh.org)
 
+## macOS settings
+
+[Capture selected macOS preferences](config/macos/README.md) per host as `config/macos/<host>.json`,
+with a CUE schema and source mapping in `settings.cue`. The guide explains the
+collection model, current coverage, blind spots, and the expansion plan toward
+declarative configuration.
+
 <p align="right">made with ❤️ for everyone by <a href="https://www.octolab.org/">OctoLab</a></p>
 
 [mirror.page]:      https://bitbucket.org/kamilsk/dotfiles
