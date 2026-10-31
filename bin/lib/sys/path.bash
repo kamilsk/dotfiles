@@ -16,8 +16,6 @@ filetypes() {
     uniq
 }
 
-obsidian() { cd "${HOME}/Library/Mobile Documents/iCloud~md~obsidian/Documents" || return 1; }
-
 storage() { cd /Volumes/Volume_1 || return 1; }
 
 taps() { cd "$(brew --prefix)/Library/Taps/${1:-}" || return 1; }
