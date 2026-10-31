@@ -12,10 +12,25 @@ keep_going=false
 verbose_flag= # becomes --verbose with -v, for the steps that can explain themselves
 failures=()
 outcome=failed # becomes success or partial only on the way out
+# a file, not an array: a notice from a subshell must reach the summary too
+notices=$(mktemp "${TMPDIR:-/tmp}/self-update-notices.XXXXXX")
+
+# notice reports what a step did not do as it should, without failing the step:
+# printed at once and again at the very end of the run, where it is not lost
+# in the output of the steps
+function notice() {
+  echo "self-update: $*" >&2
+  echo "$*" >>"${notices}"
+}
 
 # any exit not marked as success or partial is a hard error (1), whatever its status,
 # so 2 always means a partial success; bash 3.2 may even report 0 after a set -u abort
 function normalize_exit() {
+  if [ -s "${notices}" ]; then
+    echo "self-update: finished with notices:" >&2
+    sed 's/^/  /' "${notices}" >&2
+  fi
+  rm -f "${notices}"
   case "${outcome}" in
   success) exit 0 ;;
   partial) exit 2 ;;
@@ -68,14 +83,14 @@ function update_brew() {
   else
     # without the host's own list the common one is only a minimum: cleaning up to it
     # would uninstall everything else, so it only installs and upgrades
-    echo "self-update: no Brewfile for host '${host}' in ${root}/toolset; installing the common one without cleanup" >&2
+    notice "no Brewfile for host '${host}' in ${root}/toolset; installing the common one without cleanup"
     # the environment can request cleanup too, so it is cleared for this call
     tolerate env -u HOMEBREW_BUNDLE_INSTALL_CLEANUP -u HOMEBREW_BUNDLE_FORCE_INSTALL_CLEANUP \
       brew bundle --file="${common}" --verbose --upgrade --force
   fi
   brew upgrade --formula --yes
   tolerate brew cu --all --cleanup --no-brew-update --yes ${verbose_flag:+"${verbose_flag}"}
-  "${root}"/bin/unquarantine || echo "unquarantine: some apps are still quarantined" >&2
+  "${root}"/bin/unquarantine || notice "unquarantine: some apps are still quarantined"
   # warnings are printed either way; --verbose adds the environment dump for bug reports
   brew doctor ${verbose_flag:+"${verbose_flag}"} || true
 }
@@ -132,142 +147,34 @@ function update_codex() {
   fi
 }
 
-# `plannotator update` installs a release through the upstream install.sh, whose
-# `curl -fsSL` fetches a binary of ~170 MB without a word: on a slow route to GitHub
-# the step looks hung for half an hour. self-update runs that script the way the native
-# updater does, with a progress bar on this one line, and leaves the update to the
-# native updater whenever the script or the setup is not what this relies on
-# shellcheck disable=SC2016 # lines of install.sh, expanded there
-plannotator_silent='curl -fsSL -o "$tmp_file" --speed-limit 1 --speed-time 60 "$binary_url"'
-# shellcheck disable=SC2016
-plannotator_loud='curl -fSL --progress-bar -o "$tmp_file" --speed-limit 1 --speed-time 60 "$binary_url"'
-plannotator_fallback=75 # install_plannotator could not start; nothing was installed
-
 function update_plannotator() {
   if command -v plannotator >/dev/null; then
     tolerate plannotator_update
   fi
 }
 
+# the native updater runs the upstream install.sh, which since 0.28.52 fetches the
+# compressed binary (~45 MB, not ~220 MB) and resumes a dropped download, still
+# without a progress bar; an up-to-date Plannotator is only checked
 function plannotator_update() {
-  local check latest status=0
-  check=$(plannotator update --check) || return
-  latest=$(sed -n 's/^Plannotator \([0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\) is available (you have .*)\.$/\1/p' <<<"${check}")
-  if [ -z "${latest}" ]; then
-    if [[ "${check}" == *'Up to date'* ]]; then
-      echo "${check}"
-      return
-    fi
-    echo "self-update: plannotator: unknown answer of 'plannotator update --check'; using the native updater" >&2
-    plannotator update
-    return
-  fi
-  echo "${check%%$'\n'*}"
-  install_plannotator "${latest}" || status=$?
-  case "${status}" in
-  "${plannotator_fallback}") plannotator update ;;
+  local status=0
+  # the git limits keep the Claude Code plugin fetch from hanging on a slow route
+  GIT_HTTP_LOW_SPEED_LIMIT="${GIT_HTTP_LOW_SPEED_LIMIT:-1}" \
+    GIT_HTTP_LOW_SPEED_TIME="${GIT_HTTP_LOW_SPEED_TIME:-60}" \
+    plannotator update </dev/null || status=$?
   # Ctrl-C stops the whole run, as it would anywhere else, not only this step
-  130)
+  if [ "${status}" -eq 130 ]; then
     echo "self-update: plannotator: interrupted" >&2
     exit 130
-    ;;
-  *) return "${status}" ;;
-  esac
-}
-
-function plannotator_cannot() {
-  echo "self-update: plannotator: $*; using the native updater" >&2
-  return "${plannotator_fallback}"
-}
-
-# runs install.sh the way the native updater does: staged by `plannotator update-prepare`
-# (the script and the pinned checksums, fetched through Plannotator's own TLS roots),
-# with the same arguments and environment, under the same lock; returns plannotator_fallback
-# while nothing has been installed yet, and install.sh's status once it has started
-function install_plannotator() {
-  local version=$1 data flags=0
-  # only the copy install.sh manages can be replaced by it
-  if ! [ "$(command -v plannotator)" -ef "${HOME}/.local/bin/plannotator" ]; then
-    plannotator_cannot "$(command -v plannotator) is not the copy install.sh manages"
-    return
   fi
-  data=$(plannotator data-dir) && [ -d "${data}" ] || {
-    plannotator_cannot "no data folder"
-    return
-  }
-  # without the file the native updater installs with the defaults, and so does this;
-  # flags would have to be translated into options of install.sh
-  if [ -f "${data}/install-flags.json" ]; then
-    flags=$(jq -r 'if .v == 1 then .flags | length else "unknown" end' "${data}/install-flags.json" 2>/dev/null) ||
-      flags=unknown
-  fi
-  if [ "${flags}" != 0 ]; then
-    plannotator_cannot "the last install had options in ${data}/install-flags.json"
-    return
-  fi
-  (
-    lock="${data}/update.lock" holder='' dir='' status=0
-    # nothing to clean up until it is set: the lock only while it is still this run's
-    trap '[ -z "${dir}" ] || rm -rf "${dir}"
-      [ -z "${holder}" ] || [ "$(cat "${lock}" 2>/dev/null)" != "${holder}" ] || rm -f "${lock}"' EXIT
-    trap 'exit 130' INT TERM HUP
-    # the form Plannotator can judge: a holder that is gone frees the lock at once, not in an hour
-    candidate="pid=$$ group=$(ps -o pgid= -p $$ | tr -d ' ') host=$(uname -n) boot= pidns="
-    # an update in progress, or a lock it left behind, is the native updater's to judge
-    if ! (set -o noclobber && echo "${candidate}" >"${lock}") 2>/dev/null; then
-      plannotator_cannot "${lock} is taken"
-      exit
-    fi
-    holder=${candidate}
-    staged=$(plannotator update-prepare "v${version}" </dev/null) || staged=''
-    case "${staged}" in
-    *$'\n'* | */) ;;
-    /*/plannotator-update-?*) dir=${staged} ;;
-    esac
-    if [ -z "${dir}" ] || [ ! -f "${dir}/install.sh" ]; then
-      plannotator_cannot "plannotator update-prepare did not stage the update"
-      exit
-    fi
-    script="${dir}/install.sh"
-    # the assert: the upstream script still has exactly the one silent download to adapt
-    if ! grep -qF 'REPO="backnotprop/plannotator"' "${script}" ||
-      [ "$(grep -cxF -- "${plannotator_silent}" "${script}")" -ne 1 ]; then
-      plannotator_cannot "install.sh changed upstream, the download line was not found; adapt self-update"
-      exit
-    fi
-    awk -v silent="${plannotator_silent}" -v loud="${plannotator_loud}" \
-      '$0 == silent { print loud; next } { print }' "${script}" >"${script}.loud" &&
-      [ "$(grep -cxF -- "${plannotator_loud}" "${script}.loud")" -eq 1 ] || {
-      plannotator_cannot "install.sh could not be adapted"
-      exit
-    }
-    if [ -f "${dir}/curl-ca-bundle.pem" ]; then
-      export CURL_CA_BUNDLE="${dir}/curl-ca-bundle.pem"
-    fi
-    echo "Installing v${version}; the download shows its progress"
-    # PLANNOTATOR_UPDATE_VERSION tells install.sh this is an update, not a pin, so it updates
-    # the Claude Code plugin too; the git limits keep that fetch from hanging on a slow route
-    PLANNOTATOR_UPDATE_VERSION="v${version}" \
-      PLANNOTATOR_EXPECTED_SHA256="$(cat "${dir}/expected-sha256" 2>/dev/null)" \
-      PLANNOTATOR_UPDATE_MISMATCH_FILE="${dir}/checksum-mismatch" \
-      GIT_HTTP_LOW_SPEED_LIMIT="${GIT_HTTP_LOW_SPEED_LIMIT:-1}" \
-      GIT_HTTP_LOW_SPEED_TIME="${GIT_HTTP_LOW_SPEED_TIME:-60}" \
-      bash "${script}.loud" --version "v${version}" --non-interactive </dev/null || status=$?
-    if [ -f "${dir}/checksum-mismatch" ]; then
-      echo "self-update: plannotator: the download did not match the pinned checksum; nothing was changed" >&2
-      status=1
-    fi
-    # the status of a started install is install.sh's, never a reason to start over
-    [ "${status}" -ne "${plannotator_fallback}" ] || status=1
-    exit "${status}"
-  )
+  return "${status}"
 }
 
 function update_docker() {
   if command -v docker >/dev/null; then
     # the CLI comes from Homebrew, the daemon from Docker Desktop, which may simply be closed
     if ! docker info >/dev/null 2>&1; then
-      echo "Docker daemon is not running; images were not updated"
+      notice "Docker daemon is not running; images were not updated"
       return
     fi
     docker images --filter dangling=false --format '{{.Repository}}:{{.Tag}}' |
@@ -371,7 +278,7 @@ else
       UPDATE+=(update_zsh)
       ;;
     *)
-      UPDATE+=("echo unknown type: ${type}")
+      notice "unknown type: ${type}"
       ;;
     esac
   done
