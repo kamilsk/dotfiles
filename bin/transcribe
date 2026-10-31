@@ -1,0 +1,178 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o pipefail
+
+# transcribe — speech to text; MacWhisper's mw with Parakeet v3 by default (DOT-513, #913).
+#
+#   transcribe call.m4a > call.txt                      text to stdout
+#   transcribe call.m4a -o call.srt --format srt        a file only when asked
+#   transcribe a.m4a b.m4a --output-dir notes/          several inputs
+#   transcribe call.m4a --names "Pavel,Kamil"           Speaker 1, 2 → names, in order of appearance
+#   transcribe call.m4a -- --model whisperkit:openai_whisper-large-v3-v20240930
+#
+# Everything after -- reaches the engine as is and replaces the matching default.
+# Exit codes: 0 success, 1 engine failure, 2 usage error, 127 no engine found.
+
+readonly default_model='parakeet-pro:nvidia_parakeet-v3'
+readonly default_lang='ru'
+
+usage() {
+  cat <<'USAGE'
+usage: transcribe [options] <file>... [-- <engine args>]
+
+  --lang <code>          source language, ISO 639-1 or auto (default: ru)
+  --format <fmt>         txt | srt | vtt | md | json (default: txt)
+  --names <a,b,...>      relabel Speaker 1, 2, ... in order of appearance
+  --engine <name>        auto | mw (default: auto, which is mw today)
+  -o <file>              write to a file instead of stdout (one input only)
+  --output-dir <dir>     write <input name>.<fmt> per input into <dir>
+  --force                overwrite existing output files
+  -h, --help             show this help
+
+The transcript goes to stdout, the engine report and progress to stderr.
+After -- engine arguments go as is, e.g. -- --model <engine:model-id>.
+USAGE
+}
+
+die() { printf 'transcribe: %s\n' "$1" >&2; exit "${2:-2}"; }
+
+# need_value <flag> <next arg> — refuses "--flag" without a value.
+need_value() { [ "$#" -ge 2 ] && [ -n "$2" ] || die "$1 needs a value; see transcribe --help"; }
+
+lang=${default_lang} format=txt names='' engine=auto output='' output_dir='' force=''
+inputs=() passthrough=()
+
+while [ "$#" -gt 0 ]; do
+  case $1 in
+    -h | --help) usage; exit 0 ;;
+    --) shift; passthrough=("$@"); break ;;
+    --lang=* | --format=* | --names=* | --engine=* | --output=* | --output-dir=*)
+      flag=${1%%=*}; value=${1#*=}; shift; set -- "${flag}" "${value}" "$@"; continue ;;
+    --lang) need_value "$@"; lang=$2; shift 2 ;;
+    --format) need_value "$@"; format=$2; shift 2 ;;
+    --names) need_value "$@"; names=$2; shift 2 ;;
+    --engine) need_value "$@"; engine=$2; shift 2 ;;
+    -o | --output) need_value "$@"; output=$2; shift 2 ;;
+    --output-dir) need_value "$@"; output_dir=$2; shift 2 ;;
+    --force) force=1; shift ;;
+    -*) die "unknown option $1; engine options go after --, e.g. transcribe file -- $1" ;;
+    *) inputs+=("$1"); shift ;;
+  esac
+done
+
+case ${format} in txt | srt | vtt | md | json) ;; *) die "--format must be txt, srt, vtt, md or json, not ${format}" ;; esac
+[ "${#inputs[@]}" -gt 0 ] || { usage >&2; exit 2; }
+[ -z "${output}" ] || [ -z "${output_dir}" ] || die '-o and --output-dir exclude each other'
+[ "${#inputs[@]}" -eq 1 ] || [ -n "${output_dir}" ] || die "${#inputs[@]} inputs need --output-dir"
+for input in "${inputs[@]}"; do
+  [ -f "${input}" ] || die "no such file: ${input}"
+done
+
+# key <option> — what an engine option sets: --no-speakers and --speakers=x both set "speakers".
+key() { local k=${1#--}; k=${k%%=*}; printf '%s' "${k#no-}"; }
+
+overridden=' '
+model='' effective_format=${format}
+i=0
+while [ "${i}" -lt "${#passthrough[@]}" ]; do
+  arg=${passthrough[i]}
+  case ${arg} in
+    -o | --output | --output=* | --output-dir | --output-dir=* | --stream | --overwrite)
+      die "${arg%%=*} after -- is not supported: transcribe captures the output; use -o, --output-dir and --force" ;;
+    --*)
+      k=$(key "${arg}")
+      overridden="${overridden}${k} "
+      next=${passthrough[i + 1]-}
+      case ${arg} in
+        --model=*) model=${arg#*=} ;;
+        --model) model=${next} ;;
+        --format=*) effective_format=${arg#*=} ;;
+        --format) effective_format=${next} ;;
+      esac
+      ;;
+  esac
+  i=$((i + 1))
+done
+case ${overridden} in *' style '*) overridden="${overridden}group " ;; esac
+: "${model:=${default_model}}"
+
+# defaults: one option per entry, its value glued with =, dropped when the pass-through sets its key
+defaults=("--model=${default_model}" "--language=${lang}" --speakers "--format=${format}")
+case ${format} in
+  txt | md) defaults+=(--style=transcript --group=people --timestamps) ;;
+esac
+engine_args=()
+for d in "${defaults[@]}"; do
+  case ${overridden} in *" $(key "${d}") "*) ;; *) engine_args+=("${d}") ;; esac
+done
+engine_args+=(${passthrough[@]+"${passthrough[@]}"})
+
+# find_mw — mw on PATH, else inside MacWhisper.app in the application folders.
+find_mw() {
+  local dir
+  if command -v mw >/dev/null 2>&1; then command -v mw; return 0; fi
+  IFS=: read -r -a dirs <<<"${TRANSCRIBE_APP_DIRS:-/Applications:${HOME}/Applications}"
+  for dir in "${dirs[@]}"; do
+    if [ -x "${dir}/MacWhisper.app/Contents/MacOS/mw" ]; then
+      printf '%s\n' "${dir}/MacWhisper.app/Contents/MacOS/mw"
+      return 0
+    fi
+  done
+  return 1
+}
+
+case ${engine} in
+  auto | mw)
+    mw=$(find_mw) || die 'no engine: mw not found on PATH or in MacWhisper.app; brew install --cask macwhisper' 127
+    ;;
+  *) die "--engine must be auto or mw, not ${engine}" ;;
+esac
+
+# destinations, all checked before the first transcription
+dests=()
+for input in "${inputs[@]}"; do
+  if [ -n "${output}" ]; then
+    dest=${output}
+  elif [ -n "${output_dir}" ]; then
+    base=${input##*/}
+    dest="${output_dir%/}/${base%.*}.${effective_format}"
+  else
+    dest=''
+  fi
+  case " ${dests[*]-} " in *" ${dest} "*) [ -z "${dest}" ] || die "two inputs would both write ${dest}" ;; esac
+  if [ -n "${dest}" ] && [ -e "${dest}" ] && [ -z "${force}" ]; then
+    die "${dest} exists; add --force to overwrite"
+  fi
+  dests+=("${dest}")
+done
+[ -z "${output_dir}" ] || mkdir -p "${output_dir}" || die "cannot create ${output_dir}" 1
+
+# relabel — Speaker N becomes the next name in order of first appearance.
+relabel() {
+  if [ -z "${names}" ]; then cat; return; fi
+  TRANSCRIBE_NAMES=${names} perl -CSD -pe '
+    BEGIN { my $v = $ENV{TRANSCRIBE_NAMES}; utf8::decode($v); @n = map { s/^\s+|\s+$//gr } split /,/, $v; %m = () }
+    s{\bSpeaker (\d+)\b}{ exists $m{$1} ? $m{$1} : (@n ? ($m{$1} = shift @n) : ($m{$1} = "Speaker $1")) }ge'
+}
+
+printf 'transcribe: engine mw (%s), language %s\n' "${model}" "${lang}" >&2
+
+tmp=$(mktemp "${TMPDIR:-/tmp}/transcribe.XXXXXX") || die 'cannot create a temporary file' 1
+trap 'rm -f "${tmp}"' EXIT
+
+status=0
+for i in "${!inputs[@]}"; do
+  input=${inputs[i]} dest=${dests[i]}
+  if ! "${mw}" transcribe "${engine_args[@]}" "${input}" >"${tmp}"; then
+    printf 'transcribe: the engine failed on %s\n' "${input}" >&2
+    status=1
+    continue
+  fi
+  if [ -z "${dest}" ]; then
+    relabel <"${tmp}"
+  else
+    relabel <"${tmp}" >"${dest}" || { printf 'transcribe: cannot write %s\n' "${dest}" >&2; status=1; }
+  fi
+done
+exit "${status}"
