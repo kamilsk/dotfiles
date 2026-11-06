@@ -8,7 +8,7 @@ require (
 	github.com/evanw/esbuild v0.28.2
 	github.com/golang/mock v1.6.0
 	github.com/isacikgoz/gia v0.2.0
-	github.com/itchyny/gojq v0.12.19
+	github.com/itchyny/gojq v0.12.20
 	github.com/marwan-at-work/mod v0.10.0
 	github.com/mikefarah/yq/v4 v4.54.1
 	github.com/mrnugget/fzz v1.1.0
@@ -28,8 +28,7 @@ require (
 	github.com/andybalholm/cascadia v1.3.2 // indirect
 	github.com/apparentlymart/go-textseg/v15 v15.0.0 // indirect
 	github.com/apparentlymart/go-textseg/v17 v17.0.1 // indirect
-	github.com/clipperhouse/stringish v0.1.1 // indirect
-	github.com/clipperhouse/uax29/v2 v2.3.0 // indirect
+	github.com/clipperhouse/uax29/v2 v2.7.0 // indirect
 	github.com/cloudflare/circl v1.6.3 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.6 // indirect
 	github.com/dimchansky/utfbom v1.1.1 // indirect
@@ -43,14 +42,14 @@ require (
 	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/hashicorp/hcl/v2 v2.25.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
-	github.com/itchyny/go-yaml v0.0.0-20251001235044-fca9a0999f15 // indirect
-	github.com/itchyny/timefmt-go v0.1.8 // indirect
+	github.com/itchyny/go-yaml v0.0.0-20261030110000-18a91f8189a6 // indirect
+	github.com/itchyny/timefmt-go v0.1.9 // indirect
 	github.com/jinzhu/copier v0.4.0 // indirect
 	github.com/jroimartin/gocui v0.4.0 // indirect
 	github.com/magiconair/properties v1.18.12 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.24 // indirect
-	github.com/mattn/go-runewidth v0.0.19 // indirect
+	github.com/mattn/go-runewidth v0.0.31 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
 	github.com/nsf/termbox-go v0.0.0-20190325093121-288510b9734e // indirect
 	github.com/pelletier/go-toml/v2 v2.4.3 // indirect
